@@ -1,0 +1,20 @@
+﻿[
+  {
+    "dutch": "Hallo",
+    "english": "Hello",
+    "spanish": "Hola",
+    "russian": "Привет"
+  },
+  {
+    "dutch": "Dag",
+    "english": "Goodbye",
+    "spanish": "Adiós",
+    "russian": "До свидания"
+  },
+  {
+    "dutch": "Hoe gaat het met je?",
+    "english": "How are you?",
+    "spanish": "¿Cómo estás?",
+    "russian": "Как дела?"
+  }
+]
