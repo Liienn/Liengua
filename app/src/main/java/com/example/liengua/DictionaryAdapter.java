@@ -46,17 +46,14 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         // Append Spanish translation if enabled
         if (showSpanish && entry.getTranslationSpanish() != null && !entry.getTranslationSpanish().isEmpty()) {
             translation.append("ES: ").append(entry.getTranslationSpanish()).append("\n");
-            holder.translationTextView.setOnClickListener(v -> showAlternatives("spanish", entry.getAlternatives(), holder));
         }
         // Append Dutch translation if enabled
         if (showDutch && entry.getTranslationDutch() != null && !entry.getTranslationDutch().isEmpty()) {
             translation.append("NL: ").append(entry.getTranslationDutch()).append("\n");
-            holder.translationTextView.setOnClickListener(v -> showAlternatives("dutch", entry.getAlternatives(), holder));
         }
         // Append Russian translation if enabled
         if (showRussian && entry.getTranslationRussian() != null && !entry.getTranslationRussian().isEmpty()) {
             translation.append("RU: ").append(entry.getTranslationRussian()).append("\n");
-            holder.translationTextView.setOnClickListener(v -> showAlternatives("russian", entry.getAlternatives(), holder));
         }
 
         // Set the translation text

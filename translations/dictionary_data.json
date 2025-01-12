@@ -27,7 +27,7 @@
     "spanish": "¿En qué año?",
     "russian": "В каком году?",
     "alternatives": {
-        "dutch": [],
+        "dutch": ["Welk jaar?"],
         "spanish": [],
         "russian": []
     }
@@ -38,7 +38,7 @@
     "spanish": "¿Por cuánto tiempo?",
     "russian": "На сколько времени?",
     "alternatives": {
-        "dutch": [],
+        "dutch": ["Hoe lang?"],
         "spanish": [],
         "russian": []
     }
@@ -56,11 +56,11 @@
   },
   {
     "english": "Where to?",
-    "dutch": "Waarnaartoe? / Naar waar?",
+    "dutch": "Waarnaartoe?",
     "spanish": "¿A dónde?",
     "russian": "Куда?",
     "alternatives": {
-        "dutch": [],
+        "dutch": ["Naar waar?"],
         "spanish": [],
         "russian": []
     }
@@ -104,7 +104,7 @@
     "spanish": "¿A qué hora?",
     "russian": "Во сколько?",
     "alternatives": {
-        "dutch": [],
+        "dutch": ["Op welk uur?", "Op welke tijd?", "Wanneer?"],
         "spanish": [],
         "russian": []
     }
@@ -137,6 +137,50 @@
   "spanish": "Por si acaso",
   "russian": "На всякий случай",
   "alternatives": {
+        "dutch": ["Voor het geval dat", "Om zeker te zijn"],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "What kind (of...)?",
+    "dutch": "Welke?",
+    "spanish": "",
+    "russian": "",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "How far?",
+    "dutch": "Hoe ver?",
+    "spanish": "",
+    "russian": "",
+    "alternatives": {
+        "dutch": [""],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "I am confused",
+    "dutch": "Ik ben in de war",
+    "spanish": "",
+    "russian": "",
+    "alternatives": {
+        "dutch": ["Ik ben verward", "Ik ben de kluts kwijt"],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "I wish!",
+    "dutch": "Was het maar (waar)!",
+    "spanish": "",
+    "russian": "",
+    "alternatives": {
         "dutch": [],
         "spanish": [],
         "russian": []

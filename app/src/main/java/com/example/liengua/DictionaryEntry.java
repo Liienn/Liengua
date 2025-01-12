@@ -21,17 +21,8 @@ public class DictionaryEntry {
         this.russian = russian;
         this.dutch = dutch;
         this.alternatives = alternatives != null ? alternatives : new HashMap<>();
-        alternatives.put("dutch", new ArrayList<>());
-        alternatives.put("spanish", new ArrayList<>());
-        alternatives.put("russian", new ArrayList<>());
-        if (entry.alternatives != null) {
-            alternatives.putAll(entry.alternatives);
-        }
     }
 
-    // Parsing the JSON response
-    Gson gson = new Gson();
-    DictionaryEntry entry = gson.fromJson(jsonResponse, DictionaryEntry.class);
 
 
     // Getters
