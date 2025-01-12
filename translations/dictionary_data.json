@@ -1,20 +1,38 @@
 ﻿[
   {
-    "dutch": "Hallo",
     "english": "Hello",
+    "dutch": "Hallo",
     "spanish": "Hola",
     "russian": "Привет"
   },
   {
-    "dutch": "Dag",
     "english": "Goodbye",
+    "dutch": "Dag",
     "spanish": "Adiós",
     "russian": "До свидания"
   },
   {
-    "dutch": "Hoe gaat het met je?",
-    "english": "How are you?",
-    "spanish": "¿Cómo estás?",
-    "russian": "Как дела?"
+    "english": "In what year?",
+    "dutch": "In welk jaar?",
+    "spanish": "¿En qué año?",
+    "russian": "В каком году?"
+  },
+  {
+    "english": "For how long?",
+    "dutch": "Voor hoe lang?",
+    "spanish": "¿Por cuánto tiempo?",
+    "russian": "На сколько времени?"
+  },
+  {
+    "english": "With whom?",
+    "dutch": "Met wie?",
+    "spanish": "¿Con quién?",
+    "russian": "С кем?"
+  },
+  {
+    "english": "Where to?",
+    "dutch": "Waarnaartoe? / Naar waar?",
+    "spanish": "¿A dónde?",
+    "russian": "Куда?"
   }
 ]

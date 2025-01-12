@@ -1,6 +1,9 @@
 package com.example.liengua;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.CheckBox;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private DictionaryAdapter adapter;
+    private DictionaryAdapter dictionaryAdapter;
     private List<DictionaryEntry> entryList;
 
     @Override
@@ -31,8 +34,31 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // Set up checkboxes for language selection
+        CheckBox spanishCheckBox = findViewById(R.id.spanish_checkbox);
+        CheckBox dutchCheckBox = findViewById(R.id.dutch_checkbox);
+        CheckBox russianCheckBox = findViewById(R.id.russian_checkbox);
+
+        // Listen for changes in the checkbox selection
+        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+
         // Fetch data from GitHub
         fetchDataFromGitHub();
+    }
+
+    private void updateLanguages() {
+        // Get the selected languages from the checkboxes
+        boolean showSpanish = ((CheckBox) findViewById(R.id.spanish_checkbox)).isChecked();
+        boolean showDutch = ((CheckBox) findViewById(R.id.dutch_checkbox)).isChecked();
+        boolean showRussian = ((CheckBox) findViewById(R.id.russian_checkbox)).isChecked();
+
+        // Update the adapter with the selected languages
+        if (dictionaryAdapter != null) {
+            dictionaryAdapter.setLanguagesToShow(showSpanish, showDutch, showRussian);
+            dictionaryAdapter.notifyDataSetChanged();
+        }
     }
 
     private void fetchDataFromGitHub() {
@@ -63,8 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // Run on the main thread to update the UI
                     runOnUiThread(() -> {
-                        adapter = new DictionaryAdapter(entryList);
-                        recyclerView.setAdapter(adapter);
+                        // Set the adapter with the fetched data
+                        dictionaryAdapter = new DictionaryAdapter(entryList);
+                        recyclerView.setAdapter(dictionaryAdapter);
                     });
                 }
             }
