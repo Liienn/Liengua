@@ -346,9 +346,9 @@
   "spanish": "¿Cuál es la diferencia?",
   "russian": "В чем разница?",
   "alternatives": {
-      "dutch": ["Hoe verschilt het?", "Wat maakt het verschil?"],
+      "dutch": ["Hoe verschilt het (van elkaar)?", "Wat maakt het verschil?"],
       "spanish": ["¿En qué se diferencia?", "¿Cómo se diferencia?"],
-      "russian": ["Какова разница?", "Что отличает?"]
+      "russian": ["В чем отличие", "Чем отличается... от...", "Какова разница?", "Что отличает?"]
   }
 },
 {
@@ -1189,7 +1189,7 @@
   "english": "Since yesterday",
   "dutch": "Sinds gisteren",
   "spanish": "Desde ayer",
-  "russian": "С вчерашнего дня",
+  "russian": "Со вчерашнего дня",
   "alternatives": {
     "dutch": [
       "Vanaf gisteren"
@@ -1470,7 +1470,7 @@
   "alternatives": {
       "dutch": ["Ik mis je"],
       "spanish": ["Te extraño"],
-      "russian": ["Я тосковаю по тебе"]
+      "russian": ["Я тоскую по тебе"]
   }
 },
 {
@@ -1635,7 +1635,7 @@
   "alternatives": {
       "dutch": ["Ergens genoeg van krijgen", "Het/iets/iemand beu zijn"],
       "spanish": ["Cansarse de algo"],
-      "russian": ["Достало что-то/кому-то"]
+      "russian": ["Достало что-то/кого-то", "Меня/его/ее/их/ нас это достало"]
   }
 },
 {
