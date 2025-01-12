@@ -1698,11 +1698,11 @@
   },
   {
     "english": "A piece of cake",
-    "dutch": "Dat is zo gebeurd",
+    "dutch": "Komt in de sacoche",
     "spanish": "Pan comido",
     "russian": "Проще простого",
     "alternatives": {
-        "dutch": ["Komt in de sacoche", "Een fluitje van een cent", "Het is heel erg gemakkelijk"],
+        "dutch": ["Dat is zo gebeurd", "Een fluitje van een cent", "Het is heel erg gemakkelijk"],
         "spanish": ["Estar chupado"],
         "russian": ["Пустяковое дело"]
     }
