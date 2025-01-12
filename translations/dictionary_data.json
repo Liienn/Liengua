@@ -5,20 +5,20 @@
     "spanish": "Hola",
     "russian": "Привет",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Hoi", "Hey", "Goedemorgen", "Goedendag"],
+        "spanish": ["¿Qué tal?", "¿Cómo estás?", "Buenos días", "Buenas"],
+        "russian": ["Здравствуй", "Добрый день", "Доброе утро", "Приветка"]
     }
   },
   {
     "english": "Goodbye",
-    "dutch": "Dag",
+    "dutch": "Tot ziens",
     "spanish": "Adiós",
     "russian": "До свидания",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Dag", "Tot later", "Vaarwel"],
+        "spanish": ["Hasta luego", "Hasta pronto", "Chao", "Nos vemos"],
+        "russian": ["Пока", "До встречи", "Прощай", "Увидимся"]
     }
   },
   {
@@ -27,9 +27,9 @@
     "spanish": "¿En qué año?",
     "russian": "В каком году?",
     "alternatives": {
-        "dutch": ["Welk jaar?"],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Welk jaar?", "In welk jaartal?", "In welk kalenderjaar?"],
+        "spanish": ["¿En qué año fue?", "¿En qué año ocurrió?", "¿En qué año sucedió?"],
+        "russian": ["В каком году это было?", "Когда это произошло?", "В какой год?"]
     }
   },
   {
@@ -38,9 +38,9 @@
     "spanish": "¿Por cuánto tiempo?",
     "russian": "На сколько времени?",
     "alternatives": {
-        "dutch": ["Hoe lang?"],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Hoe lang?", "Hoeveel tijd?", "Voor welke duur?"],
+        "spanish": ["¿Cuánto tiempo?", "¿Por cuánto rato?", "¿Durante cuánto tiempo?"],
+        "russian": ["На какой срок?", "Как долго?", "На сколько времени это?"]
     }
   },
   {
@@ -49,9 +49,9 @@
     "spanish": "¿Con quién?",
     "russian": "С кем?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Met wie ga je?", "Met wie ben je?", "Met wie spreek je?"],
+        "spanish": ["¿Con quién estás?", "¿Con quién vas?", "¿Con quién hablas?"],
+        "russian": ["С кем ты?", "С кем ты идешь?", "С кем ты говоришь?"]
     }
   },
   {
@@ -60,9 +60,9 @@
     "spanish": "¿A dónde?",
     "russian": "Куда?",
     "alternatives": {
-        "dutch": ["Naar waar?"],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Naar waar?", "Waarheen?", "Waar naartoe?"],
+        "spanish": ["¿A dónde vamos?", "¿Hacia dónde?", "¿Dónde exactamente?"],
+        "russian": ["Куда идем?", "Куда мы едем?", "В какое место?"]
     }
   },
   {
@@ -80,11 +80,11 @@
     "english": "How much?",
     "dutch": "Hoeveel?",
     "spanish": "¿Cuánto?",
-    "russian": "Солкько?",
+    "russian": "Сколько?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Hoeveel kost het?", "Hoeveel is het?", "Wat is de prijs?"],
+        "spanish": ["¿Cuánto cuesta?", "¿Cuánto es?", "¿Cuál es el precio?"],
+        "russian": ["Сколько стоит?", "Какова цена?", "Как много?"]
     }
   },
   {
@@ -93,9 +93,9 @@
     "spanish": "¿Cuándo?",
     "russian": "Когда?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Op welk moment?", "Tegen wanneer?", "Hoe laat?"],
+        "spanish": ["¿En qué momento?", "¿A qué hora?", "¿Para cuándo?"],
+        "russian": ["В какой момент?", "Когда именно?", "Когда будет?"]
     }
   },
   {
@@ -105,8 +105,8 @@
     "russian": "Во сколько?",
     "alternatives": {
         "dutch": ["Op welk uur?", "Om hoe laat?", "Wanneer?"],
-        "spanish": [],
-        "russian": []
+        "spanish": ["¿A qué hora exactamente?", "¿A qué hora será?", "¿En qué momento?"],
+      "russian": ["Когда?", "В какое время?", "Когда именно?"]
     }
   },
   {
@@ -115,9 +115,9 @@
     "spanish": "¿Con qué frecuencia?",
     "russian": "Как часто?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Hoe dikwijls?", "Hoe vaak gebeurt het?", "Hoe regelmatig?"],
+        "spanish": ["¿Con qué regularidad?", "¿Con qué frecuencia ocurre?", "¿Qué tan seguido?"],
+        "russian": ["Как часто это бывает?", "Как регулярно?", "Как часто это происходит?"]
     }
   },
   {
@@ -126,20 +126,20 @@
     "spanish": "¿Cuál?",
     "russian": "Какой?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Welke van de (twee/drie/...)?", "Welke bedoel je?", "Welke precies?"],
+        "spanish": ["¿Cuál de ellos?", "¿Cuál exactamente?", "¿Cuál de los (dos/tres/...)?"],
+        "russian": ["Какой из них?", "Какой именно?"]
     }
   },
   {
-  "english": "Just in case",
-  "dutch": "Voor de zekerheid",
-  "spanish": "Por si acaso",
-  "russian": "На всякий случай",
-  "alternatives": {
+    "english": "Just in case",
+    "dutch": "Voor de zekerheid",
+    "spanish": "Por si acaso",
+    "russian": "На всякий случай",
+    "alternatives": {
         "dutch": ["Voor het geval dat", "Om zeker te zijn"],
-        "spanish": [],
-        "russian": []
+        "spanish": ["En caso de que", "Para el caso de que"],
+        "russian": ["Для всякого случая", "На случай чего-то"]
     }
   },
   {
@@ -148,9 +148,9 @@
     "spanish": "¿Qué tipo (de...)?",
     "russian": "Какой (из...)?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Wat voor?", "Welke soort?", "Wat voor soort?"],
+        "spanish": ["¿Qué clase (de...)?", "¿Qué clase de...?"],
+        "russian": ["Какой вид (из...)?", "Какого рода (из...)?"]
     }
   },
   {
@@ -159,9 +159,9 @@
     "spanish": "¿Qué tan lejos?",
     "russian": "Как далеко?",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Hoe ver is het?", "Hoe ver weg?"],
+        "spanish": ["¿Qué tan lejos está?", "¿A qué distancia?"],
+        "russian": ["На каком расстоянии?", "Сколько осталось?", "Как далеко отсюда?"]
     }
   },
   {
@@ -170,9 +170,9 @@
     "spanish": "Estoy confundido/a",
     "russian": "Я запутался/запуталась",
     "alternatives": {
-        "dutch": ["Ik ben verward", "Ik ben de kluts kwijt"],
-        "spanish": [],
-        "russian": ["Это меня путает"]
+        "dutch": ["Ik ben verward", "Ik ben de kluts kwijt", "Ik begrijp het niet"],
+        "spanish": ["No entiendo", "Me siento perdido/a"],
+        "russian": ["Это меня путает", "Я не понимаю", "Я в замешательстве"]
     }
   },
   {
@@ -192,24 +192,1423 @@
     "spanish": "No preguntaré",
     "russian": "Я не спрашиваю",
     "alternatives": {
-        "dutch": ["Ik vraag het niet"],
-        "spanish": ["No voy a preguntar"],
-        "russian": ["без вопросов", "Я не буду спрашивать"]
-    }
-  },
-  {
-    "english": "I can't wait",
-    "dutch": "Ik kan niet wachten",
-    "spanish": "No puedo esperar",
-    "russian": "Жду не дождусь",
-    "alternatives": {
-        "dutch": ["Ik kijk er naar uit", "Ik wacht vol ongeduld"],
-        "spanish": ["Estoy ansioso/a", "Espero con ansias"],
-        "russian": ["Жду с нетерпением", "Мне не терпится"]
+        "dutch": ["Ik vraag het niet", "Ik zal geen vragen stellen", "Ik ga het niet vragen"],
+        "spanish": ["No voy a preguntar", "No voy a hacer preguntas", "No pregunto"],
+        "russian": ["без вопросов", "Я не буду спрашивать", "Не буду спрашивать"]
     }
 },
+{
+  "english": "I can't wait",
+  "dutch": "Ik kan niet wachten",
+  "spanish": "No puedo esperar",
+  "russian": "Жду не дождусь",
+  "alternatives": {
+      "dutch": ["Ik kijk er naar uit", "Ik wacht vol ongeduld", "Ik ben er helemaal klaar voor", "Ik sta te popelen/springen"],
+      "spanish": ["Estoy ansioso/a", "Espero con ansias", "No aguanto más", "Estoy deseando"],
+      "russian": ["Жду с нетерпением", "Мне не терпится", "Жду как не в себя", "Невозможно дождаться"]
+  }
+},
+{
+  "english": "I don't like wasting money",
+  "dutch": "Ik hou niet van geld verspillen",
+  "spanish": "No me gusta malgastar dinero",
+  "russian": "Мне жалко денег",
+  "alternatives": {
+      "dutch": ["Ik vind het zonde van het geld", "Ik wil geen geld verspillen"],
+      "spanish": ["No me gusta desperdiciar dinero", "Me molesta malgastar dinero"],
+      "russian": ["Я не люблю тратить деньги впустую", "Мне не нравится тратить деньги зря"]
+  }
+},
+{
+  "english": "To spend on oneself / to treat oneself",
+  "dutch": "Iets voor jezelf doen",
+  "spanish": "Hacer algo por ti mismo",
+  "russian": "Тратиться на себя",
+  "alternatives": {
+      "dutch": ["Iets voor jezelf doen", "Jezelf verwennen", "Jezelf trakteren"],
+      "spanish": ["Hacer algo para ti mismo", "Gastarse en uno mismo", "Consentirse"],
+      "russian": ["Тратить на себя средства", "Тратить на себя время/энергию", "Баловать себя"]
+  }
+},
+{
+  "english": "What's your opinion?",
+  "dutch": "Wat denk jij erover?",
+  "spanish": "¿Cuál es tu opinión?",
+  "russian": "Какое твоё мнение?",
+  "alternatives": {
+      "dutch": ["Wat is jouw mening?", "Wat vind jij ervan?"],
+      "spanish": ["¿Qué opinas?", "¿Qué piensas?"],
+      "russian": ["Что ты думаешь?", "Как ты считаешь?"]
+  }
+},
+{
+  "english": "What for?",
+  "dutch": "Waarvoor?",
+  "spanish": "¿Para qué?",
+  "russian": "Зачем?",
+  "alternatives": {
+      "dutch": ["Waarom?", "Voor wat?", "Met welk doel?"],
+      "spanish": ["¿Con qué fin?", "¿Por qué?"],
+      "russian": ["Зачем?", "С какой целью?", "Почему?"]
+  }
+},
+{
+  "english": "Which way?",
+  "dutch": "Welke kant?",
+  "spanish": "¿Hacia dónde?",
+  "russian": "Куда?",
+  "alternatives": {
+      "dutch": ["Welke richting?", "Waarnaartoe?", "In welke richting?", "Waarheen?"],
+      "spanish": ["¿A dónde?", "¿Hacia qué dirección?"],
+      "russian": ["В какую сторону?", "В какую сторону идти?", "Куда идти?"]
+  }
+},
+{
+  "english": "Whose is it?",
+  "dutch": "Van wie is het?",
+  "spanish": "¿De quién es?",
+  "russian": "Чьё это?",
+  "alternatives": {
+      "dutch": ["Van wie is dit?", "Wie is de eigenaar?"],
+      "spanish": ["¿De quién pertenece?", "¿A quién le pertenece?"],
+      "russian": ["Кому это принадлежит?", "Чьё это имущество?"]
+  }
+},
+{
+  "english": "In which case?",
+  "dutch": "In welk geval?",
+  "spanish": "¿En qué caso?",
+  "russian": "В каком случае?",
+  "alternatives": {
+      "dutch": ["Wanneer?", "In welk scenario?", "In welke situatie?"],
+      "spanish": ["¿En qué situación?", "¿En qué circunstancia?"],
+      "russian": ["При каком случае?", "В каком контексте?", "В какой ситуации?"]
+  }
+},
+{
+  "english": "What do you mean?",
+  "dutch": "Wat bedoel je?",
+  "spanish": "¿Qué quieres decir?",
+  "russian": "Что ты имеешь в виду?",
+  "alternatives": {
+      "dutch": ["Hoe bedoel je?", "Wat bedoel je precies?", "Wat wil je zeggen?"],
+      "spanish": ["¿Qué significas?", "¿Qué quieres decir exactamente?"],
+      "russian": ["Что ты хочешь сказать?", "Что ты имеешь в виду конкретно?"]
+  }
+},
+{
+  "english": "How come?",
+  "dutch": "Hoe komt het?",
+  "spanish": "¿Por qué?",
+  "russian": "Как это случилось?",
+  "alternatives": {
+      "dutch": ["Wat is de reden?", "Waarom?", "Hoezo?"],
+      "spanish": ["¿Cómo es eso?", "¿Por qué sucede?"],
+      "russian": ["Почему так?", "Как это получилось?"]
+  }
+},
+{
+  "english": "By whom?",
+  "dutch": "Door wie?",
+  "spanish": "¿Por quién?",
+  "russian": "Кем?",
+  "alternatives": {
+      "dutch": ["Wie heeft dat gedaan/gemaakt?", "Wie is verantwoordelijk?"],
+      "spanish": ["¿Quién lo hizo?", "¿Quién es el responsable?"],
+      "russian": ["Кто это сделал?", "Кто это придумал?"]
+  }
+},
+{
+  "english": "For what reason?",
+  "dutch": "Waarom?",
+  "spanish": "¿Por qué?",
+  "russian": "По какой причине?",
+  "alternatives": {
+      "dutch": ["Wat is de reden?", "Waarom zo?", "Met welke reden?"],
+      "spanish": ["¿Por qué motivo?", "¿Cuál es la razón?"],
+      "russian": ["Зачем?", "Почему?"]
+  }
+},
+{
+  "english": "Which one is better?",
+  "dutch": "Welke is beter?",
+  "spanish": "¿Cuál es mejor?",
+  "russian": "Какая/какой лучше?",
+  "alternatives": {
+      "dutch": ["Welke is het beste?", "Welke is beter (dan de andere)?"],
+      "spanish": ["¿Cuál es la mejor?", "¿Cuál es el mejor?"],
+      "russian": ["Какая/какой из них лучше?", "Которая/которой лучше?"]
+  }
+},
+{
+  "english": "What's the difference?",
+  "dutch": "Wat is het verschil?",
+  "spanish": "¿Cuál es la diferencia?",
+  "russian": "В чем разница?",
+  "alternatives": {
+      "dutch": ["Hoe verschilt het?", "Wat maakt het verschil?"],
+      "spanish": ["¿En qué se diferencia?", "¿Cómo se diferencia?"],
+      "russian": ["Какова разница?", "Что отличает?"]
+  }
+},
+{
+  "english": "Where have you been?",
+  "dutch": "Waar ben je geweest?",
+  "spanish": "¿Dónde has estado?",
+  "russian": "Где ты был(а)?",
+  "alternatives": {
+      "dutch": ["Waar was je?", "Waar ben je naartoe gegaan?"],
+      "spanish": ["¿Dónde estuviste?", "¿Dónde has ido?"],
+      "russian": ["Куда ты ходил(а)?", "Где ты побывал(а)?"]
+  }
+},
+{
+  "english": "What time is it?",
+  "dutch": "Hoelaat is het?",
+  "spanish": "¿Qué hora es?",
+  "russian": "Который час?",
+  "alternatives": {
+      "dutch": ["Wat is de tijd?", "Wat uur leven we?"],
+      "spanish": ["¿Qué hora tiene?", "¿A qué hora estamos?"],
+      "russian": ["Сколько времени?", "Когда время?"]
+  }
+},
+{
+  "english": "Can you repeat that?",
+  "dutch": "Ik hou niet van geld verspillen",
+  "spanish": "¿Puedes repetir eso?",
+  "russian": "Можешь повторить это?",
+  "alternatives": {
+      "dutch": ["Kan je dat nog eens zeggen?", "Wil je dat herhalen?"],
+      "spanish": ["¿Puedes decirlo de nuevo?", "¿Me puedes repetir eso?"],
+      "russian": ["Можешь повторить?", "Не мог бы ты повторить?"]
+  }
+},
+{
+  "english": "I prefer ...",
+  "dutch": "Mijn voorkeur is ...",
+  "spanish": "Yo prefiero ...",
+  "russian": "Я предпочитаю ...",
+  "alternatives": {
+      "dutch": ["Ik verkies ...", "Mijn voorkeur gaat naar ..."],
+      "spanish": ["Prefiero ...", "A mí me gusta más ..."],
+      "russian": ["Мне нравится больше ..."]
+  }
+},
+{
+  "english": "I wish I could / I would like to",
+  "dutch": "Ik wou dat ik kon ...",
+  "spanish": "Ojalá pudiera ...",
+  "russian": "Жаль, что я не могу ...",
+  "alternatives": {
+      "dutch": ["Kon ik maar ...", "Ik zou willen dat ..."],
+      "spanish": ["Me gustaría ...", "Ojalá pudiera ..."],
+      "russian": ["Хотел бы я ...", "Я бы хотел ..."]
+  }
+},
+{
+  "english": "I might do that",
+  "dutch": "Misschien doe ik dat",
+  "spanish": "Podría hacerlo",
+  "russian": "Я мог(ла) бы, это сделать",
+  "alternatives": {
+      "dutch": ["Ik ga het (misschien) proberen", "Misschien ga ik het doen"],
+      "spanish": ["Tal vez lo haga", "Quizás lo haga"],
+      "russian": ["Я, возможно, это сделаю", "Может быть, я это сделаю"]
+  }
+},
+{
+  "english": "I would be glad to",
+  "dutch": "Ik zou graag",
+  "spanish": "Me gustaría",
+  "russian": "Я был(а) бы рад(а) (что-то сделать)",
+  "alternatives": {
+      "dutch": [
+          "Ik zou blij zijn (om iets te doen)",
+          "Ik zou het fijn vinden (om iets te doen)",
+          "Het zou me plezier doen (om iets te doen)"
+      ],
+      "spanish": [
+          "Estaría encantado/a de",
+          "Me encantaría",
+          "Estaría feliz de"
+      ],
+      "russian": [
+          "Я с радостью (что-то сделаю)",
+          "Я буду рад(а) (что-то сделать)",
+          "Мне будет приятно (что-то сделать)"
+      ]
+  }
+},
+{
+  "english": "I am allowed to",
+  "dutch": "Ik mag",
+  "spanish": "Tengo permiso para",
+  "russian": "Мне разрешено",
+  "alternatives": {
+      "dutch": [
+          "Het is toegestaan dat ik ...",
+          "Ik heb het recht om ..."
+      ],
+      "spanish": [
+          "Se me permite",
+          "Tengo autorización para"
+      ],
+      "russian": [
+          "Мне разрешено",
+          "Я имею право",
+          "Мне можно"
+      ]
+  }
+},
+{
+  "english": "I would prefer",
+  "dutch": "Ik zou liever (iets anders hebben/doen)",
+  "spanish": "Preferiría",
+  "russian": "Я бы предпочел(а)",
+  "alternatives": {
+      "dutch": [
+          "Ik heb liever (iets anders)",
+          "Mijn voorkeur gaat uit naar (iets anders)"
+      ],
+      "spanish": [
+          "Me gustaría más (hacer otra cosa)"
+      ],
+      "russian": [
+          "Я бы предпочел(а) (что-то другое)",
+          "Мне бы хотелось (что-то другое)"
+      ]
+  }
+},
+{
+  "english": "I am willing to / I am ready to",
+  "dutch": "Ik ben bereid om",
+  "spanish": "Estoy dispuesto/a a",
+  "russian": "Я готов(а)",
+  "alternatives": {
+      "dutch": [
+          "Ik ben klaar om",
+          "Ik sta open om"
+      ],
+      "spanish": [
+          "Estoy listo/a para"
+      ],
+      "russian": [
+          "Я готов(а) к",
+          "Я готов(а) сделать"
+      ]
+  }
+},
+{
+  "english": "I don't have to",
+  "dutch": "Ik hoef niet",
+  "spanish": "No tengo que",
+  "russian": "Мне не нужно",
+  "alternatives": {
+      "dutch": [
+          "Ik moet niet",
+          "Ik ben niet verplicht (om)"
+      ],
+      "spanish": [
+          "No es necesario que"
+      ],
+      "russian": [
+          "Мне не нужно",
+          "Я не обязан(а)"
+      ]
+  }
+},
+{
+  "english": "I understand",
+  "dutch": "Ik begrijp het",
+  "spanish": "Entiendo",
+  "russian": "Я понимаю",
+  "alternatives": {
+      "dutch": [
+          "Ik snap het",
+          "Ik heb het door"
+      ],
+      "spanish": [
+          "Comprendo",
+          "Lo entiendo"
+      ],
+      "russian": [
+          "Я осознаю",
+          "Мне понятно"
+      ]
+  }
+},
+{
+  "english": "It's interesting",
+  "dutch": "Het is interessant",
+  "spanish": "Es interesante",
+  "russian": "Это интересно",
+  "alternatives": {
+      "dutch": [
+          "Het is boeiend",
+          "Het is fascinerend",
+          "Het is intrigerend",
+          "Het is opmerkelijk"
+      ],
+      "spanish": [
+          "Es fascinante",
+          "Es curioso",
+          "Es intrigante",
+          "Es asombroso"
+      ],
+      "russian": [
+          "Это увлекательно",
+          "Это захватывающе",
+          "Это потрясающе",
+          "Это захватывающе"
+      ]
+  }
+},
+{
+  "english": "Wait a moment, please",
+  "dutch": "Wacht even, alstublieft",
+  "spanish": "Espera un momento, por favor",
+  "russian": "Подождите минутку, пожалуйста",
+  "alternatives": {
+      "dutch": [
+          "Een moment, alstublieft",
+          "Wacht even alsjeblieft",
+          "Even geduld, alstublieft"
+      ],
+      "spanish": [
+          "Un momento, por favor",
+          "Esperad un momento, por favor"
+      ],
+      "russian": [
+          "Погодите минутку, пожалуйста",
+          "Подождите, пожалуйста",
+          "Минутку, пожалуйста"
+      ]
+  }
+},
+{
+  "english": "I agree",
+  "dutch": "Ik ben het ermee eens",
+  "spanish": "Estoy de acuerdo",
+  "russian": "Я согласен/согласна",
+  "alternatives": {
+      "dutch": [
+          "Ik denk er ook zo over",
+          "Ik deel jouw mening",
+          "Ik ben het met je eens",
+          "Inderdaad"
+      ],
+      "spanish": [
+          "Coincido",
+          "Me parece bien",
+          "Opino lo mismo"
+      ],
+      "russian": [
+          "Я согласен/согласна",
+          "Я тоже так думаю",
+          "Согласен/согласна с этим",
+          "Да, я согласен/согласна"
+      ]
+  }
+},
+{
+  "english": "Let's go",
+  "dutch": "Laten we gaan",
+  "spanish": "Vamos",
+  "russian": "Пойдем",
+  "alternatives": {
+      "dutch": [
+          "Laten we beginnen",
+          "Laten we eraan beginnen",
+          "Laten we vertrekken",
+          "Laten we starten",
+          "Het is tijd om te gaan/beginnen"
+      ],
+      "spanish": [
+          "Vámonos",
+          "Empecemos",
+          "Vamos allá"
+      ],
+      "russian": [
+          "Пойдем",
+          "Давайте идти",
+          "Пошли",
+          "Поехали"
+      ]
+  }
+},
+{
+  "english": "I hope so",
+  "dutch": "Ik hoop het",
+  "spanish": "Eso espero",
+  "russian": "Надеюсь",
+  "alternatives": {
+      "dutch": [
+          "Ik hoop dat het zo is",
+          "Ik hoop dat het zo gaat zijn",
+          "Ik hoop het wel",
+          "Ik hoop dat het klopt"
+      ],
+      "spanish": [
+          "Ojalá",
+          "Espero que sí"
+      ],
+      "russian": [
+          "Надеюсь",
+          "Будем надеяться",
+          "Надеюсь на это"
+      ]
+  }
+},
+{
+  "english": "I don't mind",
+  "dutch": "Ik vind het niet erg",
+  "spanish": "No me importa",
+  "russian": "Мне все равно",
+  "alternatives": {
+      "dutch": [
+          "Het maakt mij niet uit",
+          "Voor mij maakt het niet uit",
+          "Het is mij gelijk",
+          "Ik heb er geen probleem mee",
+          "Ik vind het prima"
+      ],
+      "spanish": [
+          "Me da igual",
+          "No me molesta"
+      ],
+      "russian": [
+          "Мне не важно",
+          "Не возражаю"
+      ]
+  }
+},
+{
+  "english": "That's enough",
+  "dutch": "Dat is genoeg",
+  "spanish": "Eso es suficiente",
+  "russian": "Это достаточно",
+  "alternatives": {
+      "dutch": [
+          "Het is genoeg",
+          "Dat is voldoende",
+          "Niet meer van dat",
+          "Dat is alles",
+          "Dat is voldoende voor nu"
+      ],
+      "spanish": [
+          "Ya está bien",
+          "Eso basta"
+      ],
+      "russian": [
+          "Это достаточно",
+          "Хватит",
+          "Больше не надо"
+      ]
+  }
+},
+{
+  "english": "That's not fair",
+  "dutch": "Het/dat/dit is niet eerlijk",
+  "spanish": "Eso no es justo",
+  "russian": "Это нечестно",
+  "alternatives": {
+      "dutch": [
+          "Het/dat/dit is oneerlijk",
+          "Het/dat/dit is onterecht",
+          "Het/dat/dit is niet rechtvaardig"
+      ],
+      "spanish": [
+          "Eso no es correcto",
+          "No tiene sentido"
+      ],
+      "russian": [
+          "Это несправедливо",
+          "Это не честно",
+          "Это неправильно"
+      ]
+  }
+},
+{
+  "english": "How wonderful!",
+  "dutch": "Hoe geweldig!",
+  "spanish": "¡Qué maravilloso!",
+  "russian": "Как замечательно!",
+  "alternatives": {
+    "dutch": [
+        "Wat geweldig!",
+        "Hoe fantastisch!",
+        "Wat geniaal!",
+        "Prachtig!"
+    ],
+    "spanish": [
+        "¡Qué increíble!",
+        "¡Qué asombroso!",
+        "¡Qué fantástico!",
+        "¡Qué impresionante!",
+        "¡Qué genial!"
+    ],
+    "russian": [
+        "Как здорово!",
+        "Как прекрасно!",
+        "Как чудесно!",
+        "Как замечательно!",
+        "Как великолепно!"
+    ]
+}
+},
+{
+  "english": "This is my favorite",
+  "dutch": "Dit is mijn favoriet(e)",
+  "spanish": "Este es mi favorito",
+  "russian": "Это мой любимый",
+  "alternatives": {
+    "dutch": [
+      "Dit is mijn lievelings",
+      "Dit vind ik de leukste/beste",
+      "Dit is mijn voorkeur"
+    ],
+    "spanish": [
+      "Este es mi preferido",
+      "Este es mi elección",
+      "Este es mi favorito absoluto"
+    ],
+    "russian": [
+      "Это мой любимый",
+      "Это мой фаворит",
+      "Это мой предпочтительный",
+      "Это мой выбор"
+    ]
+  }
+},
+{
+  "english": "That's true",
+  "dutch": "Dat is waar",
+  "spanish": "Eso es cierto",
+  "russian": "Это правда",
+  "alternatives": {
+    "dutch": [
+      "Dat klopt",
+      "Je hebt gelijk",
+      "Wat je zegt is waar",
+      "Inderdaad",
+      "Dat is correct"
+    ],
+    "spanish": [
+      "Es verdad",
+      "Es correcto",
+      "Así es",
+      "Tienes razón"
+    ],
+    "russian": [
+      "Это правда",
+      "Ты прав",
+      "Это верно",
+      "Действительно",
+      "Это так"
+    ]
+  }
+},
+{
+  "english": "I am not sure",
+  "dutch": "Ik ben niet zeker",
+  "spanish": "No estoy seguro",
+  "russian": "Я не уверен",
+  "alternatives": {
+    "dutch": [
+      "Ik weet het niet zeker",
+      "Ik ben er niet zeker van",
+      "Ik ben niet helemaal zeker"
+    ],
+    "spanish": [
+      "No estoy completamente seguro",
+      "No lo sé con certeza"
+    ],
+    "russian": [
+      "Я не уверен",
+      "Я не точно уверен",
+      "Не могу сказать наверняка"
+    ]
+  }
+},
+{
+  "english": "I don't think so",
+  "dutch": "Ik denk het niet",
+  "spanish": "No lo creo",
+  "russian": "Я так не думаю",
+  "alternatives": {
+    "dutch": [
+      "Volgens mij niet",
+      "Ik geloof het niet",
+      "Ik denk van niet"
+    ],
+    "spanish": [
+      "No pienso que sí",
+      "No estoy seguro"
+    ],
+    "russian": [
+      "Мне кажется, что нет"
+    ]
+  }
+},
+{
+  "english": "Let me think",
+  "dutch": "Laat me even denken",
+  "spanish": "Déjame pensar",
+  "russian": "Дай мне подумать",
+  "alternatives": {
+    "dutch": [
+      "Laat me even nadenken",
+      "Laat me er even over nadenken"
+    ],
+    "spanish": [
+      "Déjame reflexionar",
+      "Voy a pensar"
+    ],
+    "russian": [
+      "Позволь мне подумать",
+      "Мне нужно подумать"
+    ]
+  }
+},
+{
+  "english": "It doesn't matter",
+  "dutch": "Het maakt niet uit",
+  "spanish": "No importa",
+  "russian": "Это не важно",
+  "alternatives": {
+    "dutch": [
+      "Het geeft niet",
+      "Het doet er niet toe",
+      "Het is niet belangrijk"
+    ],
+    "spanish": [
+      "No tiene importancia",
+      "No hace diferencia"
+    ],
+    "russian": [
+      "Это не имеет значения",
+      "Все равно"
+    ]
+  }
+},
+{
+  "english": "It's nice to meet you",
+  "dutch": "Leuk je te ontmoeten",
+  "spanish": "Mucho gusto",
+  "russian": "Приятно познакомиться",
+  "alternatives": {
+    "dutch": [
+      "Aangenaam",
+      "Leuk je te leren kennen",
+      "Fijn je te ontmoeten"
+    ],
+    "spanish": [
+      "Encantado/a de conocerte",
+      "Un placer conocerte",
+      "Es un placer conocerte"
+    ],
+    "russian": [
+      "Рад(а) познакомиться",
+      "Приятно познакомиться",
+      "Очень рад(а) встрече"
+    ]
+  }
+},
+{
+  "english": "In my opinion",
+  "dutch": "Naar mijn mening",
+  "spanish": "En mi opinión",
+  "russian": "На мой взгляд",
+  "alternatives": {
+    "dutch": [
+      "Volgens mij",
+      "Ik denk (dat)",
+      "Wat mij betreft",
+      "In mijn ogen"
+    ],
+    "spanish": [
+      "A mi parecer",
+      "Según yo",
+      "Para mí"
+    ],
+    "russian": [
+      "По моему мнению",
+      "Как по мне",
+      "Мне кажется"
+    ]
+  }
+},
+{
+  "english": "I believe that ...",
+  "dutch": "Ik geloof dat ...",
+  "spanish": "Creo que ...",
+  "russian": "Я верю, что ...",
+  "alternatives": {
+    "dutch": [
+      "Volgens mij ...",
+      "Ik denk dat ...",
+      "In mijn ogen ...",
+      "Wat mij betreft ..."
+    ],
+    "spanish": [
+      "En mi opinión ...",
+      "A mi parecer ...",
+      "Pienso que ..."
+    ],
+    "russian": [
+      "По моему мнению ...",
+      "Мне кажется, что ...",
+      "Как мне кажется ...",
+      "Думаю, что ..."
+    ]
+  }
+},
+{
+  "english": "It seems to me that",
+  "dutch": "Het lijkt mij dat",
+  "spanish": "Me parece",
+  "russian": "Мне кажется",
+  "alternatives": {
+    "dutch": [
+      "Mij lijkt dat",
+      "Het lijkt erop dat",
+      "Ik heb de indruk dat",
+      "Het komt (mij) over dat"
+    ],
+    "spanish": [
+      "Creo que",
+      "A mí me parece",
+      "Pienso que"
+    ],
+    "russian": [
+      "По моему мнению",
+      "Мне представляется",
+      "Мне видится"
+    ]
+  }
+},
+{
+  "english": "In a week",
+  "dutch": "In een week",
+  "spanish": "En una semana",
+  "russian": "Через неделю",
+  "alternatives": {
+    "dutch": [
+      "Binnen een week",
+      "Over een week"
+    ],
+    "spanish": [
+      "Dentro de una semana"
+    ],
+    "russian": [
+      "Через неделю"
+    ]
+  }
+},
+{
+  "english": "After a week",
+  "dutch": "Na een week",
+  "spanish": "Después de una semana",
+  "russian": "Через неделю",
+  "alternatives": {
+    "dutch": [
+      "Over een week"
+    ],
+    "spanish": [
+      "Pasada una semana"
+    ],
+    "russian": []
+  }
+},
+{
+  "english": "After a day",
+  "dutch": "Na een dag",
+  "spanish": "Después de un día",
+  "russian": "Через день",
+  "alternatives": {
+    "dutch": ["Over een dag"],
+    "spanish": ["Después de un día"],
+    "russian": []
+  }
+},
+{
+  "english": "For some hours",
+  "dutch": "Voor een paar uur",
+  "spanish": "Durante unas horas",
+  "russian": "В течение нескольких часов",
+  "alternatives": {
+    "dutch": [
+      "Gedurende een paar uur",
+      "Voor een aantal uren"
+    ],
+    "spanish": [
+      "Por un par de horas"
+    ],
+    "russian": [
+      "На протяжении нескольких часов",
+      "В течение пары часов"
+    ]
+  }
+},
+{
+  "english": "In the morning",
+  "dutch": "'s Morgens",
+  "spanish": "Por la mañana",
+  "russian": "Утром",
+  "alternatives": {
+    "dutch": [
+      "'s Ochtends",
+      "In de ochtend",
+      "In de morgen"
+    ],
+    "spanish": [
+      "En la mañana"
+    ],
+    "russian": [
+      "С утра"
+    ]
+  }
+},
+{
+  "english": "In the evening",
+  "dutch": "'s Avonds",
+  "spanish": "Por la tarde",
+  "russian": "Вечером",
+  "alternatives": {
+    "dutch": [
+      "In de avond"
+    ],
+    "spanish": [
+      "En la tarde"
+    ],
+    "russian": [
+      "После обеда"
+    ]
+  }
+},
+{
+  "english": "Next year",
+  "dutch": "Volgend jaar",
+  "spanish": "El próximo año",
+  "russian": "В следующем году",
+  "alternatives": {
+    "dutch": [
+      "Het volgende jaar"
+    ],
+    "spanish": [
+      "El año que viene"
+    ],
+    "russian": [
+      "В будущем году"
+    ]
+  }
+},
+{
+  "english": "Last month",
+  "dutch": "Vorige maand",
+  "spanish": "El mes pasado",
+  "russian": "В прошлом месяце",
+  "alternatives": {
+    "dutch": [
+      "Afgelopen maand"
+    ],
+    "spanish": [
+      "El mes anterior"
+    ],
+    "russian": [
+      "Минувшем месяце"
+    ]
+  }
+},
+{
+  "english": "At the same time",
+  "dutch": "Tegelijkertijd",
+  "spanish": "Al mismo tiempo",
+  "russian": "В то же время",
+  "alternatives": {
+    "dutch": [
+      "Tegelijk",
+      "Op hetzelfde moment",
+      "Op hetzelfde tijdstip"
+    ],
+    "spanish": [
+      "A la vez"
+    ],
+    "russian": [
+      "Одновременно"
+    ]
+  }
+},
+{
+  "english": "Before the meeting",
+  "dutch": "Voor de vergadering",
+  "spanish": "Antes de la reunión",
+  "russian": "До встречи",
+  "alternatives": {
+    "dutch": [
+      "Voor de bijeenkomst",
+      "Voor de afspraak",
+      "Voor het gesprek"
+    ],
+    "spanish": [
+      "Antes de la cita"
+    ],
+    "russian": [
+      "До собрания"
+    ]
+  }
+},
+{
+  "english": "Once a week",
+  "dutch": "Eens per week",
+  "spanish": "Una vez a la semana",
+  "russian": "Раз в неделю",
+  "alternatives": {
+    "dutch": [
+      "Één keer per week",
+      "Wekelijks"
+    ],
+    "spanish": [],
+    "russian": []
+  }
+},
+{
+  "english": "For a few minutes",
+  "dutch": "Voor een paar minuutjes",
+  "spanish": "Por unos minutos",
+  "russian": "На несколько минут",
+  "alternatives": {
+    "dutch": [
+      "Voor een paar minuten",
+      "Gedurende een paar minuten"
+    ],
+    "spanish": [],
+    "russian": []
+  }
+},
+{
+  "english": "Since yesterday",
+  "dutch": "Sinds gisteren",
+  "spanish": "Desde ayer",
+  "russian": "С вчерашнего дня",
+  "alternatives": {
+    "dutch": [
+      "Vanaf gisteren"
+    ],
+    "spanish": [],
+    "russian": []
+  }
+},
+{
+  "english": "By the end of the week",
+  "dutch": "Tegen het einde van de week",
+  "spanish": "Para el final de la semana",
+  "russian": "К концу недели",
+  "alternatives": {
+    "dutch": ["Aan het einde van de week", "Voor het eind van de week"],
+    "spanish": ["Antes de que termine la semana"],
+    "russian": ["До конца недели"]
+  }
+},
+{
+  "english": "The day after tomorrow",
+  "dutch": "Overmorgen",
+  "spanish": "Pasado mañana",
+  "russian": "Послезавтра",
+  "alternatives": {
+      "dutch": [],
+      "spanish": [],
+      "russian": []
+  }
+},
+{
+  "english": "The day before yesterday",
+  "dutch": "Eergisteren",
+  "spanish": "Anteayer",
+  "russian": "Позавчера",
+  "alternatives": {
+      "dutch": [],
+      "spanish": [],
+      "russian": []
+  }
+},
+{
+  "english": "In the near future / soon",
+  "dutch": "In de nabije toekomst",
+  "spanish": "En un futuro cercano",
+  "russian": "В ближайшем будущем",
+  "alternatives": {
+      "dutch": ["Binnenkort", "Snel", "Op korte termijn"],
+      "spanish": ["Pronto", "Dentro de poco"],
+      "russian": ["Скоро", "В ближайшее время"]
+  }
+},
+{
+  "english": "From now on",
+  "dutch": "Vanaf nu",
+  "spanish": "De ahora en adelante",
+  "russian": "С этого момента",
+  "alternatives": {
+      "dutch": ["Vanaf dit moment", "Vanaf vandaag"],
+      "spanish": ["A partir de ahora", "Desde ahora"],
+      "russian": ["Отныне"]
+  }
+},
+{
+  "english": "At the end of the month",
+  "dutch": "Aan het einde van de maand",
+  "spanish": "Al final del mes",
+  "russian": "В конце месяца",
+  "alternatives": {
+      "dutch": ["Op het einde van de maand"],
+      "spanish": ["A fin de mes", "Al cierre del mes"],
+      "russian": ["Под конец месяца"]
+  }
+},
+{
+  "english": "In the past / earlier",
+  "dutch": "In het verleden",
+  "spanish": "En el pasado",
+  "russian": "Раньше",
+  "alternatives": {
+      "dutch": ["Vroeger"],
+      "spanish": ["Antiguamente", "Hace tiempo"],
+      "russian": ["В прошлом"]
+  }
+},
+{
+  "english": "At midnight",
+  "dutch": "Op middernacht",
+  "spanish": "A medianoche",
+  "russian": "Полночь",
+  "alternatives": {
+      "dutch": ["Midden in de nacht"],
+      "spanish": ["A la medianoche"],
+      "russian": ["В полночь"]
+  }
+},
+{
+  "english": "At dawn",
+  "dutch": "Bij zonsopgang",
+  "spanish": "Al amanecer",
+  "russian": "На рассвете",
+  "alternatives": {
+      "dutch": ["In de vroege ochtend"],
+      "spanish": ["Al alba"],
+      "russian": ["На заре"]
+  }
+},
+{
+  "english": "From morning till evening",
+  "dutch": "Van 's morgens tot 's avonds",
+  "spanish": "De mañana a noche",
+  "russian": "С утра до вечера",
+  "alternatives": {
+      "dutch": ["Van 's ochtends tot 's avonds"],
+      "spanish": ["Desde la mañana hasta la noche"],
+      "russian": []
+  }
+},
+{
+  "english": "At the beginning of the week",
+  "dutch": "In het begin van de week",
+  "spanish": "Al principio de la semana",
+  "russian": "В начале недели",
+  "alternatives": {
+      "dutch": ["Aan het begin van de week"],
+      "spanish": ["Al inicio de la semana"],
+      "russian": []
+  }
+},
+{
+  "english": "In the meantime",
+  "dutch": "Ondertussen",
+  "spanish": "Mientras tanto",
+  "russian": "Тем временем",
+  "alternatives": {
+      "dutch": ["Terwijl", "In de tussentijd"],
+      "spanish": ["Mientras", "Mientras que"],
+      "russian": ["Между тем"]
+  }
+},
+{
+  "english": "Eventually",
+  "dutch": "Uiteindelijk",
+  "spanish": "Eventualmente",
+  "russian": "В конечном счёте",
+  "alternatives": {
+      "dutch": ["Ten slotte"],
+      "spanish": ["Al final", "Tarde o temprano"],
+      "russian": ["Со временем", "В конце концов"]
+  }
+},
+{
+  "english": "I am happy",
+  "dutch": "Ik ben blij",
+  "spanish": "Estoy feliz",
+  "russian": "Я рад(а)",
+  "alternatives": {
+      "dutch": ["Ik ben gelukkig", "Ik voel me goed", "Ik ben tevreden"],
+      "spanish": ["Estoy contento", "Estoy alegre", "Me siento bien", "Estoy satisfecho"],
+      "russian": ["Я счастлив(а)", "Я доволен/доволна", "Мне хорошо", "Я в хорошем настроении"]
+  }
+},
+{
+  "english": "I am sad",
+  "dutch": "Ik ben droevig",
+  "spanish": "Estoy triste",
+  "russian": "Я грустный/грустная",
+  "alternatives": {
+      "dutch": ["Ik ben verdrietig", "Ik voel me triest"],
+      "spanish": ["Me siento triste"],
+      "russian": ["Я печальный/печальная", "Мне грустно"]
+  }
+},
+{
+  "english": "I am excited / hyped",
+  "dutch": "Ik ben enthousiast / hyped",
+  "spanish": "Estoy emocionado/emocionada",
+  "russian": "Я взволнован/взволнована",
+  "alternatives": {
+      "dutch": ["Ik ben opgewonden", "Ik heb er zin in"],
+      "spanish": ["Estoy entusiasmado/entusiasmada", "Estoy animado/animada"],
+      "russian": ["Я в предвкушении", "Мне радостно"]
+  }
+},
+{
+  "english": "I am nervous",
+  "dutch": "Ik ben nerveus",
+  "spanish": "Estoy nervioso/nerviosa",
+  "russian": "Я нервничаю",
+  "alternatives": {
+      "dutch": ["Ik heb zenuwen", "Ik ben zenuwachtig"],
+      "spanish": ["Estoy ansioso/ansiosa", "Me siento intranquilo/intranquila"],
+      "russian": ["Я волнуюсь", "Мне не по себе"]
+  }
+},
+{
+  "english": "I am surprised",
+  "dutch": "Ik ben verrast",
+  "spanish": "Estoy sorprendido/sorprendida",
+  "russian": "Я удивлён/удивлена",
+  "alternatives": {
+      "dutch": ["Ik ben verbaasd", "Ik sta versteld"],
+      "spanish": ["Estoy asombrado/asombrada", "Me he quedado boquiabierto/boquiabierta"],
+      "russian": ["Я поражён/поражена", "Я ошеломлён/ошеломлена"]
+  }
+},
+{
+  "english": "I am bored",
+  "dutch": "Ik verveel me",
+  "spanish": "Estoy aburrido/aburrida",
+  "russian": "Мне скучно",
+  "alternatives": {
+      "dutch": ["Ik ben verveeld"],
+      "spanish": ["Me aburro"],
+      "russian": ["Я скучаю"]
+  }
+},
+{
+  "english": "I am tired",
+  "dutch": "Ik ben moe",
+  "spanish": "Estoy cansado/cansada",
+  "russian": "Я устал/устала",
+  "alternatives": {
+      "dutch": ["Ik ben uitgeput", "Ik ben vermoeid"],
+      "spanish": ["Me siento cansado/cansada"],
+      "russian": ["Я утомлен/утомлена"]
+  }
+},
+{
+  "english": "I am proud",
+  "dutch": "Ik ben trots (op)",
+  "spanish": "Estoy orgulloso/orgullosa",
+  "russian": "Я горжусь",
+  "alternatives": {
+      "dutch": ["Ik ben fier (op)"],
+      "spanish": ["Me siento orgulloso/orgullosa"],
+      "russian": ["Я горд"]
+  }
+},
+{
+  "english": "I am grateful",
+  "dutch": "Ik ben dankbaar (voor)",
+  "spanish": "Estoy agradecido/agradecida",
+  "russian": "Я благодарен/благодарна",
+  "alternatives": {
+      "dutch": ["Ik waardeer"],
+      "spanish": ["Aprecio"],
+      "russian": ["Я признателен/признательна"]
+  }
+},
+{
+  "english": "I am relieved",
+  "dutch": "Ik ben opgelucht (dat)",
+  "spanish": "Estoy aliviado/aliviada",
+  "russian": "Я чувствую облегчение",
+  "alternatives": {
+      "dutch": ["Ik ben blij (dat het voorbij is)"],
+      "spanish": ["Me siento aliviado/aliviada"],
+      "russian": ["Я испытал/испытала облегчение"]
+  }
+},
+{
+  "english": "I am hopeful",
+  "dutch": "Ik heb hoop (dat)",
+  "spanish": "Tengo esperanza",
+  "russian": "Я надеюсь",
+  "alternatives": {
+      "dutch": ["Ik ben hoopvol (dat)"],
+      "spanish": ["Estoy esperanzado/esperanzada"],
+      "russian": ["Я полон/полна надежды"]
+  }
+},
+{
+  "english": "I miss you",
+  "dutch": "Ik mis jou",
+  "spanish": "Te echo de menos",
+  "russian": "Я по тебе скучаю",
+  "alternatives": {
+      "dutch": ["Ik mis je"],
+      "spanish": ["Te extraño"],
+      "russian": ["Я тосковаю по тебе"]
+  }
+},
+{
+  "english": "I am disappointed",
+  "dutch": "Ik ben teleurgesteld (in)",
+  "spanish": "Estoy decepcionado/a",
+  "russian": "Я разочарован/а",
+  "alternatives": {
+      "dutch": [],
+      "spanish": ["Estoy desilusionado/a"],
+      "russian": ["Я расстроен/а"]
+  }
+},
+{
+  "english": "I am frustrated",
+  "dutch": "Ik ben gefrustreerd (door)",
+  "spanish": "Estoy frustrado/a",
+  "russian": "Я расстроен/а",
+  "alternatives": {
+      "dutch": ["Ik ben geïrriteerd (door)"],
+      "spanish": ["Estoy molesto/a"],
+      "russian": ["Я раздражен/а"]
+  }
+},
+{
+  "english": "I am scared",
+  "dutch": "Ik ben bang (voor)",
+  "spanish": "Tengo miedo (de)",
+  "russian": "Я боюсь (чего-то)",
+  "alternatives": {
+      "dutch": ["Ik ben bang", "Ik ben angstig (voor)"],
+      "spanish": ["Estoy asustado/a (de)"],
+      "russian": ["Я напуган/а (чем-то)"]
+  }
+},
+{
+  "english": "That's incredible",
+  "dutch": "Dat is ongelofelijk",
+  "spanish": "Eso es increíble",
+  "russian": "Это невероятно",
+  "alternatives": {
+      "dutch": ["Dat is indrukwekkend", "Dat is verbazingwekkend"],
+      "spanish": ["Es increíble", "Eso es asombroso", "Es impresionante"],
+      "russian": ["Это поразительно", "Это удивительно", "Это восхитительно"]
+  }
+},
+{
+  "english": "I have doubts",
+  "dutch": "Ik twijfel",
+  "spanish": "Tengo dudas",
+  "russian": "У меня есть сомнения",
+  "alternatives": {
+      "dutch": ["Ik heb twijfels", "Daar twijfel ik over", "Ik ben er niet zeker van"],
+      "spanish": ["Estoy dudando", "No estoy seguro"],
+      "russian": ["Я сомневаюсь", "Я не уверен"]
+  }
+},
+{
+  "english": "I am embarrassed",
+  "dutch": "Ik ben beschaamd",
+  "spanish": "Estoy avergonzado/a",
+  "russian": "Мне стыдно",
+  "alternatives": {
+      "dutch": ["Ik schaam me"],
+      "spanish": ["Me da vergüenza", "Estoy apenado/a"],
+      "russian": ["Я чувствую стыд", "Мне неудобно"]
+  }
+},
+{
+  "english": "I am shy",
+  "dutch": "Ik ben verlegen",
+  "spanish": "Soy tímido/a",
+  "russian": "Я стеснительный/ая",
+  "alternatives": {
+      "dutch": ["Ik ben timide"],
+      "spanish": ["Soy introvertido/a"],
+      "russian": ["Я застенчивый/ая", "Мне трудно общаться"]
+  }
+},
+{
+  "english": "I don't know what to say",
+  "dutch": "Ik weet niet wat te zeggen",
+  "spanish": "No sé qué decir",
+  "russian": "Я не знаю, что сказать",
+  "alternatives": {
+      "dutch": ["Ik weet niet wat ik kan/moet zeggen"],
+      "spanish": ["No sé qué decirte", "No sé qué expresar"],
+      "russian": ["Я не знаю, что сказать тебе", "Не знаю, как реагировать"]
+  }
+},
+{
+  "english": "I am stressed",
+  "dutch": "Ik heb stress",
+  "spanish": "Estoy estresado/a",
+  "russian": "Я переживаю/стрессую",
+  "alternatives": {
+      "dutch": ["Ik ben gestresseerd"],
+      "spanish": ["Estoy nervioso/a", "Tengo nervios"],
+      "russian": ["Я в стрессе", "Я нервничаю"]
+  }
+},
+{
+  "english": "I need a break",
+  "dutch": "Ik heb vakantie nodig",
+  "spanish": "Necesito un descanso",
+  "russian": "Мне нужен перерыв",
+  "alternatives": {
+      "dutch": ["Ik heb rust nodig"],
+      "spanish": ["Necesito un respiro", "Me hace falta descansar"],
+      "russian": ["Мне нужен отдых", "Мне нужно передохнуть"]
+  }
+},
+{
+  "english": "I regret it / I am sorry",
+  "dutch": "Ik heb er spijt van",
+  "spanish": "Lo lamento",
+  "russian": "Мне жаль",
+  "alternatives": {
+      "dutch": ["Het spijt me"],
+      "spanish": ["Siento mucho", "Me arrepiento"],
+      "russian": ["Я сожалею", "Мне очень жаль"]
+  }
+},
+{
+  "english": "I'm lost",
+  "dutch": "Ik ben verdwaald",
+  "spanish": "Estoy perdido",
+  "russian": "Я потерялся",
+  "alternatives": {
+      "dutch": ["Ik ben de weg kwijt"],
+      "spanish": ["Estoy desorientado"],
+      "russian": ["Я заблудился"]
+  }
+},
   {
-    "english": "",
+    "english": "-a placeholder-",
     "dutch": "",
     "spanish": "",
     "russian": "",
