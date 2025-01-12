@@ -92,14 +92,14 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             CharSequence[] altArray = languageAlternatives.toArray(new CharSequence[0]);
 
             new AlertDialog.Builder(translationTextView.getContext())
-                    .setTitle(entry.getSentence())
+                    .setTitle(translationTextView.getText())
                     .setItems(altArray, (dialog, which) -> {
                         // Optional: Handle click on alternative
                     })
                     .setPositiveButton("Close", null)
                     .show();
         } else {
-            Toast.makeText(translationTextView.getContext(), "No " + language + " alternatives available.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(translationTextView.getContext(), "No " + language + " alternatives available for '" + entry.getSentence() + "'", Toast.LENGTH_SHORT).show();
         }
     }
 

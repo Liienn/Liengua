@@ -23,16 +23,19 @@
             android:id="@+id/spanish_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Spanish" />
         <CheckBox
             android:id="@+id/dutch_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Dutch" />
         <CheckBox
             android:id="@+id/russian_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Russian" />
     </LinearLayout>
 

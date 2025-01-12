@@ -80,7 +80,7 @@
     "english": "How much?",
     "dutch": "Hoeveel?",
     "spanish": "¿Cuánto?",
-    "russian": "Сколько?",
+    "russian": "Солкько?",
     "alternatives": {
         "dutch": [],
         "spanish": [],
@@ -104,7 +104,7 @@
     "spanish": "¿A qué hora?",
     "russian": "Во сколько?",
     "alternatives": {
-        "dutch": ["Op welk uur?", "Op welke tijd?", "Wanneer?"],
+        "dutch": ["Op welk uur?", "Om hoe laat?", "Wanneer?"],
         "spanish": [],
         "russian": []
     }
