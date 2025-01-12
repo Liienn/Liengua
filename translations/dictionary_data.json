@@ -182,10 +182,32 @@
     "russian": "Хотелось бы!",
     "alternatives": {
         "dutch": ["Was het maar waar!", "Was het maar zo!", "Ik wou dat het zo was!", "Ik wou dat het waar was!"],
-        "spanish": [],
+        "spanish": ["¡Ojalá fuera así!", "¡Si tan solo fuera cierto!"],
         "russian": ["Если бы!", "Если бы так было!"]
     }
   },
+  {
+    "english": "I won't ask",
+    "dutch": "Ik zal niks vragen",
+    "spanish": "No preguntaré",
+    "russian": "Я не спрашиваю",
+    "alternatives": {
+        "dutch": ["Ik vraag het niet"],
+        "spanish": ["No voy a preguntar"],
+        "russian": ["без вопросов", "Я не буду спрашивать"]
+    }
+  },
+  {
+    "english": "I can't wait",
+    "dutch": "Ik kan niet wachten",
+    "spanish": "No puedo esperar",
+    "russian": "Жду не дождусь",
+    "alternatives": {
+        "dutch": ["Ik kijk er naar uit", "Ik wacht vol ongeduld"],
+        "spanish": ["Estoy ansioso/a", "Espero con ansias"],
+        "russian": ["Жду с нетерпением", "Мне не терпится"]
+    }
+},
   {
     "english": "",
     "dutch": "",

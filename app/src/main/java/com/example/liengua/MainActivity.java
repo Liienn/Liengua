@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -122,18 +123,52 @@ public class MainActivity extends AppCompatActivity {
 
         for (DictionaryEntry entry : entryList) {
             boolean matchFound =
-                            (entry.getSentence().toLowerCase().contains(query.toLowerCase())) ||
+                    // Check the sentence in English
+                    entry.getSentence().toLowerCase().contains(query.toLowerCase()) ||
+
+                            // Check the main translations
                             (spanishCheckBox.isChecked() && entry.getTranslationSpanish().toLowerCase().contains(query.toLowerCase())) ||
                             (dutchCheckBox.isChecked() && entry.getTranslationDutch().toLowerCase().contains(query.toLowerCase())) ||
                             (russianCheckBox.isChecked() && entry.getTranslationRussian().toLowerCase().contains(query.toLowerCase()));
 
+            // Check alternatives in each language if they exist
+            if (entry.getAlternatives() != null) {
+                if (entry.getAlternatives().containsKey("dutch") && dutchCheckBox.isChecked()) {
+                    for (String alternative : Objects.requireNonNull(entry.getAlternatives().get("dutch"))) {
+                        if (alternative.toLowerCase().contains(query.toLowerCase())) {
+                            matchFound = true;
+                            break; // Stop checking further once a match is found
+                        }
+                    }
+                }
+                if (entry.getAlternatives().containsKey("spanish") && spanishCheckBox.isChecked()) {
+                    for (String alternative : Objects.requireNonNull(entry.getAlternatives().get("spanish"))) {
+                        if (alternative.toLowerCase().contains(query.toLowerCase())) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                }
+                if (entry.getAlternatives().containsKey("russian") && russianCheckBox.isChecked()) {
+                    for (String alternative : Objects.requireNonNull(entry.getAlternatives().get("russian"))) {
+                        if (alternative.toLowerCase().contains(query.toLowerCase())) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // If a match is found, add the entry to the filtered list
             if (matchFound) {
                 filteredDictionaryEntries.add(entry);
             }
         }
 
+        // Notify the adapter to refresh the list
         if (dictionaryAdapter != null) {
             dictionaryAdapter.notifyDataSetChanged();
         }
     }
+
 }
