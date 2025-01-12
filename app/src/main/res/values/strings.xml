@@ -3,6 +3,9 @@
     <string name="search_phrases">Search phrases</string>
     <string name="translations">Translations</string>
     <string name="english_sentence">English Sentence</string>
+    <string name="spanish_translation">Spanish translation</string>
+    <string name="dutch_translation">Dutch translation</string>
+    <string name="russian_translation">Russian translation</string>
     <string-array name="languages">
         <item>Spanish</item>
         <item>Dutch</item>

@@ -14,8 +14,23 @@
         android:text="@string/english_sentence" />
 
     <TextView
-        android:id="@+id/translation"
+        android:id="@+id/spanishTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/translations" />
+        android:text="@string/spanish_translation"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/dutchTranslation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dutch_translation"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/russianTranslation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/russian_translation"
+        android:visibility="gone" />
 </LinearLayout>

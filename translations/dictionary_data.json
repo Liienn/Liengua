@@ -159,7 +159,7 @@
     "spanish": "¿Qué tan lejos?",
     "russian": "Как далеко?",
     "alternatives": {
-        "dutch": [""],
+        "dutch": [],
         "spanish": [],
         "russian": []
     }
@@ -172,18 +172,18 @@
     "alternatives": {
         "dutch": ["Ik ben verward", "Ik ben de kluts kwijt"],
         "spanish": [],
-        "russian": []
+        "russian": ["Это меня путает"]
     }
   },
   {
     "english": "I wish!",
-    "dutch": "Was het maar (waar)!",
+    "dutch": "Was het maar!",
     "spanish": "¡Ojalá!",
-    "russian": "Если бы так было!",
+    "russian": "Хотелось бы!",
     "alternatives": {
-        "dutch": [],
+        "dutch": ["Was het maar waar!", "Was het maar zo!", "Ik wou dat het zo was!", "Ik wou dat het waar was!"],
         "spanish": [],
-        "russian": []
+        "russian": ["Если бы!", "Если бы так было!"]
     }
   },
   {

@@ -41,4 +41,8 @@ public class DictionaryEntry {
     public String getTranslationDutch() {
         return dutch;
     }
+
+    public Map<String, List<String>> getAlternatives() {
+        return alternatives;
+    }
 }

@@ -7,6 +7,8 @@ import android.text.TextWatcher;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -90,15 +92,14 @@ public class MainActivity extends AppCompatActivity {
 
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                runOnUiThread(() ->
-                        Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show()
-                );
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     String jsonData = response.body().string();
                     Gson gson = new Gson();
                     Type type = new TypeToken<List<DictionaryEntry>>() {}.getType();
@@ -107,12 +108,13 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
                         dictionaryAdapter = new DictionaryAdapter(filteredDictionaryEntries);
                         recyclerView.setAdapter(dictionaryAdapter);
-                        filterList("");
+                        filterList(""); // Initialize the filter list
                     });
                 }
             }
         });
     }
+
 
     @SuppressLint("NotifyDataSetChanged")
     private void filterList(String query) {
