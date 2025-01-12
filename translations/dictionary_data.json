@@ -1661,6 +1661,292 @@
   }
 },
   {
+  "english": "Suddenly",
+  "dutch": "Plotseling",
+  "spanish": "De repente",
+  "russian": "Вдруг",
+  "alternatives": {
+      "dutch": ["Ineens", "Plots", "Opeens", "Onverwacht"],
+      "spanish": ["De improviso", "De golpe", "Repentinamente", "Inesperadamente"],
+      "russian": ["Неожиданно", "Внезапно", "Резко", "Невозможно предсказать"]
+  }
+},
+{
+    "english": "To make ends meet",
+    "dutch": "Rondkomen",
+    "spanish": "Llegar a fin de mes",
+    "russian": "Связывать концы с концами",
+    "alternatives": {
+        "dutch": ["Het hoofd boven water houden"],
+        "spanish": ["Estar en números rojos"],
+        "russian": ["Трудно сводить концы с концами"]
+    }
+  },
+  {
+    "english": "To break the ice",
+    "dutch": "Het ijs breken",
+    "spanish": "Romper el hielo",
+    "russian": "Разрушить лед",
+    "alternatives": {
+        "dutch": ["Een gesprek beginnen"],
+        "spanish": ["Iniciar una conversación"],
+        "russian": ["Начать разговор"]
+    }
+  },
+  {
+    "english": "Burn the midnight oil",
+    "dutch": "Een nacht doorwerken",
+    "spanish": "Trabajar hasta tarde",
+    "russian": "Работать до поздней ночи",
+    "alternatives": {
+        "dutch": ["Een nachtje doordoen", "Tot in de nacht werken"],
+        "spanish": ["Estudiar/trabajar hasta la madrugada"],
+        "russian": ["Не ложиться спать"]
+    }
+  },
+  {
+    "english": "A piece of cake",
+    "dutch": "Dat is zo gebeurd",
+    "spanish": "Pan comido",
+    "russian": "Проще простого",
+    "alternatives": {
+        "dutch": ["Komt in de saccoche", "Een fluitje van een cent", "Het is heel erg gemakkelijk"],
+        "spanish": ["Estar chupado"],
+        "russian": ["Пустяковое дело"]
+    }
+  },
+  {
+    "english": "Better late than never",
+    "dutch": "Beter laat dan nooit",
+    "spanish": "Más vale tarde que nunca",
+    "russian": "Лучше поздно, чем никогда",
+    "alternatives": {
+        "dutch": ["Beter laat dan niet"],
+        "spanish": ["Nunca es tarde"],
+        "russian": ["Поздно, но не поздно"]
+    }
+  },
+  {
+    "english": "To hit the nail on the head",
+    "dutch": "De spijker op de kop slaan",
+    "spanish": "Dar en el clavo",
+    "russian": "Попасть в точку",
+    "alternatives": {
+        "dutch": ["Precies het juiste zeggen"],
+        "spanish": ["Acertar de lleno"],
+        "russian": ["Точно угадать"]
+    }
+  },
+   {
+    "english": "Monday",
+    "dutch": "Maandag",
+    "spanish": "Lunes",
+    "russian": "Понедельник",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Tuesday",
+    "dutch": "Dinsdag",
+    "spanish": "Martes",
+    "russian": "Вторник",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Wednesday",
+    "dutch": "Woensdag",
+    "spanish": "Miércoles",
+    "russian": "Среда",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Thursday",
+    "dutch": "Donderdag",
+    "spanish": "Jueves",
+    "russian": "Четверг",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Friday",
+    "dutch": "Vrijdag",
+    "spanish": "Viernes",
+    "russian": "Пятница",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Saturday",
+    "dutch": "Zaterdag",
+    "spanish": "Sábado",
+    "russian": "Суббота",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Sunday",
+    "dutch": "Zondag",
+    "spanish": "Domingo",
+    "russian": "Воскресенье",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "January",
+    "dutch": "Januari",
+    "spanish": "Enero",
+    "russian": "Январь",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "February",
+    "dutch": "Februari",
+    "spanish": "Febrero",
+    "russian": "Февраль",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "March",
+    "dutch": "Maart",
+    "spanish": "Marzo",
+    "russian": "Март",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "April",
+    "dutch": "April",
+    "spanish": "Abril",
+    "russian": "Апрель",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "May",
+    "dutch": "Mei",
+    "spanish": "Mayo",
+    "russian": "Май",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "June",
+    "dutch": "Juni",
+    "spanish": "Junio",
+    "russian": "Июнь",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "July",
+    "dutch": "Juli",
+    "spanish": "Julio",
+    "russian": "Июль",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "August",
+    "dutch": "Augustus",
+    "spanish": "Agosto",
+    "russian": "Август",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "September",
+    "dutch": "September",
+    "spanish": "Septiembre",
+    "russian": "Сентябрь",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "October",
+    "dutch": "Oktober",
+    "spanish": "Octubre",
+    "russian": "Октябрь",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "November",
+    "dutch": "November",
+    "spanish": "Noviembre",
+    "russian": "Ноябрь",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "December",
+    "dutch": "December",
+    "spanish": "Diciembre",
+    "russian": "Декабрь",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
     "english": "-a placeholder-",
     "dutch": "",
     "spanish": "",
