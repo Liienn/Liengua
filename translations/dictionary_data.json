@@ -39,7 +39,12 @@
     "english": "Shall we continue reading?",
     "dutch": "Zullen we verder lezen?",
     "spanish": "¿Seguimos leyendo?",
-    "russian": "Будем продолжать читать?"
+    "russian": "Продолжим читать?",
+    "alternatives": {
+        "dutch": ["Heb je zin om verder te lezen?", "Wil je (graag) verder lezen?"],
+        "spanish": ["¿Quieres seguir leyendo?", "¿Continuamos la lectura?"],
+        "russian": ["Читать дальше?", "Будем продолжать читать?", "Хочешь продолжить читать?", "Не будем ли продолжать чтение?"]
+    }
   },
   {
     "english": "How much?",
@@ -73,8 +78,8 @@
   },
   {
   "english": "Just in case",
-  "dutch": "",
-  "spanish": "",
+  "dutch": "Voor de zekerheid",
+  "spanish": "Por si acaso",
   "russian": "На всякий случай"
   },
   {
