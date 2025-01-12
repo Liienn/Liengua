@@ -34,5 +34,53 @@
     "dutch": "Waarnaartoe? / Naar waar?",
     "spanish": "¿A dónde?",
     "russian": "Куда?"
+  },
+  {
+    "english": "Shall we continue reading?",
+    "dutch": "Zullen we verder lezen?",
+    "spanish": "¿Seguimos leyendo?",
+    "russian": "Будем продолжать читать?"
+  },
+  {
+    "english": "How much?",
+    "dutch": "Hoeveel?",
+    "spanish": "¿Cuánto?",
+    "russian": "Сколько?"
+  },
+  {
+    "english": "When?",
+    "dutch": "Wanneer?",
+    "spanish": "¿Cuándo?",
+    "russian": "Когда?"
+  },
+  {
+    "english": "At what time?",
+    "dutch": "Hoe laat?",
+    "spanish": "¿A qué hora?",
+    "russian": "Во сколько?"
+  },
+  {
+    "english": "How often?",
+    "dutch": "Hoe vaak?",
+    "spanish": "¿Con qué frecuencia?",
+    "russian": "Как часто?"
+  },
+  {
+    "english": "Which one?",
+    "dutch": "Welke?",
+    "spanish": "¿Cuál?",
+    "russian": "Какой?"
+  },
+  {
+  "english": "Just in case",
+  "dutch": "",
+  "spanish": "",
+  "russian": "На всякий случай"
+  },
+  {
+    "english": "",
+    "dutch": "",
+    "spanish": "",
+    "russian": ""
   }
 ]

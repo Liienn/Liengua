@@ -1,9 +1,11 @@
 package com.example.liengua;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,84 +19,119 @@ import okhttp3.Request;
 import okhttp3.Response;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText searchInput;
     private RecyclerView recyclerView;
     private DictionaryAdapter dictionaryAdapter;
-    private List<DictionaryEntry> entryList;
+    private List<DictionaryEntry> entryList = new ArrayList<>();
+    private final List<DictionaryEntry> filteredDictionaryEntries = new ArrayList<>();
+    private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize RecyclerView and set layout manager
+        searchInput = findViewById(R.id.search_input);
         recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Set up checkboxes for language selection
-        CheckBox spanishCheckBox = findViewById(R.id.spanish_checkbox);
-        CheckBox dutchCheckBox = findViewById(R.id.dutch_checkbox);
-        CheckBox russianCheckBox = findViewById(R.id.russian_checkbox);
+        spanishCheckBox = findViewById(R.id.spanish_checkbox);
+        dutchCheckBox = findViewById(R.id.dutch_checkbox);
+        russianCheckBox = findViewById(R.id.russian_checkbox);
 
-        // Listen for changes in the checkbox selection
-        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
-        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
-        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        setupCheckBoxListeners();
 
-        // Fetch data from GitHub
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterList(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
         fetchDataFromGitHub();
     }
 
-    private void updateLanguages() {
-        // Get the selected languages from the checkboxes
-        boolean showSpanish = ((CheckBox) findViewById(R.id.spanish_checkbox)).isChecked();
-        boolean showDutch = ((CheckBox) findViewById(R.id.dutch_checkbox)).isChecked();
-        boolean showRussian = ((CheckBox) findViewById(R.id.russian_checkbox)).isChecked();
+    private void setupCheckBoxListeners() {
+        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+    }
 
-        // Update the adapter with the selected languages
+    @SuppressLint("NotifyDataSetChanged")
+    private void updateLanguages() {
         if (dictionaryAdapter != null) {
-            dictionaryAdapter.setLanguagesToShow(showSpanish, showDutch, showRussian);
+            dictionaryAdapter.setLanguagesToShow(
+                    spanishCheckBox.isChecked(),
+                    dutchCheckBox.isChecked(),
+                    russianCheckBox.isChecked()
+            );
             dictionaryAdapter.notifyDataSetChanged();
         }
     }
 
     private void fetchDataFromGitHub() {
         OkHttpClient client = new OkHttpClient();
+        String url = "https://raw.githubusercontent.com/Liienn/Liengua/main/translations/dictionary_data.json";
 
-        // GitHub URL to the raw JSON file
-        String url = "https://raw.githubusercontent.com/Liienn/Liengua/main/translations/dictionary_data.json"; // Replace with your actual GitHub URL
-
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
+        Request request = new Request.Builder().url(url).build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() ->
+                        Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show()
+                );
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     String jsonData = response.body().string();
-
-                    // Parse the JSON data using Gson
                     Gson gson = new Gson();
                     Type type = new TypeToken<List<DictionaryEntry>>() {}.getType();
                     entryList = gson.fromJson(jsonData, type);
 
-                    // Run on the main thread to update the UI
                     runOnUiThread(() -> {
-                        // Set the adapter with the fetched data
-                        dictionaryAdapter = new DictionaryAdapter(entryList);
+                        dictionaryAdapter = new DictionaryAdapter(filteredDictionaryEntries);
                         recyclerView.setAdapter(dictionaryAdapter);
+                        filterList("");
                     });
                 }
             }
         });
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void filterList(String query) {
+        filteredDictionaryEntries.clear();
+
+        for (DictionaryEntry entry : entryList) {
+            boolean matchFound =
+                            (entry.getSentence().toLowerCase().contains(query.toLowerCase())) ||
+                            (spanishCheckBox.isChecked() && entry.getTranslationSpanish().toLowerCase().contains(query.toLowerCase())) ||
+                            (dutchCheckBox.isChecked() && entry.getTranslationDutch().toLowerCase().contains(query.toLowerCase())) ||
+                            (russianCheckBox.isChecked() && entry.getTranslationRussian().toLowerCase().contains(query.toLowerCase()));
+
+            if (matchFound) {
+                filteredDictionaryEntries.add(entry);
+            }
+        }
+
+        if (dictionaryAdapter != null) {
+            dictionaryAdapter.notifyDataSetChanged();
+        }
     }
 }
