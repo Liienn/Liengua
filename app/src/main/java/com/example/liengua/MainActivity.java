@@ -22,6 +22,8 @@ import okhttp3.Response;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -68,10 +70,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupCheckBoxListeners() {
-        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
-        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
-        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
+        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
+        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
     }
+
 
     @SuppressLint("NotifyDataSetChanged")
     private void updateLanguages() {
@@ -119,13 +122,13 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     private void filterList(String query) {
+        updateLanguages();
         filteredDictionaryEntries.clear();
 
         for (DictionaryEntry entry : entryList) {
             boolean matchFound =
                     // Check the sentence in English
                     entry.getSentence().toLowerCase().contains(query.toLowerCase()) ||
-
                             // Check the main translations
                             (spanishCheckBox.isChecked() && entry.getTranslationSpanish().toLowerCase().contains(query.toLowerCase())) ||
                             (dutchCheckBox.isChecked() && entry.getTranslationDutch().toLowerCase().contains(query.toLowerCase())) ||
@@ -163,7 +166,16 @@ public class MainActivity extends AppCompatActivity {
             if (matchFound) {
                 filteredDictionaryEntries.add(entry);
             }
+
         }
+
+        // Sort the entries alphabetically based on the English sentence
+        Collections.sort(filteredDictionaryEntries, new Comparator<DictionaryEntry>() {
+            @Override
+            public int compare(DictionaryEntry entry1, DictionaryEntry entry2) {
+                return entry1.getSentence().compareToIgnoreCase(entry2.getSentence());
+            }
+        });
 
         // Notify the adapter to refresh the list
         if (dictionaryAdapter != null) {
