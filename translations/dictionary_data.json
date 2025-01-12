@@ -1605,6 +1605,61 @@
       "russian": ["Я заблудился"]
   }
 },
+{
+  "english": "Like two peas in a pod",
+  "dutch": "Als twee druppels water",
+  "spanish": "Como dos gotas de agua",
+  "russian": "Как две капли воды",
+  "alternatives": {
+      "dutch": [],
+      "spanish": [],
+      "russian": []
+  }
+},
+{
+  "english": "Continuously / Without stopping",
+  "dutch": "Aan één stuk door",
+  "spanish": "Continuamente / Sin parar",
+  "russian": "Без остановки / Непрерывно",
+  "alternatives": {
+      "dutch": ["Ononderbroken"],
+      "spanish": ["De manera ininterrumpida"],
+      "russian": ["Не прерываясь", "беспрестанно", "не переставая"]
+  }
+},
+{
+  "english": "To get/be fed up with something/someone",
+  "dutch": "Ergens genoeg van hebben",
+  "spanish": "Estar harto/a de algo",
+  "russian": "Надоесть что-то/кому-то",
+  "alternatives": {
+      "dutch": ["Ergens genoeg van krijgen", "Het/iets/iemand beu zijn"],
+      "spanish": ["Cansarse de algo"],
+      "russian": ["Достало что-то/кому-то"]
+  }
+},
+{
+  "english": "To need access",
+  "dutch": "Toegang nodig hebben",
+  "spanish": "Necesitar acceso",
+  "russian": "Нуждаться в доступе",
+  "alternatives": {
+      "dutch": ["Rechten nodig hebben", "Toegangsrechten nodig hebben"],
+      "spanish": ["Requerir acceso", "Tener necesidad de acceso"],
+      "russian": ["Требовать доступ", "Иметь потребность в доступе"]
+  }
+},
+{
+  "english": "Trial and error",
+  "dutch": "Met vallen en opstaan",
+  "spanish": "Prueba y error",
+  "russian": "Метод проб и ошибок",
+  "alternatives": {
+      "dutch": ["Door proberen en fouten maken"],
+      "spanish": ["Ensayo y error"],
+      "russian": ["Попытка и ошибка"]
+  }
+},
   {
     "english": "-a placeholder-",
     "dutch": "",
