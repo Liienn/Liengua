@@ -145,8 +145,8 @@
   {
     "english": "What kind (of...)?",
     "dutch": "Welke?",
-    "spanish": "",
-    "russian": "",
+    "spanish": "¿Qué tipo (de...)?",
+    "russian": "Какой (из...)?",
     "alternatives": {
         "dutch": [],
         "spanish": [],
@@ -156,8 +156,8 @@
   {
     "english": "How far?",
     "dutch": "Hoe ver?",
-    "spanish": "",
-    "russian": "",
+    "spanish": "¿Qué tan lejos?",
+    "russian": "Как далеко?",
     "alternatives": {
         "dutch": [""],
         "spanish": [],
@@ -167,8 +167,8 @@
   {
     "english": "I am confused",
     "dutch": "Ik ben in de war",
-    "spanish": "",
-    "russian": "",
+    "spanish": "Estoy confundido/a",
+    "russian": "Я запутался/запуталась",
     "alternatives": {
         "dutch": ["Ik ben verward", "Ik ben de kluts kwijt"],
         "spanish": [],
@@ -178,8 +178,8 @@
   {
     "english": "I wish!",
     "dutch": "Was het maar (waar)!",
-    "spanish": "",
-    "russian": "",
+    "spanish": "¡Ojalá!",
+    "russian": "Если бы так было!",
     "alternatives": {
         "dutch": [],
         "spanish": [],
