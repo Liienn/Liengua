@@ -249,7 +249,7 @@
   "alternatives": {
       "dutch": ["Waarom?", "Voor wat?", "Met welk doel?"],
       "spanish": ["¿Con qué fin?", "¿Por qué?"],
-      "russian": ["Зачем?", "С какой целью?", "Почему?"]
+      "russian": ["С какой целью?", "Почему?"]
   }
 },
 {
@@ -455,7 +455,6 @@
           "Tengo autorización para"
       ],
       "russian": [
-          "Мне разрешено",
           "Я имею право",
           "Мне можно"
       ]
@@ -513,7 +512,6 @@
           "No es necesario que"
       ],
       "russian": [
-          "Мне не нужно",
           "Я не обязан(а)"
       ]
   }
@@ -580,7 +578,6 @@
           "Esperad un momento, por favor"
       ],
       "russian": [
-          "Погодите минутку, пожалуйста",
           "Подождите, пожалуйста",
           "Минутку, пожалуйста"
       ]
@@ -604,7 +601,6 @@
           "Opino lo mismo"
       ],
       "russian": [
-          "Я согласен/согласна",
           "Я тоже так думаю",
           "Согласен/согласна с этим",
           "Да, я согласен/согласна"
@@ -630,7 +626,6 @@
           "Vamos allá"
       ],
       "russian": [
-          "Пойдем",
           "Давайте идти",
           "Пошли",
           "Поехали"
@@ -654,7 +649,6 @@
           "Espero que sí"
       ],
       "russian": [
-          "Надеюсь",
           "Будем надеяться",
           "Надеюсь на это"
       ]
@@ -701,7 +695,6 @@
           "Eso basta"
       ],
       "russian": [
-          "Это достаточно",
           "Хватит",
           "Больше не надо"
       ]
@@ -801,7 +794,6 @@
       "Tienes razón"
     ],
     "russian": [
-      "Это правда",
       "Ты прав",
       "Это верно",
       "Действительно",
@@ -1710,7 +1702,7 @@
     "spanish": "Pan comido",
     "russian": "Проще простого",
     "alternatives": {
-        "dutch": ["Komt in de saccoche", "Een fluitje van een cent", "Het is heel erg gemakkelijk"],
+        "dutch": ["Komt in de sacoche", "Een fluitje van een cent", "Het is heel erg gemakkelijk"],
         "spanish": ["Estar chupado"],
         "russian": ["Пустяковое дело"]
     }
