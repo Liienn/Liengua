@@ -991,16 +991,14 @@
 {
   "english": "In a week",
   "dutch": "In een week",
-  "spanish": "En una semana",
+  "spanish": "Dentro de una semana",
   "russian": "Через неделю",
   "alternatives": {
     "dutch": [
       "Binnen een week",
       "Over een week"
     ],
-    "spanish": [
-      "Dentro de una semana"
-    ],
+    "spanish": ["En una semana"],
     "russian": [
       "Через неделю"
     ]
