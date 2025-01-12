@@ -3,37 +3,67 @@
     "english": "Hello",
     "dutch": "Hallo",
     "spanish": "Hola",
-    "russian": "Привет"
+    "russian": "Привет",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "Goodbye",
     "dutch": "Dag",
     "spanish": "Adiós",
-    "russian": "До свидания"
+    "russian": "До свидания",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "In what year?",
     "dutch": "In welk jaar?",
     "spanish": "¿En qué año?",
-    "russian": "В каком году?"
+    "russian": "В каком году?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "For how long?",
     "dutch": "Voor hoe lang?",
     "spanish": "¿Por cuánto tiempo?",
-    "russian": "На сколько времени?"
+    "russian": "На сколько времени?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "With whom?",
     "dutch": "Met wie?",
     "spanish": "¿Con quién?",
-    "russian": "С кем?"
+    "russian": "С кем?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "Where to?",
     "dutch": "Waarnaartoe? / Naar waar?",
     "spanish": "¿A dónde?",
-    "russian": "Куда?"
+    "russian": "Куда?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "Shall we continue reading?",
@@ -50,42 +80,77 @@
     "english": "How much?",
     "dutch": "Hoeveel?",
     "spanish": "¿Cuánto?",
-    "russian": "Сколько?"
+    "russian": "Сколько?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "When?",
     "dutch": "Wanneer?",
     "spanish": "¿Cuándo?",
-    "russian": "Когда?"
+    "russian": "Когда?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "At what time?",
     "dutch": "Hoe laat?",
     "spanish": "¿A qué hora?",
-    "russian": "Во сколько?"
+    "russian": "Во сколько?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "How often?",
     "dutch": "Hoe vaak?",
     "spanish": "¿Con qué frecuencia?",
-    "russian": "Как часто?"
+    "russian": "Как часто?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "Which one?",
     "dutch": "Welke?",
     "spanish": "¿Cuál?",
-    "russian": "Какой?"
+    "russian": "Какой?",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
   "english": "Just in case",
   "dutch": "Voor de zekerheid",
   "spanish": "Por si acaso",
-  "russian": "На всякий случай"
+  "russian": "На всякий случай",
+  "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   },
   {
     "english": "",
     "dutch": "",
     "spanish": "",
-    "russian": ""
+    "russian": "",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
   }
 ]

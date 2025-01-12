@@ -1,5 +1,9 @@
 package com.example.liengua;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,18 +15,24 @@ public class DictionaryEntry {
     private Map<String, List<String>> alternatives;
 
     // Getters and setters
-    public Map<String, List<String>> getAlternatives() {
-        return alternatives;
-    }
     public DictionaryEntry(String english, String spanish, String russian, String dutch) {
         this.english = english;
         this.spanish = spanish;
         this.russian = russian;
         this.dutch = dutch;
+        this.alternatives = alternatives != null ? alternatives : new HashMap<>();
+        alternatives.put("dutch", new ArrayList<>());
+        alternatives.put("spanish", new ArrayList<>());
+        alternatives.put("russian", new ArrayList<>());
+        if (entry.alternatives != null) {
+            alternatives.putAll(entry.alternatives);
+        }
     }
-    public void setAlternatives(Map<String, List<String>> alternatives) {
-        this.alternatives = alternatives;
-    }
+
+    // Parsing the JSON response
+    Gson gson = new Gson();
+    DictionaryEntry entry = gson.fromJson(jsonResponse, DictionaryEntry.class);
+
 
     // Getters
     public String getSentence() {

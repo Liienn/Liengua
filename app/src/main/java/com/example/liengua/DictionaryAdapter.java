@@ -41,25 +41,30 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         DictionaryEntry entry = dictionaryEntryList.get(position);
 
         StringBuilder translation = new StringBuilder();
+        holder.translationTextView.setOnClickListener(null); // Remove previous listeners
+
+        // Append Spanish translation if enabled
         if (showSpanish && entry.getTranslationSpanish() != null && !entry.getTranslationSpanish().isEmpty()) {
             translation.append("ES: ").append(entry.getTranslationSpanish()).append("\n");
             holder.translationTextView.setOnClickListener(v -> showAlternatives("spanish", entry.getAlternatives(), holder));
         }
+        // Append Dutch translation if enabled
         if (showDutch && entry.getTranslationDutch() != null && !entry.getTranslationDutch().isEmpty()) {
             translation.append("NL: ").append(entry.getTranslationDutch()).append("\n");
             holder.translationTextView.setOnClickListener(v -> showAlternatives("dutch", entry.getAlternatives(), holder));
         }
+        // Append Russian translation if enabled
         if (showRussian && entry.getTranslationRussian() != null && !entry.getTranslationRussian().isEmpty()) {
             translation.append("RU: ").append(entry.getTranslationRussian()).append("\n");
             holder.translationTextView.setOnClickListener(v -> showAlternatives("russian", entry.getAlternatives(), holder));
         }
 
-
+        // Set the translation text
         holder.translationTextView.setText(translation.toString());
         holder.sentenceTextView.setText(entry.getSentence());
     }
 
-    private void showAlternatives(String language, Map<String, List<String>> alternatives, DictionaryAdapter.DictionaryViewHolder holder) {
+    private void showAlternatives(String language, Map<String, List<String>> alternatives, DictionaryViewHolder holder) {
         List<String> languageAlternatives = alternatives.get(language);
         if (languageAlternatives != null && !languageAlternatives.isEmpty()) {
             StringBuilder altText = new StringBuilder("Alternatives:\n");
@@ -67,15 +72,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                 altText.append(alt).append("\n");
             }
 
+            // Show alternatives in a Toast (or consider using a Dialog for better UX)
             Toast.makeText(holder.translationTextView.getContext(), altText.toString(), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(holder.translationTextView.getContext(), "No alternatives available.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void appendTranslation(StringBuilder translation, String langPrefix, String text) {
-        if (text != null && !text.isEmpty()) {
-            translation.append(langPrefix).append(": ").append(text).append("\n");
         }
     }
 
@@ -95,4 +95,3 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         }
     }
 }
-
