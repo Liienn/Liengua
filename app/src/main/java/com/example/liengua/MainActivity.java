@@ -1,9 +1,11 @@
 package com.example.liengua;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -182,5 +184,8 @@ public class MainActivity extends AppCompatActivity {
             dictionaryAdapter.notifyDataSetChanged();
         }
     }
-
+    public void openContactActivity(View view) {
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+    }
 }

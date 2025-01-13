@@ -6,6 +6,13 @@
     <string name="spanish_translation">Spanish translation</string>
     <string name="dutch_translation">Dutch translation</string>
     <string name="russian_translation">Russian translation</string>
+    <string name="get_random_phrase">Get Random Phrase</string>
+    <string name="spanish">Spanish</string>
+    <string name="dutch">Dutch</string>
+    <string name="russian">Russian</string>
+    <string name="write_your_message_here">Write your message here</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="note_to_lien">Note to Lien</string>
     <string-array name="languages">
         <item>Spanish</item>
         <item>Dutch</item>

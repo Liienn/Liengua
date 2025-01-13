@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.liengua"
     tools:ignore="ExtraText">
+
+    <!-- Add permission for Internet access -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Liengua">
 
-        <!-- Add MainActivity as the launcher activity -->
+        <!-- Main Activity (Launcher activity) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,6 +23,12 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- New Contact Activity -->
+        <activity
+            android:name=".ContactActivity"
+            android:exported="true">
         </activity>
 
     </application>
