@@ -73,7 +73,7 @@
     "alternatives": {
         "dutch": ["Heb je zin om verder te lezen?", "Wil je (graag) verder lezen?"],
         "spanish": ["¿Quieres seguir leyendo?", "¿Continuamos la lectura?"],
-        "russian": ["Читать дальше?", "Будем продолжать читать?", "Хочешь продолжить читать?", "Не будем ли продолжать чтение?"]
+        "russian": ["Читать дальше?", "Будем продолжать читать?", "Хочешь продолжить читать?", "Не продолжить ли нам читать?"]
     }
   },
   {
@@ -146,11 +146,11 @@
     "english": "What kind (of...)?",
     "dutch": "Welke?",
     "spanish": "¿Qué tipo (de...)?",
-    "russian": "Какой (из...)?",
+    "russian": "Какой?",
     "alternatives": {
         "dutch": ["Wat voor?", "Welke soort?", "Wat voor soort?"],
         "spanish": ["¿Qué clase (de...)?", "¿Qué clase de...?"],
-        "russian": ["Какой вид (из...)?", "Какого рода (из...)?"]
+        "russian": ["Что за...? "]
     }
   },
   {
@@ -370,12 +370,12 @@
   "alternatives": {
       "dutch": ["Wat is de tijd?", "Wat uur leven we?"],
       "spanish": ["¿Qué hora tiene?", "¿A qué hora estamos?"],
-      "russian": ["Сколько времени?", "Когда время?"]
+      "russian": ["Сколько времени?"]
   }
 },
 {
   "english": "Can you repeat that?",
-  "dutch": "Ik hou niet van geld verspillen",
+  "dutch": "Kun je dat herhalen?",
   "spanish": "¿Puedes repetir eso?",
   "russian": "Можешь повторить это?",
   "alternatives": {
@@ -1636,9 +1636,9 @@
   "spanish": "Necesitar acceso",
   "russian": "Нуждаться в доступе",
   "alternatives": {
-      "dutch": ["Rechten nodig hebben", "Toegangsrechten nodig hebben"],
+      "dutch": ["Rechten nodig hebben", "Toegangsrechten nodig hebben", "Ik heb toegang nodig"],
       "spanish": ["Requerir acceso", "Tener necesidad de acceso"],
-      "russian": ["Требовать доступ", "Иметь потребность в доступе"]
+      "russian": ["Требовать доступ", "Иметь потребность в доступе", "Мне нужен/надо доступ"]
   }
 },
 {
@@ -1649,7 +1649,7 @@
   "alternatives": {
       "dutch": ["Door proberen en fouten maken"],
       "spanish": ["Ensayo y error"],
-      "russian": ["Попытка и ошибка"]
+      "russian": ["Методом проб и ошибок"]
   }
 },
   {
@@ -1667,7 +1667,7 @@
     "english": "To make ends meet",
     "dutch": "Rondkomen",
     "spanish": "Llegar a fin de mes",
-    "russian": "Связывать концы с концами",
+    "russian": "Сводить концы с концами",
     "alternatives": {
         "dutch": ["Het hoofd boven water houden"],
         "spanish": ["Estar en números rojos"],
@@ -1939,7 +1939,348 @@
     }
   },
   {
-    "english": "-a placeholder-",
+    "english": "All in good time*",
+    "dutch": "Alles op zijn tijd",
+    "spanish": "Todo a su tiempo",
+    "russian": "Всему своё время",
+    "alternatives": {
+      "dutch": ["Er is geen haast", "Rustig aan, alles op zijn tijd"],
+      "spanish": ["Cada cosa a su tiempo", "Todo llegará a su debido tiempo"],
+      "russian": ["Всему свое время", "Всему своё время придёт"]
+    }
+  },
+  {
+    "english": "I changed my mind*",
+    "dutch": "Ik heb me bedacht",
+    "spanish": "Cambié de opinión",
+    "russian": "Я передумал(а)",
+    "alternatives": {
+      "dutch": ["Ik ben van gedachten veranderd"],
+      "spanish": ["He cambiado de idea", "Decidí otra cosa"],
+      "russian": ["Я изменил(а) своё мнение", "Я решил(а) по-другому"]
+    }
+  },
+  {
+    "english": "I don't care*",
+    "dutch": "Het kan me niks schelen",
+    "spanish": "No me importa",
+    "russian": "Мне всё равно",
+    "alternatives": {
+      "dutch": ["Het boeit me niet", "Het laat me koud", "Het doet me niks"],
+      "spanish": ["No me interesa", "No me afecta", "Me da igual"],
+      "russian": ["Мне наплевать", "Мне безразлично", "Меня это не волнует"]
+    }
+  },
+  {
+    "english": "I'm fine as it is*",
+    "dutch": "Ik ben tevreden zoals het is",
+    "spanish": "Estoy bien así",
+    "russian": "Мне и так хорошо",
+    "alternatives": {
+      "dutch": ["Het is goed zoals het is", "Ik vind het prima zo"],
+      "spanish": ["Estoy bien como está", "Así estoy bien"],
+      "russian": ["Меня устраивает", "Так мне нормально"]
+    }
+  },
+  {
+    "english": "Actually*",
+    "dutch": "Eigenlijk",
+    "spanish": "En realidad",
+    "russian": "На самом деле",
+    "alternatives": {
+      "dutch": ["In feite", "Echt waar"],
+      "spanish": ["De hecho", "Realmente"],
+      "russian": ["Фактически", "Действительно"]
+    }
+  },
+  {
+    "english": "Terrible*",
+    "dutch": "Vreselijk",
+    "spanish": "Terrible",
+    "russian": "Ужасный",
+    "alternatives": {
+      "dutch": ["Verschrikkelijk", "Erg"],
+      "spanish": ["Horrible", "Espantoso"],
+      "russian": ["Страшный", "Жуткий"]
+    }
+  },
+  {
+    "english": "I missed a meeting*",
+    "dutch": "Ik heb een vergadering gemist",
+    "spanish": "Me perdí una reunión",
+    "russian": "Я пропустил(а) встречу",
+    "alternatives": {
+      "dutch": ["Ik miste een vergadering"],
+      "spanish": ["Perdí una reunión"],
+      "russian": ["Я не пришёл/пришла на встречу"]
+    }
+  },
+  {
+    "english": "I don't want so much pasta*",
+    "dutch": "Ik wil niet zoveel pasta",
+    "spanish": "No quiero tanta pasta",
+    "russian": "Я не хочу так много пасты",
+    "alternatives": {
+      "dutch": ["Ik hoef niet zoveel pasta", "Ik wil minder pasta"],
+      "spanish": ["No necesito tanta pasta", "Quiero menos pasta"],
+      "russian": ["Мне не нужно так много пасты", "Я хочу меньше пасты"]
+    }
+  },
+  {
+    "english": "Do not say anything without thinking*",
+    "dutch": "Denk na voordat je iets zegt",
+    "spanish": "No digas nada sin pensar",
+    "russian": "Не говори ничего, не подумав",
+    "alternatives": {
+      "dutch": ["Zeg niets zonder na te denken"],
+      "spanish": ["Piensa antes de hablar"],
+      "russian": ["Подумай, прежде чем что-то сказать"]
+    }
+  },
+  {
+    "english": "It's too much*",
+    "dutch": "Het is te veel",
+    "spanish": "Es demasiado",
+    "russian": "Это слишком много",
+    "alternatives": {
+      "dutch": ["Het is veel te veel"],
+      "spanish": ["Es mucho", "Es demasiado para mí"],
+      "russian": ["Это чересчур", "Слишком много для меня"]
+    }
+  },
+  {
+    "english": "Above all*",
+    "dutch": "Bovenal",
+    "spanish": "Sobre todo",
+    "russian": "Прежде всего",
+    "alternatives": {
+      "dutch": ["Bovendien"],
+      "spanish": ["Ante todo"],
+      "russian": ["Прежде всего", "Самое главное"]
+    }
+  },
+  {
+    "english": "Although*",
+    "dutch": "Hoewel",
+    "spanish": "Aunque",
+    "russian": "Хотя",
+    "alternatives": {
+      "dutch": ["Alhoewel"],
+      "spanish": ["A pesar de que"],
+      "russian": ["Несмотря на то что"]
+    }
+  },
+  {
+    "english": "As a result*",
+    "dutch": "Als resultaat",
+    "spanish": "Como resultado",
+    "russian": "В результате",
+    "alternatives": {
+      "dutch": ["Daarom", "Als gevolg", "Met als gevolg (dat)"],
+      "spanish": ["Por lo tanto"],
+      "russian": ["Следовательно", "Как результат"]
+    }
+  },
+  {
+    "english": "As well as*",
+    "dutch": "Evenals",
+    "spanish": "Además de",
+    "russian": "А также",
+    "alternatives": {
+      "dutch": ["Net als", "En daarnaast"],
+      "spanish": ["Así como"],
+      "russian": ["Так же как"]
+    }
+  },
+  {
+    "english": "However*",
+    "dutch": "Echter",
+    "spanish": "Sin embargo",
+    "russian": "Однако",
+    "alternatives": {
+      "dutch": ["Toch", "Desondanks", "Maar toch"],
+      "spanish": ["No obstante"],
+      "russian": ["Тем не менее"]
+    }
+  },
+  {
+    "english": "In many respects*",
+    "dutch": "Op veel manieren",
+    "spanish": "En muchos aspectos",
+    "russian": "Во многих отношениях",
+    "alternatives": {
+      "dutch": ["Op veel gebieden", "In veel opzichten"],
+      "spanish": [],
+      "russian": ["В разных аспектах"]
+    }
+  },
+  {
+    "english": "In spite of*",
+    "dutch": "Ondanks",
+    "spanish": "A pesar de",
+    "russian": "Несмотря на",
+    "alternatives": {
+      "dutch": ["Desondanks", "Alhoewel"],
+      "spanish": ["Aunque", "Pese a", "Aun así"],
+      "russian": ["Невзирая на", "Вопреки"]
+    }
+  },
+  {
+    "english": "Instead of*",
+    "dutch": "In plaats van",
+    "spanish": "En lugar de",
+    "russian": "Вместо",
+    "alternatives": {
+      "dutch": ["In de plaats van"],
+      "spanish": ["En vez de"],
+      "russian": ["Заменить"]
+    }
+  },
+  {
+    "english": "Nevertheless*",
+    "dutch": "Desalniettemin",
+    "spanish": "No obstante",
+    "russian": "Тем не менее",
+    "alternatives": {
+      "dutch": ["Toch", "Niettemin"],
+      "spanish": ["Sin embargo"],
+      "russian": ["Однако"]
+    }
+  },
+  {
+    "english": "Otherwise*",
+    "dutch": "Anders",
+    "spanish": "De lo contrario",
+    "russian": "Иначе",
+    "alternatives": {
+      "dutch": ["In andere gevallen", "Zo niet"],
+      "spanish": ["Si no"],
+      "russian": ["В противном случае"]
+    }
+  },
+  {
+    "english": "In brief*",
+    "dutch": "Kortom",
+    "spanish": "En breve",
+    "russian": "Кратко",
+    "alternatives": {
+      "dutch": ["In het kort"],
+      "spanish": ["En resumen"],
+      "russian": ["Короче говоря"]
+    }
+  },
+  {
+    "english": "It is necessary*",
+    "dutch": "Het is noodzakelijk",
+    "spanish": "Es necesario",
+    "russian": "Это необходимо",
+    "alternatives": {
+      "dutch": ["Het is nodig"],
+      "spanish": ["Es imprescindible"],
+      "russian": ["Это требуется"]
+    }
+  },
+  {
+    "english": "I feel like doing something*",
+    "dutch": "Ik heb zin om iets te doen",
+    "spanish": "Tengo ganas de hacer algo",
+    "russian": "Мне хочется что-то сделать",
+    "alternatives": {
+      "dutch": ["Ik wil iets doen", "Ik voel me in de stemming om iets te doen"],
+      "spanish": ["Me apetece hacer algo"],
+      "russian": ["Я хочу что-то сделать"]
+    }
+  },
+  {
+    "english": "I can't even though I want to*",
+    "dutch": "Ik kan niet, hoewel ik het zou willen",
+    "spanish": "No puedo aunque quiero",
+    "russian": "Я не могу, хотя хочу",
+    "alternatives": {
+      "dutch": ["Ik kan het niet, ook al wil ik het"],
+      "spanish": ["No soy capaz aunque quiera"],
+      "russian": ["Не могу, хотя очень хочу"]
+    }
+  },
+  {
+    "english": "Probably*",
+    "dutch": "Waarschijnlijk",
+    "spanish": "Probablemente",
+    "russian": "Вероятно",
+    "alternatives": {
+      "dutch": ["Misschien", "Wellicht"],
+      "spanish": ["Quizás", "Tal vez"],
+      "russian": ["Возможно", "Наверное"]
+    }
+  },
+  {
+    "english": "Still*",
+    "dutch": "Nog steeds",
+    "spanish": "Todavía",
+    "russian": "Все еще",
+    "alternatives": {
+      "dutch": ["Nog altijd"],
+      "spanish": ["Aún"],
+      "russian": ["До сих пор"]
+    }
+  },
+  {
+    "english": "Accidentally*",
+    "dutch": "Per ongeluk",
+    "spanish": "Por accidente",
+    "russian": "Случайно",
+    "alternatives": {
+      "dutch": ["Bij toeval"],
+      "spanish": ["Accidentalmente"],
+      "russian": ["Нечаянно"]
+    }
+  },
+  {
+    "english": "Unsurprisingly / It comes as no surprise*",
+    "dutch": "Niet verrassend",
+    "spanish": "No es sorprendente",
+    "russian": "Неудивительно",
+    "alternatives": {
+      "dutch": ["Geen wonder", "Het is geen wonder (dat)", "Het is geen verrassing (dat)"],
+      "spanish": ["No es de extrañar"],
+      "russian": ["Это неудивительно"]
+    }
+  },
+  {
+    "english": "To the left*",
+    "dutch": "Naar links",
+    "spanish": "A la izquierda",
+    "russian": "Налево",
+    "alternatives": {
+      "dutch": ["Linksaf"],
+      "spanish": ["Hacia la izquierda"],
+      "russian": ["Влево"]
+    }
+  },
+  {
+    "english": "To the right*",
+    "dutch": "Naar rechts",
+    "spanish": "A la derecha",
+    "russian": "Направо",
+    "alternatives": {
+      "dutch": ["Rechtsaf"],
+      "spanish": ["Hacia la derecha"],
+      "russian": ["Вправо"]
+    }
+  },
+  {
+    "english": "Everything is clear*",
+    "dutch": "Alles is duidelijk",
+    "spanish": "Todo está claro",
+    "russian": "Все понятно",
+    "alternatives": {
+      "dutch": [],
+      "spanish": [],
+      "russian": []
+    }
+  },
+  {
+    "english": "- newly added phrases are marked with a '*' -",
     "dutch": "",
     "spanish": "",
     "russian": "",
