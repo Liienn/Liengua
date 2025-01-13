@@ -2,26 +2,24 @@ package com.example.liengua;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.graphics.Color;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.os.Build;
 import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.WindowDecorActionBar;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.DictionaryViewHolder> {
 
@@ -48,33 +46,40 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     }
 
     @SuppressLint("SetTextI18n")
+    private void setupTranslationTextView(TextView textView,String label, String language, String translation, boolean showTranslation, DictionaryViewHolder holder) {
+
+        if (showTranslation && translation != null && !translation.isEmpty()) {
+            textView.setText(label + ": " + translation);
+            textView.setVisibility(View.VISIBLE);
+            textView.setOnClickListener(v -> showAlternatives(language.toLowerCase(), textView, holder));
+            textView.setOnLongClickListener(v -> {
+                String fullText = textView.getText().toString();
+                String textToCopy = fullText;
+                if (fullText.contains(": ")) {
+                    String[] parts = fullText.split(": ", 2);
+                    if (parts.length > 1) {
+                        textToCopy = parts[1];
+                    }
+                }
+                ClipboardManager clipboard = (ClipboardManager) v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Copied Text", textToCopy);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(v.getContext(), "Text copied to clipboard", Toast.LENGTH_SHORT).show();
+                return true; // Indicates the event is consumed
+            });
+        } else {
+            textView.setVisibility(View.GONE);
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull DictionaryViewHolder holder, int position) {
         DictionaryEntry entry = dictionaryEntryList.get(position);
 
-        StringBuilder translation = new StringBuilder();
-        holder.spanishTranslationTextView.setOnClickListener(null); // Remove previous listeners
-
-        if (showSpanish && entry.getTranslationSpanish() != null && !entry.getTranslationSpanish().isEmpty()) {
-            setTranslationTextViewText(holder.spanishTranslationTextView,"ES: " + entry.getTranslationSpanish());
-            holder.spanishTranslationTextView.setOnClickListener(v -> showAlternatives("spanish", holder.spanishTranslationTextView, holder));
-        } else {
-            holder.spanishTranslationTextView.setVisibility(View.GONE);
-        }
-
-        if (showDutch && entry.getTranslationDutch() != null && !entry.getTranslationDutch().isEmpty()) {
-            setTranslationTextViewText(holder.dutchTranslationTextView,"NL: " + entry.getTranslationDutch());
-            holder.dutchTranslationTextView.setOnClickListener(v -> showAlternatives("dutch", holder.dutchTranslationTextView, holder));
-        } else {
-            holder.dutchTranslationTextView.setVisibility(View.GONE);
-        }
-
-        if (showRussian && entry.getTranslationRussian() != null && !entry.getTranslationRussian().isEmpty()) {
-            setTranslationTextViewText(holder.russianTranslationTextView,"RU: " + entry.getTranslationRussian());
-            holder.russianTranslationTextView.setOnClickListener(v -> showAlternatives("russian", holder.russianTranslationTextView, holder));
-        } else {
-            holder.russianTranslationTextView.setVisibility(View.GONE);
-        }
+        setupTranslationTextView(holder.spanishTranslationTextView,"ES", "spanish", entry.getTranslationSpanish(), showSpanish, holder);
+        setupTranslationTextView(holder.dutchTranslationTextView, "NL","dutch", entry.getTranslationDutch(), showDutch, holder);
+        setupTranslationTextView(holder.russianTranslationTextView, "RU","russian", entry.getTranslationRussian(), showRussian, holder);
 
         // Set the translation text
         holder.sentenceTextView.setText(entry.getSentence());
@@ -89,19 +94,66 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         List<String> languageAlternatives = entry.getAlternatives().get(language);
 
         if (languageAlternatives != null && !languageAlternatives.isEmpty()) {
-            CharSequence[] altArray = languageAlternatives.toArray(new CharSequence[0]);
+            // Create a new list to include the original translation as the first item
+            List<String> allAlternatives = new ArrayList<>();
+            String originalTranslation = extractOriginalTranslation(translationTextView);
+            if (originalTranslation != null) {
+                allAlternatives.add(originalTranslation);
+            }
+            allAlternatives.addAll(languageAlternatives);
 
-            new AlertDialog.Builder(translationTextView.getContext())
-                    .setTitle(translationTextView.getText())
+            // Convert the list to a CharSequence array for the dialog
+            CharSequence[] altArray = allAlternatives.toArray(new CharSequence[0]);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(translationTextView.getContext());
+            builder.setTitle(entry.getSentence())
                     .setItems(altArray, (dialog, which) -> {
-                        // Optional: Handle click on alternative
+                        // This action will be triggered when an alternative is selected
+                        String selectedAlternative = allAlternatives.get(which);
+                        // Copy selected alternative to clipboard
+                        ClipboardManager clipboard = (ClipboardManager) translationTextView.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                        ClipData clip = ClipData.newPlainText(language + " alternative", selectedAlternative);
+                        clipboard.setPrimaryClip(clip);
+                        Toast.makeText(translationTextView.getContext(), "Alternative copied to clipboard", Toast.LENGTH_SHORT).show();
+                        // Don't dismiss the dialog here, so it stays open
                     })
-                    .setPositiveButton("Close", null)
-                    .show();
+                    .setPositiveButton("Close", (dialog, which) -> dialog.dismiss()) // Dialog closes when 'Close' is clicked
+                    .setCancelable(true); // Dialog closes if clicked outside the dialog
+
+            AlertDialog dialog = builder.create();
+
+            // Prevent closing dialog on item click, but keep other behavior intact
+            dialog.setOnShowListener(dialogInterface -> {
+                ListView listView = dialog.getListView();
+                listView.setOnItemClickListener((parent, view, position, id) -> {
+                    // Handle item click manually, prevent automatic closing
+                    String selectedAlternative = allAlternatives.get(position);
+                    // Copy selected alternative to clipboard
+                    ClipboardManager clipboard = (ClipboardManager) translationTextView.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText(language + " alternative", selectedAlternative);
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(translationTextView.getContext(), "Alternative copied to clipboard", Toast.LENGTH_SHORT).show();
+                });
+            });
+
+            dialog.show();
         } else {
             Toast.makeText(translationTextView.getContext(), "No " + language + " alternatives available for '" + entry.getSentence() + "'", Toast.LENGTH_SHORT).show();
         }
     }
+
+    // Helper method to safely extract the original translation from the TextView
+    private String extractOriginalTranslation(TextView translationTextView) {
+        String text = translationTextView.getText().toString();
+
+        // Assuming original translation is the full text or it follows a known pattern (like "Translation: text")
+        String[] parts = text.split(": ");
+        if (parts.length > 1) {
+            return parts[1]; // Return the part after ": "
+        }
+        return text; // Return the full text if no ": " is found
+    }
+
 
 
     @Override
