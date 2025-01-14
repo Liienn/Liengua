@@ -2,18 +2,25 @@ package com.example.liengua;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import okhttp3.Call;
@@ -31,32 +38,47 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText searchInput;
-    private RecyclerView recyclerView;
+    private EditText searchInput, contactMessageEditText;
     private DictionaryAdapter dictionaryAdapter;
     private List<DictionaryEntry> entryList = new ArrayList<>();
     private final List<DictionaryEntry> filteredDictionaryEntries = new ArrayList<>();
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
+    private ImageView arrow1, arrow2;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // Initialize BottomSheetBehavior
+        LinearLayout bottomSheet = findViewById(R.id.bottom_sheet);
+        if (bottomSheet == null) {
+            Log.e("BottomSheet", "Bottom sheet view is null");
+        } else {
+            Log.d("BottomSheet", "Bottom sheet view found");
+        }
+        assert bottomSheet != null;
+        BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        // Initialize views
+        fetchDataFromGitHub();
         searchInput = findViewById(R.id.search_input);
-        recyclerView = findViewById(R.id.dictionary_list);
+        RecyclerView recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
+        Button sendButton = findViewById(R.id.sendButton);
+        contactMessageEditText = findViewById(R.id.contactMessage);
 
+        // Setup checkbox listeners
         setupCheckBoxListeners();
 
+
+        // Search input listener
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -64,11 +86,82 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void afterTextChanged(Editable s) {}
+        });
+
+        arrow1 = findViewById(R.id.swipe_icon3);
+        arrow2 = findViewById(R.id.swipe_icon);
+        // Set the bottom sheet to be swiped up and down
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED); // Default collapsed state
+        bottomSheetBehavior.setHideable(false); // Optional: prevent hiding the sheet entirely
+        bottomSheetBehavior.setPeekHeight(100);
+        // Add slide listener to the BottomSheetBehavior
+        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+                    // Handle the case when the sheet is fully expanded
+                    Log.d("BottomSheet", "Expanded");
+                    arrow1.setImageResource(android.R.drawable.arrow_down_float);
+                    arrow2.setImageResource(android.R.drawable.arrow_down_float);
+                } else if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
+                    // Handle the case when the sheet is collapsed
+                    Log.d("BottomSheet", "Collapsed");
+                    arrow1.setImageResource(android.R.drawable.arrow_up_float);
+                    arrow2.setImageResource(android.R.drawable.arrow_up_float);
+                } else if (newState == BottomSheetBehavior.STATE_DRAGGING) {
+                    // Handle the case when the user is dragging the sheet
+                    Log.d("BottomSheet", "Dragging");
+                }
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                // `slideOffset` ranges from 0 (collapsed) to 1 (expanded)
+                // We want to change the icons smoothly around 90% of the expansion
+
+                if (slideOffset > 0.9) {
+                    // Sheet is 90% expanded or more: arrows pointing down
+                    arrow1.setImageResource(android.R.drawable.arrow_down_float);
+                    arrow2.setImageResource(android.R.drawable.arrow_down_float);
+                } else if (slideOffset < 0.1) {
+                    // Sheet is close to collapsed: arrows pointing up
+                    arrow1.setImageResource(android.R.drawable.arrow_up_float);
+                    arrow2.setImageResource(android.R.drawable.arrow_up_float);
+                } else {
+                    // Handle intermediate state, if needed (optional)
+                    // You can adjust the icons based on the slideOffset
+                    // For example, switch to a neutral icon or keep the existing arrow icons
+                }
             }
         });
 
-        fetchDataFromGitHub();
+        // Send button functionality - send an email when clicked
+        sendButton.setOnClickListener(v -> sendEmail());
+    }
+
+    private void sendEmail() {
+        String message = contactMessageEditText.getText().toString().trim();
+
+        if (message.isEmpty()) {
+            Toast.makeText(this, "Please enter a message", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Set up the Intent to send the email
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("message/rfc822");
+
+        // Set the email subject and body
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"teuwenlien@gmail.com"});  // Replace with your email
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "User Feedback");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send Feedback"));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "No email client is installed.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void setupCheckBoxListeners() {
@@ -76,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
         dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
         russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
     }
-
 
     @SuppressLint("NotifyDataSetChanged")
     private void updateLanguages() {
@@ -113,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
                     runOnUiThread(() -> {
                         dictionaryAdapter = new DictionaryAdapter(filteredDictionaryEntries);
+                        RecyclerView recyclerView = findViewById(R.id.dictionary_list);
                         recyclerView.setAdapter(dictionaryAdapter);
                         filterList(""); // Initialize the filter list
                     });
@@ -121,28 +214,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     @SuppressLint("NotifyDataSetChanged")
     private void filterList(String query) {
         updateLanguages();
         filteredDictionaryEntries.clear();
 
         for (DictionaryEntry entry : entryList) {
-            boolean matchFound =
-                    // Check the sentence in English
-                    entry.getSentence().toLowerCase().contains(query.toLowerCase()) ||
-                            // Check the main translations
-                            (spanishCheckBox.isChecked() && entry.getTranslationSpanish().toLowerCase().contains(query.toLowerCase())) ||
-                            (dutchCheckBox.isChecked() && entry.getTranslationDutch().toLowerCase().contains(query.toLowerCase())) ||
-                            (russianCheckBox.isChecked() && entry.getTranslationRussian().toLowerCase().contains(query.toLowerCase()));
+            boolean matchFound = entry.getSentence().toLowerCase().contains(query.toLowerCase()) ||
+                    (spanishCheckBox.isChecked() && entry.getTranslationSpanish().toLowerCase().contains(query.toLowerCase())) ||
+                    (dutchCheckBox.isChecked() && entry.getTranslationDutch().toLowerCase().contains(query.toLowerCase())) ||
+                    (russianCheckBox.isChecked() && entry.getTranslationRussian().toLowerCase().contains(query.toLowerCase()));
 
-            // Check alternatives in each language if they exist
             if (entry.getAlternatives() != null) {
                 if (entry.getAlternatives().containsKey("dutch") && dutchCheckBox.isChecked()) {
                     for (String alternative : Objects.requireNonNull(entry.getAlternatives().get("dutch"))) {
                         if (alternative.toLowerCase().contains(query.toLowerCase())) {
                             matchFound = true;
-                            break; // Stop checking further once a match is found
+                            break;
                         }
                     }
                 }
@@ -164,28 +252,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            // If a match is found, add the entry to the filtered list
             if (matchFound) {
                 filteredDictionaryEntries.add(entry);
             }
-
         }
 
-        // Sort the entries alphabetically based on the English sentence
-        Collections.sort(filteredDictionaryEntries, new Comparator<DictionaryEntry>() {
-            @Override
-            public int compare(DictionaryEntry entry1, DictionaryEntry entry2) {
-                return entry1.getSentence().compareToIgnoreCase(entry2.getSentence());
-            }
-        });
-
-        // Notify the adapter to refresh the list
-        if (dictionaryAdapter != null) {
-            dictionaryAdapter.notifyDataSetChanged();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Collections.sort(filteredDictionaryEntries, Comparator.comparing(DictionaryEntry::getSentence, String::compareToIgnoreCase));
         }
-    }
-    public void openContactActivity(View view) {
-        Intent intent = new Intent(this, ContactActivity.class);
-        startActivity(intent);
+        dictionaryAdapter.notifyDataSetChanged();
     }
 }

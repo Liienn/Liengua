@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
 
-    <!-- Main content layout inside the RelativeLayout -->
+    <!-- Include search bar and checkboxes layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Search bar -->
-
-        <!-- Language selection checkboxes -->
         <EditText
             android:id="@+id/search_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
             android:hint="@string/search_phrases"
             android:inputType="text" />
 
@@ -27,18 +25,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="8dp">
+
             <CheckBox
                 android:id="@+id/spanish_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="@string/spanish" />
+
             <CheckBox
                 android:id="@+id/dutch_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="@string/dutch" />
+
             <CheckBox
                 android:id="@+id/russian_checkbox"
                 android:layout_width="wrap_content"
@@ -46,27 +47,71 @@
                 android:checked="true"
                 android:text="@string/russian" />
         </LinearLayout>
-
         <!-- RecyclerView to display translations -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dictionary_list"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingTop="8dp" />
-
-        <Button
-            android:id="@+id/contactButton"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:onClick="openContactActivity"
-            android:text="@string/note_to_lien"
-            tools:ignore="UsingOnClickInXml" />
-
+            android:paddingTop="8dp" />
     </LinearLayout>
 
-    <!-- Contact Button positioned at top-right -->
+    <!-- Include bottom sheet layout -->
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/colorSurface"
+        android:paddingTop="10dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-</RelativeLayout>
+    <!-- Icon indicating swipe up gesture -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/swipe_icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:src="@android:drawable/arrow_up_float" />
+            <ImageView
+                android:id="@+id/swipe_icon2"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:src="@android:drawable/sym_action_email" />
+
+            <ImageView
+                android:id="@+id/swipe_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+            android:src="@android:drawable/arrow_up_float" />
+        </LinearLayout>
+
+        <EditText
+        android:id="@+id/contactMessage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="top|start"
+        android:hint="Write your message here"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_gravity="right"
+        android:text="Send" />
+</LinearLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

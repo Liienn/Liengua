@@ -17,11 +17,9 @@ public class ContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_form); // Use the updated layout with the back button
 
         contactMessageEditText = findViewById(R.id.contactMessage);
         sendButton = findViewById(R.id.sendButton);
-        backButton = findViewById(R.id.backButton);
 
         // Handle back button click
         backButton.setOnClickListener(v -> finish());  // This will close the current activity and return to the previous one
