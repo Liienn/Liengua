@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/coordinator_layout"
     tools:ignore="ExtraText">
 
     <!-- Include search bar and checkboxes layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -24,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="8dp">
+            android:paddingBottom="4dp">
 
             <CheckBox
                 android:id="@+id/spanish_checkbox"
@@ -47,12 +48,14 @@
                 android:checked="true"
                 android:text="@string/russian" />
         </LinearLayout>
+
         <!-- RecyclerView to display translations -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dictionary_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp" />
+            android:layout_height="match_parent"
+            android:paddingTop="1dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </LinearLayout>
 
     <!-- Include bottom sheet layout -->
@@ -63,10 +66,9 @@
         android:orientation="vertical"
         android:background="?attr/colorSurface"
         android:paddingTop="10dp"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-    <!-- Icon indicating swipe up gesture -->
-
+        <!-- Icon indicating swipe up gesture -->
         <LinearLayout
             android:id="@+id/swipe_icon_layout"
             android:orientation="horizontal"
@@ -87,44 +89,41 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:src="@android:drawable/sym_action_email" />
-
             <ImageView
                 android:id="@+id/swipe_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginStart="8dp"
-            android:src="@android:drawable/arrow_up_float" />
+                android:src="@android:drawable/arrow_up_float" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/contactMessage"
-            android:layout_width="0dp"
-            android:maxHeight="150dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="top|start"
-            android:hint="Write your message here"
-            android:inputType="textMultiLine"
-            android:scrollbars="vertical" />
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:contentDescription="TODO"
-            android:src="@android:drawable/ic_menu_send"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_marginEnd="8dp"/>
+            <EditText
+                android:id="@+id/contactMessage"
+                android:layout_width="0dp"
+                android:maxHeight="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="top|start"
+                android:hint="Write your message here"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical" />
+
+            <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:contentDescription="TODO"
+                android:src="@android:drawable/ic_menu_send"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="8dp"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

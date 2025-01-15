@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -90,6 +92,28 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     swipeIconLayout.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+        // Use ViewTreeObserver to get the height of the bottom sheet after layout
+        bottomSheet.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                // Remove the listener to prevent repeated calls
+                bottomSheet.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                // Get the height of the bottom sheet
+                int bottomSheetHeight = (int) (bottomSheet.getHeight() * 0.5);
+
+                // Set the paddingBottom of the RecyclerView dynamically based on bottom sheet height
+                RecyclerView recyclerView = findViewById(R.id.dictionary_list);
+                recyclerView.setPadding(
+                        recyclerView.getPaddingLeft(),  // Keep current left padding
+                        recyclerView.getPaddingTop(),   // Keep current top padding
+                        recyclerView.getPaddingRight(), // Keep current right padding
+                        bottomSheetHeight               // Set dynamic bottom padding
+                );
+
+                return true;
             }
         });
 
