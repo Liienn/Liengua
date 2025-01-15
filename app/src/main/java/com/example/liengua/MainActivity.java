@@ -2,6 +2,7 @@ package com.example.liengua;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -9,9 +10,11 @@ import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -69,8 +72,26 @@ public class MainActivity extends AppCompatActivity {
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
-        Button sendButton = findViewById(R.id.sendButton);
+        ImageButton sendButton = findViewById(R.id.sendButton);
         contactMessageEditText = findViewById(R.id.contactMessage);
+        LinearLayout swipeIconLayout = findViewById(R.id.swipe_icon_layout);
+        final View rootView = findViewById(android.R.id.content);
+        rootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Rect r = new Rect();
+                rootView.getWindowVisibleDisplayFrame(r);
+                int screenHeight = rootView.getRootView().getHeight();
+                int keypadHeight = screenHeight - r.bottom;
+
+                // Check if the keyboard is visible
+                if (keypadHeight > screenHeight * 0.15) { // Assume 15% of screen height as keyboard threshold
+                    swipeIconLayout.setVisibility(View.GONE);
+                } else {
+                    swipeIconLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         // Setup checkbox listeners
         setupCheckBoxListeners();
@@ -145,10 +166,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Send button functionality - send an email when clicked
-        sendButton.setOnClickListener(v -> sendEmail());
+        sendButton.setOnClickListener(v -> sendMessage());
     }
 
-    private void sendEmail() {
+    private void sendMessage() {
         String message = contactMessageEditText.getText().toString().trim();
 
         if (message.isEmpty()) {
@@ -156,20 +177,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Set up the Intent to send the email
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setType("message/rfc822");
+        // Set up the Intent to share the message
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, message);
 
-        // Set the email subject and body
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"teuwenlien@gmail.com"});  // Replace with your email
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "User Feedback");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
-
-        try {
-            startActivity(Intent.createChooser(emailIntent, "Send Feedback"));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(this, "No email client is installed.", Toast.LENGTH_SHORT).show();
-        }
+        // Always show the chooser dialog
+        Intent chooserIntent = Intent.createChooser(shareIntent, "Share via");
+        startActivity(chooserIntent);
     }
 
     private void setupCheckBoxListeners() {

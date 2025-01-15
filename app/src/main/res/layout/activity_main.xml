@@ -68,10 +68,12 @@
     <!-- Icon indicating swipe up gesture -->
 
         <LinearLayout
+            android:id="@+id/swipe_icon_layout"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:paddingBottom="5dp"
             android:gravity="center"
             android:background="@drawable/border">
             <ImageView
@@ -94,24 +96,33 @@
             android:src="@android:drawable/arrow_up_float" />
         </LinearLayout>
 
-        <EditText
-        android:id="@+id/contactMessage"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="top|start"
-        android:hint="Write your message here"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:inputType="textMultiLine"
-        android:scrollbars="vertical" />
-
-    <Button
-        android:id="@+id/sendButton"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_gravity="right"
-        android:text="Send" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/contactMessage"
+            android:layout_width="0dp"
+            android:maxHeight="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="top|start"
+            android:hint="Write your message here"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical" />
+
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:contentDescription="TODO"
+            android:src="@android:drawable/ic_menu_send"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginEnd="8dp"/>
+    </LinearLayout>
 </LinearLayout>
 
 
