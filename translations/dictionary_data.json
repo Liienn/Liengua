@@ -2280,14 +2280,14 @@
     }
   },
   {
-    "english": "- newly added phrases are marked with a '*' -",
-    "dutch": "",
-    "spanish": "",
-    "russian": "в одно ухо влетает, из другого вылетает",
+    "english": "In one ear, out the other*",
+    "dutch": "Het ene oor in, het andere uit",
+    "spanish": "Por un oído entra, por el otro sale",
+    "russian": "В одно ухо влетает, из другого вылетает",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+      "dutch": ["Iets in de wind slaan"],
+      "spanish": ["No hacer caso"],
+      "russian": ["Не слушать"]
     }
   },
   {
