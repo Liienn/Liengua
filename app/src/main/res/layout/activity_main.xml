@@ -71,23 +71,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:background="@drawable/border">
             <ImageView
                 android:id="@+id/swipe_icon3"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="8dp"
                 android:src="@android:drawable/arrow_up_float" />
             <ImageView
                 android:id="@+id/swipe_icon2"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:src="@android:drawable/sym_action_email" />
 
             <ImageView
                 android:id="@+id/swipe_icon"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
             android:src="@android:drawable/arrow_up_float" />
         </LinearLayout>

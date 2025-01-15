@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -94,7 +95,14 @@ public class MainActivity extends AppCompatActivity {
         // Set the bottom sheet to be swiped up and down
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED); // Default collapsed state
         bottomSheetBehavior.setHideable(false); // Optional: prevent hiding the sheet entirely
-        bottomSheetBehavior.setPeekHeight(100);
+        // Get the screen height in pixels
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int screenHeight = displayMetrics.heightPixels;
+// Calculate 2% of the screen height
+        int peekHeight = (int) (screenHeight * 0.1);
+// Set the peek height for the BottomSheetBehavior
+        bottomSheetBehavior.setPeekHeight(peekHeight);
         // Add slide listener to the BottomSheetBehavior
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
