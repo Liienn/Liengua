@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private DictionaryAdapter dictionaryAdapter;
     private List<DictionaryEntry> entryList = new ArrayList<>();
     private final List<DictionaryEntry> filteredDictionaryEntries = new ArrayList<>();
+    private Button randomizeButton;
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
     private ImageView arrow1, arrow2;
 
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        randomizeButton = findViewById(R.id.randomize_button);
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
@@ -94,8 +96,14 @@ public class MainActivity extends AppCompatActivity {
                 // Check if the keyboard is visible
                 if (keypadHeight > screenHeight * 0.15) { // Assume 15% of screen height as keyboard threshold
                     swipeIconLayout.setVisibility(View.GONE);
+                    if(randomizeButton != null) {
+                        randomizeButton.setVisibility(View.GONE);
+                    }
                 } else {
                     swipeIconLayout.setVisibility(View.VISIBLE);
+                    if(randomizeButton != null) {
+                        randomizeButton.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
