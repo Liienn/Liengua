@@ -2456,18 +2456,62 @@
     }
   },
   {
-    "english": "",
-    "dutch": "",
-    "spanish": "",
-    "russian": "",
+    "english": "I am busy**",
+    "dutch": "Ik heb het druk",
+    "spanish": "Estoy ocupado/a",
+    "russian": "Я занят(а)",
     "alternatives": {
-        "dutch": [],
-        "spanish": [],
-        "russian": []
+        "dutch": ["Ik ben bezig", "Ik heb het te druk"],
+        "spanish": ["Estoy ocupado/a en este momento"],
+        "russian": ["Я сейчас занят(а)"]
     }
   },
   {
-    "english": "",
+    "english": "I will be busy**",
+    "dutch": "Ik zal het druk hebben",
+    "spanish": "Estaré ocupado/a",
+    "russian": "Я буду занят(а)",
+    "alternatives": {
+        "dutch": ["Ik zal bezig zijn", "Ik zal het dan te druk hebben"],
+        "spanish": ["Estaré ocupado/a en ese momento"],
+        "russian": ["Я буду занят(а) в это время"]
+    }
+  },
+  {
+    "english": "I am not busy**",
+    "dutch": "Ik heb het niet druk",
+    "spanish": "No estoy ocupado/a",
+    "russian": "Я не занят(а)",
+    "alternatives": {
+        "dutch": ["Ik ben niet bezig", "Ik heb het niet te druk", "Ik heb tijd", "Ik heb niks te doen"],
+        "spanish": ["No estoy ocupado/a en este momento"],
+        "russian": ["Я сейчас свободен(а)"]
+    }
+  },
+  {
+    "english": "Soon**",
+    "dutch": "Binnenkort",
+    "spanish": "Pronto",
+    "russian": "Скоро",
+    "alternatives": {
+        "dutch": ["Straks", "Zo meteen", "Dadelijk", "Snel", "Binnen een paar minuten/uren/dagen/..."],
+        "spanish": ["En breve", "Dentro de poco"],
+        "russian": ["Вскоре", "Через некоторое время"]
+    }
+  },
+  {
+    "english": "I'm going crazy**",
+    "dutch": "Ik word gek",
+    "spanish": "Me estoy volviendo loco/a",
+    "russian": "Я схожу с ума",
+    "alternatives": {
+        "dutch": ["Ik word er gek van", "Ik word gek van het wachten", "Ik word gek van deze situatie"],
+        "spanish": ["Me estoy volviendo loco/a de esperar", "Me estoy volviendo loco/a con esta situación"],
+        "russian": ["Я схожу с ума от ожидания", "Я схожу с ума от этой ситуации"]
+    }
+  },
+  {
+    "english": "- a placeholder -",
     "dutch": "",
     "spanish": "",
     "russian": "",
