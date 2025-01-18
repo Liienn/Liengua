@@ -46,7 +46,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
+                android:paddingRight="8dp"
                 android:text="@string/russian" />
+
+            <!-- Add the info icon -->
+            <ImageView
+                android:id="@+id/info_icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:maxHeight="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_margin="10dp"
+                android:src="@android:drawable/ic_dialog_info" />
         </LinearLayout>
 
         <!-- RecyclerView to display translations -->
@@ -69,33 +81,48 @@
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <!-- Icon indicating swipe up gesture -->
-        <LinearLayout
-            android:id="@+id/swipe_icon_layout"
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp"
-            android:gravity="center"
-            android:background="@drawable/border">
-            <ImageView
-                android:id="@+id/swipe_icon3"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/swipe_icon_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/randomize_button"
+                android:gravity="center"
+                android:background="@drawable/border">
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/swipe_icon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@android:drawable/arrow_up_float" />
+
+                <ImageView
+                    android:id="@+id/swipe_icon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/sym_action_email" />
+
+                <ImageView
+                    android:id="@+id/swipe_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@android:drawable/arrow_up_float" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/randomize_button"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginEnd="8dp"
-                android:src="@android:drawable/arrow_up_float" />
-            <ImageView
-                android:id="@+id/swipe_icon2"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@android:drawable/sym_action_email" />
-            <ImageView
-                android:id="@+id/swipe_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:src="@android:drawable/arrow_up_float" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="Randomize"
+                android:layout_margin="8dp"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

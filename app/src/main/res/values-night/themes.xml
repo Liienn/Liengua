@@ -11,5 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#0E9DB1</item>
+        <!-- Customize your theme here. -->
+        <item name="actionBarSize">38dp</item>
     </style>
 </resources>

@@ -22,9 +22,7 @@ public class DictionaryEntry {
         this.dutch = dutch;
         this.alternatives = alternatives != null ? alternatives : new HashMap<>();
     }
-
-
-
+    
     // Getters
     public String getSentence() {
         return english;

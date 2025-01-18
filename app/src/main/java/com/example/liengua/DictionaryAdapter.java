@@ -23,14 +23,15 @@ import java.util.List;
 
 public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.DictionaryViewHolder> {
 
-    private final List<DictionaryEntry> dictionaryEntryList;
+    private static List<DictionaryEntry> dictionaryEntryList;
     private boolean showSpanish = true;
     private boolean showDutch = true;
     private boolean showRussian = true;
 
     public DictionaryAdapter(List<DictionaryEntry> dictionaryEntryList) {
-        this.dictionaryEntryList = dictionaryEntryList;
+        DictionaryAdapter.dictionaryEntryList = dictionaryEntryList;
     }
+
 
     public void setLanguagesToShow(boolean showSpanish, boolean showDutch, boolean showRussian) {
         this.showSpanish = showSpanish;
@@ -159,6 +160,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     @Override
     public int getItemCount() {
         return dictionaryEntryList.size();
+    }
+
+    public static List<DictionaryEntry> getDictionaryEntryList() {
+        return dictionaryEntryList;
     }
 
     public static class DictionaryViewHolder extends RecyclerView.ViewHolder {

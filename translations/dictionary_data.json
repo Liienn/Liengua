@@ -7,7 +7,7 @@
     "alternatives": {
         "dutch": ["Hoi", "Hey", "Goedemorgen", "Goedendag"],
         "spanish": ["¿Qué tal?", "¿Cómo estás?", "Buenos días", "Buenas"],
-        "russian": ["Здравствуй", "Добрый день", "Доброе утро", "Приветка"]
+        "russian": ["Здравствуй", "Добрый день", "Доброе утро", "Приветик"]
     }
   },
   {
@@ -2269,7 +2269,7 @@
     }
   },
   {
-    "english": "Everything is clear*",
+    "english": "Everything is clear**",
     "dutch": "Alles is duidelijk",
     "spanish": "Todo está claro",
     "russian": "Все понятно",
@@ -2280,7 +2280,7 @@
     }
   },
   {
-    "english": "In one ear, out the other*",
+    "english": "In one ear, out the other**",
     "dutch": "Het ene oor in, het andere uit",
     "spanish": "Por un oído entra, por el otro sale",
     "russian": "В одно ухо влетает, из другого вылетает",
@@ -2291,7 +2291,183 @@
     }
   },
   {
-    "english": "- newly added phrases are marked with a '*' -",
+    "english": "That's putting it mildly**",
+    "dutch": "Dat is zacht uitgedrukt",
+    "spanish": "Eso es decirlo suavemente",
+    "russian": "Это мягко сказано",
+    "alternatives": {
+        "dutch": ["Dat is een understatement"],
+        "spanish": ["Eso es decirlo de forma suave"],
+        "russian": ["Это сказано мягко"]
+    }
+  },
+  {
+    "english": "Careful!**",
+    "dutch": "Voorzichtig!",
+    "spanish": "¡Cuidado!",
+    "russian": "Осторожно!",
+    "alternatives": {
+        "dutch": ["Pas op!", "Kijk uit!", "Wees voorzichtig!"],
+        "spanish": ["¡Atención!", "¡Ojo!", "¡Cuidado con eso!"],
+        "russian": ["Будьте осторожны!", "Берегитесь!"]
+    }
+  },
+  {
+    "english": "To boil with rage**",
+    "dutch": "Koken van woede",
+    "spanish": "Hervir de rabia",
+    "russian": "Кипеть от ярости",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "To be in a bad mood**",
+    "dutch": "Slechtgezind zijn",
+    "spanish": "Tener mal humor",
+    "russian": "Быть в плохом настроении",
+    "alternatives": {
+        "dutch": ["Slecht gehumeurd zijn", "Een slecht humeur hebben"],
+        "spanish": ["Estar de mal humor"],
+        "russian": ["Быть в плохом расположении духа"]
+    }
+  },
+  {
+    "english": "To be in a good mood**",
+    "dutch": "Goedgezind zijn",
+    "spanish": "Tener buen humor",
+    "russian": "Быть в хорошем настроении",
+    "alternatives": {
+        "dutch": ["Goed gehumeurd zijn", "Een goed humeur hebben"],
+        "spanish": ["Estar de buen humor"],
+        "russian": ["Быть в хорошем расположении духа"]
+    }
+  },
+  {
+    "english": "To be in a hurry**",
+    "dutch": "Haast hebben",
+    "spanish": "Tener prisa",
+    "russian": "Торопиться",
+    "alternatives": {
+        "dutch": ["Gehaast zijn", "Geen tijd hebben"],
+        "spanish": ["Ir con prisa"],
+        "russian": ["Быть в спешке"]
+    }
+  },
+  {
+    "english": "It has no use**",
+    "dutch": "Het heeft geen zin",
+    "spanish": "No sirve de nada",
+    "russian": "Это бесполезно",
+    "alternatives": {
+        "dutch": ["Het heeft geen nut", "Het heeft geen effect"],
+        "spanish": ["No vale la pena"],
+        "russian": ["Это не имеет смысла"]
+    }
+  },
+  {
+    "english": "It's not worth it**",
+    "dutch": "Het is het niet waard",
+    "spanish": "No vale la pena",
+    "russian": "Это не стоит того",
+    "alternatives": {
+        "dutch": ["Het is niet de moeite waard"],
+        "spanish": ["No merece la pena"],
+        "russian": []
+    }
+  },
+  {
+    "english": "Are you sure?**",
+    "dutch": "Weet je het zeker?",
+    "spanish": "¿Estás seguro?",
+    "russian": "Ты уверен(а)?",
+    "alternatives": {
+        "dutch": ["Ben je zeker?", "Ben je daar zeker van?"],
+        "spanish": ["¿Estás segura de eso?"],
+        "russian": ["Ты уверена в этом?"]
+    }
+  },
+  {
+    "english": "It is true!**",
+    "dutch": "Het is waar!",
+    "spanish": "¡Es verdad!",
+    "russian": "Это правда!",
+    "alternatives": {
+        "dutch": ["Het is echt waar!", "Het is de waarheid!"],
+        "spanish": ["¡Es cierto!"],
+        "russian": ["Это точно!"]
+    }
+  },
+  {
+    "english": "Obviously**",
+    "dutch": "Uiteraard",
+    "spanish": "Por supuesto",
+    "russian": "Очевидно",
+    "alternatives": {
+        "dutch": ["Overduidelijk","Natuurlijk", "Zeker"],
+        "spanish": ["Claro que sí", "Evidentemente"],
+        "russian": ["Ясно", "Конечно"]
+    }
+  },
+  {
+    "english": "It's a pity**",
+    "dutch": "Het is jammer",
+    "spanish": "Es una lástima",
+    "russian": "Жаль",
+    "alternatives": {
+        "dutch": ["Het is spijtig", "Wat jammer"],
+        "spanish": ["Es una pena"],
+        "russian": ["Как жаль"]
+    }
+  },
+  {
+    "english": "This is too much**",
+    "dutch": "Dit is te veel",
+    "spanish": "Esto es demasiado",
+    "russian": "Это слишком много",
+    "alternatives": {
+        "dutch": ["Dit is veel te veel", "Dit is té"],
+        "spanish": ["Esto es mucho"],
+        "russian": ["Это чересчур"]
+    }
+  },
+  {
+    "english": "I'm not in the mood**",
+    "dutch": "Ik ben niet in de stemming",
+    "spanish": "No estoy de humor",
+    "russian": "У меня нет настроения",
+    "alternatives": {
+        "dutch": ["Ik heb geen zin", "Ik voel me niet in de stemming"],
+        "spanish": ["No tengo ganas"],
+        "russian": ["У меня нет желания"]
+    }
+  },
+  {
+    "english": "Is that really the right thing to do?**",
+    "dutch": "Is dat echt het beste om te doen?",
+    "spanish": "¿Es realmente lo correcto?",
+    "russian": "Это действительно правильно?",
+    "alternatives": {
+        "dutch": ["Is dat echt de juiste keuze?", "Is dat echt de beste optie?"],
+        "spanish": ["¿Es realmente lo mejor?"],
+        "russian": ["Это действительно правильное решение?"]
+    }
+  },
+  {
+    "english": "",
+    "dutch": "",
+    "spanish": "",
+    "russian": "",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "",
     "dutch": "",
     "spanish": "",
     "russian": "",

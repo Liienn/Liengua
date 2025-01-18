@@ -1,6 +1,8 @@
 package com.example.liengua;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Build;
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         // Initialize views
         fetchDataFromGitHub();
+
         searchInput = findViewById(R.id.search_input);
         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -78,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         contactMessageEditText = findViewById(R.id.contactMessage);
         LinearLayout swipeIconLayout = findViewById(R.id.swipe_icon_layout);
         final View rootView = findViewById(android.R.id.content);
+        // Ensure itemList is initialized
+
         rootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -117,9 +122,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        swipeIconLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }
+            }
+        });
+
+        // Setup info icon click listener
+        ImageView infoIcon = findViewById(R.id.info_icon1);
+        infoIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create and show a dialog with the info text
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Information");
+                builder.setMessage(
+                        "Newly added phrases are marked with a '*'. The newer the phrase, the more '*' it has.\n\n" +
+                        "You can filter the list by typing in the search bar and by checking the language checkboxes.\n(TIP: you can use the '*' in the filter to search for the newest additions)\n\n" +
+                        "Click on a translation to see alternatives.\n\n" +
+                        "Long press on a translation to copy it to the clipboard.\n\n" +
+                        "Click on the 'Randomize' button to shuffle the list.\n\n" +
+                        "Swipe or click message bar to expand or collapse it.\n\n" +
+                        "Click on the 'Send' button to share a message."
+                        );
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
         // Setup checkbox listeners
         setupCheckBoxListeners();
-
 
         // Search input listener
         searchInput.addTextChangedListener(new TextWatcher() {
@@ -135,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        arrow1 = findViewById(R.id.swipe_icon3);
+        arrow1 = findViewById(R.id.swipe_icon1);
         arrow2 = findViewById(R.id.swipe_icon);
         // Set the bottom sheet to be swiped up and down
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED); // Default collapsed state
@@ -255,10 +298,18 @@ public class MainActivity extends AppCompatActivity {
                         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
                         recyclerView.setAdapter(dictionaryAdapter);
                         filterList(""); // Initialize the filter list
+
+                        // Setup randomize button using RandomizeButtonHandler
+                        Button randomizeButton = findViewById(R.id.randomize_button);
+                        RandomizeButtonHandler randomizeButtonHandler = new RandomizeButtonHandler(filteredDictionaryEntries, dictionaryAdapter);
+                        randomizeButtonHandler.setupRandomizeButton(randomizeButton);
                     });
+                } else {
+                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
                 }
             }
         });
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
