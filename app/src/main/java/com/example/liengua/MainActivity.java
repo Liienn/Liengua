@@ -153,9 +153,9 @@ public class MainActivity extends AppCompatActivity {
                         "Newly added phrases are marked with a '*'. The newer the phrase, the more '*' it has.\n\n" +
                         "You can filter the list by typing in the search bar and by checking the language checkboxes.\n(TIP: you can use the '*' in the filter to search for the newest additions)\n\n" +
                         "Click on a translation to see alternatives.\n\n" +
-                        "Long press on a translation to copy it to the clipboard.\n\n" +
+                        "Long press on a phrase to copy it to the clipboard.\n\n" +
                         "Click on the 'Randomize' button to shuffle the list.\n\n" +
-                        "Swipe or click message bar to expand or collapse it.\n\n" +
+                        "Swipe or click the message bar to expand or collapse it.\n\n" +
                         "Click on the 'Send' button to share a message."
                         );
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
