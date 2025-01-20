@@ -5,10 +5,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextWatcher;
+import android.text.style.ImageSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +29,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
     private DictionaryAdapter dictionaryAdapter;
     private List<DictionaryEntry> entryList = new ArrayList<>();
     private final List<DictionaryEntry> filteredDictionaryEntries = new ArrayList<>();
-    private Button randomizeButton;
+    private ImageButton randomizeButton;
+    private ImageButton sortButton;
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
     private ImageView arrow1, arrow2;
 
@@ -61,21 +67,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Initialize BottomSheetBehavior
         LinearLayout bottomSheet = findViewById(R.id.bottom_sheet);
-        if (bottomSheet == null) {
-            Log.e("BottomSheet", "Bottom sheet view is null");
-        } else {
-            Log.d("BottomSheet", "Bottom sheet view found");
-        }
         assert bottomSheet != null;
         BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-        // Initialize views
         fetchDataFromGitHub();
+        // Initialize views
+        ImageButton menuButton = findViewById(R.id.menu_button);
+        MenuHandler menuHandler = new MenuHandler(this);
+        menuButton.setOnClickListener(menuHandler::showMenu);
 
         searchInput = findViewById(R.id.search_input);
         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         randomizeButton = findViewById(R.id.randomize_button);
+        sortButton = findViewById(R.id.sort_button);
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
@@ -98,11 +103,13 @@ public class MainActivity extends AppCompatActivity {
                     swipeIconLayout.setVisibility(View.GONE);
                     if(randomizeButton != null) {
                         randomizeButton.setVisibility(View.GONE);
+                        sortButton.setVisibility(View.GONE);
                     }
                 } else {
                     swipeIconLayout.setVisibility(View.VISIBLE);
                     if(randomizeButton != null) {
                         randomizeButton.setVisibility(View.VISIBLE);
+                        sortButton.setVisibility(View.VISIBLE);
                     }
                 }
             }
@@ -129,7 +136,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+        sortButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortListAlphabetically(entryList);
+            }
+        });
         swipeIconLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,28 +158,8 @@ public class MainActivity extends AppCompatActivity {
         infoIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create and show a dialog with the info text
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Information");
-                builder.setMessage(
-                        "Newly added phrases are marked with a '*'. The newer the phrase, the more '*' it has.\n\n" +
-                        "You can filter the list by typing in the search bar and by checking the language checkboxes.\n(TIP: you can use the '*' in the filter to search for the newest additions)\n\n" +
-                        "Click on a translation to see alternatives.\n\n" +
-                        "Long press on a phrase to copy it to the clipboard.\n\n" +
-                        "Click on the 'Randomize' button to shuffle the list.\n\n" +
-                        "Swipe or click the message bar to expand or collapse it.\n\n" +
-                        "Click on the 'Send' button to share a message."
-                        );
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
+                showInfoDialog();
+        } });
 
         // Setup checkbox listeners
         setupCheckBoxListeners();
@@ -179,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                filterList(s.toString());
+                filterList(s.toString(), false);
             }
 
             @Override
@@ -196,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
 // Calculate 2% of the screen height
-        int peekHeight = (int) (screenHeight * 0.1);
+        int peekHeight = (int) (screenHeight * 0.09);
 // Set the peek height for the BottomSheetBehavior
         bottomSheetBehavior.setPeekHeight(peekHeight);
         // Add slide listener to the BottomSheetBehavior
@@ -243,7 +235,55 @@ public class MainActivity extends AppCompatActivity {
         // Send button functionality - send an email when clicked
         sendButton.setOnClickListener(v -> sendMessage());
     }
+    private void insertDrawable(SpannableString spannableString, String text, int drawableResId) {
+        int start = spannableString.toString().indexOf(text);
+        int end = start + text.length();
 
+        if (start != -1) {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            Drawable drawable = ContextCompat.getDrawable(this, drawableResId);
+            if (drawable != null) {
+                drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+                ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM);
+                spannableString.setSpan(imageSpan, start, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+        }
+    }
+    private void showInfoDialog() {
+        // Create a SpannableString with the info text
+        SpannableString spannableString = new SpannableString(
+                "Newly added phrases are marked with a '*'. The newer the phrase, the more '*' it has.\n\n" +
+                        "You can filter the list by typing in the search bar and by checking the language checkboxes.\n(TIP: you can use the '*' in the filter to search for the newest additions)\n\n" +
+                        "Click on a translation to see alternatives.\n\n" +
+                        "Long press on a phrase to copy it to the clipboard.\n\n" +
+                        "BUTTONS:\n\n" +
+                        "menu : Click to access more options.\n\n" +
+                        "'Randomize' : Click to shuffle the list.\n\n" +
+                        "'A-Z' : Click to sort the list alphabetically.\n\n" +
+                        "message bar : Click or swipe to expand or collapse the message bar.\n\n" +
+                        "'Send' : Click to send a message."
+        );
+
+        // Insert drawables into the SpannableString
+        insertDrawable(spannableString, "menu", R.drawable.menu_24px);
+        insertDrawable(spannableString, "'Randomize'", R.drawable.shuffle_24px);
+        insertDrawable(spannableString, "'A-Z'", R.drawable.sort_by_alpha_24px);
+        insertDrawable(spannableString,"message bar",R.drawable.mail_24px);
+        insertDrawable(spannableString, "'Send'", R.drawable.send_24px);
+
+        // Create and show the dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Information");
+        builder.setMessage(spannableString);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
     private void sendMessage() {
         String message = contactMessageEditText.getText().toString().trim();
 
@@ -263,9 +303,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupCheckBoxListeners() {
-        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
-        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
-        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString()));
+        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString(), false));
+        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString(), false));
+        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> filterList(searchInput.getText().toString(), false));
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -277,6 +317,43 @@ public class MainActivity extends AppCompatActivity {
                     russianCheckBox.isChecked()
             );
             dictionaryAdapter.notifyDataSetChanged();
+        }
+    }
+    private void fetchDataFromMultipleAPIs() {
+        OkHttpClient client = new OkHttpClient();
+        String[] urls = {
+            "https://raw.githubusercontent.com/Liienn/Liengua/main/translations/dictionary_data.json",
+            //"https://example.com/another_dictionary_data.json"
+        };
+
+        for (String url : urls) {
+            Request request = new Request.Builder().url(url).build();
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
+                }
+
+                @SuppressLint("NotifyDataSetChanged")
+                @Override
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                    if (response.isSuccessful()) {
+                        assert response.body() != null;
+                        String jsonData = response.body().string();
+                        Gson gson = new Gson();
+                        Type type = new TypeToken<List<DictionaryEntry>>() {}.getType();
+                        List<DictionaryEntry> newEntries = gson.fromJson(jsonData, type);
+
+                        runOnUiThread(() -> {
+                            entryList.addAll(newEntries);
+                            dictionaryAdapter.notifyDataSetChanged();
+                            filterList("", true); // Initialize the filter list
+                        });
+                    } else {
+                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
+                    }
+                }
+            });
         }
     }
 
@@ -305,11 +382,11 @@ public class MainActivity extends AppCompatActivity {
                         dictionaryAdapter = new DictionaryAdapter(filteredDictionaryEntries);
                         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
                         recyclerView.setAdapter(dictionaryAdapter);
-                        filterList(""); // Initialize the filter list
+                        filterList("", true); // Initialize the filter list
 
                         // Setup randomize button using RandomizeButtonHandler
-                        Button randomizeButton = findViewById(R.id.randomize_button);
-                        RandomizeButtonHandler randomizeButtonHandler = new RandomizeButtonHandler(filteredDictionaryEntries, dictionaryAdapter);
+                        ImageButton randomizeButton = findViewById(R.id.randomize_button);
+                        RandomizeButtonHandler randomizeButtonHandler = new RandomizeButtonHandler(entryList, filteredDictionaryEntries, dictionaryAdapter);
                         randomizeButtonHandler.setupRandomizeButton(randomizeButton);
                     });
                 } else {
@@ -321,7 +398,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private void filterList(String query) {
+    private void sortListAlphabetically(List<DictionaryEntry> list) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Collections.sort(list, Comparator.comparing(DictionaryEntry::getSentence, String::compareToIgnoreCase));
+            filteredDictionaryEntries.clear();
+            filteredDictionaryEntries.addAll(entryList);
+            dictionaryAdapter.notifyDataSetChanged();
+        }
+    }
+    
+    @SuppressLint("NotifyDataSetChanged")
+    private void filterList(String query, boolean sortAlphabetically) {
         updateLanguages();
         filteredDictionaryEntries.clear();
 
@@ -362,9 +449,9 @@ public class MainActivity extends AppCompatActivity {
                 filteredDictionaryEntries.add(entry);
             }
         }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Collections.sort(filteredDictionaryEntries, Comparator.comparing(DictionaryEntry::getSentence, String::compareToIgnoreCase));
+        
+        if (sortAlphabetically) {
+            sortListAlphabetically(filteredDictionaryEntries);
         }
         dictionaryAdapter.notifyDataSetChanged();
     }

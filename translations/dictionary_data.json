@@ -2511,6 +2511,302 @@
     }
   },
   {
+    "english": "I will add it to my list***",
+    "dutch": "Ik zal het aan mijn lijst toevoegen",
+    "spanish": "Lo añadiré a mi lista",
+    "russian": "Я добавлю это в мой список",
+    "alternatives": {
+        "dutch": ["Ik zal het noteren", "Ik zal het opschrijven", "Ik zal het onthouden"],
+        "spanish": ["Lo apuntaré", "Lo anotaré"],
+        "russian": ["Я запишу это"]
+    }
+  },
+  {
+    "english": "Save it for later***",
+    "dutch": "Bewaar het voor later",
+    "spanish": "Guárdalo para más tarde",
+    "russian": "Сохрани это на потом",
+    "alternatives": {
+        "dutch": ["Bewaar het voor een andere keer", "Houd het bij voor later"],
+        "spanish": ["Déjalo para después"],
+        "russian": ["Оставь это на потом"]
+    }
+  },
+  {
+    "english": "Save file***",
+    "dutch": "Bestand opslaan",
+    "spanish": "Guardar archivo",
+    "russian": "Сохранить файл",
+    "alternatives": {
+        "dutch": ["Opslaan"],
+        "spanish": ["Guardar"],
+        "russian": ["Сохранить"]
+    }
+  },{
+    "english": "He doesn't let it bring him down***",
+    "dutch": "Hij laat zich niet doen",
+    "spanish": "No se deja vencer",
+    "russian": "Он не дает этому себя сломить",
+    "alternatives": {
+        "dutch": ["Hij laat zich niet kisten", "Hij laat zich niet ontmoedigen"],
+        "spanish": ["No se deja vencer por eso"],
+        "russian": []
+    }
+  },
+  {
+    "english": "I'm keeping busy***",
+    "dutch": "Ik hou me bezig",
+    "spanish": "Me mantengo ocupado/a",
+    "russian": "Я занимаюсь делами",
+    "alternatives": {
+        "dutch": ["Ik verveel me niet", "Ik zoek dingen om te doen"],
+        "spanish": ["No me aburro", "Busco cosas para hacer"],
+        "russian": ["Мне не скучно", "Я ищу чем заняться"]
+    }
+  },
+  {
+    "english": "I am annoyed***",
+    "dutch": "Ik ben geïrriteerd",
+    "spanish": "Estoy molesto/a",
+    "russian": "Меня раздражает",
+    "alternatives": {
+        "dutch": ["Ik ben geërgerd", "Ik ben boos"],
+        "spanish": ["Estoy enfadado/a"],
+        "russian": ["Я раздражен(а)", "Меня бесит", "Мне это неохотно"]
+    }
+  },
+  {
+    "english": "That is annoying***",
+    "dutch": "Dat is irritant",
+    "spanish": "Eso es molesto",
+    "russian": "Это раздражает",
+    "alternatives": {
+        "dutch": ["Dat is vervelend", "Dat is storend"],
+        "spanish": ["Eso es fastidioso"],
+        "russian": ["Это надоедает", "Это бесит"]
+    }
+  },
+  {
+    "english": "Promesing***",
+    "dutch": "Veelbelovend",
+    "spanish": "Prometedor",
+    "russian": "Перспективный",
+    "alternatives": {
+        "dutch": ["Beloftevol", "Met hoge verwachtingen"],
+        "spanish": [],
+        "russian": ["Многообещающий"]
+    }
+  },
+  {
+    "english": "I skipped some thigs***",
+    "dutch": "Ik heb wat dingen overgeslagen",
+    "spanish": "Me salté algunas cosas",
+    "russian": "Я пропустил(а) некоторые вещи",
+    "alternatives": {
+        "dutch": ["Ik heb wat dingen geskipt"],
+        "spanish": ["Me he saltado algunas cosas"],
+        "russian": []
+    }
+  },
+  {
+    "english": "Each and every one***",
+    "dutch": "Stuk voor stuk",
+    "spanish": "Uno por uno",
+    "russian": "Каждый и каждый",
+    "alternatives": {
+        "dutch": ["Ieder en elk", "Allemaal"],
+        "spanish": ["Cada uno"],
+        "russian": []
+    }
+  },
+  {
+    "english": "On the contrary***",
+    "dutch": "Integendeel",
+    "spanish": "Al contrario",
+    "russian": "Напротив",
+    "alternatives": {
+        "dutch": ["Daarentegen", "In tegendeel"],
+        "spanish": ["Por el contrario"],
+        "russian": ["В отличие", "Наоборот"]
+    }
+  },
+  {
+    "english": "Don't you dare!***",
+    "dutch": "Waag het niet!",
+    "spanish": "¡No te atrevas!",
+    "russian": "Не смей!",
+    "alternatives": {
+        "dutch": ["Durf het niet!", "Probeer het niet!", "Niet doen!"],
+        "spanish": ["¡No lo hagas!", "¡No te atrevas a hacerlo!"],
+        "russian": ["Не делай этого!", "Не смей это делать!"]
+    }
+  },
+  {
+    "english": "Imagine that!***",
+    "dutch": "Stel je voor!",
+    "spanish": "¡Imagínate!",
+    "russian": "Представь себе!",
+    "alternatives": {
+        "dutch": ["Denk je eens in!", "Stel je dat voor!", "Beeld je dat in!"],
+        "spanish": ["¡Imagina eso!"],
+        "russian": ["Представьте себе!"]
+    }
+  },
+  {
+    "english": "Imagination***",
+    "dutch": "Verbeelding",
+    "spanish": "Imaginación",
+    "russian": "Воображение",
+    "alternatives": {
+        "dutch": ["Fantasie", "Creativiteit"],
+        "spanish": ["Fantasía"],
+        "russian": ["Фантазия"]
+    }
+  },
+  {
+    "english": "To put aside***",
+    "dutch": "Aan de kant zetten",
+    "spanish": "Dejar de lado",
+    "russian": "Отложить",
+    "alternatives": {
+        "dutch": ["Opzij zetten", "Terzijde leggen", "Aan de kant schuiven"],
+        "spanish": ["Dejar a un lado", "Apartar"],
+        "russian": ["Поставить в сторону", "Отложить в сторону"]
+    }
+  },
+  {
+    "english": "Despite everything***",
+    "dutch": "Ondanks alles",
+    "spanish": "A pesar de todo",
+    "russian": "Несмотря на все",
+    "alternatives": {
+        "dutch": ["Ondanks dat alles ...", "Ondanks het feit dat alles ..."],
+        "spanish": ["A pesar de todo eso ..."],
+        "russian": ["Несмотря на всё это ..."]
+    }
+  },
+  {
+    "english": "Reliable***",
+    "dutch": "Betrouwbaar",
+    "spanish": "Fiable",
+    "russian": "Надежный",
+    "alternatives": {
+        "dutch": ["Solide", "Veilig"],
+        "spanish": ["Seguro"],
+        "russian": ["Безопасный"]
+    }
+  },
+  {
+    "english": "Show me!***",
+    "dutch": "Laat me eens zien!",
+    "spanish": "¡Enséñamelo!",
+    "russian": "Покажи мне!",
+    "alternatives": {
+        "dutch": ["Toon me!", "Laat het me zien!"],
+        "spanish": ["¡Muéstramelo!"],
+        "russian": ["Дай-ка посмотреть"]
+    }
+  },
+  {
+    "english": "At least***",
+    "dutch": "Althans",
+    "spanish": "Al menos",
+    "russian": "По крайней мере",
+    "alternatives": {
+        "dutch": ["Tenminste","Allessinds"],
+        "spanish": ["Por lo menos"],
+        "russian": ["Хотя бы"]
+    }
+  },
+  {
+    "english": "Birdfeeder***",
+    "dutch": "Het voederhuisje",
+    "spanish": "Comedero de pájaros",
+    "russian": "Кормушка для птиц",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "To restart something***",
+    "dutch": "Iets opnieuw opstarten",
+    "spanish": "Reiniciar algo",
+    "russian": "Перезапустить что-то",
+    "alternatives": {
+        "dutch": ["Iets herstarten", "Iets opnieuw beginnen", "Iets aan- en uitzetten"],
+        "spanish": ["Volver a empezar algo"],
+        "russian": ["Запустить что-то заново"]
+    }
+  },
+  {
+    "english": "I almost fainted***",
+    "dutch": "Ik viel bijna flauw",
+    "spanish": "Casi me desmayo",
+    "russian": "Я чуть не упал(а) в обморок",
+    "alternatives": {
+        "dutch": ["Ik was bijna flauwgevallen", "Ik ging bijna van mijn stokje"],
+        "spanish": ["Estuve a punto de desmayarme"],
+        "russian": ["Я чуть не потерял(а) сознание"]
+    }
+  },
+  {
+    "english": "To get experience***",
+    "dutch": "Ervaring opdoen",
+    "spanish": "Ganar experiencia",
+    "russian": "Получить опыт",
+    "alternatives": {
+        "dutch": ["Ervaring krijgen", "Ervaring opbouwen"],
+        "spanish": ["Adquirir experiencia"],
+        "russian": ["Приобрести опыт"]
+    }
+  },
+  {
+    "english": "To enjoy new experiences***",
+    "dutch": "(Nieuwe) ervaringen opdoen",
+    "spanish": "Disfrutar de nuevas experiencias",
+    "russian": "Получать удовольствие от новых опытов",
+    "alternatives": {
+        "dutch": ["Genieten van nieuwe ervaringen", "Nieuwe dingen proberen"],
+        "spanish": [],
+        "russian": ["Получать удовольствие от новых впечатлений"]
+    }
+  },
+  {
+    "english": "Hurry up!***",
+    "dutch": "Schiet eens op!",
+    "spanish": "¡Date prisa!",
+    "russian": "Поторопитесь!",
+    "alternatives": {
+        "dutch": ["Maak eens wat vaart!", "Schiet op!", "Vooruit!", "Doe eens wat sneller!"],
+        "spanish": ["¡Apúrate!", "¡Date prisa!", "¡Date prisa!", "¡Vamos!"],
+        "russian": ["Скорее!", "Быстрее!"]
+    }
+  },
+  {
+    "english": "To pour water***",
+    "dutch": "Water inschenken",
+    "spanish": "Echar agua",
+    "russian": "Налить воды",
+    "alternatives": {
+        "dutch": ["Water schenken", "Water gieten"],
+        "spanish": ["Servir agua"],
+        "russian": []
+    }
+  },
+  {
+    "english": "That's for sure!***",
+    "dutch": "Sowieso!",
+    "spanish": "¡Eso es seguro!",
+    "russian": "Это точно!",
+    "alternatives": {
+        "dutch": ["Dat is zeker!", "Zonder twijfel!", "Absoluut!", "Zeker weten!"],
+        "spanish": ["¡Eso es cierto!", "¡Sin duda!"],
+        "russian": ["Это безусловно!"]
+    }
+  },
+  {
     "english": "- a placeholder -",
     "dutch": "",
     "spanish": "",

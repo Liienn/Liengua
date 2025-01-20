@@ -1,5 +1,6 @@
 package com.example.liengua;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,17 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ContactActivity extends AppCompatActivity {
 
     private EditText contactMessageEditText;
-    private Button sendButton, backButton;
+    private Button sendButton;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         contactMessageEditText = findViewById(R.id.contactMessage);
         sendButton = findViewById(R.id.sendButton);
-
-        // Handle back button click
-        backButton.setOnClickListener(v -> finish());  // This will close the current activity and return to the previous one
 
         sendButton.setOnClickListener(v -> sendEmail());
     }

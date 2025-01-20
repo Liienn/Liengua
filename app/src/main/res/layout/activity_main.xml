@@ -1,3 +1,4 @@
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,66 +9,109 @@
     tools:ignore="ExtraText">
 
     <!-- Include search bar and checkboxes layout -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
-
-        <EditText
-            android:id="@+id/search_input"
+        android:padding="10dp">
+        <LinearLayout
+            android:id="@+id/top_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/search_phrases"
-            android:inputType="text" />
-
-        <!-- RecyclerView to display translations -->
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="4dp">
+            android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/spanish_checkbox"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/spanish" />
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/dutch_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/dutch" />
+                <ImageButton
+                    android:id="@+id/menu_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:background="@drawable/border"
+                    android:backgroundTint="@color/blue_200"
+                    android:padding="8dp"
+                    android:src="@drawable/menu_24px"
+                    android:tint="@color/peach_200" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/russian_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:paddingRight="8dp"
-                android:text="@string/russian" />
-
-            <!-- Add the info icon -->
-            <ImageView
-                android:id="@+id/info_icon1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxHeight="10dp"
-                android:src="@android:drawable/ic_menu_info_details" />
+                <EditText
+                    android:id="@+id/search_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_phrases"
+                    android:inputType="text" />
+            </RelativeLayout>
         </LinearLayout>
+
+        </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/checkbox_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="right"
+                    android:layout_toStartOf="@id/menu_button"
+                    android:layout_marginStart="40dp">
+
+                    <CheckBox
+                        android:id="@+id/spanish_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/spanish" />
+
+                    <CheckBox
+                        android:id="@+id/dutch_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/dutch" />
+
+                    <CheckBox
+                        android:id="@+id/russian_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:paddingRight="18dp"
+                        android:text="@string/russian" />
+                    <!-- Add the info icon -->
+                    <ImageView
+                        android:id="@+id/info_icon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:maxHeight="10dp"
+                        android:tint="@color/blue_200"
+                        android:src="@drawable/info_24px" />
+                </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- RecyclerView to display translations -->
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dictionary_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="1dp"
+            android:paddingStart="15dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
     </LinearLayout>
 
     <!-- Include bottom sheet layout -->
@@ -86,12 +130,40 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/sort_buttons_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:layout_alignParentEnd="true">
+
+                <ImageButton
+                    android:id="@+id/randomize_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shuffle_24px"
+                    android:tint="@color/peach_200"
+                    android:background="@drawable/border_solid_blue"
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageButton
+                    android:id="@+id/sort_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sort_by_alpha_24px"
+                    android:tint="@color/peach_200"
+                    android:background="@drawable/border_solid_blue"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/swipe_icon_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/randomize_button"
+                android:layout_toStartOf="@+id/sort_buttons_layout"
+                android:background="@drawable/border"
                 android:gravity="center"
-                android:background="@drawable/border">
                 android:orientation="horizontal">
 
                 <ImageView
@@ -99,32 +171,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginEnd="8dp"
+                    android:tint="@color/peach_200"
                     android:src="@android:drawable/arrow_up_float" />
 
                 <ImageView
                     android:id="@+id/swipe_icon2"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@android:drawable/sym_action_email" />
+                    android:tint="@color/blue_200"
+                    android:src="@drawable/mail_24px" />
 
                 <ImageView
                     android:id="@+id/swipe_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
+                    android:tint="@color/peach_200"
                     android:src="@android:drawable/arrow_up_float" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/randomize_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Randomize"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="8dp"
-                android:layout_alignBaseline="@id/swipe_icon_layout"
-                android:layout_alignParentEnd="true" />
+
         </RelativeLayout>
 
         <LinearLayout
@@ -148,12 +214,16 @@
             <ImageButton
                 android:id="@+id/sendButton"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:contentDescription="TODO"
-                android:src="@android:drawable/ic_menu_send"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/send_24px"
+                android:tint="@color/peach_200"
+                android:background="@drawable/border_solid_blue"
+                android:padding="7dp"
+                android:layout_gravity="center"
                 android:layout_marginEnd="8dp"/>
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
