@@ -1018,7 +1018,7 @@
   "russian": "Через день",
   "alternatives": {
     "dutch": ["Over een dag"],
-    "spanish": ["Después de un día"],
+    "spanish": ["Al día siguiente"],
     "russian": []
   }
 },
@@ -2543,14 +2543,14 @@
         "russian": ["Сохранить"]
     }
   },{
-    "english": "He doesn't let it bring him down***",
+    "english": "He doesn't let it/others mess with him***",
     "dutch": "Hij laat zich niet doen",
-    "spanish": "No se deja vencer",
-    "russian": "Он не дает этому себя сломить",
+    "spanish": "No se deja intimidar",
+    "russian": "Он не позволяет себя запутать",
     "alternatives": {
-        "dutch": ["Hij laat zich niet kisten", "Hij laat zich niet ontmoedigen"],
-        "spanish": ["No se deja vencer por eso"],
-        "russian": []
+        "dutch": ["Hij laat zich niet kisten", "Hij laat zich niet van de wijs brengen"],
+        "spanish": ["No se deja intimidar por eso", "No se deja intimidar por los demás"],
+        "russian": ["Он не позволяет себя запутать этим", "Он не позволяет себя запутать другими"]
     }
   },
   {
