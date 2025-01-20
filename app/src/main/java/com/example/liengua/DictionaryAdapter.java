@@ -1,15 +1,18 @@
 package com.example.liengua;
 
+import static com.example.liengua.FavoritesActivity.initializeFavorites;
+import static com.example.liengua.FavoritesActivity.loadFavorites;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.os.Build;
-import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,16 +26,19 @@ import java.util.List;
 
 public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.DictionaryViewHolder> {
 
+    private final Context context;
     private static List<DictionaryEntry> dictionaryEntryList;
     private static Toast toast;
     private boolean showSpanish = true;
     private boolean showDutch = true;
     private boolean showRussian = true;
+    private static List<DictionaryEntry> favoritesList;
 
-    public DictionaryAdapter(List<DictionaryEntry> dictionaryEntryList) {
+    public DictionaryAdapter(Context context, List<DictionaryEntry> dictionaryEntryList) {
+        this.context = context;
         DictionaryAdapter.dictionaryEntryList = dictionaryEntryList;
+        favoritesList = loadFavorites(context);
     }
-
 
     public void setLanguagesToShow(boolean showSpanish, boolean showDutch, boolean showRussian) {
         this.showSpanish = showSpanish;
@@ -87,12 +93,45 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
         // Set the translation text
         holder.sentenceTextView.setText(entry.getSentence());
+
+        // Check if the entry is in the favorites list and update the favorite icon
+        if (isFavorite(entry, favoritesList)) {
+            Log.d("Favorites","I FOUND this entry in the list!");
+            entry.isFavorite = true;
+            holder.favoriteButton.setImageResource(R.drawable.stars_filled_24px);
+        } else {
+            entry.isFavorite = false;
+            holder.favoriteButton.setImageResource(R.drawable.stars_24px);
+        }
+
+        holder.favoriteButton.setOnClickListener(v -> {
+            if (entry.isFavorite) {
+                Log.d("Favorites","I wish to REMOVE this entry");
+                FavoritesActivity.removeFavorite(entry, context, favoritesList);
+                holder.favoriteButton.setImageResource(R.drawable.stars_24px);
+            } else {
+                Log.d("Favorites","I wish to ADD this entry");
+                FavoritesActivity.addFavorite(entry, context, favoritesList);
+                holder.favoriteButton.setImageResource(R.drawable.stars_filled_24px);
+            }
+            Log.d("Favorites", entry + " " + entry.isFavorite);
+            Log.d("Favorites",favoritesList.toString());
+            notifyItemChanged(position);
+        });
+
+        // Set the bookmark button state (example: change icon if bookmarked)
+        if (CollectionManager.getCollections() != null && !CollectionManager.getCollections().isEmpty()) {
+            holder.bookmarkButton.setImageResource(R.drawable.bookmark_filled_24px);
+        } else {
+            holder.bookmarkButton.setImageResource(R.drawable.bookmark_24px);
+        }
+
+        holder.bookmarkButton.setOnClickListener(v -> {
+            // Show a dialog to select collections to add/remove the bookmark
+            showBookmarkDialog(entry);
+        });
     }
-    private void setTranslationTextViewText(TextView translationTextView, String translation) {
-        translationTextView.setText(translation);
-        translationTextView.setVisibility(View.VISIBLE);
-        translationTextView.setMovementMethod(LinkMovementMethod.getInstance());
-    }
+
     private void copyAlternativeToClipboard(int which, String language, List<String> allAlternatives, TextView translationTextView) {
         String selectedAlternative = allAlternatives.get(which);
         ClipboardManager clipboard = (ClipboardManager) translationTextView.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -156,15 +195,53 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         return text;
     }
 
-
-
     @Override
     public int getItemCount() {
         return dictionaryEntryList.size();
     }
 
-    public static List<DictionaryEntry> getDictionaryEntryList() {
-        return dictionaryEntryList;
+    private boolean isFavorite(DictionaryEntry entry, List<DictionaryEntry> list) {
+        favoritesList = list;
+        for (DictionaryEntry favorite : favoritesList) {
+            if (favorite.getSentence().equals(entry.getSentence())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void updateFavoritesList(List<DictionaryEntry> newFavoritesList) {
+        favoritesList = newFavoritesList;
+        notifyDataSetChanged();
+    }
+
+    private void showBookmarkDialog(DictionaryEntry entry) {
+        // Get the predefined collections
+        List<Collection> predefinedCollections = CollectionManager.getCollections();
+        String[] collectionNames = new String[predefinedCollections.size()];
+        boolean[] checkedItems = new boolean[predefinedCollections.size()];
+
+        // Populate the collection names and checked items
+        for (int i = 0; i < predefinedCollections.size(); i++) {
+            Collection collection = predefinedCollections.get(i);
+            collectionNames[i] = collection.getName();
+            checkedItems[i] = entry.getCollectionManager().containsCollection(collection);
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Select Collections")
+                .setMultiChoiceItems(collectionNames, checkedItems, (dialog, which, isChecked) -> {
+                    Collection collection = predefinedCollections.get(which);
+                    if (isChecked) {
+                        entry.getCollectionManager().addCollection(collection);
+                    } else {
+                        entry.getCollectionManager().removeCollection(collection);
+                    }
+                })
+                .setPositiveButton("Save", (dialog, which) -> notifyItemChanged(dictionaryEntryList.indexOf(entry)))
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 
     public static class DictionaryViewHolder extends RecyclerView.ViewHolder {
@@ -173,6 +250,8 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         TextView dutchTranslationTextView;
         TextView spanishTranslationTextView;
         TextView russianTranslationTextView;
+        ImageButton favoriteButton;
+        ImageButton bookmarkButton;
 
         public DictionaryViewHolder(View itemView) {
             super(itemView);
@@ -180,6 +259,8 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             spanishTranslationTextView = itemView.findViewById(R.id.spanishTranslation);
             dutchTranslationTextView = itemView.findViewById(R.id.dutchTranslation);
             russianTranslationTextView = itemView.findViewById(R.id.russianTranslation);
+            favoriteButton = itemView.findViewById(R.id.favorite_button);
+            bookmarkButton = itemView.findViewById(R.id.bookmark_button);
         }
     }
 }

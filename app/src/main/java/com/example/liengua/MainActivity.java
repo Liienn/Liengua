@@ -319,43 +319,6 @@ public class MainActivity extends AppCompatActivity {
             dictionaryAdapter.notifyDataSetChanged();
         }
     }
-    private void fetchDataFromMultipleAPIs() {
-        OkHttpClient client = new OkHttpClient();
-        String[] urls = {
-            "https://raw.githubusercontent.com/Liienn/Liengua/main/translations/dictionary_data.json",
-            //"https://example.com/another_dictionary_data.json"
-        };
-
-        for (String url : urls) {
-            Request request = new Request.Builder().url(url).build();
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
-                }
-
-                @SuppressLint("NotifyDataSetChanged")
-                @Override
-                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                    if (response.isSuccessful()) {
-                        assert response.body() != null;
-                        String jsonData = response.body().string();
-                        Gson gson = new Gson();
-                        Type type = new TypeToken<List<DictionaryEntry>>() {}.getType();
-                        List<DictionaryEntry> newEntries = gson.fromJson(jsonData, type);
-
-                        runOnUiThread(() -> {
-                            entryList.addAll(newEntries);
-                            dictionaryAdapter.notifyDataSetChanged();
-                            filterList("", true); // Initialize the filter list
-                        });
-                    } else {
-                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
-                    }
-                }
-            });
-        }
-    }
 
     private void fetchDataFromGitHub() {
         OkHttpClient client = new OkHttpClient();
@@ -379,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
                     entryList = gson.fromJson(jsonData, type);
 
                     runOnUiThread(() -> {
-                        dictionaryAdapter = new DictionaryAdapter(filteredDictionaryEntries);
+                        dictionaryAdapter = new DictionaryAdapter(MainActivity.this, filteredDictionaryEntries);
                         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
                         recyclerView.setAdapter(dictionaryAdapter);
                         filterList("", true); // Initialize the filter list

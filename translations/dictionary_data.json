@@ -2542,7 +2542,8 @@
         "spanish": ["Guardar"],
         "russian": ["Сохранить"]
     }
-  },{
+  },
+  {
     "english": "He doesn't let it/others mess with him***",
     "dutch": "Hij laat zich niet doen",
     "spanish": "No se deja intimidar",
@@ -2598,7 +2599,7 @@
     }
   },
   {
-    "english": "I skipped some thigs***",
+    "english": "I skipped some things***",
     "dutch": "Ik heb wat dingen overgeslagen",
     "spanish": "Me salté algunas cosas",
     "russian": "Я пропустил(а) некоторые вещи",

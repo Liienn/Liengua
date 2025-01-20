@@ -2,6 +2,7 @@ package com.example.liengua;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -29,22 +30,28 @@ public class MenuHandler {
                 true);
 
         // Set up menu options
-        Button option1 = menuView.findViewById(R.id.menu_option_1);
-        Button option2 = menuView.findViewById(R.id.menu_option_2);
-        Button option3 = menuView.findViewById(R.id.menu_option_3);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button favorites = menuView.findViewById(R.id.menu_favorites);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button collections = menuView.findViewById(R.id.menu_collections);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button exercises = menuView.findViewById(R.id.menu_exercises);
 
-        option1.setOnClickListener(v -> {
-            // Handle option 1 click
+        favorites.setOnClickListener(v -> {
+            // Start FavoritesActivity
+            Intent intent = new Intent(context, FavoritesActivity.class);
+            context.startActivity(intent);
             popupWindow.dismiss();
         });
 
-        option2.setOnClickListener(v -> {
-            // Handle option 2 click
+        collections.setOnClickListener(v -> {
+            // Start CollectionsActivity
+            Intent intent = new Intent(context, CollectionsActivity.class);
+            context.startActivity(intent);
             popupWindow.dismiss();
         });
 
-        option3.setOnClickListener(v -> {
-            // Handle option 3 click
+        exercises.setOnClickListener(v -> {
+            // Start ExercisesActivity
+            Intent intent = new Intent(context, ExercisesActivity.class);
+            context.startActivity(intent);
             popupWindow.dismiss();
         });
 

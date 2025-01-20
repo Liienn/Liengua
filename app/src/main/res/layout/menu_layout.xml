@@ -17,21 +17,21 @@
         android:textStyle="bold"
         android:text="Menu"/>
         <Button
-            android:id="@+id/menu_option_1"
+            android:id="@+id/menu_favorites"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 1" />
+            android:text="@string/favorites" />
 
         <Button
-            android:id="@+id/menu_option_2"
+            android:id="@+id/menu_collections"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 2" />
+            android:text="@string/collections" />
 
         <Button
-            android:id="@+id/menu_option_3"
+            android:id="@+id/menu_exercises"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 3" />
+            android:text="@string/exercises" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
