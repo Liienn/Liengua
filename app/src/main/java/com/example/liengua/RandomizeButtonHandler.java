@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import android.annotation.SuppressLint;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class RandomizeButtonHandler {

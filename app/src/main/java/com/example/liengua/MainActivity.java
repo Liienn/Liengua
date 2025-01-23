@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         originalEntryList = entryList;
-        // Initialize BottomSheetBehavior
+
         LinearLayout bottomSheet = findViewById(R.id.bottom_sheet);
         assert bottomSheet != null;
         BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         fetchDataFromGitHub();
-        // Initialize views
+
         ImageButton menuButton = findViewById(R.id.menu_button);
         MenuHandler menuHandler = new MenuHandler(this);
         menuButton.setOnClickListener(menuHandler::showMenu);
@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         contactMessageEditText = findViewById(R.id.contactMessage);
         LinearLayout swipeIconLayout = findViewById(R.id.swipe_icon_layout);
         final View rootView = findViewById(android.R.id.content);
-        // Ensure itemList is initialized
 
         rootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -130,16 +129,14 @@ public class MainActivity extends AppCompatActivity {
                 // Remove the listener to prevent repeated calls
                 bottomSheet.getViewTreeObserver().removeOnPreDrawListener(this);
 
-                // Get the height of the bottom sheet
                 int bottomSheetHeight = (int) (bottomSheet.getHeight() * 0.5);
 
-                // Set the paddingBottom of the RecyclerView dynamically based on bottom sheet height
                 RecyclerView recyclerView = findViewById(R.id.entries_list);
                 recyclerView.setPadding(
-                        recyclerView.getPaddingLeft(),  // Keep current left padding
-                        recyclerView.getPaddingTop(),   // Keep current top padding
-                        recyclerView.getPaddingRight(), // Keep current right padding
-                        bottomSheetHeight               // Set dynamic bottom padding
+                        recyclerView.getPaddingLeft(),
+                        recyclerView.getPaddingTop(),
+                        recyclerView.getPaddingRight(),
+                        bottomSheetHeight
                 );
 
                 return true;
@@ -356,7 +353,6 @@ public class MainActivity extends AppCompatActivity {
                         filterList("", true); // Initialize the filter list
 
                         // Setup randomize button using RandomizeButtonHandler
-
                         randomizeButton = findViewById(R.id.randomize_button);
 
                         RefreshButtonHandler refreshButtonHandler = new RefreshButtonHandler(MainActivity.this);
@@ -420,12 +416,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-
             if (matchFound) {
                 filteredDictionaryEntries.add(entry);
             }
         }
-        
         if (sortAlphabetically) {
             sortListAlphabetically(filteredDictionaryEntries);
         }

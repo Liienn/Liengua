@@ -1,7 +1,5 @@
 package com.example.liengua;
 
-import static androidx.core.app.ActivityCompat.recreate;
-import static com.example.liengua.FavoritesActivity.initializeFavorites;
 import static com.example.liengua.FavoritesActivity.loadFavorites;
 
 import android.annotation.SuppressLint;
@@ -213,13 +211,6 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                 FavoritesActivity.saveFavorites(context,dictionaryEntryList);
             }
         });
-    }
-    public void restartActivity() {
-        recreate();
-    }
-
-    private void recreate() {
-
     }
 
     private void copyAlternativeToClipboard(int which, String language, List<String> allAlternatives, TextView translationTextView) {

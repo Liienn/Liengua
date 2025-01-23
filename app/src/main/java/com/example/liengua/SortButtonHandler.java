@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Dictionary;
 import java.util.List;
 
     public class SortButtonHandler {

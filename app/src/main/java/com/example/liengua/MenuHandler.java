@@ -19,17 +19,14 @@ public class MenuHandler {
     }
 
     public void showMenu(View anchorView) {
-        // Inflate the menu layout
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         @SuppressLint("InflateParams") View menuView = inflater.inflate(R.layout.menu_layout, null);
 
-        // Create the popup window
         popupWindow = new PopupWindow(menuView,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 true);
 
-        // Set up menu options
         Button favorites = menuView.findViewById(R.id.menu_favorites);
         Button collections = menuView.findViewById(R.id.menu_collections);
         Button exercises = menuView.findViewById(R.id.menu_exercises);
@@ -55,7 +52,6 @@ public class MenuHandler {
             popupWindow.dismiss();
         });
 
-        // Show the popup window
         popupWindow.showAsDropDown(anchorView);
     }
 }

@@ -13,15 +13,11 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,10 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 
 public class FavoritesActivity extends AppCompatActivity {
 
@@ -154,13 +147,13 @@ public class FavoritesActivity extends AppCompatActivity {
         // Create a SpannableString with the info text
         SpannableString spannableString = new SpannableString(
                 "These are the phrases you have added to favorites. \n\n" +
-                "'fav' : Click this button to remove a phrase from your favorites. \n\n" +
-                "'tune' : Click this button to enable reordening phrases. \n" +
+                "'fav' : Click to remove a phrase from your favorites. \n\n" +
+                "'tune' : Click to enable reordering phrases. \n" +
                 "Click it again to disable reordering and to use the sort buttons again. \n" +
                 "The order will be saved, even when you exit the app. \n\n" +
-                "'refresh' : Click this button to refresh the list to your saved order. \n" +
+                "'refresh' : Click to refresh the list to your saved order. \n" +
                 "(This button will be hidden when you are reordering phrases) \n\n" +
-                "'home' : Click this button to return to the main screen."
+                "'home' : Click to return to the main screen."
         );
 
         // Insert drawables into the SpannableString
