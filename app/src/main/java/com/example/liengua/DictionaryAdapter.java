@@ -50,21 +50,27 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                if (!recyclerView.canScrollVertically(-1)) {
-                    // User is at the top of the list
-                    scrollToTopButton.setVisibility(View.GONE);
-                } else if (dy > 0) {
-                    // User is scrolling down
-                    scrollToTopButton.setVisibility(View.VISIBLE);
-                }
+                if (!showMoveButtonsForEntry) {
+                    super.onScrolled(recyclerView, dx, dy);
+                    if (!recyclerView.canScrollVertically(-1)) {
+                        // User is at the top of the list
+                        scrollToTopButton.setVisibility(View.GONE);
+                        scrollToBottomButton.setVisibility(View.GONE);
+                    } else if (dy > 0) {
+                        // User is scrolling down
+                        scrollToTopButton.setVisibility(View.GONE);
+                        scrollToBottomButton.setVisibility(View.VISIBLE);
+                    }
 
-                if (!recyclerView.canScrollVertically(1)) {
-                    // User is at the bottom of the list
-                    scrollToBottomButton.setVisibility(View.GONE);
-                } else if (dy < 0) {
-                    // User is scrolling up
-                    scrollToBottomButton.setVisibility(View.VISIBLE);
+                    if (!recyclerView.canScrollVertically(1)) {
+                        // User is at the bottom of the list
+                        scrollToTopButton.setVisibility(View.GONE);
+                        scrollToBottomButton.setVisibility(View.GONE);
+                    } else if (dy < 0) {
+                        // User is scrolling up
+                        scrollToBottomButton.setVisibility(View.GONE);
+                        scrollToTopButton.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });

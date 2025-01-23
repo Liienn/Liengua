@@ -91,6 +91,8 @@ public class FavoritesActivity extends AppCompatActivity {
             clearFavoritesButton.setVisibility(showMoveButtons ? View.VISIBLE : View.GONE);
             randomizeButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
             sortButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
+            scrollToTopButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
+            scrollToBottomButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
             if(refreshButton.isShown()) {
                 refreshButton.setVisibility(View.GONE);
             }
