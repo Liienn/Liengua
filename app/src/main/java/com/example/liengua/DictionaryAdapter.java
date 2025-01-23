@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.os.Build;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -141,9 +142,15 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             Log.d("Favorites","I FOUND this entry in the list!");
             entry.isFavorite = true;
             holder.favoriteButton.setImageResource(R.drawable.stars_filled_24px);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                holder.favoriteButton.setAlpha(0.7F);
+            }
         } else {
             entry.isFavorite = false;
             holder.favoriteButton.setImageResource(R.drawable.stars_24px);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                holder.favoriteButton.setAlpha(0.3F);
+            }
         }
 
         holder.favoriteButton.setOnClickListener(v -> {

@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/add_to_bookmarks"
+            android:alpha=".3"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:src="@drawable/bookmark_24px" />
@@ -38,6 +39,7 @@
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/add_to_favorites"
             android:paddingTop="6dp"
+            android:alpha=".3"
             android:paddingBottom="6dp"
             android:src="@drawable/stars_24px" />
 </LinearLayout>
@@ -96,6 +98,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/move_item_up"
+            android:alpha="0.7"
             android:padding="8dp"
             android:src="@drawable/arrow_upward_24px" />
 
@@ -105,6 +108,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/move_item_down"
+            android:alpha="0.7"
             android:padding="8dp"
             android:src="@drawable/arrow_downward_24px" />
     </LinearLayout>
