@@ -1,5 +1,6 @@
 package com.example.liengua;
 
+import static androidx.core.app.ActivityCompat.recreate;
 import static com.example.liengua.FavoritesActivity.initializeFavorites;
 import static com.example.liengua.FavoritesActivity.loadFavorites;
 
@@ -8,11 +9,13 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -33,6 +37,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     private boolean showDutch = true;
     private boolean showRussian = true;
     private static List<DictionaryEntry> favoritesList;
+    boolean showMoveButtonsForEntry = false;
 
     public DictionaryAdapter(Context context, List<DictionaryEntry> dictionaryEntryList) {
         this.context = context;
@@ -44,6 +49,12 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         this.showSpanish = showSpanish;
         this.showDutch = showDutch;
         this.showRussian = showRussian;
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setShowMoveButtons(boolean showMoveButtons) {
+        this.showMoveButtonsForEntry = showMoveButtons;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -106,9 +117,20 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
         holder.favoriteButton.setOnClickListener(v -> {
             if (entry.isFavorite) {
-                Log.d("Favorites","I wish to REMOVE this entry");
-                FavoritesActivity.removeFavorite(entry, context, favoritesList);
-                holder.favoriteButton.setImageResource(R.drawable.stars_24px);
+                // Show confirmation dialog before removing favorite
+                new AlertDialog.Builder(context)
+                        .setTitle("Remove Favorite")
+                        .setMessage(Html.fromHtml("Are you sure you want to remove<br><br><div style='text-align:center;'><b>'" + entry.getSentence() + "'</b></div>from favorites?"))
+                        .setPositiveButton("Yes", (dialog, which) -> {
+                            Log.d("Favorites","I wish to REMOVE this entry");
+                            FavoritesActivity.removeFavorite(entry, context, favoritesList);
+                            holder.favoriteButton.setImageResource(R.drawable.stars_24px);
+                            Log.d("Favorites", entry + " " + entry.isFavorite);
+                            Log.d("Favorites", favoritesList.toString());
+                            notifyItemChanged(position);
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
             } else {
                 Log.d("Favorites","I wish to ADD this entry");
                 FavoritesActivity.addFavorite(entry, context, favoritesList);
@@ -130,6 +152,36 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             // Show a dialog to select collections to add/remove the bookmark
             showBookmarkDialog(entry);
         });
+
+        if (showMoveButtonsForEntry) {
+            holder.moveButtonsLayout.setVisibility(View.VISIBLE);
+        } else {
+            holder.moveButtonsLayout.setVisibility(View.GONE);
+        }
+
+        // Set click listeners for move up and move down buttons
+        holder.moveUpButton.setOnClickListener(v -> {
+            if (position > 0) {
+                Collections.swap(dictionaryEntryList, position, position - 1);
+                notifyItemMoved(position, position - 1);
+                FavoritesActivity.saveFavorites(context,dictionaryEntryList);
+            }
+        });
+
+        holder.moveDownButton.setOnClickListener(v -> {
+            if (position < dictionaryEntryList.size() - 1) {
+                Collections.swap(dictionaryEntryList, position, position + 1);
+                notifyItemMoved(position, position + 1);
+                FavoritesActivity.saveFavorites(context,dictionaryEntryList);
+            }
+        });
+    }
+    public void restartActivity() {
+        recreate();
+    }
+
+    private void recreate() {
+
     }
 
     private void copyAlternativeToClipboard(int which, String language, List<String> allAlternatives, TextView translationTextView) {
@@ -212,6 +264,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
     @SuppressLint("NotifyDataSetChanged")
     public void updateFavoritesList(List<DictionaryEntry> newFavoritesList) {
+        Log.d("Favorites","Updating favorites list to: " + newFavoritesList);
         favoritesList = newFavoritesList;
         notifyDataSetChanged();
     }
@@ -230,7 +283,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Select Collections")
+        builder.setTitle("Collections coming soon!")
                 .setMultiChoiceItems(collectionNames, checkedItems, (dialog, which, isChecked) -> {
                     Collection collection = predefinedCollections.get(which);
                     if (isChecked) {
@@ -246,12 +299,15 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
     public static class DictionaryViewHolder extends RecyclerView.ViewHolder {
 
+        LinearLayout moveButtonsLayout;
         TextView sentenceTextView;
         TextView dutchTranslationTextView;
         TextView spanishTranslationTextView;
         TextView russianTranslationTextView;
         ImageButton favoriteButton;
         ImageButton bookmarkButton;
+        ImageButton moveUpButton;
+        ImageButton moveDownButton;
 
         public DictionaryViewHolder(View itemView) {
             super(itemView);
@@ -261,6 +317,9 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             russianTranslationTextView = itemView.findViewById(R.id.russianTranslation);
             favoriteButton = itemView.findViewById(R.id.favorite_button);
             bookmarkButton = itemView.findViewById(R.id.bookmark_button);
+            moveButtonsLayout = itemView.findViewById(R.id.move_buttons_layout);
+            moveUpButton = itemView.findViewById(R.id.move_up_button);
+            moveDownButton = itemView.findViewById(R.id.move_down_button);
         }
     }
 }

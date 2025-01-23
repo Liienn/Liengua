@@ -1,0 +1,40 @@
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sort_buttons_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="6dp"
+    android:layout_alignParentEnd="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageButton
+        android:id="@+id/refresh_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/refresh_24px"
+        android:background="@drawable/border_solid_blue"
+        android:padding="8dp"
+        android:layout_marginEnd="8dp"
+        app:tint="@color/peach_200" />
+
+    <ImageButton
+        android:id="@+id/randomize_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shuffle_24px"
+        android:background="@drawable/border_solid_blue"
+        android:padding="8dp"
+        android:layout_marginEnd="8dp"
+        app:tint="@color/peach_200" />
+
+                <ImageButton
+                    android:id="@+id/sort_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sort_by_alpha_24px"
+                    android:background="@drawable/border_solid_blue"
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:tint="@color/peach_200" />
+
+            </LinearLayout>

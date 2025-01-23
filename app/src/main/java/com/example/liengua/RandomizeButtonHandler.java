@@ -19,22 +19,33 @@ public class RandomizeButtonHandler {
         this.filteredDictionaryEntries = filteredDictionaryEntries;
         this.adapter = adapter;
     }
+    public RandomizeButtonHandler(List<DictionaryEntry> entryList, RecyclerView.Adapter<?> adapter) {
+        this.entryList = entryList;
+        this.adapter = adapter;
+        this.filteredDictionaryEntries = null;
+    }
 
-    public void setupRandomizeButton(ImageButton randomizeButton) {
+    public void setupRandomizeButton(ImageButton randomizeButton, final ImageButton refreshButton) {
         randomizeButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onClick(View v) {
                 if (entryList != null) {
                     Collections.shuffle(entryList);
-                    updateFilteredEntries();
+                    if(filteredDictionaryEntries != null) {
+                        updateFilteredEntries();
+                    }
                     adapter.notifyDataSetChanged();
+                    if(refreshButton != null) {
+                        refreshButton.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
     }
 
     private void updateFilteredEntries() {
+        assert filteredDictionaryEntries != null;
         filteredDictionaryEntries.clear();
         filteredDictionaryEntries.addAll(entryList);
     }

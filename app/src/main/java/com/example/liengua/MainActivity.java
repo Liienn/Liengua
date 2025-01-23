@@ -49,22 +49,24 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText searchInput, contactMessageEditText;
     private DictionaryAdapter dictionaryAdapter;
     private List<DictionaryEntry> entryList = new ArrayList<>();
     private final List<DictionaryEntry> filteredDictionaryEntries = new ArrayList<>();
-    private ImageButton randomizeButton;
-    private ImageButton sortButton;
+    private ImageButton randomizeButton, sortButton, refreshButton;
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
     private ImageView arrow1, arrow2;
+    private List<DictionaryEntry> originalEntryList;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        originalEntryList = entryList;
         // Initialize BottomSheetBehavior
         LinearLayout bottomSheet = findViewById(R.id.bottom_sheet);
         assert bottomSheet != null;
@@ -79,11 +81,13 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.dictionary_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        randomizeButton = findViewById(R.id.randomize_button);
-        sortButton = findViewById(R.id.sort_button);
+
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
+
+        refreshButton = findViewById(R.id.refresh_button);
+
         ImageButton sendButton = findViewById(R.id.sendButton);
         contactMessageEditText = findViewById(R.id.contactMessage);
         LinearLayout swipeIconLayout = findViewById(R.id.swipe_icon_layout);
@@ -104,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     if(randomizeButton != null) {
                         randomizeButton.setVisibility(View.GONE);
                         sortButton.setVisibility(View.GONE);
+                        refreshButton.setVisibility(View.GONE);
                     }
                 } else {
                     swipeIconLayout.setVisibility(View.VISIBLE);
@@ -136,12 +141,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        sortButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sortListAlphabetically(entryList);
-            }
-        });
+
+
         swipeIconLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -233,7 +234,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Send button functionality - send an email when clicked
+
         sendButton.setOnClickListener(v -> sendMessage());
+
+        sortButton = findViewById(R.id.sort_button);
+        sortButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortListAlphabetically(entryList);
+                refreshButton.setVisibility(View.VISIBLE);
+            }
+        });
+        refreshButton.setVisibility(View.GONE);
+
+
     }
     private void insertDrawable(SpannableString spannableString, String text, int drawableResId) {
         int start = spannableString.toString().indexOf(text);
@@ -258,6 +272,8 @@ public class MainActivity extends AppCompatActivity {
                         "Long press on a phrase to copy it to the clipboard.\n\n" +
                         "BUTTONS:\n\n" +
                         "menu : Click to access more options.\n\n" +
+                        "'fav' : Click to add a phrase to your favorites.\n\n" +
+                        "'coll' : Click to add a phrase to your collections.\n\n" +
                         "'Randomize' : Click to shuffle the list.\n\n" +
                         "'A-Z' : Click to sort the list alphabetically.\n\n" +
                         "message bar : Click or swipe to expand or collapse the message bar.\n\n" +
@@ -266,6 +282,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Insert drawables into the SpannableString
         insertDrawable(spannableString, "menu", R.drawable.menu_24px);
+        insertDrawable(spannableString, "'fav'", R.drawable.stars_24px);
+        insertDrawable(spannableString, "'coll'", R.drawable.bookmark_24px);
         insertDrawable(spannableString, "'Randomize'", R.drawable.shuffle_24px);
         insertDrawable(spannableString, "'A-Z'", R.drawable.sort_by_alpha_24px);
         insertDrawable(spannableString,"message bar",R.drawable.mail_24px);
@@ -340,6 +358,7 @@ public class MainActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     Type type = new TypeToken<List<DictionaryEntry>>() {}.getType();
                     entryList = gson.fromJson(jsonData, type);
+                    originalEntryList = entryList;
 
                     runOnUiThread(() -> {
                         dictionaryAdapter = new DictionaryAdapter(MainActivity.this, filteredDictionaryEntries);
@@ -348,9 +367,15 @@ public class MainActivity extends AppCompatActivity {
                         filterList("", true); // Initialize the filter list
 
                         // Setup randomize button using RandomizeButtonHandler
-                        ImageButton randomizeButton = findViewById(R.id.randomize_button);
+
+
+                        randomizeButton = findViewById(R.id.randomize_button);
+
+                        RefreshButtonHandler refreshButtonHandler = new RefreshButtonHandler(MainActivity.this);
+                        refreshButtonHandler.setupRefreshButton(refreshButton);
                         RandomizeButtonHandler randomizeButtonHandler = new RandomizeButtonHandler(entryList, filteredDictionaryEntries, dictionaryAdapter);
-                        randomizeButtonHandler.setupRandomizeButton(randomizeButton);
+                        randomizeButtonHandler.setupRandomizeButton(randomizeButton, refreshButton);
+
                     });
                 } else {
                     runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
@@ -416,6 +441,8 @@ public class MainActivity extends AppCompatActivity {
         if (sortAlphabetically) {
             sortListAlphabetically(filteredDictionaryEntries);
         }
-        dictionaryAdapter.notifyDataSetChanged();
+        if(dictionaryAdapter != null) {
+            dictionaryAdapter.notifyDataSetChanged();
+        }
     }
 }

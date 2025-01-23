@@ -6,8 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
-
-    <LinearLayout
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -30,13 +33,21 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:backgroundTint="@color/blue_200"
-            android:src="@drawable/menu_24px"
+            android:layout_toRightOf="@id/home_button"
             android:padding="8dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/menu_24px"
             app:tint="@color/peach_200" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/favorites_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/favorites"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+          />
 
         <ImageButton
             android:id="@+id/clear_favorites_button"
@@ -50,24 +61,64 @@
             app:tint="@color/white" />
         </RelativeLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/favorites_title"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <include
+        android:id="@+id/checkbox_favorites_layout"
+        layout="@layout/checkboxes_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/favorites"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="6dp" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/empty_favorites_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is empty, let's add some phrases!"
+        android:textSize="18sp"
         android:layout_gravity="center_horizontal"
-        android:paddingBottom="16dp"/>
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/favorites_list"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="1dp"
-        android:paddingStart="2dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:ignore="RtlSymmetry" />
+        android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favorites_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/sort_buttons_favorites_layout"
+            android:paddingStart="2dp"
+            android:paddingTop="1dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:ignore="RtlSymmetry" />
+
+        <include
+            android:id="@+id/sort_buttons_favorites_layout"
+            layout="@layout/sort_buttons_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            tools:ignore="NotSibling" />
+
+        <ImageButton
+            android:id="@+id/tune_favorites_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tune_24px"
+            app:tint="@color/peach_200"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:layout_alignTop="@id/sort_buttons_favorites_layout"
+            android:backgroundTint="@color/blue_200"
+            android:background="@drawable/border"
+            />
+    </RelativeLayout>
 </LinearLayout>

@@ -25,27 +25,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/favorites"
-            android:drawableEnd="@drawable/stars_24px"
-            android:drawableTint="@color/peach_200"
+            android:drawableStart="@drawable/stars_24px"
             android:drawablePadding="8dp"
-         />
+            android:iconTint="@color/peach_200" />
 
         <Button
             android:id="@+id/menu_collections"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/collections"
-            android:drawableEnd="@drawable/bookmark_24px"
-            android:drawableTint="@color/peach_200"
+            android:drawableStart="@drawable/bookmark_24px"
             android:drawablePadding="8dp"
-          />
+            android:iconTint="@color/peach_200" />
 
         <Button
             android:id="@+id/menu_exercises"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/sports_gymnastics_24px"
-            android:drawableTint="@color/peach_200"
             android:text="@string/exercises" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

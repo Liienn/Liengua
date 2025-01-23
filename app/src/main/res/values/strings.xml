@@ -21,6 +21,8 @@
     <string name="exercises">Exercises</string>
     <string name="home">home</string>
     <string name="menu">menu</string>
+    <string name="move_item_up" />
+    <string name="move_item_down" />
     <string-array name="languages">
         <item>Spanish</item>
         <item>Dutch</item>

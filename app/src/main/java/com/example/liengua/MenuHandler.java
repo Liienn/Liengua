@@ -30,9 +30,9 @@ public class MenuHandler {
                 true);
 
         // Set up menu options
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button favorites = menuView.findViewById(R.id.menu_favorites);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button collections = menuView.findViewById(R.id.menu_collections);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button exercises = menuView.findViewById(R.id.menu_exercises);
+        Button favorites = menuView.findViewById(R.id.menu_favorites);
+        Button collections = menuView.findViewById(R.id.menu_collections);
+        Button exercises = menuView.findViewById(R.id.menu_exercises);
 
         favorites.setOnClickListener(v -> {
             // Start FavoritesActivity

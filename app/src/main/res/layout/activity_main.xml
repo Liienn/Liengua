@@ -56,53 +56,14 @@
         </LinearLayout>
 
         </RelativeLayout>
-                <LinearLayout
-                    android:id="@+id/checkbox_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="right"
-                    android:layout_toStartOf="@id/menu_button"
-                    android:layout_marginStart="40dp">
-
-                    <CheckBox
-                        android:id="@+id/spanish_checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/spanish" />
-
-                    <CheckBox
-                        android:id="@+id/dutch_checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/dutch" />
-
-                    <CheckBox
-                        android:id="@+id/russian_checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:paddingRight="18dp"
-                        android:text="@string/russian" />
-                    <!-- Add the info icon -->
-                    <ImageView
-                        android:id="@+id/info_icon1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:maxHeight="10dp"
-                        android:tint="@color/blue_200"
-                        android:src="@drawable/info_24px" />
-                </LinearLayout>
-
+            <include
+                android:id="@+id/checkbox_home_layout"
+                layout="@layout/checkboxes_layout"
+                android:layout_below="@id/clear_favorites_button"
+                android:layout_marginTop="16dp" />
         </LinearLayout>
 
         <!-- RecyclerView to display translations -->
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dictionary_list"
@@ -125,43 +86,23 @@
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <!-- Icon indicating swipe up gesture -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:id="@+id/sort_buttons_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
-                android:layout_alignParentEnd="true">
-
-                <ImageButton
-                    android:id="@+id/randomize_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/shuffle_24px"
-                    android:tint="@color/peach_200"
-                    android:background="@drawable/border_solid_blue"
-                    android:padding="8dp"
-                    android:layout_marginEnd="8dp" />
-
-                <ImageButton
-                    android:id="@+id/sort_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sort_by_alpha_24px"
-                    android:tint="@color/peach_200"
-                    android:background="@drawable/border_solid_blue"
-                    android:padding="8dp" />
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:id="@+id/swipe_icon_layout"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/sort_buttons_layout"
+                android:layout_marginEnd="0dp"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/linearLayout"
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -171,27 +112,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginEnd="8dp"
-                    android:tint="@color/peach_200"
-                    android:src="@android:drawable/arrow_up_float" />
+                    android:src="@android:drawable/arrow_up_float"
+                    android:tint="@color/peach_200" />
 
                 <ImageView
                     android:id="@+id/swipe_icon2"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:tint="@color/blue_200"
-                    android:src="@drawable/mail_24px" />
+                    android:src="@drawable/mail_24px"
+                    android:tint="@color/blue_200" />
 
                 <ImageView
                     android:id="@+id/swipe_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
-                    android:tint="@color/peach_200"
-                    android:src="@android:drawable/arrow_up_float" />
+                    android:src="@android:drawable/arrow_up_float"
+                    android:tint="@color/peach_200" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
 
+                <include
+                    android:id="@+id/sort_buttons_favorites_layout"
+                    layout="@layout/sort_buttons_layout" />
+            </LinearLayout>
         </RelativeLayout>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
