@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/entries_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/entries_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:paddingStart="2dp"
+        android:paddingTop="1dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageButton
+        android:id="@+id/scroll_to_top_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/entries_list"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/scroll_to_top_24px"
+        android:alpha="0.3"
+        android:contentDescription="@string/scroll_to_top"
+        android:src="@drawable/scroll_to_top_24px"
+        app:layout_constraintEnd_toEndOf="@+id/entries_list"
+        app:layout_constraintTop_toTopOf="@+id/entries_list"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/scroll_to_bottom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/entries_list"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/scroll_to_bottom_24px"
+        android:alpha="0.3"
+        android:contentDescription="@string/scroll_to_top"
+        android:src="@drawable/scroll_to_bottom_24px"
+        app:layout_constraintEnd_toEndOf="@+id/entries_list"
+        app:layout_constraintBottom_toBottomOf="@+id/entries_list"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

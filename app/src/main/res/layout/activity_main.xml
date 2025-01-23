@@ -64,15 +64,27 @@
         </LinearLayout>
 
         <!-- RecyclerView to display translations -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/bottom_sheet"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="20dp">
+
+        <include
             android:id="@+id/dictionary_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="1dp"
-            android:paddingStart="2dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
+            layout="@layout/entries_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            tools:ignore="NotSibling" />
+    </LinearLayout>
+</RelativeLayout>
     </LinearLayout>
 
     <!-- Include bottom sheet layout -->
@@ -82,7 +94,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="?attr/colorSurface"
-        android:paddingTop="10dp"
+        android:paddingTop="2dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <!-- Icon indicating swipe up gesture -->

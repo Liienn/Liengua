@@ -25,6 +25,26 @@ public class RandomizeButtonHandler {
         this.filteredDictionaryEntries = null;
     }
 
+    public void setupRandomizeButton(ImageButton randomizeButton, final ImageButton refreshButton, final ImageButton tuneButton) {
+        randomizeButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View v) {
+                if (entryList != null) {
+                    Collections.shuffle(entryList);
+                    if(filteredDictionaryEntries != null) {
+                        updateFilteredEntries();
+                    }
+                    adapter.notifyDataSetChanged();
+                    if(refreshButton != null && tuneButton != null) {
+                        refreshButton.setVisibility(View.VISIBLE);
+                        tuneButton.setVisibility(View.GONE);
+                    }
+                }
+            }
+        });
+    }
+
     public void setupRandomizeButton(ImageButton randomizeButton, final ImageButton refreshButton) {
         randomizeButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("NotifyDataSetChanged")

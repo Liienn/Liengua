@@ -1,13 +1,17 @@
 package com.example.liengua;
 
+import static com.example.liengua.Utils.insertDrawable;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,18 +43,19 @@ public class FavoritesActivity extends AppCompatActivity {
     private static List<DictionaryEntry> favoritesList;
     private TextView emptyFavoritesMessage;
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
-    private ImageButton randomizeButton, sortButton, refreshButton;
+    private ImageButton randomizeButton, sortButton, refreshButton, scrollToTopButton, scrollToBottomButton;
     private ImageView infoIcon;
     private static final Gson gson = new Gson();
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint({"NotifyDataSetChanged", "UseCompatLoadingForDrawables"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("FavoritesActivity", "onCreate called");
         setContentView(R.layout.favorites_layout);
         favoritesList = loadFavorites(this);
-        List<DictionaryEntry> originalFavoritesList = favoritesList;
+        ImageButton scrollToTopButton = findViewById(R.id.scroll_to_top_button);
+        ImageButton scrollToBottomButton = findViewById(R.id.scroll_to_bottom_button);
         randomizeButton = findViewById(R.id.randomize_button);
         sortButton = findViewById(R.id.sort_button);
         refreshButton = findViewById(R.id.refresh_button);
@@ -57,8 +63,12 @@ public class FavoritesActivity extends AppCompatActivity {
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
         infoIcon = findViewById(R.id.info_icon1);
-        infoIcon.setVisibility(View.GONE);
-        RecyclerView favoritesListView = findViewById(R.id.favorites_list);
+        infoIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInfoDialog();
+            } });
+        RecyclerView favoritesListView = findViewById(R.id.entries_list);
         ImageButton homeButton = findViewById(R.id.home_button);
         ImageButton menuButton = findViewById(R.id.menu_button);
         ImageButton clearFavoritesButton = findViewById(R.id.clear_favorites_button);
@@ -73,16 +83,33 @@ public class FavoritesActivity extends AppCompatActivity {
         menuButton.setOnClickListener(this::showMenu);
 
         clearFavoritesButton.setOnClickListener(v -> clearFavorites(this));
+
+        tuneButton.setBackground(getResources().getDrawable(R.drawable.border_solid));
         tuneButton.setOnClickListener(v -> {
             boolean showMoveButtons = !dictionaryAdapter.showMoveButtonsForEntry;
             dictionaryAdapter.setShowMoveButtons(showMoveButtons);
             clearFavoritesButton.setVisibility(showMoveButtons ? View.VISIBLE : View.GONE);
+            randomizeButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
+            sortButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
+            if(refreshButton.isShown()) {
+                refreshButton.setVisibility(View.GONE);
+            }
+            if (showMoveButtons) {
+                tuneButton.setBackgroundColor(getResources().getColor(R.color.peach_700));
+                tuneButton.setBackground(getResources().getDrawable(R.drawable.border_solid_blue));
+
+            } else {
+                tuneButton.setBackground(getResources().getDrawable(R.drawable.border_solid));
+            }
         });
-        dictionaryAdapter = new DictionaryAdapter(this ,favoritesList);
+
+        dictionaryAdapter = new DictionaryAdapter(this ,favoritesList, favoritesListView, scrollToTopButton, scrollToBottomButton);
         favoritesListView.setLayoutManager(new LinearLayoutManager(this));
         favoritesListView.setAdapter(dictionaryAdapter);
+        favoritesListView.setItemAnimator(new SlideInItemAnimator());
         dictionaryAdapter.updateFavoritesList(favoritesList);
         dictionaryAdapter.notifyDataSetChanged();
+
         updateEmptyMessageVisibility();
         
         if(!emptyFavoritesMessage.isShown()) {
@@ -93,9 +120,9 @@ public class FavoritesActivity extends AppCompatActivity {
             RefreshButtonHandler refreshButtonHandler = new RefreshButtonHandler(FavoritesActivity.this);
             refreshButtonHandler.setupRefreshButton(refreshButton);
             RandomizeButtonHandler randomizeButtonHandler = new RandomizeButtonHandler(favoritesList, dictionaryAdapter);
-            randomizeButtonHandler.setupRandomizeButton(randomizeButton, refreshButton);
+            randomizeButtonHandler.setupRandomizeButton(randomizeButton, refreshButton, tuneButton);
             SortButtonHandler sortButtonHandler = new SortButtonHandler(favoritesList, dictionaryAdapter);
-            sortButtonHandler.setupSortButton(sortButton, refreshButton);
+            sortButtonHandler.setupSortButton(sortButton, refreshButton, tuneButton);
         } else {
             spanishCheckBox.setVisibility(View.GONE);
             dutchCheckBox.setVisibility(View.GONE);
@@ -119,6 +146,39 @@ public class FavoritesActivity extends AppCompatActivity {
         dictionaryAdapter.updateFavoritesList(favoritesList);
         dictionaryAdapter.notifyDataSetChanged();
         updateEmptyMessageVisibility();
+    }
+
+    private void showInfoDialog() {
+        // Create a SpannableString with the info text
+        SpannableString spannableString = new SpannableString(
+                "These are the phrases you have added to favorites. \n\n" +
+                "'fav' : Click this button to remove a phrase from your favorites. \n\n" +
+                "'tune' : Click this button to enable reordening phrases. \n" +
+                "Click it again to disable reordering and to use the sort buttons again. \n" +
+                "The order will be saved, even when you exit the app. \n\n" +
+                "'refresh' : Click this button to refresh the list to your saved order. \n" +
+                "(This button will be hidden when you are reordering phrases) \n\n" +
+                "'home' : Click this button to return to the main screen."
+        );
+
+        // Insert drawables into the SpannableString
+        insertDrawable(this, spannableString, "'tune'", R.drawable.tune_24px);
+        insertDrawable(this, spannableString, "'fav'", R.drawable.stars_24px);
+        insertDrawable(this, spannableString, "'home'", R.drawable.home_24px);
+        insertDrawable(this, spannableString, "'refresh'", R.drawable.refresh_24px);
+
+        // Create and show the dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(FavoritesActivity.this);
+        builder.setTitle("Information");
+        builder.setMessage(spannableString);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void setupCheckBoxListeners() {
@@ -183,9 +243,6 @@ public class FavoritesActivity extends AppCompatActivity {
         }
         if (FavoritesActivity.favoritesList == null) {
             FavoritesActivity.favoritesList = loadFavorites(context);
-        }
-        if (dictionaryAdapter == null) {
-            dictionaryAdapter = new DictionaryAdapter(context, Collections.emptyList());
         }
     }
 

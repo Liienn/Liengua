@@ -39,10 +39,35 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     private static List<DictionaryEntry> favoritesList;
     boolean showMoveButtonsForEntry = false;
 
-    public DictionaryAdapter(Context context, List<DictionaryEntry> dictionaryEntryList) {
+    public DictionaryAdapter(Context context, List<DictionaryEntry> dictionaryEntryList, RecyclerView recyclerView, ImageButton scrollToTopButton, ImageButton scrollToBottomButton) {
         this.context = context;
         DictionaryAdapter.dictionaryEntryList = dictionaryEntryList;
         favoritesList = loadFavorites(context);
+
+        scrollToTopButton.setOnClickListener(v -> recyclerView.smoothScrollToPosition(0));
+        scrollToBottomButton.setOnClickListener(v -> recyclerView.smoothScrollToPosition(dictionaryEntryList.size() - 1));
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!recyclerView.canScrollVertically(-1)) {
+                    // User is at the top of the list
+                    scrollToTopButton.setVisibility(View.GONE);
+                } else if (dy > 0) {
+                    // User is scrolling down
+                    scrollToTopButton.setVisibility(View.VISIBLE);
+                }
+
+                if (!recyclerView.canScrollVertically(1)) {
+                    // User is at the bottom of the list
+                    scrollToBottomButton.setVisibility(View.GONE);
+                } else if (dy < 0) {
+                    // User is scrolling up
+                    scrollToBottomButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     public void setLanguagesToShow(boolean showSpanish, boolean showDutch, boolean showRussian) {

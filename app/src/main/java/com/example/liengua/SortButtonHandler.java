@@ -20,7 +20,7 @@ import java.util.List;
             this.dictionaryAdapter = dictionaryAdapter;
         }
     
-        public void setupSortButton(final ImageButton sortButton, final ImageButton refreshButton) {
+        public void setupSortButton(final ImageButton sortButton, final ImageButton refreshButton, final ImageButton tuneButton) {
             sortButton.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("NotifyDataSetChanged")
                 @Override
@@ -38,8 +38,9 @@ import java.util.List;
                             });
                         }
                         dictionaryAdapter.notifyDataSetChanged();
-                        if(refreshButton != null) {
+                        if(refreshButton != null && tuneButton != null) {
                             refreshButton.setVisibility(View.VISIBLE);
+                            tuneButton.setVisibility(View.GONE);
                         }
                         Log.d("SortButtonHandler", "List sorted and adapter notified.");
                     } else {

@@ -23,6 +23,7 @@
     <string name="menu">menu</string>
     <string name="move_item_up" />
     <string name="move_item_down" />
+    <string name="scroll_to_top">scroll to top</string>
     <string-array name="languages">
         <item>Spanish</item>
         <item>Dutch</item>

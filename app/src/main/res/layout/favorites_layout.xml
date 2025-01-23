@@ -70,7 +70,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="6dp" />
     </RelativeLayout>
     <TextView
@@ -88,24 +87,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <include
             android:id="@+id/favorites_list"
+            layout="@layout/entries_list"
+            android:layout_alignParentTop="true"
+            android:layout_above="@id/bottom_buttons_favorites_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            tools:ignore="NotSibling" />
+
+        <LinearLayout
+            android:id="@+id/bottom_buttons_favorites_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/sort_buttons_favorites_layout"
-            android:paddingStart="2dp"
-            android:paddingTop="1dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:ignore="RtlSymmetry" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <include
             android:id="@+id/sort_buttons_favorites_layout"
             layout="@layout/sort_buttons_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="8dp"
             tools:ignore="NotSibling" />
 
         <ImageButton
@@ -116,9 +125,9 @@
             app:tint="@color/peach_200"
             android:padding="8dp"
             android:layout_margin="8dp"
-            android:layout_alignTop="@id/sort_buttons_favorites_layout"
-            android:backgroundTint="@color/blue_200"
-            android:background="@drawable/border"
+            android:background="@drawable/border_solid_blue"
             />
+    </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.example.liengua;
 
+import static com.example.liengua.Utils.insertDrawable;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -56,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
     private DictionaryAdapter dictionaryAdapter;
     private List<DictionaryEntry> entryList = new ArrayList<>();
     private final List<DictionaryEntry> filteredDictionaryEntries = new ArrayList<>();
-    private ImageButton randomizeButton, sortButton, refreshButton;
+    private ImageButton randomizeButton, sortButton, refreshButton, scrollToTopButton, scrollToBottomButton;
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
+    private RecyclerView recyclerView;
     private ImageView arrow1, arrow2;
     private List<DictionaryEntry> originalEntryList;
 
@@ -78,9 +81,10 @@ public class MainActivity extends AppCompatActivity {
         menuButton.setOnClickListener(menuHandler::showMenu);
 
         searchInput = findViewById(R.id.search_input);
-        RecyclerView recyclerView = findViewById(R.id.dictionary_list);
+        recyclerView = findViewById(R.id.entries_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        scrollToBottomButton = findViewById(R.id.scroll_to_bottom_button);
+        scrollToTopButton = findViewById(R.id.scroll_to_top_button);
 
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
@@ -130,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 int bottomSheetHeight = (int) (bottomSheet.getHeight() * 0.5);
 
                 // Set the paddingBottom of the RecyclerView dynamically based on bottom sheet height
-                RecyclerView recyclerView = findViewById(R.id.dictionary_list);
+                RecyclerView recyclerView = findViewById(R.id.entries_list);
                 recyclerView.setPadding(
                         recyclerView.getPaddingLeft(),  // Keep current left padding
                         recyclerView.getPaddingTop(),   // Keep current top padding
@@ -246,23 +250,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         refreshButton.setVisibility(View.GONE);
-
-
     }
-    private void insertDrawable(SpannableString spannableString, String text, int drawableResId) {
-        int start = spannableString.toString().indexOf(text);
-        int end = start + text.length();
 
-        if (start != -1) {
-            @SuppressLint("UseCompatLoadingForDrawables")
-            Drawable drawable = ContextCompat.getDrawable(this, drawableResId);
-            if (drawable != null) {
-                drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-                ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM);
-                spannableString.setSpan(imageSpan, start, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            }
-        }
-    }
     private void showInfoDialog() {
         // Create a SpannableString with the info text
         SpannableString spannableString = new SpannableString(
@@ -281,13 +270,13 @@ public class MainActivity extends AppCompatActivity {
         );
 
         // Insert drawables into the SpannableString
-        insertDrawable(spannableString, "menu", R.drawable.menu_24px);
-        insertDrawable(spannableString, "'fav'", R.drawable.stars_24px);
-        insertDrawable(spannableString, "'coll'", R.drawable.bookmark_24px);
-        insertDrawable(spannableString, "'Randomize'", R.drawable.shuffle_24px);
-        insertDrawable(spannableString, "'A-Z'", R.drawable.sort_by_alpha_24px);
-        insertDrawable(spannableString,"message bar",R.drawable.mail_24px);
-        insertDrawable(spannableString, "'Send'", R.drawable.send_24px);
+        insertDrawable(this, spannableString, "menu", R.drawable.menu_24px);
+        insertDrawable(this, spannableString, "'fav'", R.drawable.stars_24px);
+        insertDrawable(this, spannableString, "'coll'", R.drawable.bookmark_24px);
+        insertDrawable(this, spannableString, "'Randomize'", R.drawable.shuffle_24px);
+        insertDrawable(this, spannableString, "'A-Z'", R.drawable.sort_by_alpha_24px);
+        insertDrawable(this, spannableString,"message bar",R.drawable.mail_24px);
+        insertDrawable(this, spannableString, "'Send'", R.drawable.send_24px);
 
         // Create and show the dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -361,13 +350,12 @@ public class MainActivity extends AppCompatActivity {
                     originalEntryList = entryList;
 
                     runOnUiThread(() -> {
-                        dictionaryAdapter = new DictionaryAdapter(MainActivity.this, filteredDictionaryEntries);
-                        RecyclerView recyclerView = findViewById(R.id.dictionary_list);
+                        dictionaryAdapter = new DictionaryAdapter(MainActivity.this, filteredDictionaryEntries, recyclerView, scrollToTopButton, scrollToBottomButton);
+                        RecyclerView recyclerView = findViewById(R.id.entries_list);
                         recyclerView.setAdapter(dictionaryAdapter);
                         filterList("", true); // Initialize the filter list
 
                         // Setup randomize button using RandomizeButtonHandler
-
 
                         randomizeButton = findViewById(R.id.randomize_button);
 
