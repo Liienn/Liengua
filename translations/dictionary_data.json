@@ -3061,6 +3061,369 @@
     }
   },
   {
+    "english": "To squirm / cringe / wriggle****",
+    "dutch": "Ineenkrimpen",
+    "spanish": "Retorcerse",
+    "russian": "Ёжиться",
+    "alternatives": {
+        "dutch": ["Kronkelen", "Wriemelen"],
+        "spanish": ["Retorcerse de asco"],
+        "russian": ["Извиваться", "Скрючиваться"]
+    }
+  },
+  {
+    "english": "Being stuck to their phone****",
+    "dutch": "Aan hun gsm vastgeplakt zijn",
+    "spanish": "Pegado a su teléfono",
+    "russian": "Быть приклеенным к своему телефону",
+    "alternatives": {
+        "dutch": ["Aan hun gsm gekluisterd zitten"],
+        "spanish": [],
+        "russian": ["Залипать в свой телефон"]
+    }
+  },
+  {
+    "english": "To escape something****",
+    "dutch": "Ergens aan ontsnappen",
+    "spanish": "Escapar de algo",
+    "russian": "Убежать от чего-то",
+    "alternatives": {
+        "dutch": ["Ergens van wegvluchten", "Ergens van wegrennen", "Iets ontlopen"],
+        "spanish": ["Huir de algo"],
+        "russian": ["Сбежать от чего-то"]
+    }
+  },
+  {
+    "english": "To speak fluently****",
+    "dutch": "Vloeiend spreken",
+    "spanish": "Hablar con fluidez",
+    "russian": "Говорить свободно",
+    "alternatives": {
+        "dutch": ["Vlot spreken", "Vloeiend praten"],
+        "spanish": ["Hablar fluidamente"],
+        "russian": ["Говорить бегло"]
+    }
+  },
+  {
+    "english": "From a distance****",
+    "dutch": "Vanop een afstand",
+    "spanish": "Desde lejos",
+    "russian": "На расстоянии",
+    "alternatives": {
+        "dutch": ["Van ver", "Van een afstand"],
+        "spanish": ["Desde una distancia"],
+        "russian": ["Издалека", "С расстояния"]
+    }
+  },
+  {
+    "english": "Speak up a bit****",
+    "dutch": "Spreek eens wat luider",
+    "spanish": "Habla un poco más alto",
+    "russian": "Говори чуть громче",
+    "alternatives": {
+        "dutch": ["Spreek wat harder", "Spreek wat luider"],
+        "spanish": ["Habla un poco más fuerte"],
+        "russian": ["Говори погромче"]
+    }
+  },
+  {
+    "english": "Being confident about something****",
+    "dutch": "Zeker zijn van iets",
+    "spanish": "Tener confianza en algo",
+    "russian": "Быть уверенным в чем-то",
+    "alternatives": {
+        "dutch": ["Vertrouwen hebben in iets", "Zeker zijn over iets"],
+        "spanish": ["Tener seguridad en algo"],
+        "russian": ["Иметь уверенность в чем-то"]
+    }
+  },
+  {
+    "english": "The volume is on max****",
+    "dutch": "Het volume staat op maximum",
+    "spanish": "El volumen está al máximo",
+    "russian": "Громкость на максимуме",
+    "alternatives": {
+        "dutch": ["Het volume kan niet hoger", "Het volume staat op het hoogste"],
+        "spanish": ["El volumen no puede estar más alto"],
+        "russian": ["Громкость не может быть выше"]
+    }
+  },
+  {
+    "english": "I can't keep up with you****",
+    "dutch": "Ik kan je niet volgen",
+    "spanish": "No puedo seguirte",
+    "russian": "Я не могу за тобой уследить",
+    "alternatives": {
+        "dutch": ["Ik kan je niet bijhouden"],
+        "spanish": ["No puedo alcanzarte"],
+        "russian": ["Я не могу за тобой поспевать", "Я за тобой не успеваю"]
+    }
+  },
+  {
+    "english": "I slept over with a friend****",
+    "dutch": "Ik bleef slapen bij een vriend",
+    "spanish": "Dormí en casa de un amigo",
+    "russian": "Я переночевал у друга",
+    "alternatives": {
+        "dutch": ["Ik logeerde bij een vriend"],
+        "spanish": ["Me quedé a dormir en casa de un amigo"],
+        "russian": ["Я остался/осталась переночевать у друга"]
+    }
+  },
+  {
+    "english": "I'm head over heels in love with you****",
+    "dutch": "Ik ben stapelverliefd op jou",
+    "spanish": "Estoy locamente enamorado/a de ti",
+    "russian": "Я без ума от тебя",
+    "alternatives": {
+        "dutch": ["Ik ben helemaal weg van jou", "Ik ben tot over mijn oren verliefd op jou"],
+        "spanish": ["Estoy enamorado/a de ti hasta las trancas"],
+        "russian": ["Я влюблен(а) в тебя по уши"]
+    }
+  },
+  {
+    "english": "May I pass?****",
+    "dutch": "Mag ik erlangs?",
+    "spanish": "¿Puedo pasar?",
+    "russian": "Можно мне пройти?",
+    "alternatives": {
+        "dutch": ["Mag ik er voorbij?", "Mag ik erdoor?"],
+        "spanish": ["¿Puedo pasar por aquí?"],
+        "russian": ["Можно мне пройти мимо?"]
+    }
+  },
+  {
+    "english": "When will you graduate?****",
+    "dutch": "Wanneer studeer je af?",
+    "spanish": "¿Cuándo te graduarás?",
+    "russian": "Когда ты закончишь учебу?",
+    "alternatives": {
+        "dutch": ["Wanneer ben je klaar met studeren?"],
+        "spanish": ["¿Cuándo te licenciarás?"],
+        "russian": []
+    }
+  },
+  {
+    "english": "Put it down here****",
+    "dutch": "Zet het hier maar neer",
+    "spanish": "Déjalo aquí",
+    "russian": "Поставь это сюда",
+    "alternatives": {
+        "dutch": ["Leg het hier maar neer", "Zet het hier maar op de grond"],
+        "spanish": ["Ponlo aquí"],
+        "russian": ["Положи это здесь"]
+    }
+  },
+  {
+    "english": "If the weather allows it****",
+    "dutch": "Als het weer het toelaat",
+    "spanish": "Si el tiempo lo permite",
+    "russian": "Если позволит погода",
+    "alternatives": {
+        "dutch": ["Als het weer goed (genoeg) is"],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "I met her at the concert****",
+    "dutch": "Ik ben haar tegengekomen op het concert",
+    "spanish": "La conocí en el concierto",
+    "russian": "Я встретил(а) её на концерте",
+    "alternatives": {
+        "dutch": ["Ik ontmoette haar op het concert", "Ik zag haar op het concert", "Ik kwam haar tegen op het concert"],
+        "spanish": ["La vi en el concierto"],
+        "russian": ["Я увидел(а) её на концерте"]
+    }
+  },
+  {
+    "english": "I cherish good memories****",
+    "dutch": "Ik koester goede herinneringen",
+    "spanish": "Conservo buenos recuerdos",
+    "russian": "Я храню хорошие воспоминания",
+    "alternatives": {
+        "dutch": ["Ik bewaar goede herinneringen", "Ik houd van goede herinneringen"],
+        "spanish": ["Guardo buenos recuerdos"],
+        "russian": ["Я люблю хорошие воспоминания"]
+    }
+  },
+  {
+    "english": "To laze around****",
+    "dutch": "Luieren",
+    "spanish": "Holgazanear",
+    "russian": "Бездельничать",
+    "alternatives": {
+        "dutch": ["Lui zijn", "Niks doen"],
+        "spanish": ["Holgar"],
+        "russian": ["Лениться"]
+    }
+  },
+  {
+    "english": "I found out something****",
+    "dutch": "Ik ben ergens achter gekomen",
+    "spanish": "Descubrí algo",
+    "russian": "Я что-то узнал(а)",
+    "alternatives": {
+        "dutch": ["Ik kwam iets te weten", "Ik ontdekte iets"],
+        "spanish": ["Me enteré de algo"],
+        "russian": ["Я осознал что-то"]
+    }
+  },
+  {
+    "english": "Call when you can****",
+    "dutch": "Bel maar wanneer je kan",
+    "spanish": "Llama cuando puedas",
+    "russian": "Позвони, когда сможешь",
+    "alternatives": {
+        "dutch": ["Bel wanneer je kan", "Bel wanneer je tijd hebt"],
+        "spanish": ["Llama cuando tengas tiempo"],
+        "russian": ["Позвони, когда у тебя будет время"]
+    }
+  },
+  {
+    "english": "To get some fresh air****",
+    "dutch": "Een frisse neus halen",
+    "spanish": "Tomar el aire fresco",
+    "russian": "Получить свежий воздух",
+    "alternatives": {
+        "dutch": ["Een luchtje scheppen", "Even naar buiten gaan voor frisse lucht"],
+        "spanish": [],
+        "russian": ["Проветриться"]
+    }
+  },
+  {
+    "english": "Sales****",
+    "dutch": "De solden",
+    "spanish": "Las rebajas",
+    "russian": "Распродажа",
+    "alternatives": {
+        "dutch": ["De uitverkoop", "De koopjes", "De korting"],
+        "spanish": ["Los descuentos"],
+        "russian": ["Скидки"]
+    }
+  },
+  {
+    "english": "To discourage someone****",
+    "dutch": "Iemand ontmoedigen",
+    "spanish": "Desanimar a alguien",
+    "russian": "Обескуражить кого-то",
+    "alternatives": {
+        "dutch": ["Iemand demotiveren"],
+        "spanish": ["Desalentar a alguien"],
+        "russian": ["Разубедить кого-то"]
+    }
+  },
+  {
+    "english": "To encourage someone****",
+    "dutch": "Iemand moed inspreken",
+    "spanish": "Animar a alguien",
+    "russian": "Ободрить кого-то",
+    "alternatives": {
+        "dutch": ["Iemand aanmoedigen", "Iemand steunen"],
+        "spanish": ["Dar ánimos a alguien"],
+        "russian": ["Поддержать кого-то"]
+    }
+  },
+  {
+    "english": "Educational****",
+    "dutch": "Educatief",
+    "spanish": "Educativo",
+    "russian": "Образовательный",
+    "alternatives": {
+        "dutch": ["Leerzaam", "Onderwijskundig"],
+        "spanish": ["Formativo"],
+        "russian": ["Познавательный"]
+    }
+  },
+  {
+    "english": "Rush hour****",
+    "dutch": "Spitsuur",
+    "spanish": "Hora punta",
+    "russian": "Час пик",
+    "alternatives": {
+        "dutch": ["Spits"],
+        "spanish": ["Hora de mayor tráfico"],
+        "russian": ["Часы пик"]
+    }
+  },
+  {
+    "english": "Ear piercing / deafening****",
+    "dutch": "Oorverdovend",
+    "spanish": "Ensordecedor",
+    "russian": "Пронзительный",
+    "alternatives": {
+        "dutch": ["Oorverdovend luid"],
+        "spanish": ["Ensordecedoramente alto"],
+        "russian": ["Пронзительно громкий"]
+    }
+  },
+  {
+    "english": "No one cares about it****",
+    "dutch": "Niemand geeft erom",
+    "spanish": "A nadie le importa",
+    "russian": "Никому это не важно",
+    "alternatives": {
+        "dutch": ["Het laat iedereen koud", "Niemand trekt zich er iets van aan"],
+        "spanish": ["A nadie le importa un comino"],
+        "russian": ["Никому это не интересно"]
+    }
+  },
+  {
+    "english": "I'm concerned about the consequences****",
+    "dutch": "Ik maak me zorgen over de gevolgen",
+    "spanish": "Me preocupa las consecuencias",
+    "russian": "Я беспокоюсь о последствиях",
+    "alternatives": {
+        "dutch": ["Ik ben bezorgd over de gevolgen", "Ik vrees de gevolgen", "Ik ben bang hoe het gaat aflopen"],
+        "spanish": ["Me preocupa las repercusiones"],
+        "russian": []
+    }
+  },
+  {
+    "english": "I care about nature****",
+    "dutch": "Ik geef om de natuur",
+    "spanish": "Me importa la naturaleza",
+    "russian": "Мне небезразлична природа",
+    "alternatives": {
+        "dutch": ["Ik hou van de natuur", "Ik vind de natuur belangrijk", "Ik ben begaan met de natuur"],
+        "spanish": ["Me preocupa la naturaleza"],
+        "russian": ["Я заботлюсь о природе"]
+    }
+  },
+  {
+    "english": "Small writings / notes****",
+    "dutch": "Schrijfsels",
+    "spanish": "Escritos",
+    "russian": "Почеркушки",
+    "alternatives": {
+        "dutch": ["Notities", "Aantekeningen"],
+        "spanish": ["Apuntes"],
+        "russian": ["Записки"]
+    }
+  },
+  {
+    "english": "We take turns****",
+    "dutch": "We doen het om de beurt",
+    "spanish": "Nos turnamos",
+    "russian": "Мы делаем это по очереди",
+    "alternatives": {
+        "dutch": ["We wisselen"],
+        "spanish": ["Nos relevamos"],
+        "russian": ["Мы чередуемся"]
+    }
+  },
+  {
+    "english": "It is somewhere around here****",
+    "dutch": "Het is hier ergens",
+    "spanish": "Está por aquí",
+    "russian": "Это где-то здесь",
+    "alternatives": {
+        "dutch": ["Het ligt hier ergens", "Het is hier in de buurt"],
+        "spanish": ["Está por estos lares"],
+        "russian": ["Это где-то поблизости"]
+    }
+  },
+  {
     "english": "- a placeholder -",
     "dutch": "",
     "spanish": "",
