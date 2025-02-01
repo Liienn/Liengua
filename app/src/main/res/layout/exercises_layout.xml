@@ -12,37 +12,12 @@
         android:orientation="horizontal"
         android:gravity="start">
 
-        <ImageButton
-            android:id="@+id/home_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/blue_200"
-            android:src="@drawable/home_24px"
-            android:padding="8dp"
-            android:layout_marginEnd="10dp"
-            app:tint="@color/peach_200" />
-
-        <ImageButton
-            android:id="@+id/menu_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/blue_200"
-            android:src="@drawable/menu_24px"
-            android:padding="8dp"
-            app:tint="@color/peach_200" />
+        <include
+            android:id="@+id/favorite_layout_top"
+            layout="@layout/page_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/exercises_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/exercises"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="16dp"/>
 
     <TextView
         android:id="@+id/coming_soon_message"

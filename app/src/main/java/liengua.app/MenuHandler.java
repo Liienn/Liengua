@@ -30,6 +30,12 @@ public class MenuHandler {
         Button favorites = menuView.findViewById(R.id.menu_favorites);
         Button collections = menuView.findViewById(R.id.menu_collections);
         Button exercises = menuView.findViewById(R.id.menu_exercises);
+        Button about = menuView.findViewById(R.id.menu_about);
+
+        com.example.liengua.Utils.setDrawableWithAlpha(context, favorites, R.drawable.stars_24px, 80);
+        com.example.liengua.Utils.setDrawableWithAlpha(context, collections, R.drawable.bookmark_24px, 80);
+        com.example.liengua.Utils.setDrawableWithAlpha(context, exercises, R.drawable.sports_gymnastics_24px, 80);
+        com.example.liengua.Utils.setDrawableWithAlpha(context, about, R.drawable.info_24px, 80);
 
         favorites.setOnClickListener(v -> {
             // Start FavoritesActivity
@@ -51,6 +57,13 @@ public class MenuHandler {
             context.startActivity(intent);
             popupWindow.dismiss();
         });
+
+            about.setOnClickListener(v -> {
+                // Start AboutActivity
+                Intent intent = new Intent(context, AboutActivity.class);
+                context.startActivity(intent);
+                popupWindow.dismiss();
+            });
 
         popupWindow.showAsDropDown(anchorView);
     }

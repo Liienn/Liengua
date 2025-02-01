@@ -40,7 +40,7 @@ public class FavoritesActivity extends AppCompatActivity {
     private ImageView infoIcon;
     private static final Gson gson = new Gson();
 
-    @SuppressLint({"NotifyDataSetChanged", "UseCompatLoadingForDrawables"})
+    @SuppressLint({"NotifyDataSetChanged", "UseCompatLoadingForDrawables", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +67,8 @@ public class FavoritesActivity extends AppCompatActivity {
         ImageButton clearFavoritesButton = findViewById(R.id.clear_favorites_button);
         emptyFavoritesMessage = findViewById(R.id.empty_favorites_message);
         ImageButton tuneButton = findViewById(R.id.tune_favorites_button);
-
+        TextView pageTopTextView = findViewById(R.id.page_top_text_view);
+        pageTopTextView.setText("Favorites");
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(FavoritesActivity.this, MainActivity.class);
             startActivity(intent);
@@ -150,7 +151,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 "'fav' : Click to remove a phrase from your favorites. \n\n" +
                 "'tune' : Click to enable reordering phrases. \n" +
                 "Click it again to disable reordering and to use the sort buttons again. \n" +
-                "The order will be saved, even when you exit the app. \n\n" +
+                "The order will be saved, even when you exit the com.example.liengua.app. \n\n" +
                 "'refresh' : Click to refresh the list to your saved order. \n" +
                 "(This button will be hidden when you are reordering phrases) \n\n" +
                 "'home' : Click to return to the main screen."
