@@ -55,16 +55,14 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                         // User is at the top of the list
                         scrollToTopButton.setVisibility(View.GONE);
                         scrollToBottomButton.setVisibility(View.GONE);
+                    } else if (!recyclerView.canScrollVertically(1)) {
+                        // User is at the bottom of the list
+                        scrollToTopButton.setVisibility(View.GONE);
+                        scrollToBottomButton.setVisibility(View.GONE);
                     } else if (dy > 0) {
                         // User is scrolling down
                         scrollToTopButton.setVisibility(View.GONE);
                         scrollToBottomButton.setVisibility(View.VISIBLE);
-                    }
-
-                    if (!recyclerView.canScrollVertically(1)) {
-                        // User is at the bottom of the list
-                        scrollToTopButton.setVisibility(View.GONE);
-                        scrollToBottomButton.setVisibility(View.GONE);
                     } else if (dy < 0) {
                         // User is scrolling up
                         scrollToBottomButton.setVisibility(View.GONE);
@@ -73,6 +71,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                 }
             }
         });
+    }
+
+    public static int getFavoriteCount() {
+        return favoritesList.size();
     }
 
     public void setLanguagesToShow(boolean showSpanish, boolean showDutch, boolean showRussian) {
@@ -178,7 +180,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         });
 
         // Set the bookmark button state (example: change icon if bookmarked)
-        if (CollectionManager.getCollections() != null && !CollectionManager.getCollections().isEmpty()) {
+        if (!CollectionManager.getCollections(context).isEmpty()) {
             holder.bookmarkButton.setImageResource(R.drawable.bookmark_filled_24px);
         } else {
             holder.bookmarkButton.setImageResource(R.drawable.bookmark_24px);
@@ -300,7 +302,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
     private void showBookmarkDialog(DictionaryEntry entry) {
         // Get the predefined collections
-        List<Collection> predefinedCollections = CollectionManager.getCollections();
+        List<Collection> predefinedCollections = CollectionManager.getCollections(context);
         String[] collectionNames = new String[predefinedCollections.size()];
         boolean[] checkedItems = new boolean[predefinedCollections.size()];
 
@@ -308,7 +310,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         for (int i = 0; i < predefinedCollections.size(); i++) {
             Collection collection = predefinedCollections.get(i);
             collectionNames[i] = collection.getName();
-            checkedItems[i] = entry.getCollectionManager().containsCollection(collection);
+            //checkedItems[i] = entry.getCollectionManager().containsCollection(collection);
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -316,13 +318,16 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                 .setMultiChoiceItems(collectionNames, checkedItems, (dialog, which, isChecked) -> {
                     Collection collection = predefinedCollections.get(which);
                     if (isChecked) {
-                        entry.getCollectionManager().addCollection(collection);
+                        // entry.getCollectionManager().addCollection(collection);
                     } else {
-                        entry.getCollectionManager().removeCollection(collection);
+                        // entry.getCollectionManager().removeCollection(collection);
                     }
                 })
-                .setPositiveButton("Save", (dialog, which) -> notifyItemChanged(dictionaryEntryList.indexOf(entry)))
-                .setNegativeButton("Cancel", null)
+                .setPositiveButton("Create new", (dialog, which) -> {
+                    CollectionManager.createCollection(context, dictionaryEntryList, dictionaryEntryList.indexOf(entry));
+                    notifyItemChanged(dictionaryEntryList.indexOf(entry));
+                })
+                .setNegativeButton("Close", null)
                 .show();
     }
 

@@ -1,4 +1,4 @@
-
+package com.example.liengua;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -20,7 +20,7 @@ public class AboutActivity extends AppCompatActivity {
 
         // Initialize views
         TextView pageTopTextView = findViewById(R.id.page_top_text_view);
-        pageTopTextView.setText("About the com.example.liengua.app");
+        pageTopTextView.setText("About");
 
         ImageButton homeButton = findViewById(R.id.home_button);
         ImageButton menuButton = findViewById(R.id.menu_button);
@@ -30,13 +30,17 @@ public class AboutActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        String appName = getAppName();
         String versionName = getAppVersion();
+        String appName = getAppName();
 
-        TextView appNameTextView = findViewById(R.id.app_name_text_view);
-        appNameTextView.setText("Package name: " + appName);
         TextView versionTextView = findViewById(R.id.version_text_view);
         versionTextView.setText("Version: " + versionName);
+        TextView appNameTextView = findViewById(R.id.package_name_text_view);
+        appNameTextView.setText("Package: " + appName);
+        TextView phrasesAmountTextView = findViewById(R.id.phrase_amount_text_view);
+        phrasesAmountTextView.setText("Amount of phrases: " + MainActivity.getEntryCount());
+        TextView favoritesAmountTextView = findViewById(R.id.favorites_amount_text_view);
+        favoritesAmountTextView.setText("Amount of favorites: " + DictionaryAdapter.getFavoriteCount());
 
 
         menuButton.setOnClickListener(this::showMenu);

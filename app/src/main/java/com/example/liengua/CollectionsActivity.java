@@ -8,8 +8,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.List;
 
 public class CollectionsActivity extends AppCompatActivity {
+    private ListView collectionsListView;
+    private List<Collection> collections;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -28,6 +34,16 @@ public class CollectionsActivity extends AppCompatActivity {
         });
 
         menuButton.setOnClickListener(this::showMenu);
+
+        collectionsListView = findViewById(R.id.collections_list);
+
+        // Retrieve collections from SharedPreferences
+        collections = CollectionManager.getCollections(this);
+
+        // Set up the adapter
+        CollectionAdapter adapter = new CollectionAdapter(this, collections);
+        collectionsListView.setAdapter(adapter);
+
     }
 
     private void showMenu(View anchorView) {

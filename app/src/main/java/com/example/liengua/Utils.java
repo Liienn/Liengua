@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
-
 public class Utils {
     public static void insertDrawable(Context context, SpannableString spannableString, String text, int drawableResId) {
         int start = spannableString.toString().indexOf(text);

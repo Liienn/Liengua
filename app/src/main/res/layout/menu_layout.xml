@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="@string/favorites"
             android:drawableEnd="@drawable/stars_24px"
-            android:drawableTint="@color/peach_200"
+            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
          />
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/collections"
             android:drawableEnd="@drawable/bookmark_24px"
-            android:drawableTint="@color/peach_200"
+            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
           />
 
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/sports_gymnastics_24px"
-            android:drawableTint="@color/peach_200"
+            android:drawableTint="@color/white"
             android:text="@string/exercises" />
 
         <Button
@@ -54,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/info_24px"
-            android:drawableTint="@color/peach_200"
+            android:drawableTint="@color/white"
             android:text="About" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

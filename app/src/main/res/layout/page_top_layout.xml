@@ -40,16 +40,14 @@
         app:tint="@color/peach_200" />
 
 
-
-    <TextView
-        android:id="@+id/page_top_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:layout_centerVertical="true"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        />
+        <TextView
+            android:id="@+id/page_top_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="Title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

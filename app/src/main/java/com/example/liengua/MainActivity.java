@@ -1,4 +1,4 @@
-package liengua.app;
+package com.example.liengua;
 
 import static com.example.liengua.Utils.insertDrawable;
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
     private RecyclerView recyclerView;
     private ImageView arrow1, arrow2;
-    private List<DictionaryEntry> originalEntryList;
+    private static List<DictionaryEntry> originalEntryList;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -242,6 +242,9 @@ public class MainActivity extends AppCompatActivity {
         refreshButton.setVisibility(View.GONE);
     }
 
+    public static int getEntryCount() {
+        return originalEntryList.size();
+    }
     private void showInfoDialog() {
         // Create a SpannableString with the info text
         SpannableString spannableString = new SpannableString(

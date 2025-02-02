@@ -20,17 +20,16 @@
         android:layout_marginStart="16dp"
         android:layout_below="@id/about_layout_top"
         android:text="Liengua"
-        android:textColor="@android:color/black"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/version_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_below="@id/app_name_text_view"
         android:text="Version: 1.2.3"
-        android:textColor="@android:color/black"
         android:textSize="14sp" />
 
     <TextView
@@ -40,7 +39,24 @@
         android:layout_marginStart="16dp"
         android:layout_below="@id/version_text_view"
         android:text="Amount of phrases"
-        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/favorites_amount_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_below="@id/phrase_amount_text_view"
+        android:text="Amount of favorites"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/package_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/favorites_amount_text_view"
+        android:text="Package name"
         android:textSize="14sp" />
 
 </RelativeLayout>
