@@ -1,16 +1,17 @@
 package com.example.liengua;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Collection {
+public class CollectionLiengua implements Serializable {
     private String name;
     private String description;
     private final boolean isTopLevel;
-    private final List<DictionaryEntry> entries;
+    private List<DictionaryEntry> entries;
 
     // Constructor for top-level collections with description
-    public Collection(String name, String description) {
+    public CollectionLiengua(String name, String description) {
         this.name = name;
         this.description = description;
         this.isTopLevel = true;
@@ -18,7 +19,7 @@ public class Collection {
     }
 
     // Constructor for top-level collections without description (default description)
-    public Collection(String name) {
+    public CollectionLiengua(String name) {
         this(name, "No description");
     }
 
@@ -46,5 +47,13 @@ public class Collection {
 
     public List<DictionaryEntry> getEntries() {
         return entries;
+    }
+
+    public void removeEntry(DictionaryEntry entry) {
+        entries.remove(entry);
+    }
+
+    public void setEntries(List<DictionaryEntry> entries) {
+        this.entries = entries;
     }
 }

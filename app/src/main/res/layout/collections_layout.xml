@@ -22,11 +22,20 @@
         android:id="@+id/coming_soon_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coming Soon"
+        android:text="Under construction"
         android:textSize="18sp"
         android:layout_gravity="center_horizontal"
         android:paddingBottom="16dp"/>
-
+    <TextView
+        android:id="@+id/empty_collections_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is empty, let's add some collections!"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        />
     <ListView
         android:id="@+id/collections_list"
         android:layout_width="match_parent"

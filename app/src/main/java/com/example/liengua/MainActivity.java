@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
                     originalEntryList = entryList;
 
                     runOnUiThread(() -> {
-                        dictionaryAdapter = new DictionaryAdapter(MainActivity.this, filteredDictionaryEntries, recyclerView, scrollToTopButton, scrollToBottomButton);
+                        dictionaryAdapter = new DictionaryAdapter(MainActivity.this, filteredDictionaryEntries, recyclerView, scrollToTopButton, scrollToBottomButton, null);
                         RecyclerView recyclerView = findViewById(R.id.entries_list);
                         recyclerView.setAdapter(dictionaryAdapter);
                         filterList("", true); // Initialize the filter list

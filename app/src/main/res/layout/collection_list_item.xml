@@ -31,8 +31,11 @@
         <ImageButton
             android:id="@+id/delete_collection_button"
             android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/delete_forever_24px"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/delete_24px"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 </LinearLayout>

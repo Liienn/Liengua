@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Html;
 import android.text.SpannableString;
 import android.util.Log;
@@ -39,6 +41,8 @@ public class FavoritesActivity extends AppCompatActivity {
     private ImageButton randomizeButton, sortButton, refreshButton, scrollToTopButton, scrollToBottomButton;
     private ImageView infoIcon;
     private static final Gson gson = new Gson();
+    private static final Handler handler = new Handler(Looper.getMainLooper());
+
 
     @SuppressLint({"NotifyDataSetChanged", "UseCompatLoadingForDrawables", "SetTextI18n"})
     @Override
@@ -78,28 +82,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
         clearFavoritesButton.setOnClickListener(v -> clearFavorites(this));
 
-        tuneButton.setBackground(getResources().getDrawable(R.drawable.border_solid));
-        tuneButton.setOnClickListener(v -> {
-            boolean showMoveButtons = !dictionaryAdapter.showMoveButtonsForEntry;
-            dictionaryAdapter.setShowMoveButtons(showMoveButtons);
-            clearFavoritesButton.setVisibility(showMoveButtons ? View.VISIBLE : View.GONE);
-            randomizeButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
-            sortButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
-            scrollToTopButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
-            scrollToBottomButton.setVisibility(showMoveButtons? View.GONE: View.VISIBLE);
-            if(refreshButton.isShown()) {
-                refreshButton.setVisibility(View.GONE);
-            }
-            if (showMoveButtons) {
-                tuneButton.setBackgroundColor(getResources().getColor(R.color.peach_700));
-                tuneButton.setBackground(getResources().getDrawable(R.drawable.border_solid_blue));
-
-            } else {
-                tuneButton.setBackground(getResources().getDrawable(R.drawable.border_solid));
-            }
-        });
-
-        dictionaryAdapter = new DictionaryAdapter(this ,favoritesList, favoritesListView, scrollToTopButton, scrollToBottomButton);
+        dictionaryAdapter = new DictionaryAdapter(this ,favoritesList, favoritesListView, scrollToTopButton, scrollToBottomButton, null);
         favoritesListView.setLayoutManager(new LinearLayoutManager(this));
         favoritesListView.setAdapter(dictionaryAdapter);
         favoritesListView.setItemAnimator(new SlideInItemAnimator());
@@ -119,6 +102,8 @@ public class FavoritesActivity extends AppCompatActivity {
             randomizeButtonHandler.setupRandomizeButton(randomizeButton, refreshButton, tuneButton);
             SortButtonHandler sortButtonHandler = new SortButtonHandler(favoritesList, dictionaryAdapter);
             sortButtonHandler.setupSortButton(sortButton, refreshButton, tuneButton);
+            TuneButtonHandler tuneButtonHandler = new TuneButtonHandler(favoritesList,dictionaryAdapter,FavoritesActivity.this);
+            tuneButtonHandler.setTuneButton(tuneButton,dictionaryAdapter,randomizeButton,sortButton,scrollToTopButton,scrollToBottomButton,refreshButton);
         } else {
             spanishCheckBox.setVisibility(View.GONE);
             dutchCheckBox.setVisibility(View.GONE);
@@ -229,7 +214,7 @@ public class FavoritesActivity extends AppCompatActivity {
         editor.apply();
         if(dictionaryAdapter != null) {
             dictionaryAdapter.updateFavoritesList(list);
-            dictionaryAdapter.notifyDataSetChanged();
+            handler.postDelayed(dictionaryAdapter::notifyDataSetChanged, 300);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.liengua;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +13,9 @@ import java.util.List;
 
 public class CollectionAdapter extends BaseAdapter {
     private final Context context;
-    private final List<Collection> collections;
+    private final List<CollectionLiengua> collections;
 
-    public CollectionAdapter(Context context, List<Collection> collections) {
+    public CollectionAdapter(Context context, List<CollectionLiengua> collections) {
         this.context = context;
         this.collections = collections;
     }
@@ -40,7 +41,7 @@ public class CollectionAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.collection_list_item, parent, false);
         }
 
-        Collection collection = collections.get(position);
+        CollectionLiengua collection = collections.get(position);
 
         TextView nameTextView = convertView.findViewById(R.id.collection_name_text_view);
         TextView descriptionTextView = convertView.findViewById(R.id.collection_description_text_view);
@@ -53,6 +54,12 @@ public class CollectionAdapter extends BaseAdapter {
             CollectionManager.deleteCollection(context, collection);
             collections.remove(position);
             notifyDataSetChanged();
+        });
+
+        convertView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, CollectionEntriesActivity.class);
+            intent.putExtra("collection", collection);
+            context.startActivity(intent);
         });
 
         return convertView;

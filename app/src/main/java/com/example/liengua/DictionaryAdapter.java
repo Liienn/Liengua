@@ -1,5 +1,6 @@
 package com.example.liengua;
 
+import static android.content.ContentValues.TAG;
 import static com.example.liengua.FavoritesActivity.loadFavorites;
 
 import android.annotation.SuppressLint;
@@ -7,8 +8,12 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Html;
+import android.text.style.IconMarginSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,11 +42,13 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     private boolean showRussian = true;
     private static List<DictionaryEntry> favoritesList;
     boolean showMoveButtonsForEntry = false;
-
-    public DictionaryAdapter(Context context, List<DictionaryEntry> dictionaryEntryList, RecyclerView recyclerView, ImageButton scrollToTopButton, ImageButton scrollToBottomButton) {
+    private final CollectionLiengua currentCollection;
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    public DictionaryAdapter(Context context, List<DictionaryEntry> dictionaryEntryList, RecyclerView recyclerView, ImageButton scrollToTopButton, ImageButton scrollToBottomButton, CollectionLiengua currentCollection) {
         this.context = context;
         DictionaryAdapter.dictionaryEntryList = dictionaryEntryList;
         favoritesList = loadFavorites(context);
+        this.currentCollection = currentCollection;
 
         scrollToTopButton.setOnClickListener(v -> recyclerView.smoothScrollToPosition(0));
         scrollToBottomButton.setOnClickListener(v -> recyclerView.smoothScrollToPosition(dictionaryEntryList.size() - 1));
@@ -125,7 +132,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         }
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "NotifyDataSetChanged"})
     @Override
     public void onBindViewHolder(@NonNull DictionaryViewHolder holder, int position) {
         DictionaryEntry entry = dictionaryEntryList.get(position);
@@ -202,19 +209,50 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             if (position > 0) {
                 Collections.swap(dictionaryEntryList, position, position - 1);
                 notifyItemMoved(position, position - 1);
-                FavoritesActivity.saveFavorites(context,dictionaryEntryList);
             }
+            if(isCurrentActivityFavoritesActivity()) {
+                FavoritesActivity.saveFavorites(context, dictionaryEntryList);
+            } else if (isCurrentActivityCollectionEntriesActivity()) {
+                CollectionManager.saveCollection(context, currentCollection, dictionaryEntryList);
+            }
+            handler.postDelayed(this::notifyDataSetChanged, 300);
         });
 
         holder.moveDownButton.setOnClickListener(v -> {
             if (position < dictionaryEntryList.size() - 1) {
                 Collections.swap(dictionaryEntryList, position, position + 1);
                 notifyItemMoved(position, position + 1);
-                FavoritesActivity.saveFavorites(context,dictionaryEntryList);
             }
-        });
-    }
+            if(isCurrentActivityFavoritesActivity()) {
+                FavoritesActivity.saveFavorites(context,dictionaryEntryList);
+            } else if (currentCollection != null && isCurrentActivityCollectionEntriesActivity()) {
+                CollectionManager.saveCollection(context, currentCollection, dictionaryEntryList);
+            }
+            handler.postDelayed(this::notifyDataSetChanged, 300);
 
+        });
+        Log.d(TAG, "Binding entry at position " + position + ": " + entry.getSentence());
+    }
+    private boolean isCurrentActivityFavoritesActivity() {
+        Context currentContext = context;
+        while (currentContext instanceof ContextWrapper) {
+            if (currentContext instanceof FavoritesActivity) {
+                return true;
+            }
+            currentContext = ((ContextWrapper) currentContext).getBaseContext();
+        }
+        return false;
+    }
+    private boolean isCurrentActivityCollectionEntriesActivity() {
+        Context currentContext = context;
+        while (currentContext instanceof ContextWrapper) {
+            if (currentContext instanceof CollectionEntriesActivity) {
+                return true;
+            }
+            currentContext = ((ContextWrapper) currentContext).getBaseContext();
+        }
+        return false;
+    }
     private void copyAlternativeToClipboard(int which, String language, List<String> allAlternatives, TextView translationTextView) {
         String selectedAlternative = allAlternatives.get(which);
         ClipboardManager clipboard = (ClipboardManager) translationTextView.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -280,6 +318,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
     @Override
     public int getItemCount() {
+        Log.d(TAG, "Total number of entries: " + dictionaryEntryList.size());
         return dictionaryEntryList.size();
     }
 
@@ -297,30 +336,30 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     public void updateFavoritesList(List<DictionaryEntry> newFavoritesList) {
         Log.d("Favorites","Updating favorites list to: " + newFavoritesList);
         favoritesList = newFavoritesList;
-        notifyDataSetChanged();
+        handler.postDelayed(this::notifyDataSetChanged, 300);
     }
 
     private void showBookmarkDialog(DictionaryEntry entry) {
         // Get the predefined collections
-        List<Collection> predefinedCollections = CollectionManager.getCollections(context);
+        List<CollectionLiengua> predefinedCollections = CollectionManager.getCollections(context);
         String[] collectionNames = new String[predefinedCollections.size()];
         boolean[] checkedItems = new boolean[predefinedCollections.size()];
 
         // Populate the collection names and checked items
         for (int i = 0; i < predefinedCollections.size(); i++) {
-            Collection collection = predefinedCollections.get(i);
+            CollectionLiengua collection = predefinedCollections.get(i);
             collectionNames[i] = collection.getName();
             //checkedItems[i] = entry.getCollectionManager().containsCollection(collection);
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Collections coming soon!")
+        builder.setTitle("Collections usable, but under construction! Prepare for bugs")
                 .setMultiChoiceItems(collectionNames, checkedItems, (dialog, which, isChecked) -> {
-                    Collection collection = predefinedCollections.get(which);
+                    CollectionLiengua collection = predefinedCollections.get(which);
                     if (isChecked) {
-                        // entry.getCollectionManager().addCollection(collection);
+                        CollectionManager.addEntryToCollection(context, entry, collection);
                     } else {
-                        // entry.getCollectionManager().removeCollection(collection);
+                        CollectionManager.removeEntryFromCollection(context, entry, collection);
                     }
                 })
                 .setPositiveButton("Create new", (dialog, which) -> {

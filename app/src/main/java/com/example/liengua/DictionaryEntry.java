@@ -1,10 +1,11 @@
 package com.example.liengua;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DictionaryEntry {
+public class DictionaryEntry implements Serializable {
     private final String english;
     private final String spanish;
     private final String russian;

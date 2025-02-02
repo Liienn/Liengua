@@ -15,7 +15,8 @@ import java.util.List;
 
 public class CollectionsActivity extends AppCompatActivity {
     private ListView collectionsListView;
-    private List<Collection> collections;
+    private List<CollectionLiengua> collections;
+    private TextView emptyCollectionsMessage;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -26,6 +27,7 @@ public class CollectionsActivity extends AppCompatActivity {
         ImageButton homeButton = findViewById(R.id.home_button);
         ImageButton menuButton = findViewById(R.id.menu_button);
         TextView pageTopTextView = findViewById(R.id.page_top_text_view);
+        emptyCollectionsMessage = findViewById(R.id.empty_collections_message);
         pageTopTextView.setText("Collections");
 
         homeButton.setOnClickListener(v -> {
@@ -44,6 +46,15 @@ public class CollectionsActivity extends AppCompatActivity {
         CollectionAdapter adapter = new CollectionAdapter(this, collections);
         collectionsListView.setAdapter(adapter);
 
+        updateEmptyMessageVisibility();
+
+    }
+    private void updateEmptyMessageVisibility() {
+        if (collections.isEmpty()) {
+            emptyCollectionsMessage.setVisibility(View.VISIBLE);
+        } else {
+            emptyCollectionsMessage.setVisibility(View.GONE);
+        }
     }
 
     private void showMenu(View anchorView) {

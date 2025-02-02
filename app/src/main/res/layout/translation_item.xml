@@ -84,7 +84,24 @@
         />
     </LinearLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp">
 
+                <ImageButton
+                    android:id="@+id/entry_delete_button"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:padding="8dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:contentDescription="@string/move_item_down"
+                    android:src="@drawable/bookmark_remove_24px" />
+            </RelativeLayout>
     <LinearLayout
         android:id="@+id/move_buttons_layout"
         android:layout_width="wrap_content"
@@ -112,5 +129,8 @@
             android:padding="8dp"
             android:src="@drawable/arrow_downward_24px" />
     </LinearLayout>
+
+
  </RelativeLayout>
+
 </LinearLayout>
