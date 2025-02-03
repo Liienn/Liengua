@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -15,8 +16,9 @@ import java.util.List;
 
 public class CollectionsActivity extends AppCompatActivity {
     private ListView collectionsListView;
-    private List<CollectionLiengua> collections;
-    private TextView emptyCollectionsMessage;
+    private Button addCollectionButton;
+    private static List<CollectionLiengua> collections;
+    private static TextView emptyCollectionsMessage;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -24,6 +26,7 @@ public class CollectionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.collections_layout);
 
+        addCollectionButton = findViewById(R.id.add_collection_button);
         ImageButton homeButton = findViewById(R.id.home_button);
         ImageButton menuButton = findViewById(R.id.menu_button);
         TextView pageTopTextView = findViewById(R.id.page_top_text_view);
@@ -49,7 +52,7 @@ public class CollectionsActivity extends AppCompatActivity {
         updateEmptyMessageVisibility();
 
     }
-    private void updateEmptyMessageVisibility() {
+    static void updateEmptyMessageVisibility() {
         if (collections.isEmpty()) {
             emptyCollectionsMessage.setVisibility(View.VISIBLE);
         } else {

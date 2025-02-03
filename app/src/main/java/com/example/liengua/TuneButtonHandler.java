@@ -4,7 +4,10 @@ import static androidx.core.content.ContextCompat.getColor;
 import static androidx.core.content.ContextCompat.getDrawable;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -23,7 +26,7 @@ public class TuneButtonHandler {
         this.dictionaryAdapter = dictionaryAdapter;
         this.context = context;
     }
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint({"UseCompatLoadingForDrawables", "NotifyDataSetChanged"})
     public void setTuneButton(ImageButton tuneButton,
                               DictionaryAdapter adapter,
                               ImageButton randomizeButton,
@@ -39,6 +42,7 @@ public class TuneButtonHandler {
             sortButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
             scrollToTopButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
             scrollToBottomButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
+
             if (refreshButton.isShown()) {
                 refreshButton.setVisibility(View.GONE);
             }

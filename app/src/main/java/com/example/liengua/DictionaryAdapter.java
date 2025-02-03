@@ -185,9 +185,17 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             Log.d("Favorites",favoritesList.toString());
             notifyItemChanged(position);
         });
+        // Check if the entry is in any collection
+        boolean isBookmarked = false;
+        List<CollectionLiengua> collections = CollectionManager.getCollections(context);
+        for (CollectionLiengua collection : collections) {
+            if (collection.getEntries().contains(entry)) {
+                isBookmarked = true;
+                break;
+            }
+        }
 
-        // Set the bookmark button state (example: change icon if bookmarked)
-        if (!CollectionManager.getCollections(context).isEmpty()) {
+        if (isBookmarked) {
             holder.bookmarkButton.setImageResource(R.drawable.bookmark_filled_24px);
         } else {
             holder.bookmarkButton.setImageResource(R.drawable.bookmark_24px);
@@ -198,11 +206,22 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             showBookmarkDialog(entry);
         });
 
-        if (showMoveButtonsForEntry) {
-            holder.moveButtonsLayout.setVisibility(View.VISIBLE);
-        } else {
-            holder.moveButtonsLayout.setVisibility(View.GONE);
-        }
+        holder.removeEntryButton.setOnClickListener(v -> {
+            new AlertDialog.Builder(context)
+                    .setTitle("Remove from collection")
+                    .setMessage(Html.fromHtml("Are you sure you want to remove<br><br><div style='text-align:center;'><b>'" + entry.getSentence() + "'</b></div>from this collection?"))
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        Log.d("Collection", "I wish to REMOVE this entry");
+                        currentCollection.getEntries().remove(entry);
+                        notifyItemRemoved(position);
+                        CollectionManager.saveCollection(context, currentCollection);
+                        notifyDataSetChanged();
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        });
+        holder.removeEntryButton.setVisibility(showMoveButtonsForEntry && isCurrentActivityCollectionEntriesActivity() ? View.VISIBLE : View.GONE);
+        holder.moveButtonsLayout.setVisibility(showMoveButtonsForEntry ? View.VISIBLE : View.GONE);
 
         // Set click listeners for move up and move down buttons
         holder.moveUpButton.setOnClickListener(v -> {
@@ -349,7 +368,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         for (int i = 0; i < predefinedCollections.size(); i++) {
             CollectionLiengua collection = predefinedCollections.get(i);
             collectionNames[i] = collection.getName();
-            //checkedItems[i] = entry.getCollectionManager().containsCollection(collection);
+            checkedItems[i] = collection.getEntries().contains(entry);
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -374,13 +393,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
 
         LinearLayout moveButtonsLayout;
         TextView sentenceTextView;
-        TextView dutchTranslationTextView;
-        TextView spanishTranslationTextView;
-        TextView russianTranslationTextView;
+        TextView spanishTranslationTextView, russianTranslationTextView, dutchTranslationTextView;
         ImageButton favoriteButton;
-        ImageButton bookmarkButton;
-        ImageButton moveUpButton;
-        ImageButton moveDownButton;
+        ImageButton bookmarkButton, removeEntryButton;
+        ImageButton moveUpButton, moveDownButton;
 
         public DictionaryViewHolder(View itemView) {
             super(itemView);
@@ -390,6 +406,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             russianTranslationTextView = itemView.findViewById(R.id.russianTranslation);
             favoriteButton = itemView.findViewById(R.id.favorite_button);
             bookmarkButton = itemView.findViewById(R.id.bookmark_button);
+            removeEntryButton = itemView.findViewById(R.id.entry_delete_button);
             moveButtonsLayout = itemView.findViewById(R.id.move_buttons_layout);
             moveUpButton = itemView.findViewById(R.id.move_up_button);
             moveDownButton = itemView.findViewById(R.id.move_down_button);

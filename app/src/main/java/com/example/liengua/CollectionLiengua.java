@@ -37,10 +37,6 @@ public class CollectionLiengua implements Serializable {
         description = descriptionText;
     }
 
-    public boolean isTopLevel() {
-        return isTopLevel;
-    }
-
     public void addEntry(DictionaryEntry entry) {
         entries.add(entry);
     }

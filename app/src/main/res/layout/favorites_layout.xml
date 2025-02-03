@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/favorites_background"
     android:padding="16dp">
 <LinearLayout
     android:layout_width="match_parent"
@@ -37,7 +38,8 @@
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
     <include
         android:id="@+id/checkbox_favorites_layout"
         layout="@layout/checkboxes_layout"
@@ -59,7 +61,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bounding_box">
 
         <include
             android:id="@+id/favorites_list"

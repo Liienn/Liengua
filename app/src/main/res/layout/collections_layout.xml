@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -36,6 +37,13 @@
         android:paddingBottom="16dp"
         android:visibility="gone"
         />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
     <ListView
         android:id="@+id/collections_list"
         android:layout_width="match_parent"
@@ -43,4 +51,19 @@
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"/>
 
+        <Button
+            android:id="@+id/add_collection_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/border_solid_blue"
+            android:textColor="@color/peach_200"
+            android:text="Add a new collection" />
+    </RelativeLayout>
 </LinearLayout>
+
+
+</LinearLayout>
+

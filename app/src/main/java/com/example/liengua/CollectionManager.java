@@ -92,6 +92,7 @@ public class CollectionManager {
             return;
         }
         showCreateCollectionDialog(context, dictionaryEntryList.get(i));
+        CollectionsActivity.updateEmptyMessageVisibility();
     }
 
     public static void deleteCollection(Context context, CollectionLiengua collection) {
@@ -107,6 +108,7 @@ public class CollectionManager {
         String json = gson.toJson(collections);
         editor.putString(COLLECTIONS_KEY, json);
         editor.apply();
+        CollectionsActivity.updateEmptyMessageVisibility();
     }
     public static void showCreateCollectionDialog(Context context, DictionaryEntry entry) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -154,6 +156,7 @@ public class CollectionManager {
             }
         }
         saveCollection(context, collections);
+        CollectionEntriesActivity.updateEmptyMessageVisibility();
     }
 
     public static void removeEntryFromCollection(Context context, DictionaryEntry entry, CollectionLiengua collection) {
@@ -165,5 +168,6 @@ public class CollectionManager {
             }
         }
         saveCollection(context, collections);
+        CollectionEntriesActivity.updateEmptyMessageVisibility();
     }
 }

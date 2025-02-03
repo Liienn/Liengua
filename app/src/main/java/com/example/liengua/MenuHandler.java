@@ -1,6 +1,7 @@
 package com.example.liengua;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
@@ -58,12 +59,12 @@ public class MenuHandler {
             popupWindow.dismiss();
         });
 
-            about.setOnClickListener(v -> {
-                // Start AboutActivity
-                Intent intent = new Intent(context, AboutActivity.class);
-                context.startActivity(intent);
-                popupWindow.dismiss();
-            });
+        about.setOnClickListener(v -> {
+            // Start AboutActivity
+            Intent intent = new Intent(context, AboutActivity.class);
+            context.startActivity(intent);
+            popupWindow.dismiss();
+        });
 
         popupWindow.showAsDropDown(anchorView);
     }

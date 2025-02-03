@@ -13,12 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="true"
+        android:buttonTint="@color/teal_200"
         android:text="@string/spanish" />
 
     <CheckBox
         android:id="@+id/dutch_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="@color/teal_200"
         android:checked="true"
         android:text="@string/dutch" />
 
@@ -26,6 +28,7 @@
         android:id="@+id/russian_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="@color/teal_200"
         android:checked="true"
         android:paddingRight="18dp"
         android:text="@string/russian" />
@@ -38,5 +41,5 @@
         android:layout_marginEnd="10dp"
         android:maxHeight="10dp"
         android:src="@drawable/info_24px"
-        app:tint="@color/blue_200" />
+        app:tint="@color/teal_200" />
                 </LinearLayout>

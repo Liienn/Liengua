@@ -3,6 +3,7 @@ package com.example.liengua;
 import static com.example.liengua.Utils.insertDrawable;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -53,12 +54,16 @@ public class FavoritesActivity extends AppCompatActivity {
         favoritesList = loadFavorites(this);
         ImageButton scrollToTopButton = findViewById(R.id.scroll_to_top_button);
         ImageButton scrollToBottomButton = findViewById(R.id.scroll_to_bottom_button);
+
         randomizeButton = findViewById(R.id.randomize_button);
         sortButton = findViewById(R.id.sort_button);
         refreshButton = findViewById(R.id.refresh_button);
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
+        spanishCheckBox.setTextColor(getResources().getColor(R.color.white));
+        dutchCheckBox.setTextColor(getResources().getColor(R.color.white));
+        russianCheckBox.setTextColor(getResources().getColor(R.color.white));
         infoIcon = findViewById(R.id.info_icon1);
         infoIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +78,7 @@ public class FavoritesActivity extends AppCompatActivity {
         ImageButton tuneButton = findViewById(R.id.tune_favorites_button);
         TextView pageTopTextView = findViewById(R.id.page_top_text_view);
         pageTopTextView.setText("Favorites");
+        pageTopTextView.setTextColor(getResources().getColor(R.color.white_transparent_70));
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(FavoritesActivity.this, MainActivity.class);
             startActivity(intent);

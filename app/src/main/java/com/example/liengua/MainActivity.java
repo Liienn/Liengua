@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -82,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
+        spanishCheckBox.setTextColor(getResources().getColor(R.color.white));
+        dutchCheckBox.setTextColor(getResources().getColor(R.color.white));
+        russianCheckBox.setTextColor(getResources().getColor(R.color.white));
 
         refreshButton = findViewById(R.id.refresh_button);
 

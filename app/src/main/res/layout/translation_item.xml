@@ -11,11 +11,12 @@
     >
     <RelativeLayout
         android:layout_width="wrap_content"
+        android:layout_marginEnd="5dp"
         android:layout_height="match_parent">
 <LinearLayout
+    android:id="@+id/entry_mark_buttons"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_marginEnd="5dp"
     android:orientation="vertical"
     android:layout_alignParentStart="true"
     android:paddingEnd="10dp"
@@ -93,7 +94,7 @@
 
                 <ImageButton
                     android:id="@+id/entry_delete_button"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alpha="0.7"
