@@ -27,6 +27,7 @@
         android:text="Collection name"
         android:layout_marginBottom="16dp" />
 </RelativeLayout>
+
     <TextView
         android:id="@+id/collection_description_text_view"
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="no description"
-        android:maxLines="4"
+        android:maxLines="3"
         android:layout_marginBottom="16dp" />
 
     <RelativeLayout

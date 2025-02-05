@@ -1,5 +1,6 @@
 package com.example.liengua;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -17,6 +18,17 @@ public class RefreshButtonHandler {
             @Override
             public void onClick(View v) {
                 activity.recreate();
+            }
+        });
+    }
+
+    public void setupRefreshButton(ImageButton refreshButton, DictionaryAdapter adapter) {
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View v) {
+                activity.recreate();
+                adapter.notifyDataSetChanged();
             }
         });
     }

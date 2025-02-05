@@ -1,5 +1,7 @@
 package com.example.liengua;
 
+import static com.example.liengua.CollectionManager.showCreateCollectionDialog;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.Collections;
 import java.util.List;
 
 public class CollectionsActivity extends AppCompatActivity {
@@ -49,11 +52,19 @@ public class CollectionsActivity extends AppCompatActivity {
         CollectionAdapter adapter = new CollectionAdapter(this, collections);
         collectionsListView.setAdapter(adapter);
 
+        addCollectionButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onClick(View v) {
+                showCreateCollectionDialog(CollectionsActivity.this, null);
+            }
+        });
+
         updateEmptyMessageVisibility();
 
     }
     static void updateEmptyMessageVisibility() {
-        if (collections.isEmpty()) {
+        if (collections == null || collections.isEmpty()) {
             emptyCollectionsMessage.setVisibility(View.VISIBLE);
         } else {
             emptyCollectionsMessage.setVisibility(View.GONE);

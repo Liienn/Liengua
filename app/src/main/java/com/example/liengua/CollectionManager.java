@@ -1,12 +1,19 @@
 package com.example.liengua;
 
+import static androidx.core.app.ActivityCompat.recreate;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.common.reflect.TypeToken;
@@ -15,13 +22,16 @@ import com.google.gson.Gson;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CollectionManager {
 
     private static final String PREFS_NAME = "collections_prefs";
     private static final String COLLECTIONS_KEY = "collections";
 
-    public static void saveCollection(Context context, List<CollectionLiengua> collections) {
+    private static final Handler handler = new Handler(Looper. getMainLooper());
+
+    public static void saveCollection(Context context, List<CollectionLiengua> collections, DictionaryAdapter adapter) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -29,9 +39,12 @@ public class CollectionManager {
         String json = gson.toJson(collections);
         editor.putString(COLLECTIONS_KEY, json);
         editor.apply();
+        if(adapter != null) {
+            handler.postDelayed(adapter::notifyDataSetChanged, 300);
+        }
     }
 
-    public static void saveCollection(Context context, CollectionLiengua collection,  List<DictionaryEntry> entries) {
+    public static void saveCollection(Context context, CollectionLiengua collection,  List<DictionaryEntry> entries, DictionaryAdapter adapter) {
         List<CollectionLiengua> collections = getCollections(context);
         boolean collectionExists = false;
 
@@ -48,8 +61,10 @@ public class CollectionManager {
         if (!collectionExists) {
             collections.add(collection);
         }
-
-        saveCollection(context, collections);
+        if(adapter != null) {
+            adapter.updateCollectionList(entries);
+        }
+        saveCollection(context, collections, adapter);
     }
 
 
@@ -70,7 +85,7 @@ public class CollectionManager {
             collections.add(collection);
         }
 
-        saveCollection(context, collections);
+        saveCollection(context, collections, null);
     }
 
     public static List<CollectionLiengua> getCollections(Context context) {
@@ -92,7 +107,6 @@ public class CollectionManager {
             return;
         }
         showCreateCollectionDialog(context, dictionaryEntryList.get(i));
-        CollectionsActivity.updateEmptyMessageVisibility();
     }
 
     public static void deleteCollection(Context context, CollectionLiengua collection) {
@@ -108,7 +122,62 @@ public class CollectionManager {
         String json = gson.toJson(collections);
         editor.putString(COLLECTIONS_KEY, json);
         editor.apply();
-        CollectionsActivity.updateEmptyMessageVisibility();
+    }
+
+    @SuppressLint("SetTextI18n")
+    public static void showEditCollectionDialog(Context context, CollectionLiengua targetCollection) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogView = inflater.inflate(R.layout.dialog_create_collection, null);
+        builder.setView(dialogView);
+
+        String previousName = targetCollection.getName();
+        String previousDescription = targetCollection.getDescription();
+        TextView titleTextView = dialogView.findViewById(R.id.collection_dialog_title);
+        titleTextView.setText("Edit collection");
+        EditText nameEditText = dialogView.findViewById(R.id.name_edit_text);
+        nameEditText.setText(previousName);
+        EditText descriptionEditText = dialogView.findViewById(R.id.description_edit_text);
+        descriptionEditText.setText(previousDescription);
+
+        builder.setPositiveButton("Edit", (dialog, which) -> {
+            String name = nameEditText.getText().toString();
+            String description = descriptionEditText.getText().toString();
+            boolean editValid = false;
+            for (CollectionLiengua col : getCollections(context)) {
+                if (name.equals(previousName)) {
+                    editValid = true;
+                    break;
+                } else if(col.getName().equals(name)) {
+                    Toast.makeText(context, "This collection name already exists", Toast.LENGTH_SHORT).show();
+                    break;
+                } else {
+                    editValid = true;
+                }
+            }
+            if (editValid) {
+                targetCollection.setName(name);
+                if(!description.equals(previousDescription)) {
+                    targetCollection.setDescription(description);
+                }
+                if(!name.equals(previousName)) {
+                    for(CollectionLiengua col: CollectionManager.getCollections(context)) {
+                        if(col.getName().equals(previousName)) {
+                            deleteCollection(context, col);
+                            break;
+                        }
+                    }
+                }
+                saveCollection(context, targetCollection);
+                Toast.makeText(context, "Collection updated", Toast.LENGTH_SHORT).show();
+                recreate((Activity) context);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
     public static void showCreateCollectionDialog(Context context, DictionaryEntry entry) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -127,17 +196,24 @@ public class CollectionManager {
                 if (col.getName().equals(name)) {
                     collectionExists = true;
                     col.setDescription(description); // Update the description if the collection already exists
-                    col.addEntry(entry); // Add the entry to the existing collection
-                    saveCollection(context, getCollections(context)); // Save the updated collections
+                    if(entry != null) {
+                        col.addEntry(entry);
+                    }
+                    saveCollection(context, getCollections(context),null); // Save the updated collections
                     Toast.makeText(context, "Collection updated", Toast.LENGTH_SHORT).show();
                     break;
                 }
             }
             if (!collectionExists) {
                 CollectionLiengua collection = new CollectionLiengua(name, description);
-                collection.addEntry(entry);
+                if(entry != null) {
+                    collection.addEntry(entry);
+                }
                 saveCollection(context, collection);
                 Toast.makeText(context, "Collection created", Toast.LENGTH_SHORT).show();
+                if(entry == null) {
+                    recreate((Activity) context);
+                }
             }
         });
 
@@ -150,24 +226,28 @@ public class CollectionManager {
     public static void addEntryToCollection(Context context, DictionaryEntry entry, CollectionLiengua collection) {
         List<CollectionLiengua> collections = getCollections(context);
         for (CollectionLiengua col : collections) {
-            if (col.getName().equals(collection.getName())) {
-                col.addEntry(entry);
+            List<String> collEntries = new ArrayList<>();
+            if(col.getName().equals(collection.getName())) {
+                for (DictionaryEntry e : collection.getEntries()) {
+                    collEntries.add(e.getSentence());
+                }
+                if (!collEntries.contains(entry.getSentence())) {
+                    col.addEntry(entry);
+                }
                 break;
             }
         }
-        saveCollection(context, collections);
-        CollectionEntriesActivity.updateEmptyMessageVisibility();
+        saveCollection(context, collections, null);
     }
 
     public static void removeEntryFromCollection(Context context, DictionaryEntry entry, CollectionLiengua collection) {
         List<CollectionLiengua> collections = getCollections(context);
         for (CollectionLiengua col : collections) {
             if (col.getName().equals(collection.getName())) {
-                col.getEntries().remove(entry);
+                col.removeEntry(entry);
                 break;
             }
         }
-        saveCollection(context, collections);
-        CollectionEntriesActivity.updateEmptyMessageVisibility();
+        saveCollection(context, collections, null);
     }
 }

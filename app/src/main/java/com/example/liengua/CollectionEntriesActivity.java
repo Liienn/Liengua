@@ -27,6 +27,7 @@ public class CollectionEntriesActivity extends AppCompatActivity {
     private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
     private static TextView emptyEntriesMessage;
     private TextView discriptionTextView;
+    private CollectionLiengua collection;
     private ImageButton randomizeButton, sortButton, refreshButton, tuneButton, scrollToTopButton, scrollToBottomButton, backButton, removeEntryButton;
 
     @Override
@@ -52,10 +53,11 @@ public class CollectionEntriesActivity extends AppCompatActivity {
         entriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         // Get the collection from the intent
         Intent intent = getIntent();
-        CollectionLiengua collection = (CollectionLiengua) intent.getSerializableExtra("collection");
+        collection = (CollectionLiengua) intent.getSerializableExtra("collection");
 
         if (collection != null) {
             collectionNameTextView.setText(collection.getName());
+            discriptionTextView.setText(collection.getDescription());
             entries = collection.getEntries();
             Log.d(TAG, "Collection name: " + collection.getName());
             Log.d(TAG, "Number of entries: " + entries.size());
@@ -71,8 +73,9 @@ public class CollectionEntriesActivity extends AppCompatActivity {
         if(!emptyEntriesMessage.isShown()) {
             setupCheckBoxListeners();
             tuneButton.setVisibility(View.VISIBLE);
+            refreshButton.setVisibility(View.GONE);
             RefreshButtonHandler refreshButtonHandler = new RefreshButtonHandler(CollectionEntriesActivity.this);
-            refreshButtonHandler.setupRefreshButton(refreshButton);
+            refreshButtonHandler.setupRefreshButton(refreshButton, adapter);
             RandomizeButtonHandler randomizeButtonHandler = new RandomizeButtonHandler(entries, adapter);
             randomizeButtonHandler.setupRandomizeButton(randomizeButton, refreshButton, tuneButton);
             SortButtonHandler sortButtonHandler = new SortButtonHandler(entries, adapter);
@@ -97,7 +100,15 @@ public class CollectionEntriesActivity extends AppCompatActivity {
         });
 
     }
-
+    @SuppressLint("NotifyDataSetChanged")
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Collection", "onResume called");
+        entries = collection.getEntries();
+        adapter.notifyDataSetChanged();
+        updateEmptyMessageVisibility();
+    }
     static void updateEmptyMessageVisibility() {
         if (entries.isEmpty()) {
             emptyEntriesMessage.setVisibility(View.VISIBLE);

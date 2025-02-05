@@ -3,18 +3,17 @@ package com.example.liengua;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CollectionLiengua implements Serializable {
     private String name;
     private String description;
-    private final boolean isTopLevel;
     private List<DictionaryEntry> entries;
 
     // Constructor for top-level collections with description
     public CollectionLiengua(String name, String description) {
         this.name = name;
         this.description = description;
-        this.isTopLevel = true;
         this.entries = new ArrayList<>();
     }
 
@@ -39,6 +38,9 @@ public class CollectionLiengua implements Serializable {
 
     public void addEntry(DictionaryEntry entry) {
         entries.add(entry);
+        if (entry.getCollectionList() == null || entry.getCollectionList().isEmpty() || !entry.getCollectionList().contains(this.getName())) {
+            entry.addToCollection(this.getName());
+        }
     }
 
     public List<DictionaryEntry> getEntries() {
@@ -47,9 +49,18 @@ public class CollectionLiengua implements Serializable {
 
     public void removeEntry(DictionaryEntry entry) {
         entries.remove(entry);
+        entry.removeFromCollection(this.getName());
     }
 
     public void setEntries(List<DictionaryEntry> entries) {
         this.entries = entries;
+    }
+
+    public boolean containsEntry(DictionaryEntry entry) {
+        List<String> listOfEntries = new ArrayList<>();
+        for(DictionaryEntry e: getEntries()) {
+            listOfEntries.add(e.getSentence());
+        }
+        return listOfEntries.contains(entry.getSentence());
     }
 }

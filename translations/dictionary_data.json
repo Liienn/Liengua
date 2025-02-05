@@ -2269,7 +2269,7 @@
     }
   },
   {
-    "english": "Everything is clear*",
+    "english": "Everything is clear",
     "dutch": "Alles is duidelijk",
     "spanish": "Todo está claro",
     "russian": "Все понятно",
@@ -2280,7 +2280,7 @@
     }
   },
   {
-    "english": "In one ear, out the other*",
+    "english": "In one ear, out the other",
     "dutch": "Het ene oor in, het andere uit",
     "spanish": "Por un oído entra, por el otro sale",
     "russian": "В одно ухо влетает, из другого вылетает",
@@ -2291,18 +2291,18 @@
     }
   },
   {
-    "english": "That's putting it mildly*",
+    "english": "That's putting it mildly",
     "dutch": "Dat is zacht uitgedrukt",
     "spanish": "Eso es decirlo suavemente",
     "russian": "Это мягко сказано",
     "alternatives": {
         "dutch": ["Dat is een understatement"],
         "spanish": ["Eso es decirlo de forma suave"],
-        "russian": ["Это сказано мягко"]
+        "russian": ["Это сказано мягко", "Мягко выражаясь"]
     }
   },
   {
-    "english": "Careful!*",
+    "english": "Careful!",
     "dutch": "Voorzichtig!",
     "spanish": "¡Cuidado!",
     "russian": "Осторожно!",
@@ -2313,7 +2313,7 @@
     }
   },
   {
-    "english": "To boil with rage*",
+    "english": "To boil with rage",
     "dutch": "Koken van woede",
     "spanish": "Hervir de rabia",
     "russian": "Кипеть от ярости",
@@ -2324,7 +2324,7 @@
     }
   },
   {
-    "english": "To be in a bad mood*",
+    "english": "To be in a bad mood",
     "dutch": "Slechtgezind zijn",
     "spanish": "Tener mal humor",
     "russian": "Быть в плохом настроении",
@@ -2335,7 +2335,7 @@
     }
   },
   {
-    "english": "To be in a good mood*",
+    "english": "To be in a good mood",
     "dutch": "Goedgezind zijn",
     "spanish": "Tener buen humor",
     "russian": "Быть в хорошем настроении",
@@ -2346,7 +2346,7 @@
     }
   },
   {
-    "english": "To be in a hurry*",
+    "english": "To be in a hurry",
     "dutch": "Haast hebben",
     "spanish": "Tener prisa",
     "russian": "Торопиться",
@@ -2357,7 +2357,7 @@
     }
   },
   {
-    "english": "It has no use*",
+    "english": "It has no use",
     "dutch": "Het heeft geen zin",
     "spanish": "No sirve de nada",
     "russian": "Это бесполезно",
@@ -2368,7 +2368,7 @@
     }
   },
   {
-    "english": "It's not worth it*",
+    "english": "It's not worth it",
     "dutch": "Het is het niet waard",
     "spanish": "No vale la pena",
     "russian": "Это не стоит того",
@@ -2379,7 +2379,7 @@
     }
   },
   {
-    "english": "Are you sure?*",
+    "english": "Are you sure?",
     "dutch": "Weet je het zeker?",
     "spanish": "¿Estás seguro?",
     "russian": "Ты уверен(а)?",
@@ -2390,7 +2390,7 @@
     }
   },
   {
-    "english": "It is true!*",
+    "english": "It is true!",
     "dutch": "Het is waar!",
     "spanish": "¡Es verdad!",
     "russian": "Это правда!",
@@ -2401,7 +2401,7 @@
     }
   },
   {
-    "english": "Obviously*",
+    "english": "Obviously",
     "dutch": "Uiteraard",
     "spanish": "Por supuesto",
     "russian": "Очевидно",
@@ -2412,7 +2412,7 @@
     }
   },
   {
-    "english": "It's a pity*",
+    "english": "It's a pity",
     "dutch": "Het is jammer",
     "spanish": "Es una lástima",
     "russian": "Жаль",
@@ -2423,7 +2423,7 @@
     }
   },
   {
-    "english": "This is too much*",
+    "english": "This is too much",
     "dutch": "Dit is te veel",
     "spanish": "Esto es demasiado",
     "russian": "Это слишком много",
@@ -2434,18 +2434,18 @@
     }
   },
   {
-    "english": "I'm not in the mood*",
+    "english": "I'm not in the mood",
     "dutch": "Ik ben niet in de stemming",
     "spanish": "No estoy de humor",
     "russian": "У меня нет настроения",
     "alternatives": {
         "dutch": ["Ik heb geen zin", "Ik voel me niet in de stemming"],
         "spanish": ["No tengo ganas"],
-        "russian": ["У меня нет желания"]
+        "russian": ["У меня нет желания", "Я не в настроении"]
     }
   },
   {
-    "english": "Is that really the right thing to do?*",
+    "english": "Is that really the right thing to do?",
     "dutch": "Is dat echt het beste om te doen?",
     "spanish": "¿Es realmente lo correcto?",
     "russian": "Это действительно правильно?",
@@ -2456,7 +2456,7 @@
     }
   },
   {
-    "english": "I am busy*",
+    "english": "I am busy",
     "dutch": "Ik heb het druk",
     "spanish": "Estoy ocupado/a",
     "russian": "Я занят(а)",
@@ -2467,7 +2467,7 @@
     }
   },
   {
-    "english": "I will be busy*",
+    "english": "I will be busy",
     "dutch": "Ik zal het druk hebben",
     "spanish": "Estaré ocupado/a",
     "russian": "Я буду занят(а)",
@@ -2478,7 +2478,7 @@
     }
   },
   {
-    "english": "I am not busy*",
+    "english": "I am not busy",
     "dutch": "Ik heb het niet druk",
     "spanish": "No estoy ocupado/a",
     "russian": "Я не занят(а)",
@@ -2489,7 +2489,7 @@
     }
   },
   {
-    "english": "Soon*",
+    "english": "Soon",
     "dutch": "Binnenkort",
     "spanish": "Pronto",
     "russian": "Скоро",
@@ -2500,7 +2500,7 @@
     }
   },
   {
-    "english": "I'm going crazy*",
+    "english": "I'm going crazy",
     "dutch": "Ik word gek",
     "spanish": "Me estoy volviendo loco/a",
     "russian": "Я схожу с ума",
@@ -2511,7 +2511,7 @@
     }
   },
   {
-    "english": "I will add it to my list**",
+    "english": "I will add it to my list*",
     "dutch": "Ik zal het aan mijn lijst toevoegen",
     "spanish": "Lo añadiré a mi lista",
     "russian": "Я добавлю это в мой список",
@@ -2522,7 +2522,7 @@
     }
   },
   {
-    "english": "Save it for later**",
+    "english": "Save it for later*",
     "dutch": "Bewaar het voor later",
     "spanish": "Guárdalo para más tarde",
     "russian": "Сохрани это на потом",
@@ -2533,7 +2533,7 @@
     }
   },
   {
-    "english": "Save file**",
+    "english": "Save file*",
     "dutch": "Bestand opslaan",
     "spanish": "Guardar archivo",
     "russian": "Сохранить файл",
@@ -2544,7 +2544,7 @@
     }
   },
   {
-    "english": "He doesn't let it/others mess with him**",
+    "english": "He doesn't let it/others mess with him*",
     "dutch": "Hij laat zich niet doen",
     "spanish": "No se deja intimidar",
     "russian": "Он не позволяет себя запутать",
@@ -2555,7 +2555,7 @@
     }
   },
   {
-    "english": "I'm keeping busy**",
+    "english": "I'm keeping busy*",
     "dutch": "Ik hou me bezig",
     "spanish": "Me mantengo ocupado/a",
     "russian": "Я занимаюсь делами",
@@ -2566,18 +2566,18 @@
     }
   },
   {
-    "english": "I am annoyed**",
+    "english": "I am annoyed*",
     "dutch": "Ik ben geïrriteerd",
     "spanish": "Estoy molesto/a",
     "russian": "Меня раздражает",
     "alternatives": {
         "dutch": ["Ik ben geërgerd", "Ik ben boos"],
         "spanish": ["Estoy enfadado/a"],
-        "russian": ["Я раздражен(а)", "Меня бесит", "Мне это неохотно"]
+        "russian": ["Я раздражен(а)", "Меня бесит"]
     }
   },
   {
-    "english": "That is annoying**",
+    "english": "That is annoying*",
     "dutch": "Dat is irritant",
     "spanish": "Eso es molesto",
     "russian": "Это раздражает",
@@ -2588,7 +2588,7 @@
     }
   },
   {
-    "english": "Promesing**",
+    "english": "Promesing*",
     "dutch": "Veelbelovend",
     "spanish": "Prometedor",
     "russian": "Перспективный",
@@ -2599,7 +2599,7 @@
     }
   },
   {
-    "english": "I skipped some things**",
+    "english": "I skipped some things*",
     "dutch": "Ik heb wat dingen overgeslagen",
     "spanish": "Me salté algunas cosas",
     "russian": "Я пропустил(а) некоторые вещи",
@@ -2610,7 +2610,7 @@
     }
   },
   {
-    "english": "Each and every one**",
+    "english": "Each and every one*",
     "dutch": "Stuk voor stuk",
     "spanish": "Uno por uno",
     "russian": "Каждый и каждый",
@@ -2621,7 +2621,7 @@
     }
   },
   {
-    "english": "On the contrary**",
+    "english": "On the contrary*",
     "dutch": "Integendeel",
     "spanish": "Al contrario",
     "russian": "Напротив",
@@ -2632,7 +2632,7 @@
     }
   },
   {
-    "english": "Don't you dare!**",
+    "english": "Don't you dare!*",
     "dutch": "Waag het niet!",
     "spanish": "¡No te atrevas!",
     "russian": "Не смей!",
@@ -2643,7 +2643,7 @@
     }
   },
   {
-    "english": "Imagine that!**",
+    "english": "Imagine that!*",
     "dutch": "Stel je voor!",
     "spanish": "¡Imagínate!",
     "russian": "Представь себе!",
@@ -2654,7 +2654,7 @@
     }
   },
   {
-    "english": "Imagination**",
+    "english": "Imagination*",
     "dutch": "Verbeelding",
     "spanish": "Imaginación",
     "russian": "Воображение",
@@ -2665,18 +2665,18 @@
     }
   },
   {
-    "english": "To put aside**",
+    "english": "To put aside*",
     "dutch": "Aan de kant zetten",
     "spanish": "Dejar de lado",
-    "russian": "Отложить",
+    "russian": "Откладывать ",
     "alternatives": {
         "dutch": ["Opzij zetten", "Terzijde leggen", "Aan de kant schuiven"],
         "spanish": ["Dejar a un lado", "Apartar"],
-        "russian": ["Поставить в сторону", "Отложить в сторону"]
+        "russian": ["Отложить в сторону"]
     }
   },
   {
-    "english": "Despite everything**",
+    "english": "Despite everything*",
     "dutch": "Ondanks alles",
     "spanish": "A pesar de todo",
     "russian": "Несмотря на все",
@@ -2687,7 +2687,7 @@
     }
   },
   {
-    "english": "Reliable**",
+    "english": "Reliable*",
     "dutch": "Betrouwbaar",
     "spanish": "Fiable",
     "russian": "Надежный",
@@ -2698,7 +2698,7 @@
     }
   },
   {
-    "english": "Show me!**",
+    "english": "Show me!*",
     "dutch": "Laat me eens zien!",
     "spanish": "¡Enséñamelo!",
     "russian": "Покажи мне!",
@@ -2709,7 +2709,7 @@
     }
   },
   {
-    "english": "At least**",
+    "english": "At least*",
     "dutch": "Althans",
     "spanish": "Al menos",
     "russian": "По крайней мере",
@@ -2720,7 +2720,7 @@
     }
   },
   {
-    "english": "Birdfeeder**",
+    "english": "Birdfeeder*",
     "dutch": "Het voederhuisje",
     "spanish": "Comedero de pájaros",
     "russian": "Кормушка для птиц",
@@ -2731,7 +2731,7 @@
     }
   },
   {
-    "english": "To restart something**",
+    "english": "To restart something*",
     "dutch": "Iets opnieuw opstarten",
     "spanish": "Reiniciar algo",
     "russian": "Перезапустить что-то",
@@ -2742,7 +2742,7 @@
     }
   },
   {
-    "english": "I almost fainted**",
+    "english": "I almost fainted*",
     "dutch": "Ik viel bijna flauw",
     "spanish": "Casi me desmayo",
     "russian": "Я чуть не упал(а) в обморок",
@@ -2753,7 +2753,7 @@
     }
   },
   {
-    "english": "To get experience**",
+    "english": "To get experience*",
     "dutch": "Ervaring opdoen",
     "spanish": "Ganar experiencia",
     "russian": "Получить опыт",
@@ -2764,10 +2764,10 @@
     }
   },
   {
-    "english": "To enjoy new experiences**",
+    "english": "To enjoy new experiences*",
     "dutch": "(Nieuwe) ervaringen opdoen",
     "spanish": "Disfrutar de nuevas experiencias",
-    "russian": "Получать удовольствие от новых опытов",
+    "russian": "Получать удовольствие от нового опыта",
     "alternatives": {
         "dutch": ["Genieten van nieuwe ervaringen", "Nieuwe dingen proberen"],
         "spanish": [],
@@ -2775,7 +2775,7 @@
     }
   },
   {
-    "english": "Hurry up!**",
+    "english": "Hurry up!*",
     "dutch": "Schiet eens op!",
     "spanish": "¡Date prisa!",
     "russian": "Поторопитесь!",
@@ -2786,7 +2786,7 @@
     }
   },
   {
-    "english": "To pour water**",
+    "english": "To pour water*",
     "dutch": "Water inschenken",
     "spanish": "Echar agua",
     "russian": "Налить воды",
@@ -2797,7 +2797,7 @@
     }
   },
   {
-    "english": "That's for sure!**",
+    "english": "That's for sure!*",
     "dutch": "Sowieso!",
     "spanish": "¡Eso es seguro!",
     "russian": "Это точно!",
@@ -2808,7 +2808,7 @@
     }
   },
   {
-    "english": "I'm stacking up on stuff***",
+    "english": "I'm stacking up on stuff**",
     "dutch": "Ik sla dingen in",
     "spanish": "Estoy acumulando cosas",
     "russian": "Я закупаюсь вещами",
@@ -2819,7 +2819,7 @@
     }
   },
   {
-    "english": "I also do this***",
+    "english": "I also do this**",
     "dutch": "Ik ben er ook schuldig aan",
     "spanish": "Yo también hago esto",
     "russian": "Я тоже делаю это",
@@ -2830,7 +2830,7 @@
     }
   },
   {
-    "english": "It's an interesting mindset***",
+    "english": "It's an interesting mindset**",
     "dutch": "Het is een interessante mentaliteit",
     "spanish": "Es una mentalidad interesante",
     "russian": "Это интересное мировоззрение",
@@ -2841,7 +2841,7 @@
     }
   },
   {
-    "english": "Sweetheart***",
+    "english": "Sweetheart**",
     "dutch": "Liefje",
     "spanish": "Cariño",
     "russian": "Дорогой / Дорогая",
@@ -2852,7 +2852,7 @@
     }
   },
   {
-    "english": "A lifelong project***",
+    "english": "A lifelong project**",
     "dutch": "Een levenslang project",
     "spanish": "Un proyecto de toda la vida",
     "russian": "Проект на всю жизнь",
@@ -2863,7 +2863,7 @@
     }
   },
   {
-    "english": "To hit two birds with one stone***",
+    "english": "To hit two birds with one stone**",
     "dutch": "Twee vliegen in één klap",
     "spanish": "?",
     "russian": "Убить сразу двух зайцев",
@@ -2874,7 +2874,7 @@
     }
   },
   {
-    "english": "It is the same thing***",
+    "english": "It is the same thing**",
     "dutch": "Het is hetzelfde",
     "spanish": "Es lo mismo",
     "russian": "Это одно и то же",
@@ -2885,7 +2885,7 @@
     }
   },
   {
-    "english": "I'm hooked***",
+    "english": "I'm hooked**",
     "dutch": "Ik ben verslaafd",
     "spanish": "Estoy enganchado/a",
     "russian": "Я подсел(а)",
@@ -2896,7 +2896,7 @@
     }
   },
   {
-    "english": "Generous***",
+    "english": "Generous**",
     "dutch": "Vrijgevig",
     "spanish": "Generoso",
     "russian": "Щедрый / Щедрая",
@@ -2907,7 +2907,7 @@
     }
   },
   {
-    "english": "Greedy***",
+    "english": "Greedy**",
     "dutch": "Hebberig",
     "spanish": "Avaro",
     "russian": "Жадный / Жадная",
@@ -2918,7 +2918,7 @@
     }
   },
   {
-    "english": "Honest***",
+    "english": "Honest**",
     "dutch": "Eerlijk",
     "spanish": "Honesto",
     "russian": "Честный / Честная",
@@ -2929,7 +2929,7 @@
     }
   },
   {
-    "english": "Dishonest***",
+    "english": "Dishonest**",
     "dutch": "Oneerlijk",
     "spanish": "Deshonesto",
     "russian": "Нечестный / Нечестная",
@@ -2940,7 +2940,7 @@
     }
   },
   {
-    "english": "Brave***",
+    "english": "Brave**",
     "dutch": "Dapper",
     "spanish": "Valiente",
     "russian": "Храбрый / Храбрая",
@@ -2951,7 +2951,7 @@
     }
   },
   {
-    "english": "Skittish / Timid***",
+    "english": "Skittish / Timid**",
     "dutch": "Schichtig",
     "spanish": "Asustadizo",
     "russian": "Пугливый / Пугливая",
@@ -2962,7 +2962,7 @@
     }
   },
   {
-    "english": "Hardworking***",
+    "english": "Hardworking**",
     "dutch": "Hardwerkend",
     "spanish": "Trabajador",
     "russian": "Трудолюбивый / Трудолюбивая",
@@ -2973,7 +2973,7 @@
     }
   },
   {
-    "english": "Lazy***",
+    "english": "Lazy**",
     "dutch": "Lui",
     "spanish": "Perezoso",
     "russian": "Ленивый / Ленивая",
@@ -2984,7 +2984,7 @@
     }
   },
   {
-    "english": "Intelligent***",
+    "english": "Intelligent**",
     "dutch": "Intelligent",
     "spanish": "Inteligente",
     "russian": "Умный / Умная",
@@ -2995,7 +2995,7 @@
     }
   },
   {
-    "english": "Foolish***",
+    "english": "Foolish**",
     "dutch": "Stom",
     "spanish": "Tonto",
     "russian": "Глупый / Глупая",
@@ -3006,7 +3006,7 @@
     }
   },
   {
-    "english": "Outgoing***",
+    "english": "Outgoing**",
     "dutch": "Sociaal",
     "spanish": "Extrovertido",
     "russian": "Общительный / Общительная",
@@ -3017,7 +3017,7 @@
     }
   },
   {
-    "english": "Reclusive***",
+    "english": "Reclusive**",
     "dutch": "Teruggetrokken",
     "spanish": "Recluso",
     "russian": "Замкнутый / Замкнутая",
@@ -3028,7 +3028,7 @@
     }
   },
   {
-    "english": "Modest***",
+    "english": "Modest**",
     "dutch": "Bescheiden",
     "spanish": "Modesto",
     "russian": "Скромный / Скромная",
@@ -3039,7 +3039,7 @@
     }
   },
   {
-    "english": "Boastful***",
+    "english": "Boastful**",
     "dutch": "Opschepperig",
     "spanish": "Presumido",
     "russian": "Хвастливый / Хвастливая",
@@ -3050,7 +3050,7 @@
     }
   },
   {
-    "english": "Frivolous***",
+    "english": "Frivolous**",
     "dutch": "Frivool",
     "spanish": "Frívolo",
     "russian": "Легкомысленный / Легкомысленная",
@@ -3061,7 +3061,7 @@
     }
   },
   {
-    "english": "To squirm / cringe / wriggle****",
+    "english": "To squirm / cringe / wriggle***",
     "dutch": "Ineenkrimpen",
     "spanish": "Retorcerse",
     "russian": "Ёжиться",
@@ -3072,18 +3072,18 @@
     }
   },
   {
-    "english": "Being stuck to their phone****",
+    "english": "Being stuck to their phone***",
     "dutch": "Aan hun gsm vastgeplakt zijn",
     "spanish": "Pegado a su teléfono",
-    "russian": "Быть приклеенным к своему телефону",
+    "russian": "Залипать в свой телефон",
     "alternatives": {
         "dutch": ["Aan hun gsm gekluisterd zitten"],
         "spanish": [],
-        "russian": ["Залипать в свой телефон"]
+        "russian": ["Залипнуть в телефон" ,"Приклеиться к экрану"]
     }
   },
   {
-    "english": "To escape something****",
+    "english": "To escape something***",
     "dutch": "Ergens aan ontsnappen",
     "spanish": "Escapar de algo",
     "russian": "Убежать от чего-то",
@@ -3094,7 +3094,7 @@
     }
   },
   {
-    "english": "To speak fluently****",
+    "english": "To speak fluently***",
     "dutch": "Vloeiend spreken",
     "spanish": "Hablar con fluidez",
     "russian": "Говорить свободно",
@@ -3105,7 +3105,7 @@
     }
   },
   {
-    "english": "From a distance****",
+    "english": "From a distance***",
     "dutch": "Vanop een afstand",
     "spanish": "Desde lejos",
     "russian": "На расстоянии",
@@ -3116,7 +3116,7 @@
     }
   },
   {
-    "english": "Speak up a bit****",
+    "english": "Speak up a bit***",
     "dutch": "Spreek eens wat luider",
     "spanish": "Habla un poco más alto",
     "russian": "Говори чуть громче",
@@ -3127,7 +3127,7 @@
     }
   },
   {
-    "english": "Being confident about something****",
+    "english": "Being confident about something***",
     "dutch": "Zeker zijn van iets",
     "spanish": "Tener confianza en algo",
     "russian": "Быть уверенным в чем-то",
@@ -3138,7 +3138,7 @@
     }
   },
   {
-    "english": "The volume is on max****",
+    "english": "The volume is on max***",
     "dutch": "Het volume staat op maximum",
     "spanish": "El volumen está al máximo",
     "russian": "Громкость на максимуме",
@@ -3149,7 +3149,7 @@
     }
   },
   {
-    "english": "I can't keep up with you****",
+    "english": "I can't keep up with you***",
     "dutch": "Ik kan je niet volgen",
     "spanish": "No puedo seguirte",
     "russian": "Я не могу за тобой уследить",
@@ -3160,7 +3160,7 @@
     }
   },
   {
-    "english": "I slept over with a friend****",
+    "english": "I slept over with a friend***",
     "dutch": "Ik bleef slapen bij een vriend",
     "spanish": "Dormí en casa de un amigo",
     "russian": "Я переночевал у друга",
@@ -3171,7 +3171,7 @@
     }
   },
   {
-    "english": "I'm head over heels in love with you****",
+    "english": "I'm head over heels in love with you***",
     "dutch": "Ik ben stapelverliefd op jou",
     "spanish": "Estoy locamente enamorado/a de ti",
     "russian": "Я без ума от тебя",
@@ -3182,18 +3182,18 @@
     }
   },
   {
-    "english": "May I pass?****",
+    "english": "May I pass?***",
     "dutch": "Mag ik erlangs?",
     "spanish": "¿Puedo pasar?",
     "russian": "Можно мне пройти?",
     "alternatives": {
         "dutch": ["Mag ik er voorbij?", "Mag ik erdoor?"],
         "spanish": ["¿Puedo pasar por aquí?"],
-        "russian": ["Можно мне пройти мимо?"]
+        "russian": ["Можно пройти?"]
     }
   },
   {
-    "english": "When will you graduate?****",
+    "english": "When will you graduate?***",
     "dutch": "Wanneer studeer je af?",
     "spanish": "¿Cuándo te graduarás?",
     "russian": "Когда ты закончишь учебу?",
@@ -3204,7 +3204,7 @@
     }
   },
   {
-    "english": "Put it down here****",
+    "english": "Put it down here***",
     "dutch": "Zet het hier maar neer",
     "spanish": "Déjalo aquí",
     "russian": "Поставь это сюда",
@@ -3215,7 +3215,7 @@
     }
   },
   {
-    "english": "If the weather allows it****",
+    "english": "If the weather allows it***",
     "dutch": "Als het weer het toelaat",
     "spanish": "Si el tiempo lo permite",
     "russian": "Если позволит погода",
@@ -3226,7 +3226,7 @@
     }
   },
   {
-    "english": "I met her at the concert****",
+    "english": "I met her at the concert***",
     "dutch": "Ik ben haar tegengekomen op het concert",
     "spanish": "La conocí en el concierto",
     "russian": "Я встретил(а) её на концерте",
@@ -3237,7 +3237,7 @@
     }
   },
   {
-    "english": "I cherish good memories****",
+    "english": "I cherish good memories***",
     "dutch": "Ik koester goede herinneringen",
     "spanish": "Conservo buenos recuerdos",
     "russian": "Я храню хорошие воспоминания",
@@ -3248,18 +3248,18 @@
     }
   },
   {
-    "english": "To laze around****",
+    "english": "To laze around***",
     "dutch": "Luieren",
     "spanish": "Holgazanear",
     "russian": "Бездельничать",
     "alternatives": {
         "dutch": ["Lui zijn", "Niks doen"],
         "spanish": ["Holgar"],
-        "russian": ["Лениться"]
+        "russian": ["Лентяйничать"]
     }
   },
   {
-    "english": "I found out something****",
+    "english": "I found out something***",
     "dutch": "Ik ben ergens achter gekomen",
     "spanish": "Descubrí algo",
     "russian": "Я что-то узнал(а)",
@@ -3270,7 +3270,7 @@
     }
   },
   {
-    "english": "Call when you can****",
+    "english": "Call when you can***",
     "dutch": "Bel maar wanneer je kan",
     "spanish": "Llama cuando puedas",
     "russian": "Позвони, когда сможешь",
@@ -3281,10 +3281,10 @@
     }
   },
   {
-    "english": "To get some fresh air****",
+    "english": "To get some fresh air***",
     "dutch": "Een frisse neus halen",
     "spanish": "Tomar el aire fresco",
-    "russian": "Получить свежий воздух",
+    "russian": "Подышать свежим воздухом",
     "alternatives": {
         "dutch": ["Een luchtje scheppen", "Even naar buiten gaan voor frisse lucht"],
         "spanish": [],
@@ -3292,7 +3292,7 @@
     }
   },
   {
-    "english": "Sales****",
+    "english": "Sales***",
     "dutch": "De solden",
     "spanish": "Las rebajas",
     "russian": "Распродажа",
@@ -3303,7 +3303,7 @@
     }
   },
   {
-    "english": "To discourage someone****",
+    "english": "To discourage someone***",
     "dutch": "Iemand ontmoedigen",
     "spanish": "Desanimar a alguien",
     "russian": "Обескуражить кого-то",
@@ -3314,7 +3314,7 @@
     }
   },
   {
-    "english": "To encourage someone****",
+    "english": "To encourage someone***",
     "dutch": "Iemand moed inspreken",
     "spanish": "Animar a alguien",
     "russian": "Ободрить кого-то",
@@ -3325,7 +3325,7 @@
     }
   },
   {
-    "english": "Educational****",
+    "english": "Educational***",
     "dutch": "Educatief",
     "spanish": "Educativo",
     "russian": "Образовательный",
@@ -3336,7 +3336,7 @@
     }
   },
   {
-    "english": "Rush hour****",
+    "english": "Rush hour***",
     "dutch": "Spitsuur",
     "spanish": "Hora punta",
     "russian": "Час пик",
@@ -3347,7 +3347,7 @@
     }
   },
   {
-    "english": "Ear piercing / deafening****",
+    "english": "Ear piercing / deafening***",
     "dutch": "Oorverdovend",
     "spanish": "Ensordecedor",
     "russian": "Пронзительный",
@@ -3358,7 +3358,7 @@
     }
   },
   {
-    "english": "No one cares about it****",
+    "english": "No one cares about it***",
     "dutch": "Niemand geeft erom",
     "spanish": "A nadie le importa",
     "russian": "Никому это не важно",
@@ -3369,7 +3369,7 @@
     }
   },
   {
-    "english": "I'm concerned about the consequences****",
+    "english": "I'm concerned about the consequences***",
     "dutch": "Ik maak me zorgen over de gevolgen",
     "spanish": "Me preocupa las consecuencias",
     "russian": "Я беспокоюсь о последствиях",
@@ -3380,18 +3380,18 @@
     }
   },
   {
-    "english": "I care about nature****",
+    "english": "I care about nature***",
     "dutch": "Ik geef om de natuur",
     "spanish": "Me importa la naturaleza",
     "russian": "Мне небезразлична природа",
     "alternatives": {
         "dutch": ["Ik hou van de natuur", "Ik vind de natuur belangrijk", "Ik ben begaan met de natuur"],
         "spanish": ["Me preocupa la naturaleza"],
-        "russian": ["Я заботлюсь о природе"]
+        "russian": ["Я забочусь о природе"]
     }
   },
   {
-    "english": "Small writings / notes****",
+    "english": "Small writings / notes***",
     "dutch": "Schrijfsels",
     "spanish": "Escritos",
     "russian": "Почеркушки",
@@ -3402,7 +3402,7 @@
     }
   },
   {
-    "english": "We take turns****",
+    "english": "We take turns***",
     "dutch": "We doen het om de beurt",
     "spanish": "Nos turnamos",
     "russian": "Мы делаем это по очереди",
@@ -3413,7 +3413,7 @@
     }
   },
   {
-    "english": "It is somewhere around here****",
+    "english": "It is somewhere around here***",
     "dutch": "Het is hier ergens",
     "spanish": "Está por aquí",
     "russian": "Это где-то здесь",
@@ -3421,6 +3421,193 @@
         "dutch": ["Het ligt hier ergens", "Het is hier in de buurt"],
         "spanish": ["Está por estos lares"],
         "russian": ["Это где-то поблизости"]
+    }
+  },
+  {
+    "english": "At first glance****",
+    "dutch": "Op het eerste gezicht",
+    "spanish": "A simple vista",
+    "russian": "На первый взгляд",
+    "alternatives": {
+        "dutch": ["Op het eerste moment", ""],
+        "spanish": [],
+        "russian": ["С первого взгляда"]
+    }
+  },
+  {
+    "english": "It is still quite warm****",
+    "dutch": "Het is nog steeds best warm",
+    "spanish": "Todavía hace bastante calor",
+    "russian": "Всё ещё тепло",
+    "alternatives": {
+        "dutch": ["Het is nog steeds behoorlijk warm", "Het is nog steeds vrij warm"],
+        "spanish": ["Todavía hace mucho calor"],
+        "russian": ["Всё ещё достаточно тепло", "Всё ещё довольно тепло"]
+    }
+  },
+  {
+    "english": "I am not making any progress****",
+    "dutch": "Het gaat niet vooruit",
+    "spanish": "No avanzo",
+    "russian": "Дело встало",
+    "alternatives": {
+        "dutch": ["Ik kom niet vooruit", "Ik boek geen vooruitgang"],
+        "spanish": ["No progreso"],
+        "russian": ["Я не делаю никаких успехов", "Я не двигаюсь с мёртвой точки"]
+    }
+  },
+  {
+    "english": "I am not making things up****",
+    "dutch": "Ik verzin het niet",
+    "spanish": "No me lo estoy inventando",
+    "russian": "Я не придумываю",
+    "alternatives": {
+        "dutch": ["Ik lieg niet", "Ik maak het niet mooier dan het is"],
+        "spanish": ["No me lo estoy inventando"],
+        "russian": ["Я не выдумываю"]
+    }
+  },
+  {
+    "english": "I am not making a big deal out of it****",
+    "dutch": "Ik maak er geen groot probleem van",
+    "spanish": "No le doy mucha importancia",
+    "russian": "Это не абы что",
+    "alternatives": {
+        "dutch": ["Ik maak er geen drama van", "Ik blaas het niet op"],
+        "spanish": [],
+        "russian": ["Я спокойно к этому отношусь", "Я не делаю из этого проблемы"]
+    }
+  },
+  {
+    "english": "Concoction / braindump****",
+    "dutch": "Hersenspinsel",
+    "spanish": "Disparate",
+    "russian": "Выдумка",
+    "alternatives": {
+        "dutch": ["Verzinsel", "Fantasie"],
+        "spanish": ["Desvarío"],
+        "russian": ["Плод воображения"]
+    }
+  },
+  {
+    "english": "To change to something else****",
+    "dutch": "Overstappen naar iets anders",
+    "spanish": "Cambiar a algo más",
+    "russian": "Переключиться на что-то другое",
+    "alternatives": {
+        "dutch": ["Overschakelen naar iets anders", "Veranderen naar iets anders"],
+        "spanish": ["Cambiar a otra cosa"],
+        "russian": []
+    }
+  },
+    {
+    "english": "I am doing my best****",
+    "dutch": "Ik doe mijn best",
+    "spanish": "Estoy haciendo lo mejor que puedo",
+    "russian": "Я делаю всё возможное",
+    "alternatives": {
+        "dutch": ["Ik geef alles", "Ik doe alles wat ik kan"],
+        "spanish": ["Estoy haciendo todo lo que puedo"],
+        "russian": ["Я делаю всё, что в моих силах"]
+    }
+  },
+  {
+    "english": "I don't know what to do****",
+    "dutch": "Ik weet niet wat ik moet doen",
+    "spanish": "No sé qué hacer",
+    "russian": "Я не знаю, что делать",
+    "alternatives": {
+        "dutch": ["Ik weet niet hoe ik verder moet", "Ik weet niet wat ik moet aanvangen"],
+        "spanish": ["No sé cómo seguir"],
+        "russian": ["Я не знаю, как поступить"]
+    }
+  },
+  {
+    "english": "Exaggeration****",
+    "dutch": "Aanstellerij",
+    "spanish": "Exageración",
+    "russian": "Преувеличение",
+    "alternatives": {
+        "dutch": ["Het is overdreven", "Het is aangedikt"],
+        "spanish": ["Sobreactuación"],
+        "russian": ["Перебор", "Преувеличивание"]
+    }
+  },
+  {
+    "english": "Something is missing****",
+    "dutch": "Er mist iets",
+    "spanish": "Falta algo",
+    "russian": "Чего-то не хватает",
+    "alternatives": {
+        "dutch": ["Er ontbreekt iets", "Er mankeert iets"],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "He has a certain additude towards that kind of stuff****",
+    "dutch": "Hij had een bepaalde houding tegenover zo'n dingen",
+    "spanish": "Él tiene una cierta actitud hacia ese tipo de cosas",
+    "russian": "У него есть предвзятое отношение к таким вещам",
+    "alternatives": {
+        "dutch": ["Hij heeft een bepaalde instelling tegenover dat soort dingen", "Hij heeft een bepaalde kijk op dat soort dingen"],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "To bring to someone's mind****",
+    "dutch": "Aan het verstand brengen",
+    "spanish": "Hacer entender",
+    "russian": "Донести до них",
+    "alternatives": {
+        "dutch": ["Iemand iets duidelijk maken", "Iemand iets uitleggen"],
+        "spanish": ["Hacer comprender"],
+        "russian": ["Донести до кого-то"]
+    }
+  },
+  {
+    "english": "A lot to love****",
+    "dutch": "Veel om van te houden",
+    "spanish": "Mucho para amar",
+    "russian": "Хорошего должно быть много",
+    "alternatives": {
+        "dutch": ["Veel om lief te hebben"],
+        "spanish": ["Mucho para querer"],
+        "russian": ["Многое, что любить"]
+    }
+  },
+  {
+    "english": "He felt a bit off****",
+    "dutch": "Hij voelde zich een beetje raar",
+    "spanish": "Se sintió un poco raro",
+    "russian": "Он чувствовал себя немного странно",
+    "alternatives": {
+        "dutch": ["Hij voelde zich alsof er iets mis was", "Hij voelde zich een beetje ongemakkelijk"],
+        "spanish": ["Se sintió un poco extraño"],
+        "russian": ["Он чувствовал себя немного не на месте"]
+    }
+  },
+  {
+    "english": "He felt watched****",
+    "dutch": "Hij voelde zich bekeken",
+    "spanish": "Se sintió observado",
+    "russian": "Он чувствовал себя наблюдаемым",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "english": "Most of the time the prediction does not happen****",
+    "dutch": "Meestal komt het niet uit",
+    "spanish": "",
+    "russian": "Обычно это не сбывается",
+    "alternatives": {
+        "dutch": ["Meestal klopt de voorspelling niet"],
+        "spanish": [],
+        "russian": []
     }
   },
   {

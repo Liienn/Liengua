@@ -1,7 +1,10 @@
 package com.example.liengua;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +38,7 @@ public class CollectionAdapter extends BaseAdapter {
         return position;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -43,16 +47,30 @@ public class CollectionAdapter extends BaseAdapter {
 
         CollectionLiengua collection = collections.get(position);
 
+
         TextView nameTextView = convertView.findViewById(R.id.collection_name_text_view);
         TextView descriptionTextView = convertView.findViewById(R.id.collection_description_text_view);
         ImageButton deleteButton = convertView.findViewById(R.id.delete_collection_button);
+        ImageButton editButton = convertView.findViewById(R.id.collection_edit_button);
 
         nameTextView.setText(collection.getName());
         descriptionTextView.setText(collection.getDescription());
 
         deleteButton.setOnClickListener(v -> {
-            CollectionManager.deleteCollection(context, collection);
-            collections.remove(position);
+            new AlertDialog.Builder(context)
+                    .setTitle(Html.fromHtml("Remove collection"))
+                    .setMessage(Html.fromHtml("Are you sure you want to delete collection '" + collection.getName() +"'?"))
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        CollectionManager.deleteCollection(context, collection);
+                        collections.remove(position);
+                        notifyDataSetChanged();
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        });
+
+        editButton.setOnClickListener(v -> {
+            CollectionManager.showEditCollectionDialog(context, collection);
             notifyDataSetChanged();
         });
 

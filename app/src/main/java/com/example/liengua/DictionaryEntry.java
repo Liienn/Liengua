@@ -1,9 +1,13 @@
 package com.example.liengua;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class DictionaryEntry implements Serializable {
     private final String english;
@@ -11,8 +15,8 @@ public class DictionaryEntry implements Serializable {
     private final String russian;
     private final String dutch;
     private Map<String, List<String>> alternatives;
-    public boolean isFavorite;
-    private CollectionManager collectionManager;
+    public boolean isFavorite, isInCollection;
+    private List<String> collectionList;
 
     // Getters and setters
     public DictionaryEntry(String english, String spanish, String russian, String dutch) {
@@ -22,7 +26,8 @@ public class DictionaryEntry implements Serializable {
         this.dutch = dutch;
         this.alternatives = alternatives != null ? alternatives : new HashMap<>();
         this.isFavorite = false;
-        this.collectionManager = new CollectionManager();
+        this.isInCollection = false;
+        this.collectionList = new ArrayList<>();
     }
 
     // Getters
@@ -46,9 +51,31 @@ public class DictionaryEntry implements Serializable {
         return alternatives;
     }
 
-    public CollectionManager getCollectionManager() {
-        return collectionManager;
+    public List<String> getCollectionList() {return collectionList; }
+
+    public void addToCollection(String collectionName) {
+        if (this.collectionList == null) {
+            this.collectionList = new ArrayList<>();
+        }
+        this.collectionList.add(collectionName);
+        this.isInCollection = !getCollectionList().isEmpty();
     }
 
+    public void removeFromCollection(String collectionName) {
+            if (this.collectionList != null) {
+                this.collectionList.remove(collectionName);
+            } else {
+                this.collectionList = new ArrayList<>();
+            }
+        this.isInCollection = !getCollectionList().isEmpty();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DictionaryEntry that = (DictionaryEntry) o;
+        return Objects.equals(getSentence(), that.getSentence());
+    }
 
 }

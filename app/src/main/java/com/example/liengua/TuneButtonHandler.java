@@ -40,8 +40,10 @@ public class TuneButtonHandler {
             adapter.setShowMoveButtons(showMoveButtons);
             randomizeButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
             sortButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
-            scrollToTopButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
-            scrollToBottomButton.setVisibility(showMoveButtons ? View.GONE : View.VISIBLE);
+            if(showMoveButtons) {
+                scrollToBottomButton.setVisibility(View.GONE);
+                scrollToTopButton.setVisibility(View.GONE);
+            }
 
             if (refreshButton.isShown()) {
                 refreshButton.setVisibility(View.GONE);

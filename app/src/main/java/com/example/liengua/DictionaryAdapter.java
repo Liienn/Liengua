@@ -160,6 +160,19 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             }
         }
 
+        if (isInCollection(entry, CollectionManager.getCollections(context))) {
+            Log.d("Collection","I FOUND this entry in the list!");
+            holder.bookmarkButton.setImageResource(R.drawable.bookmark_filled_24px);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                holder.bookmarkButton.setAlpha(0.7F);
+            }
+        } else {
+            holder.bookmarkButton.setImageResource(R.drawable.bookmark_24px);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                holder.bookmarkButton.setAlpha(0.3F);
+            }
+        }
+
         holder.favoriteButton.setOnClickListener(v -> {
             if (entry.isFavorite) {
                 // Show confirmation dialog before removing favorite
@@ -185,24 +198,8 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             Log.d("Favorites",favoritesList.toString());
             notifyItemChanged(position);
         });
-        // Check if the entry is in any collection
-        boolean isBookmarked = false;
-        List<CollectionLiengua> collections = CollectionManager.getCollections(context);
-        for (CollectionLiengua collection : collections) {
-            if (collection.getEntries().contains(entry)) {
-                isBookmarked = true;
-                break;
-            }
-        }
-
-        if (isBookmarked) {
-            holder.bookmarkButton.setImageResource(R.drawable.bookmark_filled_24px);
-        } else {
-            holder.bookmarkButton.setImageResource(R.drawable.bookmark_24px);
-        }
 
         holder.bookmarkButton.setOnClickListener(v -> {
-            // Show a dialog to select collections to add/remove the bookmark
             showBookmarkDialog(entry);
         });
 
@@ -212,7 +209,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                     .setMessage(Html.fromHtml("Are you sure you want to remove<br><br><div style='text-align:center;'><b>'" + entry.getSentence() + "'</b></div>from this collection?"))
                     .setPositiveButton("Yes", (dialog, which) -> {
                         Log.d("Collection", "I wish to REMOVE this entry");
-                        currentCollection.getEntries().remove(entry);
+                        currentCollection.removeEntry(entry);
                         notifyItemRemoved(position);
                         CollectionManager.saveCollection(context, currentCollection);
                         notifyDataSetChanged();
@@ -232,7 +229,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             if(isCurrentActivityFavoritesActivity()) {
                 FavoritesActivity.saveFavorites(context, dictionaryEntryList);
             } else if (isCurrentActivityCollectionEntriesActivity()) {
-                CollectionManager.saveCollection(context, currentCollection, dictionaryEntryList);
+                CollectionManager.saveCollection(context, currentCollection, dictionaryEntryList, this);
             }
             handler.postDelayed(this::notifyDataSetChanged, 300);
         });
@@ -244,14 +241,17 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             }
             if(isCurrentActivityFavoritesActivity()) {
                 FavoritesActivity.saveFavorites(context,dictionaryEntryList);
-            } else if (currentCollection != null && isCurrentActivityCollectionEntriesActivity()) {
-                CollectionManager.saveCollection(context, currentCollection, dictionaryEntryList);
+            } else if (isCurrentActivityCollectionEntriesActivity()) {
+                CollectionManager.saveCollection(context, currentCollection, dictionaryEntryList, this);
             }
             handler.postDelayed(this::notifyDataSetChanged, 300);
 
         });
         Log.d(TAG, "Binding entry at position " + position + ": " + entry.getSentence());
     }
+
+
+
     private boolean isCurrentActivityFavoritesActivity() {
         Context currentContext = context;
         while (currentContext instanceof ContextWrapper) {
@@ -352,9 +352,31 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     }
 
     @SuppressLint("NotifyDataSetChanged")
+    private boolean isInCollection(DictionaryEntry entry, List<CollectionLiengua> collections) {
+        for (CollectionLiengua collection : collections) {
+            List<String> entriesCol = new ArrayList<>();
+            for (DictionaryEntry e: collection.getEntries()) {
+                entriesCol.add(e.getSentence());
+            }
+            if (entriesCol.contains((entry.getSentence()))) {
+                entry.isInCollection = true;
+                return true;
+            }
+        }
+        entry.isInCollection = false;
+        return false;
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
     public void updateFavoritesList(List<DictionaryEntry> newFavoritesList) {
         Log.d("Favorites","Updating favorites list to: " + newFavoritesList);
         favoritesList = newFavoritesList;
+        handler.postDelayed(this::notifyDataSetChanged, 300);
+    }
+
+    public void updateCollectionList(List<DictionaryEntry> newCollectionList) {
+        Log.d("Collection", "Updating collection list to: " + newCollectionList);
+        currentCollection.setEntries(newCollectionList);
         handler.postDelayed(this::notifyDataSetChanged, 300);
     }
 
@@ -368,7 +390,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         for (int i = 0; i < predefinedCollections.size(); i++) {
             CollectionLiengua collection = predefinedCollections.get(i);
             collectionNames[i] = collection.getName();
-            checkedItems[i] = collection.getEntries().contains(entry);
+            checkedItems[i] = collection.containsEntry(entry);
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -377,8 +399,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                     CollectionLiengua collection = predefinedCollections.get(which);
                     if (isChecked) {
                         CollectionManager.addEntryToCollection(context, entry, collection);
+                        notifyItemChanged(dictionaryEntryList.indexOf(entry));
                     } else {
                         CollectionManager.removeEntryFromCollection(context, entry, collection);
+                        notifyItemChanged(dictionaryEntryList.indexOf(entry));
                     }
                 })
                 .setPositiveButton("Create new", (dialog, which) -> {
@@ -388,6 +412,8 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
                 .setNegativeButton("Close", null)
                 .show();
     }
+
+
 
     public static class DictionaryViewHolder extends RecyclerView.ViewHolder {
 

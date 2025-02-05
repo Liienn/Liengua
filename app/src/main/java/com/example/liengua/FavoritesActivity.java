@@ -3,7 +3,6 @@ package com.example.liengua;
 import static com.example.liengua.Utils.insertDrawable;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -142,7 +141,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 "'fav' : Click to remove a phrase from your favorites. \n\n" +
                 "'tune' : Click to enable reordering phrases. \n" +
                 "Click it again to disable reordering and to use the sort buttons again. \n" +
-                "The order will be saved, even when you exit the com.example.liengua.app. \n\n" +
+                "The order will be saved, even when you exit the application. \n\n" +
                 "'refresh' : Click to refresh the list to your saved order. \n" +
                 "(This button will be hidden when you are reordering phrases) \n\n" +
                 "'home' : Click to return to the main screen."
@@ -224,16 +223,6 @@ public class FavoritesActivity extends AppCompatActivity {
         }
     }
 
-    static void initializeFavorites(Context context) {
-        if (favoritesList == null) {
-            favoritesList = loadFavorites(context);
-        }
-        if (FavoritesActivity.favoritesList == null) {
-            FavoritesActivity.favoritesList = loadFavorites(context);
-        }
-    }
-
-    // Example method to add a favorite (you can call this method when a user adds a favorite)
     @SuppressLint("NotifyDataSetChanged")
     static void addFavorite(DictionaryEntry favorite, Context context, List<DictionaryEntry> list) {
         if (list != null && !containsEntry(list, favorite)) {
