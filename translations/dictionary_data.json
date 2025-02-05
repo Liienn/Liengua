@@ -3605,7 +3605,7 @@
     "spanish": "",
     "russian": "Обычно это не сбывается",
     "alternatives": {
-        "dutch": ["Meestal klopt de voorspelling niet"],
+        "dutch": ["Meestal klopt de voorspelling niet", "Meestal gebeurt het niet"],
         "spanish": [],
         "russian": []
     }
