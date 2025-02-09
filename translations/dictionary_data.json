@@ -3602,12 +3602,12 @@
   {
     "english": "Most of the time it does not happen****",
     "dutch": "Meestal komt het niet uit",
-    "spanish": "",
+    "spanish": "La mayoría de las veces no sucede",
     "russian": "Обычно это не сбывается",
     "alternatives": {
-        "dutch": ["Meestal klopt de voorspelling niet", "Meestal gebeurt het niet"],
-        "spanish": [],
-        "russian": []
+      "dutch": ["Meestal klopt de voorspelling niet", "Meestal gebeurt het niet"],
+      "spanish": ["Casi nunca ocurre", "Normalmente no pasa"],
+      "russian": ["Чаще всего это не случается", "Как правило, этого не происходит"]
     }
   },
   {
