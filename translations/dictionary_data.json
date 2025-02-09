@@ -3611,6 +3611,39 @@
     }
   },
   {
+    "english": "I trust you with this task****",
+    "dutch": "Ik vertrouw je deze taak toe",
+    "spanish": "Confío en ti para esta tarea",
+    "russian": "Я доверяю тебе эту задачу",
+    "alternatives": {
+        "dutch": ["Ik laat deze taak aan jou over"],
+        "spanish": ["Te encargo esta tarea", "Te confío esta responsabilidad"],
+        "russian": ["Я поручаю тебе эту задачу", "Я полагаюсь на тебя в этом деле"]
+    }
+},
+{
+  "english": "To yawn****",
+  "dutch": "Gapen",
+  "spanish": "Bostezar",
+  "russian": "Зевать",
+  "alternatives": {
+      "dutch": ["Geeuwen"],
+      "spanish": ["Dar un bostezo"],
+      "russian": ["Зевнуть"]
+  }
+},
+{
+  "english": "To take something out****",
+  "dutch": "Iets tevoorschijn halen",
+  "spanish": "Sacar algo",
+  "russian": "Достать что-то",
+  "alternatives": {
+      "dutch": ["Iets ergens uit halen"],
+      "spanish": ["Extraer algo", "Sacar"],
+      "russian": ["Вытащить что-то", "Извлечь что-то"]
+  }
+},
+  {
     "english": "- a placeholder -",
     "dutch": "",
     "spanish": "",
