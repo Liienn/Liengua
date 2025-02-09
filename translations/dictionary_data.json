@@ -3583,7 +3583,7 @@
     "spanish": "Se sintió un poco raro",
     "russian": "Он чувствовал себя немного странно",
     "alternatives": {
-        "dutch": ["Hij voelde zich alsof er iets mis was", "Hij voelde zich een beetje ongemakkelijk"],
+        "dutch": ["Hij voelde dat er iets mis was", "Hij voelde zich een beetje ongemakkelijk"],
         "spanish": ["Se sintió un poco extraño"],
         "russian": ["Он чувствовал себя немного не на месте"]
     }
