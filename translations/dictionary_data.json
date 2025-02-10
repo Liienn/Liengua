@@ -3574,7 +3574,7 @@
     "alternatives": {
         "dutch": ["Veel om lief te hebben"],
         "spanish": ["Mucho para querer"],
-        "russian": ["Многое, что любить"]
+        "russian": []
     }
   },
   {
@@ -3592,11 +3592,11 @@
     "english": "He felt watched****",
     "dutch": "Hij voelde zich bekeken",
     "spanish": "Se sintió observado",
-    "russian": "Он чувствовал себя наблюдаемым",
+    "russian": "Он чувствовал на себе взгляд",
     "alternatives": {
         "dutch": [],
         "spanish": [],
-        "russian": []
+        "russian": ["Он чувствовал что за ним наблюдают", "Он чувствовал себя не в своей тарелке"]
     }
   },
   {
@@ -3641,6 +3641,17 @@
       "dutch": ["Iets ergens uit halen"],
       "spanish": ["Extraer algo", "Sacar"],
       "russian": ["Вытащить что-то", "Извлечь что-то"]
+  }
+},
+{
+  "english": "It is what it is****",
+  "dutch": "Het is wat het is",
+  "spanish": "Es lo que hay",
+  "russian": "Что есть, то есть",
+  "alternatives": {
+    "dutch": ["Het is niet anders", "Zo is het nu eenmaal"],
+    "spanish": ["Así son las cosas"],
+    "russian": ["Так оно и есть"]
   }
 },
   {
