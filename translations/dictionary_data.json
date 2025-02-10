@@ -3585,7 +3585,7 @@
     "alternatives": {
         "dutch": ["Hij voelde dat er iets mis was", "Hij voelde zich een beetje ongemakkelijk"],
         "spanish": ["Se sintió un poco extraño"],
-        "russian": ["Он чувствовал себя немного не на месте"]
+        "russian": ["Он чувствовал себя не в своей тарелке"]
     }
   },
   {
@@ -3596,7 +3596,7 @@
     "alternatives": {
         "dutch": [],
         "spanish": [],
-        "russian": ["Он чувствовал что за ним наблюдают", "Он чувствовал себя не в своей тарелке"]
+        "russian": ["Он чувствовал что за ним наблюдают"]
     }
   },
   {
