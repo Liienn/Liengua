@@ -3654,6 +3654,39 @@
     "russian": ["Так оно и есть"]
   }
 },
+{
+  "english": "As for the other thing****",
+  "dutch": "Wat het andere betreft",
+  "spanish": "En cuanto a lo otro",
+  "russian": "Что касается другого",
+  "alternatives": {
+      "dutch": ["Met betrekking tot het andere", "Wat betreft het andere"],
+      "spanish": ["Respecto a lo otro", "Sobre lo otro"],
+      "russian": ["Относительно другого", "По поводу другого"]
+  }
+},
+{
+  "english": "Keep it up!****",
+  "dutch": "Doe zo verder!",
+  "spanish": "¡Sigue así!",
+  "russian": "Есть над чем работать!",
+  "alternatives": {
+      "dutch": ["Ga zo door!", "Hou vol!"],
+      "spanish": ["¡Continúa así!", "¡No pares!"],
+      "russian": ["Так держать!", "Продолжай в том же духе!", "Не останавливайся!"]
+  }
+},
+{
+  "english": "To keep in mind****",
+  "dutch": "In het achterhoofd houden",
+  "spanish": "Tener en cuenta",
+  "russian": "Держать в уме",
+  "alternatives": {
+      "dutch": ["Onthouden", "Er rekening mee houden"],
+      "spanish": ["Recordar", "Mantener en mente"],
+      "russian": ["Помнить", "Иметь в виду"]
+  }
+},
   {
     "english": "- a placeholder -",
     "dutch": "",
