@@ -3660,7 +3660,7 @@
   "spanish": "En cuanto a lo otro",
   "russian": "Что касается другого",
   "alternatives": {
-      "dutch": ["Met betrekking tot het andere", "Wat betreft het andere"],
+      "dutch": ["Met betrekking tot het andere", "Wat betreft het andere", "Over dat andere"],
       "spanish": ["Respecto a lo otro", "Sobre lo otro"],
       "russian": ["Относительно другого", "По поводу другого"]
   }
