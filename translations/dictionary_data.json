@@ -3687,6 +3687,50 @@
       "russian": ["Помнить", "Иметь в виду"]
   }
 },
+{
+  "english": "He wrinkled his nose****",
+  "dutch": "He trok zijn neus op",
+  "spanish": "Arrugó la nariz",
+  "russian": "Он сморщил нос",
+  "alternatives": {
+      "dutch": ["Hij trok een vies gezicht"],
+      "spanish": ["Frunció la nariz", "Hizo una mueca de desagrado"],
+      "russian": ["Скривился", "Нахмурил нос"]
+  }
+},
+{
+  "english": "Very very tiny****",
+  "dutch": "Piepklein",
+  "spanish": "Minúsculo",
+  "russian": "Крошечный",
+  "alternatives": {
+      "dutch": ["Heel klein", "Minitieus"],
+      "spanish": ["Pequeñísimo", "Diminuto"],
+      "russian": ["Малюсенький", "Миниатюрный"]
+  }
+},
+{
+  "english": "There will always be people like that****",
+  "dutch": "Van die mensen heb je altijd",
+  "spanish": "Siempre hay gente así",
+  "russian": "Такие люди всегда есть",
+  "alternatives": {
+      "dutch": ["Er zullen altijd zo'n mensen tussenzitten"],
+      "spanish": ["Siempre habrá personas así", "Hay gente así en todas partes"],
+      "russian": ["Всегда найдутся такие люди", "Такие люди встречаются везде"]
+  }
+},
+{
+  "english": "All kinds of things****",
+  "dutch": "Van alles en nog wat",
+  "spanish": "De todo un poco",
+  "russian": "Всего понемногу",
+  "alternatives": {
+      "dutch": ["Allerlei dingen", "Een beetje van alles"],
+      "spanish": ["Un poco de todo", "Cosas de todo tipo"],
+      "russian": ["Всякая всячина", "Разное", "Чего только нет"]
+  }
+},
   {
     "english": "- a placeholder -",
     "dutch": "",
