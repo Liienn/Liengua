@@ -3731,6 +3731,39 @@
       "russian": ["Всякая всячина", "Разное", "Чего только нет"]
   }
 },
+{
+  "english": "To think about something else****",
+  "dutch": "Even ergens anders aan denken",
+  "spanish": "Para pensar en otra cosa",
+  "russian": "Переключиться на что-то другое",
+  "alternatives": {
+      "dutch": ["Om de gedachtegang te doorbreken", "Om je gedachten te verzetten"],
+      "spanish": ["Para cambiar de tema", "Para distraerse un momento"],
+      "russian": ["Подумать о чём-то другом", "Отвлечься на что-то другое"]
+  }
+},
+{
+  "english": "I follow my gut feeling****",
+  "dutch": "Ik volg mijn gevoel",
+  "spanish": "Sigo mi intuición",
+  "russian": "Я следую своему чутью",
+  "alternatives": {
+      "dutch": ["Ik ga op mijn gevoel af", "Ik volg mijn intuïtie"],
+      "spanish": ["Me guío por mi instinto"],
+      "russian": ["Я полагаюсь на своё чутьё"]
+  }
+},
+{
+  "english": "By no means****",
+  "dutch": "Allesbehalve",
+  "spanish": "Cualquier cosa menos",
+  "russian": "Всё, кроме",
+  "alternatives": {
+      "dutch": [],
+      "spanish": ["Todo menos", "Cualquier cosa menos que"],
+      "russian": ["Что угодно, кроме", "Всё, что угодно, только не"]
+  }
+},
   {
     "english": "- a placeholder -",
     "dutch": "",
