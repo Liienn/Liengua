@@ -3765,6 +3765,39 @@
   }
 },
   {
+    "english": "I don't have the slightest idea****",
+    "dutch": "Ik heb geen flauw idee",
+    "spanish": "No tengo ni idea",
+    "russian": "У меня нет ни малейшего понятия",
+    "alternatives": {
+        "dutch": ["Ik heb geen idee", "Ik heb geen (flauw) benul"],
+        "spanish": ["No tengo ni la más remota idea", "No tengo ni la más mínima idea"],
+        "russian": ["Я не имею ни малейшего понятия"]
+    }
+  },
+  {
+    "english": "I have no time for this****",
+    "dutch": "Ik heb hier geen tijd voor",
+    "spanish": "No tengo tiempo para esto",
+    "russian": "У меня нет времени на это",
+    "alternatives": {
+        "dutch": ["Ik heb geen tijd voor dit gedoe", "Ik heb geen tijd voor deze onzin"],
+        "spanish": ["No tengo tiempo para estas tonterías"],
+        "russian": ["У меня нет времени на эту ерунду"]
+    }
+  },
+  {
+    "english": "The jetlag is overcome****",
+    "dutch": "De jetlag is overwonnen",
+    "spanish": "El jetlag está superado",
+    "russian": "Джетлаг побеждён",
+    "alternatives": {
+        "dutch": ["De jetlag is voorbij", "De jetlag is verdwenen"],
+        "spanish": ["El jetlag ha pasado"],
+        "russian": ["Джетлаг позади"]
+    }
+  },
+  {
     "english": "- a placeholder -",
     "dutch": "",
     "spanish": "",
