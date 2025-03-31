@@ -1,5 +1,6 @@
 ﻿[
   {
+    "id": 1,
     "english": "Hello",
     "dutch": "Hallo",
     "spanish": "Hola",
@@ -8,9 +9,12 @@
         "dutch": ["Hoi", "Hey", "Goedemorgen", "Goedendag"],
         "spanish": ["¿Qué tal?", "¿Cómo estás?", "Buenos días", "Buenas"],
         "russian": ["Здравствуй", "Добрый день", "Доброе утро", "Приветик"]
-    }
+    },
+    "tags": ["functional language"],
+    "otherKeywords": ["greeting", "salutation"]
   },
   {
+    "id": 2,
     "english": "Goodbye",
     "dutch": "Tot ziens",
     "spanish": "Adiós",
@@ -19,9 +23,12 @@
         "dutch": ["Dag", "Tot later", "Vaarwel"],
         "spanish": ["Hasta luego", "Hasta pronto", "Chao", "Nos vemos"],
         "russian": ["Пока", "До встречи", "Прощай", "Увидимся"]
-    }
+    },
+    "tags": ["functional language"],
+    "otherKeywords": ["farewell", "parting"]
   },
   {
+    "id": 3,
     "english": "In what year?",
     "dutch": "In welk jaar?",
     "spanish": "¿En qué año?",
@@ -30,9 +37,12 @@
         "dutch": ["Welk jaar?", "In welk jaartal?", "In welk kalenderjaar?"],
         "spanish": ["¿En qué año fue?", "¿En qué año ocurrió?", "¿En qué año sucedió?"],
         "russian": ["В каком году это было?", "Когда это произошло?", "В какой год?"]
-    }
+    },
+    "tags": ["functional language", "time", "question"],
+    "otherKeywords": ["time", "year", "when", "date"]
   },
   {
+    "id": 4,
     "english": "For how long?",
     "dutch": "Voor hoe lang?",
     "spanish": "¿Por cuánto tiempo?",
@@ -41,9 +51,12 @@
         "dutch": ["Hoe lang?", "Hoeveel tijd?", "Voor welke duur?"],
         "spanish": ["¿Cuánto tiempo?", "¿Por cuánto rato?", "¿Durante cuánto tiempo?"],
         "russian": ["На какой срок?", "Как долго?", "На сколько времени это?"]
-    }
+    },
+    "tags": ["functional language", "time", "question"],
+    "otherKeywords": ["time", "duration"]
   },
   {
+    "id": 5,
     "english": "With whom?",
     "dutch": "Met wie?",
     "spanish": "¿Con quién?",
@@ -52,9 +65,12 @@
         "dutch": ["Met wie ga je?", "Met wie ben je?", "Met wie spreek je?"],
         "spanish": ["¿Con quién estás?", "¿Con quién vas?", "¿Con quién hablas?"],
         "russian": ["С кем ты?", "С кем ты идешь?", "С кем ты говоришь?"]
-    }
+    },
+    "tags": ["functional language", "question", "people"],
+    "otherKeywords": ["people", "person"]
   },
   {
+    "id": 6,
     "english": "Where to?",
     "dutch": "Waarnaartoe?",
     "spanish": "¿A dónde?",
@@ -63,9 +79,12 @@
         "dutch": ["Naar waar?", "Waarheen?", "Waar naartoe?"],
         "spanish": ["¿A dónde vamos?", "¿Hacia dónde?", "¿Dónde exactamente?"],
         "russian": ["Куда идем?", "Куда мы едем?", "В какое место?"]
-    }
+    },
+    "tags": ["functional language", "question", "place"],
+    "otherKeywords": ["place", "location"]
   },
   {
+    "id": 7,
     "english": "Shall we continue reading?",
     "dutch": "Zullen we verder lezen?",
     "spanish": "¿Seguimos leyendo?",
@@ -74,9 +93,12 @@
         "dutch": ["Heb je zin om verder te lezen?", "Wil je (graag) verder lezen?"],
         "spanish": ["¿Quieres seguir leyendo?", "¿Continuamos la lectura?"],
         "russian": ["Читать дальше?", "Будем продолжать читать?", "Хочешь продолжить читать?", "Не продолжить ли нам читать?"]
-    }
+    },
+    "tags": ["functional language", "question", "verbs"],
+    "otherKeywords": []
   },
   {
+    "id": 8,
     "english": "How much?",
     "dutch": "Hoeveel?",
     "spanish": "¿Cuánto?",
@@ -85,9 +107,12 @@
         "dutch": ["Hoeveel kost het?", "Hoeveel is het?", "Wat is de prijs?"],
         "spanish": ["¿Cuánto cuesta?", "¿Cuánto es?", "¿Cuál es el precio?"],
         "russian": ["Сколько стоит?", "Какова цена?", "Как много?"]
-    }
+    },
+    "tags": ["functional language", "question", "quantity"],
+    "otherKeywords": ["amount", "price"]
   },
   {
+    "id": 9,
     "english": "When?",
     "dutch": "Wanneer?",
     "spanish": "¿Cuándo?",
@@ -96,9 +121,12 @@
         "dutch": ["Op welk moment?", "Tegen wanneer?", "Hoe laat?"],
         "spanish": ["¿En qué momento?", "¿A qué hora?", "¿Para cuándo?"],
         "russian": ["В какой момент?", "Когда именно?", "Когда будет?"]
-    }
+    },
+    "tags": ["functional language", "question", "time"],
+    "otherKeywords": ["time", "date"]
   },
   {
+    "id": 10,
     "english": "At what time?",
     "dutch": "Hoe laat?",
     "spanish": "¿A qué hora?",
@@ -107,9 +135,12 @@
         "dutch": ["Op welk uur?", "Om hoe laat?", "Wanneer?"],
         "spanish": ["¿A qué hora exactamente?", "¿A qué hora será?", "¿En qué momento?"],
       "russian": ["Когда?", "В какое время?", "Когда именно?"]
-    }
+    },
+    "tags": ["functional language", "question", "time"],
+    "otherKeywords": ["hour", "when"]
   },
   {
+    "id": 11,
     "english": "How often?",
     "dutch": "Hoe vaak?",
     "spanish": "¿Con qué frecuencia?",
@@ -118,9 +149,12 @@
         "dutch": ["Hoe dikwijls?", "Hoe vaak gebeurt het?", "Hoe regelmatig?"],
         "spanish": ["¿Con qué regularidad?", "¿Con qué frecuencia ocurre?", "¿Qué tan seguido?"],
         "russian": ["Как часто это бывает?", "Как регулярно?", "Как часто это происходит?"]
-    }
+    },
+    "tags": ["functional language", "question", "frequency"],
+    "otherKeywords": ["frequency", "regularity"]
   },
   {
+    "id": 12,
     "english": "Which one?",
     "dutch": "Welke?",
     "spanish": "¿Cuál?",
@@ -129,9 +163,12 @@
         "dutch": ["Welke van de (twee/drie/...)?", "Welke bedoel je?", "Welke precies?"],
         "spanish": ["¿Cuál de ellos?", "¿Cuál exactamente?", "¿Cuál de los (dos/tres/...)?"],
         "russian": ["Какой из них?", "Какой именно?"]
-    }
+    },
+    "tags": ["functional language", "question", "choice"],
+    "otherKeywords": ["choice", "selection"]
   },
   {
+    "id": 13,
     "english": "Just in case",
     "dutch": "Voor de zekerheid",
     "spanish": "Por si acaso",
@@ -140,9 +177,12 @@
         "dutch": ["Voor het geval dat", "Om zeker te zijn"],
         "spanish": ["En caso de que", "Para el caso de que"],
         "russian": ["Для всякого случая", "На случай чего-то"]
-    }
+    },
+    "tags": ["functional language", "condition"],
+    "otherKeywords": ["condition", "situation"]
   },
   {
+    "id": 14,
     "english": "What kind (of...)?",
     "dutch": "Welke?",
     "spanish": "¿Qué tipo (de...)?",
@@ -151,9 +191,12 @@
         "dutch": ["Wat voor?", "Welke soort?", "Wat voor soort?"],
         "spanish": ["¿Qué clase (de...)?", "¿Qué clase de...?"],
         "russian": ["Что за...? "]
-    }
+    },
+    "tags": ["functional language", "question", "type"],
+    "otherKeywords": ["type", "category", "which kind", "what sort"]
   },
   {
+    "id": 15,
     "english": "How far?",
     "dutch": "Hoe ver?",
     "spanish": "¿Qué tan lejos?",
@@ -162,9 +205,12 @@
         "dutch": ["Hoe ver is het?", "Hoe ver weg?"],
         "spanish": ["¿Qué tan lejos está?", "¿A qué distancia?"],
         "russian": ["На каком расстоянии?", "Сколько осталось?", "Как далеко отсюда?"]
-    }
+    },
+    "tags": ["functional language", "question", "distance"],
+    "otherKeywords": ["distance", "length", "duration"]
   },
   {
+    "id": 16,
     "english": "I am confused",
     "dutch": "Ik ben in de war",
     "spanish": "Estoy confundido/a",
@@ -173,9 +219,12 @@
         "dutch": ["Ik ben verward", "Ik ben de kluts kwijt", "Ik begrijp het niet"],
         "spanish": ["No entiendo", "Me siento perdido/a"],
         "russian": ["Это меня путает", "Я не понимаю", "Я в замешательстве"]
-    }
+    },
+    "tags": ["functional language", "emotion"],
+    "otherKeywords": ["confusion", "uncertainty"]
   },
   {
+    "id": 17,
     "english": "I wish!",
     "dutch": "Was het maar!",
     "spanish": "¡Ojalá!",
@@ -184,9 +233,12 @@
         "dutch": ["Was het maar waar!", "Was het maar zo!", "Ik wou dat het zo was!", "Ik wou dat het waar was!"],
         "spanish": ["¡Ojalá fuera así!", "¡Si tan solo fuera cierto!"],
         "russian": ["Если бы!", "Если бы так было!"]
-    }
+    },
+    "tags": ["functional language", "wish"],
+    "otherKeywords": ["wish", "hope", "desire"]
   },
   {
+    "id": 18,
     "english": "I won't ask",
     "dutch": "Ik zal niks vragen",
     "spanish": "No preguntaré",
@@ -195,9 +247,12 @@
         "dutch": ["Ik vraag het niet", "Ik zal geen vragen stellen", "Ik ga het niet vragen"],
         "spanish": ["No voy a preguntar", "No voy a hacer preguntas", "No pregunto"],
         "russian": ["без вопросов", "Я не буду спрашивать", "Не буду спрашивать"]
-    }
+    },
+    "tags": ["functional language"],
+    "otherKeywords": ["question", "inquiry"]
 },
 {
+  "id": 19,
   "english": "I can't wait",
   "dutch": "Ik kan niet wachten",
   "spanish": "No puedo esperar",
@@ -206,9 +261,12 @@
       "dutch": ["Ik kijk er naar uit", "Ik wacht vol ongeduld", "Ik ben er helemaal klaar voor", "Ik sta te popelen/springen"],
       "spanish": ["Estoy ansioso/a", "Espero con ansias", "No aguanto más", "Estoy deseando"],
       "russian": ["Жду с нетерпением", "Мне не терпится", "Жду как не в себя", "Невозможно дождаться"]
-  }
+  },
+  "tags": ["functional language", "emotion"],
+  "otherKeywords": ["excitement", "anticipation"]
 },
 {
+  "id": 20,
   "english": "I don't like wasting money",
   "dutch": "Ik hou niet van geld verspillen",
   "spanish": "No me gusta malgastar dinero",
@@ -217,9 +275,12 @@
       "dutch": ["Ik vind het zonde van het geld", "Ik wil geen geld verspillen"],
       "spanish": ["No me gusta desperdiciar dinero", "Me molesta malgastar dinero"],
       "russian": ["Я не люблю тратить деньги впустую", "Мне не нравится тратить деньги зря"]
-  }
+  },
+  "tags": ["functional language", "money"],
+  "otherKeywords": ["I don't like spending money", "coins", "currency"]
 },
 {
+  "id": 21,
   "english": "To spend on oneself / to treat oneself",
   "dutch": "Iets voor jezelf doen",
   "spanish": "Hacer algo por ti mismo",
@@ -228,9 +289,12 @@
       "dutch": ["Iets voor jezelf doen", "Jezelf verwennen", "Jezelf trakteren"],
       "spanish": ["Hacer algo para ti mismo", "Gastarse en uno mismo", "Consentirse"],
       "russian": ["Тратить на себя средства", "Тратить на себя время/энергию", "Баловать себя"]
-  }
+  },
+  "tags": ["functional language", "money"],
+  "otherKeywords": ["spending", "self-care", "self-indulgence"]
 },
 {
+  "id": 22,
   "english": "What's your opinion?",
   "dutch": "Wat denk jij erover?",
   "spanish": "¿Cuál es tu opinión?",
@@ -239,9 +303,12 @@
       "dutch": ["Wat is jouw mening?", "Wat vind jij ervan?"],
       "spanish": ["¿Qué opinas?", "¿Qué piensas?"],
       "russian": ["Что ты думаешь?", "Как ты считаешь?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["thought", "belief"]
 },
 {
+  "id": 23,
   "english": "What for?",
   "dutch": "Waarvoor?",
   "spanish": "¿Para qué?",
@@ -250,9 +317,12 @@
       "dutch": ["Waarom?", "Voor wat?", "Met welk doel?"],
       "spanish": ["¿Con qué fin?", "¿Por qué?"],
       "russian": ["С какой целью?", "Почему?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["what purpose", "for what reason"]
 },
 {
+  "id": 24,
   "english": "Which way?",
   "dutch": "Welke kant?",
   "spanish": "¿Hacia dónde?",
@@ -261,9 +331,12 @@
       "dutch": ["Welke richting?", "Waarnaartoe?", "In welke richting?", "Waarheen?"],
       "spanish": ["¿A dónde?", "¿Hacia qué dirección?"],
       "russian": ["В какую сторону?", "В какую сторону идти?", "Куда идти?"]
-  }
+  },
+  "tags": ["functional language", "question", "direction"],
+  "otherKeywords": ["which direction", "which path"]
 },
 {
+  "id": 25,
   "english": "Whose is it?",
   "dutch": "Van wie is het?",
   "spanish": "¿De quién es?",
@@ -272,9 +345,12 @@
       "dutch": ["Van wie is dit?", "Wie is de eigenaar?"],
       "spanish": ["¿De quién pertenece?", "¿A quién le pertenece?"],
       "russian": ["Кому это принадлежит?", "Чьё это имущество?"]
-  }
+  },
+  "tags": ["functional language", "question", "people"],
+  "otherKeywords": ["ownership", "possession"]
 },
 {
+  "id": 26,
   "english": "In which case?",
   "dutch": "In welk geval?",
   "spanish": "¿En qué caso?",
@@ -283,9 +359,12 @@
       "dutch": ["Wanneer?", "In welk scenario?", "In welke situatie?"],
       "spanish": ["¿En qué situación?", "¿En qué circunstancia?"],
       "russian": ["При каком случае?", "В каком контексте?", "В какой ситуации?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["in what situation", "condition", "when"]
 },
 {
+  "id": 27,
   "english": "What do you mean?",
   "dutch": "Wat bedoel je?",
   "spanish": "¿Qué quieres decir?",
@@ -294,9 +373,12 @@
       "dutch": ["Hoe bedoel je?", "Wat bedoel je precies?", "Wat wil je zeggen?"],
       "spanish": ["¿Qué significas?", "¿Qué quieres decir exactamente?"],
       "russian": ["Что ты хочешь сказать?", "Что ты имеешь в виду конкретно?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["meaning", "interpretation", "inquiry"]
 },
 {
+  "id": 28,
   "english": "How come?",
   "dutch": "Hoe komt het?",
   "spanish": "¿Por qué?",
@@ -305,9 +387,12 @@
       "dutch": ["Wat is de reden?", "Waarom?", "Hoezo?"],
       "spanish": ["¿Cómo es eso?", "¿Por qué sucede?"],
       "russian": ["Почему так?", "Как это получилось?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["what is the reason", "cause", "why"]
 },
 {
+  "id": 29,
   "english": "By whom?",
   "dutch": "Door wie?",
   "spanish": "¿Por quién?",
@@ -316,9 +401,12 @@
       "dutch": ["Wie heeft dat gedaan/gemaakt?", "Wie is verantwoordelijk?"],
       "spanish": ["¿Quién lo hizo?", "¿Quién es el responsable?"],
       "russian": ["Кто это сделал?", "Кто это придумал?"]
-  }
+  },
+  "tags": ["functional language", "question", "people"],
+  "otherKeywords": ["who did it", "who is responsible", "who made it"]
 },
 {
+  "id": 30,
   "english": "For what reason?",
   "dutch": "Waarom?",
   "spanish": "¿Por qué?",
@@ -327,9 +415,12 @@
       "dutch": ["Wat is de reden?", "Waarom zo?", "Met welke reden?"],
       "spanish": ["¿Por qué motivo?", "¿Cuál es la razón?"],
       "russian": ["Зачем?", "Почему?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["cause", "why"]
 },
 {
+  "id": 31,
   "english": "Which one is better?",
   "dutch": "Welke is beter?",
   "spanish": "¿Cuál es mejor?",
@@ -338,9 +429,12 @@
       "dutch": ["Welke is het beste?", "Welke is beter (dan de andere)?"],
       "spanish": ["¿Cuál es la mejor?", "¿Cuál es el mejor?"],
       "russian": ["Какая/какой из них лучше?", "Которая/которой лучше?"]
-  }
+  },
+  "tags": ["functional language", "question", "comparison"],
+  "otherKeywords": ["which one is superior", "which one is preferred", "which one is best"]
 },
 {
+  "id": 32,
   "english": "What's the difference?",
   "dutch": "Wat is het verschil?",
   "spanish": "¿Cuál es la diferencia?",
@@ -349,9 +443,12 @@
       "dutch": ["Hoe verschilt het (van elkaar)?", "Wat maakt het verschil?"],
       "spanish": ["¿En qué se diferencia?", "¿Cómo se diferencia?"],
       "russian": ["В чем отличие", "Чем отличается... от...", "Какова разница?", "Что отличает?"]
-  }
+  },
+  "tags": ["functional language", "question", "comparison"],
+  "otherKeywords": ["comparison", "contrast", "dissimilarity", "distinction"]
 },
 {
+  "id": 33,
   "english": "Where have you been?",
   "dutch": "Waar ben je geweest?",
   "spanish": "¿Dónde has estado?",
@@ -360,9 +457,12 @@
       "dutch": ["Waar was je?", "Waar ben je naartoe gegaan?"],
       "spanish": ["¿Dónde estuviste?", "¿Dónde has ido?"],
       "russian": ["Куда ты ходил(а)?", "Где ты побывал(а)?"]
-  }
+  },
+  "tags": ["functional language", "question", "place"],
+  "otherKeywords": ["location", "whereabouts", "travel", "journey", "trip", "vacation", "holiday", "excursion", "tour", "expedition", "place"]
 },
 {
+  "id": 34,
   "english": "What time is it?",
   "dutch": "Hoe laat is het?",
   "spanish": "¿Qué hora es?",
@@ -371,9 +471,12 @@
       "dutch": ["Wat is de tijd?", "Wat uur leven we?"],
       "spanish": ["¿Qué hora tiene?", "¿A qué hora estamos?"],
       "russian": ["Сколько времени?"]
-  }
+  },
+  "tags": ["functional language", "question", "time"],
+  "otherKeywords": ["time", "clock", "watch", "schedule", "timetable", "calendar", "date", "day", "month", "year", "second", "minute", "hour"]
 },
 {
+  "id": 35,
   "english": "Can you repeat that?",
   "dutch": "Kun je dat herhalen?",
   "spanish": "¿Puedes repetir eso?",
@@ -382,9 +485,12 @@
       "dutch": ["Kan je dat nog eens zeggen?", "Wil je dat herhalen?"],
       "spanish": ["¿Puedes decirlo de nuevo?", "¿Me puedes repetir eso?"],
       "russian": ["Можешь повторить?", "Не мог бы ты повторить?"]
-  }
+  },
+  "tags": ["functional language", "question"],
+  "otherKeywords": ["reiteration", "repetition", "can you say that again"]
 },
 {
+  "id": 36,
   "english": "I prefer ...",
   "dutch": "Mijn voorkeur is ...",
   "spanish": "Yo prefiero ...",
@@ -393,9 +499,12 @@
       "dutch": ["Ik verkies ...", "Mijn voorkeur gaat naar ..."],
       "spanish": ["Prefiero ...", "A mí me gusta más ..."],
       "russian": ["Мне нравится больше ..."]
-  }
+  },
+  "tags": ["functional language", "preference"],
+  "otherKeywords": ["I like", "I would rather", "I would prefer"]
 },
 {
+  "id": 37,
   "english": "I wish I could / I would like to",
   "dutch": "Ik wou dat ik kon ...",
   "spanish": "Ojalá pudiera ...",
@@ -404,9 +513,12 @@
       "dutch": ["Kon ik maar ...", "Ik zou willen dat ..."],
       "spanish": ["Me gustaría ...", "Ojalá pudiera ..."],
       "russian": ["Хотел бы я ...", "Я бы хотел ..."]
-  }
+  },
+  "tags": ["functional language", "wish"],
+  "otherKeywords": ["I hope", "I desire", "I want", "I would love to"]
 },
 {
+  "id": 38,
   "english": "I might do that",
   "dutch": "Misschien doe ik dat",
   "spanish": "Podría hacerlo",
@@ -415,9 +527,12 @@
       "dutch": ["Ik ga het (misschien) proberen", "Misschien ga ik het doen"],
       "spanish": ["Tal vez lo haga", "Quizás lo haga"],
       "russian": ["Я, возможно, это сделаю", "Может быть, я это сделаю"]
-  }
+  },
+  "tags": ["functional language", "possibility"],
+  "otherKeywords": ["I may do that", "I could do that", "I might try that"]
 },
 {
+  "id": 39,
   "english": "I would be glad to",
   "dutch": "Ik zou graag",
   "spanish": "Me gustaría",
@@ -438,9 +553,12 @@
           "Я буду рад(а) (что-то сделать)",
           "Мне будет приятно (что-то сделать)"
       ]
-  }
+  },
+  "tags": ["functional language", "willingness"],
+  "otherKeywords": ["I would love to", "I would be happy to", "I would be pleased to"]
 },
 {
+  "id": 40,
   "english": "I am allowed to",
   "dutch": "Ik mag",
   "spanish": "Tengo permiso para",
@@ -458,9 +576,12 @@
           "Я имею право",
           "Мне можно"
       ]
-  }
+  },
+  "tags": ["functional language", "permission"],
+  "otherKeywords": ["I can", "I have permission to", "I am permitted to"]
 },
 {
+  "id": 41,
   "english": "I would prefer",
   "dutch": "Ik zou liever (iets anders hebben/doen)",
   "spanish": "Preferiría",
@@ -477,9 +598,12 @@
           "Я бы предпочел(а) (что-то другое)",
           "Мне бы хотелось (что-то другое)"
       ]
-  }
+  },
+  "tags": ["functional language", "preference"],
+  "otherKeywords": ["I would rather", "I would like", "I would choose"]
 },
 {
+  "id": 42,
   "english": "I am willing to / I am ready to",
   "dutch": "Ik ben bereid om",
   "spanish": "Estoy dispuesto/a a",
@@ -496,9 +620,12 @@
           "Я готов(а) к",
           "Я готов(а) сделать"
       ]
-  }
+  },
+  "tags": ["functional language", "willingness"],
+  "otherKeywords": ["I am prepared to", "I am open to", "I am available to"]
 },
 {
+  "id": 43,
   "english": "I don't have to",
   "dutch": "Ik hoef niet",
   "spanish": "No tengo que",
@@ -514,9 +641,12 @@
       "russian": [
           "Я не обязан(а)"
       ]
-  }
+  },
+  "tags": ["functional language", "obligation"],
+  "otherKeywords": ["I am not required to", "I am not obliged to", "I do not need to"]
 },
 {
+  "id": 44,
   "english": "I understand",
   "dutch": "Ik begrijp het",
   "spanish": "Entiendo",
@@ -534,9 +664,12 @@
           "Я осознаю",
           "Мне понятно"
       ]
-  }
+  },
+  "tags": ["functional language", "understanding"],
+  "otherKeywords": ["I get it", "I see", "I grasp it"]
 },
 {
+  "id": 45,
   "english": "It's interesting",
   "dutch": "Het is interessant",
   "spanish": "Es interesante",
@@ -560,9 +693,12 @@
           "Это потрясающе",
           "Это захватывающе"
       ]
-  }
+  },
+  "tags": ["functional language", "interest"],
+  "otherKeywords": ["I find it fascinating", "I find it intriguing"]
 },
 {
+  "id": 46,
   "english": "Wait a moment, please",
   "dutch": "Wacht even, alstublieft",
   "spanish": "Espera un momento, por favor",
@@ -581,9 +717,12 @@
           "Подождите, пожалуйста",
           "Минутку, пожалуйста"
       ]
-  }
+  },
+  "tags": ["functional language", "request"],
+  "otherKeywords": ["wait a second", "wait a minute", "hold on", "hang on"]
 },
 {
+  "id": 47,
   "english": "I agree",
   "dutch": "Ik ben het ermee eens",
   "spanish": "Estoy de acuerdo",
@@ -605,9 +744,12 @@
           "Согласен/согласна с этим",
           "Да, я согласен/согласна"
       ]
-  }
+  },
+  "tags": ["functional language", "agreement"],
+  "otherKeywords": ["I concur", "I am in agreement", "I am of the same opinion"]
 },
 {
+  "id": 48,
   "english": "Let's go",
   "dutch": "Laten we gaan",
   "spanish": "Vamos",
@@ -630,9 +772,12 @@
           "Пошли",
           "Поехали"
       ]
-  }
+  },
+  "tags": ["functional language", "action"],
+  "otherKeywords": ["let's start", "let's begin", "let's leave", "let's move"]
 },
 {
+  "id": 49,
   "english": "I hope so",
   "dutch": "Ik hoop het",
   "spanish": "Eso espero",
@@ -652,9 +797,12 @@
           "Будем надеяться",
           "Надеюсь на это"
       ]
-  }
+  },
+  "tags": ["functional language", "hope"],
+  "otherKeywords": ["I wish", "I trust", "I expect"]
 },
 {
+  "id": 50,
   "english": "I don't mind",
   "dutch": "Ik vind het niet erg",
   "spanish": "No me importa",
@@ -675,9 +823,12 @@
           "Мне не важно",
           "Не возражаю"
       ]
-  }
+  },
+  "tags": ["functional language", "indifference"],
+  "otherKeywords": ["I don't care", "I have no preference", "I have no objection", "anything is fine with me", "all the same to me"]
 },
 {
+  "id": 51,
   "english": "That's enough",
   "dutch": "Dat is genoeg",
   "spanish": "Eso es suficiente",
@@ -698,9 +849,12 @@
           "Хватит",
           "Больше не надо"
       ]
-  }
+  },
+  "tags": ["functional language", "sufficiency"],
+  "otherKeywords": ["that's sufficient", "that's plenty", "that's adequate", "that's all"]
 },
 {
+  "id": 52,
   "english": "That's not fair",
   "dutch": "Het/dat/dit is niet eerlijk",
   "spanish": "Eso no es justo",
@@ -720,9 +874,12 @@
           "Это не честно",
           "Это неправильно"
       ]
-  }
+  },
+  "tags": ["functional language", "fairness"],
+  "otherKeywords": ["that's not right", "that's not just", "that's not equitable"]
 },
 {
+  "id": 53,
   "english": "How wonderful!",
   "dutch": "Hoe geweldig!",
   "spanish": "¡Qué maravilloso!",
@@ -751,6 +908,7 @@
 }
 },
 {
+  "id": 54,
   "english": "This is my favorite",
   "dutch": "Dit is mijn favoriet(e)",
   "spanish": "Este es mi favorito",
@@ -775,6 +933,7 @@
   }
 },
 {
+  "id": 55,
   "english": "That's true",
   "dutch": "Dat is waar",
   "spanish": "Eso es cierto",
@@ -802,6 +961,7 @@
   }
 },
 {
+  "id": 56,
   "english": "I am not sure",
   "dutch": "Ik ben niet zeker",
   "spanish": "No estoy seguro",
@@ -824,6 +984,7 @@
   }
 },
 {
+  "id": 57,
   "english": "I don't think so",
   "dutch": "Ik denk het niet",
   "spanish": "No lo creo",
@@ -844,6 +1005,7 @@
   }
 },
 {
+  "id": 58,
   "english": "Let me think",
   "dutch": "Laat me even denken",
   "spanish": "Déjame pensar",
@@ -864,6 +1026,7 @@
   }
 },
 {
+  "id": 59,
   "english": "It doesn't matter",
   "dutch": "Het maakt niet uit",
   "spanish": "No importa",
@@ -885,6 +1048,7 @@
   }
 },
 {
+  "id": 60,
   "english": "It's nice to meet you",
   "dutch": "Leuk je te ontmoeten",
   "spanish": "Mucho gusto",
@@ -908,6 +1072,7 @@
   }
 },
 {
+  "id": 61,
   "english": "In my opinion",
   "dutch": "Naar mijn mening",
   "spanish": "En mi opinión",
@@ -932,6 +1097,7 @@
   }
 },
 {
+  "id": 62,
   "english": "I believe that ...",
   "dutch": "Ik geloof dat ...",
   "spanish": "Creo que ...",
@@ -957,6 +1123,7 @@
   }
 },
 {
+  "id": 63,
   "english": "It seems to me that",
   "dutch": "Het lijkt mij dat",
   "spanish": "Me parece",
@@ -981,6 +1148,7 @@
   }
 },
 {
+  "id": 64,
   "english": "In a week",
   "dutch": "In een week",
   "spanish": "Dentro de una semana",
@@ -997,6 +1165,7 @@
   }
 },
 {
+  "id": 65,
   "english": "After a week",
   "dutch": "Na een week",
   "spanish": "Después de una semana",
@@ -1012,6 +1181,7 @@
   }
 },
 {
+  "id": 66,
   "english": "After a day",
   "dutch": "Na een dag",
   "spanish": "Después de un día",
@@ -1023,6 +1193,7 @@
   }
 },
 {
+  "id": 67,
   "english": "For some hours",
   "dutch": "Voor een paar uur",
   "spanish": "Durante unas horas",
@@ -1042,6 +1213,7 @@
   }
 },
 {
+  "id": 68,
   "english": "In the morning",
   "dutch": "'s Morgens",
   "spanish": "Por la mañana",
@@ -1061,6 +1233,7 @@
   }
 },
 {
+  "id": 69,
   "english": "In the evening",
   "dutch": "'s Avonds",
   "spanish": "Por la tarde",
@@ -1078,6 +1251,7 @@
   }
 },
 {
+  "id": 70,
   "english": "Next year",
   "dutch": "Volgend jaar",
   "spanish": "El próximo año",
@@ -1095,6 +1269,7 @@
   }
 },
 {
+  "id": 71,
   "english": "Last month",
   "dutch": "Vorige maand",
   "spanish": "El mes pasado",
@@ -1112,6 +1287,7 @@
   }
 },
 {
+  "id": 72,
   "english": "At the same time",
   "dutch": "Tegelijkertijd",
   "spanish": "Al mismo tiempo",
@@ -1131,6 +1307,7 @@
   }
 },
 {
+  "id": 73,
   "english": "Before the meeting",
   "dutch": "Voor de vergadering",
   "spanish": "Antes de la reunión",
@@ -1150,6 +1327,7 @@
   }
 },
 {
+  "id": 74,
   "english": "Once a week",
   "dutch": "Eens per week",
   "spanish": "Una vez a la semana",
@@ -1164,6 +1342,7 @@
   }
 },
 {
+  "id": 75,
   "english": "For a few minutes",
   "dutch": "Voor een paar minuutjes",
   "spanish": "Por unos minutos",
@@ -1178,6 +1357,7 @@
   }
 },
 {
+  "id": 76,
   "english": "Since yesterday",
   "dutch": "Sinds gisteren",
   "spanish": "Desde ayer",
@@ -1191,6 +1371,7 @@
   }
 },
 {
+  "id": 77,
   "english": "By the end of the week",
   "dutch": "Tegen het einde van de week",
   "spanish": "Para el final de la semana",
@@ -1202,6 +1383,7 @@
   }
 },
 {
+  "id": 78,
   "english": "The day after tomorrow",
   "dutch": "Overmorgen",
   "spanish": "Pasado mañana",
@@ -1213,6 +1395,7 @@
   }
 },
 {
+  "id": 79,
   "english": "The day before yesterday",
   "dutch": "Eergisteren",
   "spanish": "Anteayer",
@@ -1224,6 +1407,7 @@
   }
 },
 {
+  "id": 80,
   "english": "In the near future / soon",
   "dutch": "In de nabije toekomst",
   "spanish": "En un futuro cercano",
@@ -1235,6 +1419,7 @@
   }
 },
 {
+  "id": 81,
   "english": "From now on",
   "dutch": "Vanaf nu",
   "spanish": "De ahora en adelante",
@@ -1246,6 +1431,7 @@
   }
 },
 {
+  "id": 82,
   "english": "At the end of the month",
   "dutch": "Aan het einde van de maand",
   "spanish": "Al final del mes",
@@ -1257,6 +1443,7 @@
   }
 },
 {
+  "id": 83,
   "english": "In the past / earlier",
   "dutch": "In het verleden",
   "spanish": "En el pasado",
@@ -1268,6 +1455,7 @@
   }
 },
 {
+  "id": 84,
   "english": "At midnight",
   "dutch": "Op middernacht",
   "spanish": "A medianoche",
@@ -1279,6 +1467,7 @@
   }
 },
 {
+  "id": 85,
   "english": "At dawn",
   "dutch": "Bij zonsopgang",
   "spanish": "Al amanecer",
@@ -1290,6 +1479,7 @@
   }
 },
 {
+  "id": 86,
   "english": "From morning till evening",
   "dutch": "Van 's morgens tot 's avonds",
   "spanish": "De mañana a noche",
@@ -1301,6 +1491,7 @@
   }
 },
 {
+  "id": 87,
   "english": "At the beginning of the week",
   "dutch": "In het begin van de week",
   "spanish": "Al principio de la semana",
@@ -1312,6 +1503,7 @@
   }
 },
 {
+  "id": 88,
   "english": "In the meantime",
   "dutch": "Ondertussen",
   "spanish": "Mientras tanto",
@@ -1323,6 +1515,7 @@
   }
 },
 {
+  "id": 89,
   "english": "Eventually",
   "dutch": "Uiteindelijk",
   "spanish": "Eventualmente",
@@ -1334,6 +1527,7 @@
   }
 },
 {
+  "id": 90,
   "english": "I am happy",
   "dutch": "Ik ben blij",
   "spanish": "Estoy feliz",
@@ -1345,6 +1539,7 @@
   }
 },
 {
+  "id": 91,
   "english": "I am sad",
   "dutch": "Ik ben droevig",
   "spanish": "Estoy triste",
@@ -1356,6 +1551,7 @@
   }
 },
 {
+  "id": 92,
   "english": "I am excited / hyped",
   "dutch": "Ik ben enthousiast / hyped",
   "spanish": "Estoy emocionado/emocionada",
@@ -1367,6 +1563,7 @@
   }
 },
 {
+  "id": 93,
   "english": "I am nervous",
   "dutch": "Ik ben nerveus",
   "spanish": "Estoy nervioso/nerviosa",
@@ -1378,6 +1575,7 @@
   }
 },
 {
+  "id": 94,
   "english": "I am surprised",
   "dutch": "Ik ben verrast",
   "spanish": "Estoy sorprendido/sorprendida",
@@ -1389,6 +1587,7 @@
   }
 },
 {
+  "id": 95,
   "english": "I am bored",
   "dutch": "Ik verveel me",
   "spanish": "Estoy aburrido/aburrida",
@@ -1400,6 +1599,7 @@
   }
 },
 {
+  "id": 96,
   "english": "I am tired",
   "dutch": "Ik ben moe",
   "spanish": "Estoy cansado/cansada",
@@ -1411,6 +1611,7 @@
   }
 },
 {
+  "id": 97,
   "english": "I am proud",
   "dutch": "Ik ben trots (op)",
   "spanish": "Estoy orgulloso/orgullosa",
@@ -1422,6 +1623,7 @@
   }
 },
 {
+  "id": 98,
   "english": "I am grateful",
   "dutch": "Ik ben dankbaar (voor)",
   "spanish": "Estoy agradecido/agradecida",
@@ -1433,6 +1635,7 @@
   }
 },
 {
+  "id": 99,
   "english": "I am relieved",
   "dutch": "Ik ben opgelucht (dat)",
   "spanish": "Estoy aliviado/aliviada",
@@ -1444,6 +1647,7 @@
   }
 },
 {
+  "id": 100,
   "english": "I am hopeful",
   "dutch": "Ik heb hoop (dat)",
   "spanish": "Tengo esperanza",
@@ -1455,6 +1659,7 @@
   }
 },
 {
+  "id": 101,
   "english": "I miss you",
   "dutch": "Ik mis jou",
   "spanish": "Te echo de menos",
@@ -1466,6 +1671,7 @@
   }
 },
 {
+  "id": 102,
   "english": "I am disappointed",
   "dutch": "Ik ben teleurgesteld (in)",
   "spanish": "Estoy decepcionado/a",
@@ -1477,6 +1683,7 @@
   }
 },
 {
+  "id": 103,
   "english": "I am frustrated",
   "dutch": "Ik ben gefrustreerd (door)",
   "spanish": "Estoy frustrado/a",
@@ -1488,6 +1695,7 @@
   }
 },
 {
+  "id": 104,
   "english": "I am scared",
   "dutch": "Ik ben bang (voor)",
   "spanish": "Tengo miedo (de)",
@@ -1499,6 +1707,7 @@
   }
 },
 {
+  "id": 105,
   "english": "That's incredible",
   "dutch": "Dat is ongelofelijk",
   "spanish": "Eso es increíble",
@@ -1510,6 +1719,7 @@
   }
 },
 {
+  "id": 106,
   "english": "I have doubts",
   "dutch": "Ik twijfel",
   "spanish": "Tengo dudas",
@@ -1521,6 +1731,7 @@
   }
 },
 {
+  "id": 107,
   "english": "I am embarrassed",
   "dutch": "Ik ben beschaamd",
   "spanish": "Estoy avergonzado/a",
@@ -1532,6 +1743,7 @@
   }
 },
 {
+  "id": 108,
   "english": "I am shy",
   "dutch": "Ik ben verlegen",
   "spanish": "Soy tímido/a",
@@ -1543,6 +1755,7 @@
   }
 },
 {
+  "id": 109,
   "english": "I don't know what to say",
   "dutch": "Ik weet niet wat te zeggen",
   "spanish": "No sé qué decir",
@@ -1554,6 +1767,7 @@
   }
 },
 {
+  "id": 110,
   "english": "I am stressed",
   "dutch": "Ik heb stress",
   "spanish": "Estoy estresado/a",
@@ -1565,6 +1779,7 @@
   }
 },
 {
+  "id": 111,
   "english": "I need a break",
   "dutch": "Ik heb vakantie nodig",
   "spanish": "Necesito un descanso",
@@ -1576,6 +1791,7 @@
   }
 },
 {
+  "id": 112,
   "english": "I regret it / I am sorry",
   "dutch": "Ik heb er spijt van",
   "spanish": "Lo lamento",
@@ -1587,6 +1803,7 @@
   }
 },
 {
+  "id": 113,
   "english": "I'm lost",
   "dutch": "Ik ben verdwaald",
   "spanish": "Estoy perdido",
@@ -1598,6 +1815,7 @@
   }
 },
 {
+  "id": 114,
   "english": "Like two peas in a pod",
   "dutch": "Als twee druppels water",
   "spanish": "Como dos gotas de agua",
@@ -1609,6 +1827,7 @@
   }
 },
 {
+  "id": 115,
   "english": "Continuously / Without stopping",
   "dutch": "Aan één stuk door",
   "spanish": "Continuamente / Sin parar",
