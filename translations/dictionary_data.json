@@ -512,7 +512,7 @@
   "alternatives": {
       "dutch": ["Kon ik maar ...", "Ik zou willen dat ..."],
       "spanish": ["Me gustaría ...", "Ojalá pudiera ..."],
-      "russian": ["Хотел бы я ...", "Я бы хотел ..."]
+      "russian": ["Хотел(а) бы я ...", "Я бы хотел(а) ..."]
   },
   "tags": ["functional language", "wish"],
   "otherKeywords": ["I hope", "I desire", "I want", "I would love to"]
@@ -902,7 +902,6 @@
         "Как здорово!",
         "Как прекрасно!",
         "Как чудесно!",
-        "Как замечательно!",
         "Как великолепно!"
     ]
 }
@@ -925,7 +924,6 @@
       "Este es mi favorito absoluto"
     ],
     "russian": [
-      "Это мой любимый",
       "Это мой фаворит",
       "Это мой предпочтительный",
       "Это мой выбор"
@@ -977,7 +975,6 @@
       "No lo sé con certeza"
     ],
     "russian": [
-      "Я не уверен",
       "Я не точно уверен",
       "Не могу сказать наверняка"
     ]
@@ -1066,7 +1063,6 @@
     ],
     "russian": [
       "Рад(а) познакомиться",
-      "Приятно познакомиться",
       "Очень рад(а) встрече"
     ]
   }
@@ -1160,7 +1156,6 @@
     ],
     "spanish": ["En una semana"],
     "russian": [
-      "Через неделю"
     ]
   }
 },
@@ -1555,7 +1550,7 @@
   "english": "I am excited / hyped",
   "dutch": "Ik ben enthousiast / hyped",
   "spanish": "Estoy emocionado/emocionada",
-  "russian": "Я взволнован/взволнована",
+  "russian": "Я взволнован(а)",
   "alternatives": {
       "dutch": ["Ik ben opgewonden", "Ik heb er zin in"],
       "spanish": ["Estoy entusiasmado/entusiasmada", "Estoy animado/animada"],
@@ -1619,7 +1614,7 @@
   "alternatives": {
       "dutch": ["Ik ben fier (op)"],
       "spanish": ["Me siento orgulloso/orgullosa"],
-      "russian": ["Я горд"]
+      "russian": ["Я горд(а)"]
   }
 },
 {
@@ -1675,11 +1670,11 @@
   "english": "I am disappointed",
   "dutch": "Ik ben teleurgesteld (in)",
   "spanish": "Estoy decepcionado/a",
-  "russian": "Я разочарован/а",
+  "russian": "Я разочарован(а)",
   "alternatives": {
       "dutch": [],
       "spanish": ["Estoy desilusionado/a"],
-      "russian": ["Я расстроен/а"]
+      "russian": ["Я расстроен(а)"]
   }
 },
 {
@@ -1687,11 +1682,11 @@
   "english": "I am frustrated",
   "dutch": "Ik ben gefrustreerd (door)",
   "spanish": "Estoy frustrado/a",
-  "russian": "Я расстроен/а",
+  "russian": "Я расстроен(а)",
   "alternatives": {
       "dutch": ["Ik ben geïrriteerd (door)"],
       "spanish": ["Estoy molesto/a"],
-      "russian": ["Я раздражен/а"]
+      "russian": ["Я раздражен(а)"]
   }
 },
 {
@@ -1703,7 +1698,7 @@
   "alternatives": {
       "dutch": ["Ik ben bang", "Ik ben angstig (voor)"],
       "spanish": ["Estoy asustado/a (de)"],
-      "russian": ["Я напуган/а (чем-то)"]
+      "russian": ["Я напуган(а) (чем-то)"]
   }
 },
 {
@@ -1727,7 +1722,7 @@
   "alternatives": {
       "dutch": ["Ik heb twijfels", "Daar twijfel ik over", "Ik ben er niet zeker van"],
       "spanish": ["Estoy dudando", "No estoy seguro"],
-      "russian": ["Я сомневаюсь", "Я не уверен"]
+      "russian": ["Я сомневаюсь", "Я не уверен(а)"]
   }
 },
 {
@@ -1807,11 +1802,11 @@
   "english": "I'm lost",
   "dutch": "Ik ben verdwaald",
   "spanish": "Estoy perdido",
-  "russian": "Я потерялся",
+  "russian": "Я потерялся/потерялась",
   "alternatives": {
       "dutch": ["Ik ben de weg kwijt"],
       "spanish": ["Estoy desorientado"],
-      "russian": ["Я заблудился"]
+      "russian": ["Я заблудился/заблудилась", "Я не знаю, где я нахожусь"]
   }
 },
 {
@@ -1868,7 +1863,7 @@
   "alternatives": {
       "dutch": ["Door proberen en fouten maken"],
       "spanish": ["Ensayo y error"],
-      "russian": ["Методом проб и ошибок"]
+      "russian": []
   }
 },
   {
