@@ -9,19 +9,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBox
-        android:id="@+id/spanish_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:buttonTint="@color/teal_200"
-        android:text="@string/spanish" />
-
-    <CheckBox
         android:id="@+id/dutch_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:buttonTint="@color/teal_200"
         android:checked="true"
+        android:paddingRight="8dp"
         android:text="@string/dutch" />
 
     <CheckBox
@@ -30,8 +23,17 @@
         android:layout_height="wrap_content"
         android:buttonTint="@color/teal_200"
         android:checked="true"
-        android:paddingRight="18dp"
+        android:paddingRight="8dp"
         android:text="@string/russian" />
+
+    <CheckBox
+        android:id="@+id/spanish_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:buttonTint="@color/teal_200"
+        android:paddingRight="18dp"
+        android:text="@string/spanish" />
     <!-- Add the info icon -->
     <ImageView
         android:id="@+id/info_icon1"

@@ -24,6 +24,9 @@
     <string name="move_item_up" />
     <string name="move_item_down" />
     <string name="scroll_to_top">scroll to top</string>
+    <string name="flag_for_improvement">flag for improvement</string>
+    <string name="give_feedback">Give feedback</string>
+    <string name="request_review">request review</string>
     <string-array name="languages">
         <item>Spanish</item>
         <item>Dutch</item>

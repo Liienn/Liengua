@@ -15,4 +15,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_transparent_70">#B2FFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="default_background">#FFFFFF</color> <!-- White, default color -->
+    <color name="feedback_received">#5970F2</color>
+    <color name="suggested_delete">#E74646</color>
 </resources>

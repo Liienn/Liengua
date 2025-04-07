@@ -104,7 +104,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
     }
 
     @SuppressLint("SetTextI18n")
-    private void setupTranslationTextView(TextView textView,String label, String language, String translation, boolean showTranslation, DictionaryViewHolder holder) {
+    private void setupTranslationTextView(TextView textView, String label, String language, String translation, boolean showTranslation, DictionaryViewHolder holder) {
 
         if (showTranslation && translation != null && !translation.isEmpty()) {
             textView.setText(label + ": " + translation);
@@ -219,6 +219,8 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         });
         holder.removeEntryButton.setVisibility(showMoveButtonsForEntry && isCurrentActivityCollectionEntriesActivity() ? View.VISIBLE : View.GONE);
         holder.moveButtonsLayout.setVisibility(showMoveButtonsForEntry ? View.VISIBLE : View.GONE);
+        MoreOptionsHandler moreOptionsHandler = new MoreOptionsHandler(this.context, entry);
+        holder.moreOptionsButton.setOnClickListener(moreOptionsHandler::showMoreOptions);
 
         // Set click listeners for move up and move down buttons
         holder.moveUpButton.setOnClickListener(v -> {
@@ -420,7 +422,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
         LinearLayout moveButtonsLayout;
         TextView sentenceTextView;
         TextView spanishTranslationTextView, russianTranslationTextView, dutchTranslationTextView;
-        ImageButton favoriteButton;
+        ImageButton favoriteButton, moreOptionsButton, flaggedButton;
         ImageButton bookmarkButton, removeEntryButton;
         ImageButton moveUpButton, moveDownButton;
 
@@ -431,6 +433,8 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Di
             dutchTranslationTextView = itemView.findViewById(R.id.dutchTranslation);
             russianTranslationTextView = itemView.findViewById(R.id.russianTranslation);
             favoriteButton = itemView.findViewById(R.id.favorite_button);
+            moreOptionsButton = itemView.findViewById(R.id.more_options_button);
+            flaggedButton = itemView.findViewById(R.id.flag_button);
             bookmarkButton = itemView.findViewById(R.id.bookmark_button);
             removeEntryButton = itemView.findViewById(R.id.entry_delete_button);
             moveButtonsLayout = itemView.findViewById(R.id.move_buttons_layout);

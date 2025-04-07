@@ -3,11 +3,11 @@
   <component name="deploymentTargetSelector">
     <selectionStates>
       <SelectionState runConfigName="app">
-        <option name="selectionMode" value="DIALOG" />
-        <DropdownSelection timestamp="2025-01-18T22:41:57.968847800Z">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-04-07T12:54:46.942568700Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=R3CW40FV0HN" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\lient\.android\avd\Nexus_5X_API_30.avd" />
             </handle>
           </Target>
         </DropdownSelection>
