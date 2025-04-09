@@ -2807,7 +2807,7 @@
   },
   {
     "id": 197,
-    "english": "I will add it to my list*",
+    "english": "I will add it to my list",
     "dutch": "Ik zal het aan mijn lijst toevoegen",
     "spanish": "Lo añadiré a mi lista",
     "russian": "Я добавлю это в мой список",
@@ -2819,7 +2819,7 @@
   },
   {
     "id": 198,
-    "english": "Save it for later*",
+    "english": "Save it for later",
     "dutch": "Bewaar het voor later",
     "spanish": "Guárdalo para más tarde",
     "russian": "Сохрани это на потом",
@@ -2831,7 +2831,7 @@
   },
   {
     "id": 199,
-    "english": "Save file*",
+    "english": "Save file",
     "dutch": "Bestand opslaan",
     "spanish": "Guardar archivo",
     "russian": "Сохранить файл",
@@ -2843,7 +2843,7 @@
   },
   {
     "id": 200,
-    "english": "He doesn't let it/others mess with him*",
+    "english": "He doesn't let it/others mess with him",
     "dutch": "Hij laat zich niet doen",
     "spanish": "No se deja intimidar",
     "russian": "Он не позволяет себя запутать",
@@ -2855,7 +2855,7 @@
   },
   {
     "id": 201,
-    "english": "I'm keeping busy*",
+    "english": "I'm keeping busy",
     "dutch": "Ik hou me bezig",
     "spanish": "Me mantengo ocupado/a",
     "russian": "Я занимаюсь делами",
@@ -2867,7 +2867,7 @@
   },
   {
     "id": 202,
-    "english": "I am annoyed*",
+    "english": "I am annoyed",
     "dutch": "Ik ben geïrriteerd",
     "spanish": "Estoy molesto/a",
     "russian": "Меня раздражает",
@@ -2879,7 +2879,7 @@
   },
   {
     "id": 203,
-    "english": "That is annoying*",
+    "english": "That is annoying",
     "dutch": "Dat is irritant",
     "spanish": "Eso es molesto",
     "russian": "Это раздражает",
@@ -2891,7 +2891,7 @@
   },
   {
     "id": 204,
-    "english": "Promesing*",
+    "english": "Promesing",
     "dutch": "Veelbelovend",
     "spanish": "Prometedor",
     "russian": "Перспективный",
@@ -2903,7 +2903,7 @@
   },
   {
     "id": 205,
-    "english": "I skipped some things*",
+    "english": "I skipped some things",
     "dutch": "Ik heb wat dingen overgeslagen",
     "spanish": "Me salté algunas cosas",
     "russian": "Я пропустил(а) некоторые вещи",
@@ -2915,7 +2915,7 @@
   },
   {
     "id": 206,
-    "english": "Each and every one*",
+    "english": "Each and every one",
     "dutch": "Stuk voor stuk",
     "spanish": "Uno por uno",
     "russian": "Каждый и каждый",
@@ -2927,7 +2927,7 @@
   },
   {
     "id": 207,
-    "english": "On the contrary*",
+    "english": "On the contrary",
     "dutch": "Integendeel",
     "spanish": "Al contrario",
     "russian": "Напротив",
@@ -2939,7 +2939,7 @@
   },
   {
     "id": 208,
-    "english": "Don't you dare!*",
+    "english": "Don't you dare!",
     "dutch": "Waag het niet!",
     "spanish": "¡No te atrevas!",
     "russian": "Не смей!",
@@ -2951,7 +2951,7 @@
   },
   {
     "id": 209,
-    "english": "Imagine that!*",
+    "english": "Imagine that!",
     "dutch": "Stel je voor!",
     "spanish": "¡Imagínate!",
     "russian": "Представь себе!",
@@ -2963,7 +2963,7 @@
   },
   {
     "id": 210,
-    "english": "Imagination*",
+    "english": "Imagination",
     "dutch": "Verbeelding",
     "spanish": "Imaginación",
     "russian": "Воображение",
@@ -2975,7 +2975,7 @@
   },
   {
     "id": 211,
-    "english": "To put aside*",
+    "english": "To put aside",
     "dutch": "Aan de kant zetten",
     "spanish": "Dejar de lado",
     "russian": "Откладывать ",
@@ -2987,7 +2987,7 @@
   },
   {
     "id": 212,
-    "english": "Despite everything*",
+    "english": "Despite everything",
     "dutch": "Ondanks alles",
     "spanish": "A pesar de todo",
     "russian": "Несмотря на все",
@@ -2999,7 +2999,7 @@
   },
   {
     "id": 213,
-    "english": "Reliable*",
+    "english": "Reliable",
     "dutch": "Betrouwbaar",
     "spanish": "Fiable",
     "russian": "Надежный",
@@ -3011,7 +3011,7 @@
   },
   {
     "id": 214,
-    "english": "Show me!*",
+    "english": "Show me!",
     "dutch": "Laat me eens zien!",
     "spanish": "¡Enséñamelo!",
     "russian": "Покажи мне!",
@@ -3023,7 +3023,7 @@
   },
   {
     "id": 215,
-    "english": "At least*",
+    "english": "At least",
     "dutch": "Althans",
     "spanish": "Al menos",
     "russian": "По крайней мере",
@@ -3035,7 +3035,7 @@
   },
   {
     "id": 216,
-    "english": "Birdfeeder*",
+    "english": "Birdfeeder",
     "dutch": "Het voederhuisje",
     "spanish": "Comedero de pájaros",
     "russian": "Кормушка для птиц",
@@ -3047,7 +3047,7 @@
   },
   {
     "id": 217,
-    "english": "To restart something*",
+    "english": "To restart something",
     "dutch": "Iets opnieuw opstarten",
     "spanish": "Reiniciar algo",
     "russian": "Перезапустить что-то",
@@ -3059,7 +3059,7 @@
   },
   {
     "id": 218,
-    "english": "I almost fainted*",
+    "english": "I almost fainted",
     "dutch": "Ik viel bijna flauw",
     "spanish": "Casi me desmayo",
     "russian": "Я чуть не упал(а) в обморок",
@@ -3071,7 +3071,7 @@
   },
   {
     "id": 219,
-    "english": "To get experience*",
+    "english": "To get experience",
     "dutch": "Ervaring opdoen",
     "spanish": "Ganar experiencia",
     "russian": "Получить опыт",
@@ -3083,7 +3083,7 @@
   },
   {
     "id": 220,
-    "english": "To enjoy new experiences*",
+    "english": "To enjoy new experiences",
     "dutch": "(Nieuwe) ervaringen opdoen",
     "spanish": "Disfrutar de nuevas experiencias",
     "russian": "Получать удовольствие от нового опыта",
@@ -3095,7 +3095,7 @@
   },
   {
     "id": 221,
-    "english": "Hurry up!*",
+    "english": "Hurry up!",
     "dutch": "Schiet eens op!",
     "spanish": "¡Date prisa!",
     "russian": "Поторопитесь!",
@@ -3107,7 +3107,7 @@
   },
   {
     "id": 222,
-    "english": "To pour water*",
+    "english": "To pour water",
     "dutch": "Water inschenken",
     "spanish": "Echar agua",
     "russian": "Налить воды",
@@ -3119,7 +3119,7 @@
   },
   {
     "id": 223,
-    "english": "That's for sure!*",
+    "english": "That's for sure!",
     "dutch": "Sowieso!",
     "spanish": "¡Eso es seguro!",
     "russian": "Это точно!",
@@ -3131,7 +3131,7 @@
   },
   {
     "id": 224,
-    "english": "I'm stacking up on stuff**",
+    "english": "I'm stacking up on stuff*",
     "dutch": "Ik sla dingen in",
     "spanish": "Estoy acumulando cosas",
     "russian": "Я закупаюсь вещами",
@@ -3143,7 +3143,7 @@
   },
   {
     "id": 225,
-    "english": "I also do this**",
+    "english": "I also do this*",
     "dutch": "Ik ben er ook schuldig aan",
     "spanish": "Yo también hago esto",
     "russian": "Я тоже делаю это",
@@ -3155,7 +3155,7 @@
   },
   {
     "id": 226,
-    "english": "It's an interesting mindset**",
+    "english": "It's an interesting mindset*",
     "dutch": "Het is een interessante mentaliteit",
     "spanish": "Es una mentalidad interesante",
     "russian": "Это интересное мировоззрение",
@@ -3167,7 +3167,7 @@
   },
   {
     "id": 227,
-    "english": "Sweetheart**",
+    "english": "Sweetheart*",
     "dutch": "Liefje",
     "spanish": "Cariño",
     "russian": "Дорогой / Дорогая",
@@ -3179,7 +3179,7 @@
   },
   {
     "id": 228,
-    "english": "A lifelong project**",
+    "english": "A lifelong project*",
     "dutch": "Een levenslang project",
     "spanish": "Un proyecto de toda la vida",
     "russian": "Проект на всю жизнь",
@@ -3191,7 +3191,7 @@
   },
   {
     "id": 229,
-    "english": "To hit two birds with one stone**",
+    "english": "To hit two birds with one stone*",
     "dutch": "Twee vliegen in één klap",
     "spanish": "?",
     "russian": "Убить сразу двух зайцев",
@@ -3203,7 +3203,7 @@
   },
   {
     "id": 230,
-    "english": "It is the same thing**",
+    "english": "It is the same thing*",
     "dutch": "Het is hetzelfde",
     "spanish": "Es lo mismo",
     "russian": "Это одно и то же",
@@ -3215,7 +3215,7 @@
   },
   {
     "id": 231,
-    "english": "I'm hooked**",
+    "english": "I'm hooked*",
     "dutch": "Ik ben verslaafd",
     "spanish": "Estoy enganchado/a",
     "russian": "Я подсел(а)",
@@ -3227,7 +3227,7 @@
   },
   {
     "id": 232,
-    "english": "Generous**",
+    "english": "Generous*",
     "dutch": "Vrijgevig",
     "spanish": "Generoso",
     "russian": "Щедрый / Щедрая",
@@ -3239,7 +3239,7 @@
   },
   {
     "id": 233,
-    "english": "Greedy**",
+    "english": "Greedy*",
     "dutch": "Hebberig",
     "spanish": "Avaro",
     "russian": "Жадный / Жадная",
@@ -3251,7 +3251,7 @@
   },
   {
     "id": 234,
-    "english": "Honest**",
+    "english": "Honest*",
     "dutch": "Eerlijk",
     "spanish": "Honesto",
     "russian": "Честный / Честная",
@@ -3263,7 +3263,7 @@
   },
   {
     "id": 235,
-    "english": "Dishonest**",
+    "english": "Dishonest*",
     "dutch": "Oneerlijk",
     "spanish": "Deshonesto",
     "russian": "Нечестный / Нечестная",
@@ -3275,7 +3275,7 @@
   },
   {
     "id": 236,
-    "english": "Brave**",
+    "english": "Brave*",
     "dutch": "Dapper",
     "spanish": "Valiente",
     "russian": "Храбрый / Храбрая",
@@ -3287,7 +3287,7 @@
   },
   {
     "id": 237,
-    "english": "Skittish / Timid**",
+    "english": "Skittish / Timid*",
     "dutch": "Schichtig",
     "spanish": "Asustadizo",
     "russian": "Пугливый / Пугливая",
@@ -3299,7 +3299,7 @@
   },
   {
     "id": 238,
-    "english": "Hardworking**",
+    "english": "Hardworking*",
     "dutch": "Hardwerkend",
     "spanish": "Trabajador",
     "russian": "Трудолюбивый / Трудолюбивая",
@@ -3311,7 +3311,7 @@
   },
   {
     "id": 239,
-    "english": "Lazy**",
+    "english": "Lazy*",
     "dutch": "Lui",
     "spanish": "Perezoso",
     "russian": "Ленивый / Ленивая",
@@ -3323,7 +3323,7 @@
   },
   {
     "id": 240,
-    "english": "Intelligent**",
+    "english": "Intelligent*",
     "dutch": "Intelligent",
     "spanish": "Inteligente",
     "russian": "Умный / Умная",
@@ -3335,7 +3335,7 @@
   },
   {
     "id": 241,
-    "english": "Foolish**",
+    "english": "Foolish*",
     "dutch": "Stom",
     "spanish": "Tonto",
     "russian": "Глупый / Глупая",
@@ -3347,7 +3347,7 @@
   },
   {
     "id": 242,
-    "english": "Outgoing**",
+    "english": "Outgoing*",
     "dutch": "Sociaal",
     "spanish": "Extrovertido",
     "russian": "Общительный / Общительная",
@@ -3359,7 +3359,7 @@
   },
   {
     "id": 243,
-    "english": "Reclusive**",
+    "english": "Reclusive*",
     "dutch": "Teruggetrokken",
     "spanish": "Recluso",
     "russian": "Замкнутый / Замкнутая",
@@ -3371,7 +3371,7 @@
   },
   {
     "id": 244,
-    "english": "Modest**",
+    "english": "Modest*",
     "dutch": "Bescheiden",
     "spanish": "Modesto",
     "russian": "Скромный / Скромная",
@@ -3383,7 +3383,7 @@
   },
   {
     "id": 245,
-    "english": "Boastful**",
+    "english": "Boastful*",
     "dutch": "Opschepperig",
     "spanish": "Presumido",
     "russian": "Хвастливый / Хвастливая",
@@ -3395,7 +3395,7 @@
   },
   {
     "id": 246,
-    "english": "Frivolous**",
+    "english": "Frivolous*",
     "dutch": "Frivool",
     "spanish": "Frívolo",
     "russian": "Легкомысленный / Легкомысленная",
@@ -3407,7 +3407,7 @@
   },
   {
     "id": 247,
-    "english": "To squirm / cringe / wriggle***",
+    "english": "To squirm / cringe / wriggle**",
     "dutch": "Ineenkrimpen",
     "spanish": "Retorcerse",
     "russian": "Ёжиться",
@@ -3419,7 +3419,7 @@
   },
   {
     "id": 248,
-    "english": "Being stuck to their phone***",
+    "english": "Being stuck to their phone**",
     "dutch": "Aan hun gsm vastgeplakt zijn",
     "spanish": "Pegado a su teléfono",
     "russian": "Залипать в свой телефон",
@@ -3431,7 +3431,7 @@
   },
   {
     "id": 249,
-    "english": "To escape something***",
+    "english": "To escape something**",
     "dutch": "Ergens aan ontsnappen",
     "spanish": "Escapar de algo",
     "russian": "Убежать от чего-то",
@@ -3443,7 +3443,7 @@
   },
   {
     "id": 250,
-    "english": "To speak fluently***",
+    "english": "To speak fluently**",
     "dutch": "Vloeiend spreken",
     "spanish": "Hablar con fluidez",
     "russian": "Говорить свободно",
@@ -3455,7 +3455,7 @@
   },
   {
     "id": 251,
-    "english": "From a distance***",
+    "english": "From a distance**",
     "dutch": "Vanop een afstand",
     "spanish": "Desde lejos",
     "russian": "На расстоянии",
@@ -3467,7 +3467,7 @@
   },
   {
     "id": 252,
-    "english": "Speak up a bit***",
+    "english": "Speak up a bit**",
     "dutch": "Spreek eens wat luider",
     "spanish": "Habla un poco más alto",
     "russian": "Говори чуть громче",
@@ -3479,7 +3479,7 @@
   },
   {
     "id": 253,
-    "english": "Being confident about something***",
+    "english": "Being confident about something**",
     "dutch": "Zeker zijn van iets",
     "spanish": "Tener confianza en algo",
     "russian": "Быть уверенным в чем-то",
@@ -3491,7 +3491,7 @@
   },
   {
     "id": 254,
-    "english": "The volume is on max***",
+    "english": "The volume is on max**",
     "dutch": "Het volume staat op maximum",
     "spanish": "El volumen está al máximo",
     "russian": "Громкость на максимуме",
@@ -3503,7 +3503,7 @@
   },
   {
     "id": 255,
-    "english": "I can't keep up with you***",
+    "english": "I can't keep up with you**",
     "dutch": "Ik kan je niet volgen",
     "spanish": "No puedo seguirte",
     "russian": "Я не могу за тобой уследить",
@@ -3515,7 +3515,7 @@
   },
   {
     "id": 256,
-    "english": "I slept over with a friend***",
+    "english": "I slept over with a friend**",
     "dutch": "Ik bleef slapen bij een vriend",
     "spanish": "Dormí en casa de un amigo",
     "russian": "Я переночевал у друга",
@@ -3527,7 +3527,7 @@
   },
   {
     "id": 257,
-    "english": "I'm head over heels in love with you***",
+    "english": "I'm head over heels in love with you**",
     "dutch": "Ik ben stapelverliefd op jou",
     "spanish": "Estoy locamente enamorado/a de ti",
     "russian": "Я без ума от тебя",
@@ -3539,7 +3539,7 @@
   },
   {
     "id": 258,
-    "english": "May I pass?***",
+    "english": "May I pass?**",
     "dutch": "Mag ik erlangs?",
     "spanish": "¿Puedo pasar?",
     "russian": "Можно мне пройти?",
@@ -3551,7 +3551,7 @@
   },
   {
     "id": 259,
-    "english": "When will you graduate?***",
+    "english": "When will you graduate?**",
     "dutch": "Wanneer studeer je af?",
     "spanish": "¿Cuándo te graduarás?",
     "russian": "Когда ты закончишь учебу?",
@@ -3563,7 +3563,7 @@
   },
   {
     "id": 260,
-    "english": "Put it down here***",
+    "english": "Put it down here**",
     "dutch": "Zet het hier maar neer",
     "spanish": "Déjalo aquí",
     "russian": "Поставь это сюда",
@@ -3575,7 +3575,7 @@
   },
   {
     "id": 261,
-    "english": "If the weather allows it***",
+    "english": "If the weather allows it**",
     "dutch": "Als het weer het toelaat",
     "spanish": "Si el tiempo lo permite",
     "russian": "Если позволит погода",
@@ -3587,7 +3587,7 @@
   },
   {
     "id": 262,
-    "english": "I met her at the concert***",
+    "english": "I met her at the concert**",
     "dutch": "Ik ben haar tegengekomen op het concert",
     "spanish": "La conocí en el concierto",
     "russian": "Я встретил(а) её на концерте",
@@ -3599,7 +3599,7 @@
   },
   {
     "id": 263,
-    "english": "I cherish good memories***",
+    "english": "I cherish good memories**",
     "dutch": "Ik koester goede herinneringen",
     "spanish": "Conservo buenos recuerdos",
     "russian": "Я храню хорошие воспоминания",
@@ -3611,7 +3611,7 @@
   },
   {
     "id": 264,
-    "english": "To laze around***",
+    "english": "To laze around**",
     "dutch": "Luieren",
     "spanish": "Holgazanear",
     "russian": "Бездельничать",
@@ -3623,7 +3623,7 @@
   },
   {
     "id": 265,
-    "english": "I found out something***",
+    "english": "I found out something**",
     "dutch": "Ik ben ergens achter gekomen",
     "spanish": "Descubrí algo",
     "russian": "Я что-то узнал(а)",
@@ -3635,7 +3635,7 @@
   },
   {
     "id": 266,
-    "english": "Call when you can***",
+    "english": "Call when you can**",
     "dutch": "Bel maar wanneer je kan",
     "spanish": "Llama cuando puedas",
     "russian": "Позвони, когда сможешь",
@@ -3647,7 +3647,7 @@
   },
   {
     "id": 267,
-    "english": "To get some fresh air***",
+    "english": "To get some fresh air**",
     "dutch": "Een frisse neus halen",
     "spanish": "Tomar el aire fresco",
     "russian": "Подышать свежим воздухом",
@@ -3659,7 +3659,7 @@
   },
   {
     "id": 268,
-    "english": "Sales***",
+    "english": "Sales**",
     "dutch": "De solden",
     "spanish": "Las rebajas",
     "russian": "Распродажа",
@@ -3671,7 +3671,7 @@
   },
   {
     "id": 269,
-    "english": "To discourage someone***",
+    "english": "To discourage someone**",
     "dutch": "Iemand ontmoedigen",
     "spanish": "Desanimar a alguien",
     "russian": "Обескуражить кого-то",
@@ -3683,7 +3683,7 @@
   },
   {
     "id": 270,
-    "english": "To encourage someone***",
+    "english": "To encourage someone**",
     "dutch": "Iemand moed inspreken",
     "spanish": "Animar a alguien",
     "russian": "Ободрить кого-то",
@@ -3695,7 +3695,7 @@
   },
   {
     "id": 271,
-    "english": "Educational***",
+    "english": "Educational**",
     "dutch": "Educatief",
     "spanish": "Educativo",
     "russian": "Образовательный",
@@ -3707,7 +3707,7 @@
   },
   {
     "id": 272,
-    "english": "Rush hour***",
+    "english": "Rush hour**",
     "dutch": "Spitsuur",
     "spanish": "Hora punta",
     "russian": "Час пик",
@@ -3719,7 +3719,7 @@
   },
   {
     "id": 273,
-    "english": "Ear piercing / deafening***",
+    "english": "Ear piercing / deafening**",
     "dutch": "Oorverdovend",
     "spanish": "Ensordecedor",
     "russian": "Пронзительный",
@@ -3731,7 +3731,7 @@
   },
   {
     "id": 274,
-    "english": "No one cares about it***",
+    "english": "No one cares about it**",
     "dutch": "Niemand geeft erom",
     "spanish": "A nadie le importa",
     "russian": "Никому это не важно",
@@ -3743,7 +3743,7 @@
   },
   {
     "id": 275,
-    "english": "I'm concerned about the consequences***",
+    "english": "I'm concerned about the consequences**",
     "dutch": "Ik maak me zorgen over de gevolgen",
     "spanish": "Me preocupa las consecuencias",
     "russian": "Я беспокоюсь о последствиях",
@@ -3755,7 +3755,7 @@
   },
   {
     "id": 276,
-    "english": "I care about nature***",
+    "english": "I care about nature**",
     "dutch": "Ik geef om de natuur",
     "spanish": "Me importa la naturaleza",
     "russian": "Мне небезразлична природа",
@@ -3767,7 +3767,7 @@
   },
   {
     "id": 277,
-    "english": "Small writings / notes***",
+    "english": "Small writings / notes**",
     "dutch": "Schrijfsels",
     "spanish": "Escritos",
     "russian": "Почеркушки",
@@ -3779,7 +3779,7 @@
   },
   {
     "id": 278,
-    "english": "We take turns***",
+    "english": "We take turns**",
     "dutch": "We doen het om de beurt",
     "spanish": "Nos turnamos",
     "russian": "Мы делаем это по очереди",
@@ -3791,7 +3791,7 @@
   },
   {
     "id": 279,
-    "english": "It is somewhere around here***",
+    "english": "It is somewhere around here**",
     "dutch": "Het is hier ergens",
     "spanish": "Está por aquí",
     "russian": "Это где-то здесь",
@@ -3803,7 +3803,7 @@
   },
   {
     "id": 280,
-    "english": "At first glance****",
+    "english": "At first glance***",
     "dutch": "Op het eerste gezicht",
     "spanish": "A simple vista",
     "russian": "На первый взгляд",
@@ -3815,7 +3815,7 @@
   },
   {
     "id": 281,
-    "english": "It is still quite warm****",
+    "english": "It is still quite warm***",
     "dutch": "Het is nog steeds best warm",
     "spanish": "Todavía hace bastante calor",
     "russian": "Всё ещё тепло",
@@ -3827,7 +3827,7 @@
   },
   {
     "id": 282,
-    "english": "I am not making any progress****",
+    "english": "I am not making any progress***",
     "dutch": "Het gaat niet vooruit",
     "spanish": "No avanzo",
     "russian": "Дело встало",
@@ -3839,7 +3839,7 @@
   },
   {
     "id": 283,
-    "english": "I am not making things up****",
+    "english": "I am not making things up***",
     "dutch": "Ik verzin het niet",
     "spanish": "No me lo estoy inventando",
     "russian": "Я не придумываю",
@@ -3851,7 +3851,7 @@
   },
   {
     "id": 284,
-    "english": "I am not making a big deal out of it****",
+    "english": "I am not making a big deal out of it***",
     "dutch": "Ik maak er geen groot probleem van",
     "spanish": "No le doy mucha importancia",
     "russian": "Это не абы что",
@@ -3863,7 +3863,7 @@
   },
   {
     "id": 285,
-    "english": "Concoction / braindump****",
+    "english": "Concoction / braindump***",
     "dutch": "Hersenspinsel",
     "spanish": "Disparate",
     "russian": "Выдумка",
@@ -3875,7 +3875,7 @@
   },
   {
     "id": 286,
-    "english": "To change to something else****",
+    "english": "To change to something else***",
     "dutch": "Overstappen naar iets anders",
     "spanish": "Cambiar a algo más",
     "russian": "Переключиться на что-то другое",
@@ -3887,7 +3887,7 @@
   },
     {
     "id": 287,
-    "english": "I am doing my best****",
+    "english": "I am doing my best***",
     "dutch": "Ik doe mijn best",
     "spanish": "Estoy haciendo lo mejor que puedo",
     "russian": "Я делаю всё возможное",
@@ -3899,7 +3899,7 @@
   },
   {
     "id": 288,
-    "english": "I don't know what to do****",
+    "english": "I don't know what to do***",
     "dutch": "Ik weet niet wat ik moet doen",
     "spanish": "No sé qué hacer",
     "russian": "Я не знаю, что делать",
@@ -3911,7 +3911,7 @@
   },
   {
     "id": 289,
-    "english": "Exaggeration****",
+    "english": "Exaggeration***",
     "dutch": "Aanstellerij",
     "spanish": "Exageración",
     "russian": "Преувеличение",
@@ -3923,7 +3923,7 @@
   },
   {
     "id": 290,
-    "english": "Something is missing****",
+    "english": "Something is missing***",
     "dutch": "Er mist iets",
     "spanish": "Falta algo",
     "russian": "Чего-то не хватает",
@@ -3935,7 +3935,7 @@
   },
   {
     "id": 291,
-    "english": "He has a certain additude towards that kind of stuff****",
+    "english": "He has a certain additude towards that kind of stuff***",
     "dutch": "Hij had een bepaalde houding tegenover zo'n dingen",
     "spanish": "Él tiene una cierta actitud hacia ese tipo de cosas",
     "russian": "У него есть предвзятое отношение к таким вещам",
@@ -3947,7 +3947,7 @@
   },
   {
     "id": 292,
-    "english": "To bring to someone's mind****",
+    "english": "To bring to someone's mind***",
     "dutch": "Aan het verstand brengen",
     "spanish": "Hacer entender",
     "russian": "Донести до них",
@@ -3959,7 +3959,7 @@
   },
   {
     "id": 293,
-    "english": "A lot to love****",
+    "english": "A lot to love***",
     "dutch": "Veel om van te houden",
     "spanish": "Mucho para amar",
     "russian": "Хорошего должно быть много",
@@ -3971,7 +3971,7 @@
   },
   {
     "id": 294,
-    "english": "He felt a bit off****",
+    "english": "He felt a bit off***",
     "dutch": "Hij voelde zich een beetje raar",
     "spanish": "Se sintió un poco raro",
     "russian": "Он чувствовал себя немного странно",
@@ -3983,7 +3983,7 @@
   },
   {
     "id": 295,
-    "english": "He felt watched****",
+    "english": "He felt watched***",
     "dutch": "Hij voelde zich bekeken",
     "spanish": "Se sintió observado",
     "russian": "Он чувствовал на себе взгляд",
@@ -3995,7 +3995,7 @@
   },
   {
     "id": 296,
-    "english": "Most of the time it does not happen****",
+    "english": "Most of the time it does not happen***",
     "dutch": "Meestal komt het niet uit",
     "spanish": "La mayoría de las veces no sucede",
     "russian": "Обычно это не сбывается",
@@ -4007,7 +4007,7 @@
   },
   {
     "id": 297,
-    "english": "I trust you with this task****",
+    "english": "I trust you with this task***",
     "dutch": "Ik vertrouw je deze taak toe",
     "spanish": "Confío en ti para esta tarea",
     "russian": "Я доверяю тебе эту задачу",
@@ -4019,7 +4019,7 @@
 },
 {
   "id": 298,
-  "english": "To yawn****",
+  "english": "To yawn***",
   "dutch": "Gapen",
   "spanish": "Bostezar",
   "russian": "Зевать",
@@ -4031,7 +4031,7 @@
 },
 {
   "id": 299,
-  "english": "To take something out****",
+  "english": "To take something out***",
   "dutch": "Iets tevoorschijn halen",
   "spanish": "Sacar algo",
   "russian": "Достать что-то",
@@ -4043,7 +4043,7 @@
 },
 {
   "id": 300,
-  "english": "It is what it is****",
+  "english": "It is what it is***",
   "dutch": "Het is wat het is",
   "spanish": "Es lo que hay",
   "russian": "Что есть, то есть",
@@ -4055,7 +4055,7 @@
 },
 {
   "id": 301,
-  "english": "As for the other thing****",
+  "english": "As for the other thing***",
   "dutch": "Wat het andere betreft",
   "spanish": "En cuanto a lo otro",
   "russian": "Что касается другого",
@@ -4067,7 +4067,7 @@
 },
 {
   "id": 302,
-  "english": "Keep it up!****",
+  "english": "Keep it up!***",
   "dutch": "Doe zo verder!",
   "spanish": "¡Sigue así!",
   "russian": "Есть над чем работать!",
@@ -4079,7 +4079,7 @@
 },
 {
   "id": 303,
-  "english": "To keep in mind****",
+  "english": "To keep in mind***",
   "dutch": "In het achterhoofd houden",
   "spanish": "Tener en cuenta",
   "russian": "Держать в уме",
@@ -4091,7 +4091,7 @@
 },
 {
   "id": 304,
-  "english": "He wrinkled his nose****",
+  "english": "He wrinkled his nose***",
   "dutch": "He trok zijn neus op",
   "spanish": "Arrugó la nariz",
   "russian": "Он сморщил нос",
@@ -4103,7 +4103,7 @@
 },
 {
   "id": 305,
-  "english": "Very very tiny****",
+  "english": "Very very tiny***",
   "dutch": "Piepklein",
   "spanish": "Minúsculo",
   "russian": "Крошечный",
@@ -4115,7 +4115,7 @@
 },
 {
   "id": 306,
-  "english": "There will always be people like that****",
+  "english": "There will always be people like that***",
   "dutch": "Van die mensen heb je altijd",
   "spanish": "Siempre hay gente así",
   "russian": "Такие люди всегда есть",
@@ -4127,7 +4127,7 @@
 },
 {
   "id": 307,
-  "english": "All kinds of things****",
+  "english": "All kinds of things***",
   "dutch": "Van alles en nog wat",
   "spanish": "De todo un poco",
   "russian": "Всего понемногу",
@@ -4139,7 +4139,7 @@
 },
 {
   "id": 308,
-  "english": "To think about something else****",
+  "english": "To think about something else***",
   "dutch": "Even ergens anders aan denken",
   "spanish": "Para pensar en otra cosa",
   "russian": "Переключиться на что-то другое",
@@ -4151,7 +4151,7 @@
 },
 {
   "id": 309,
-  "english": "I follow my gut feeling****",
+  "english": "I follow my gut feeling***",
   "dutch": "Ik volg mijn gevoel",
   "spanish": "Sigo mi intuición",
   "russian": "Я следую своему чутью",
@@ -4163,7 +4163,7 @@
 },
 {
   "id": 310,
-  "english": "By no means****",
+  "english": "By no means***",
   "dutch": "Allesbehalve",
   "spanish": "Cualquier cosa menos",
   "russian": "Всё, кроме",
@@ -4175,7 +4175,7 @@
 },
   {
     "id": 311,
-    "english": "I don't have the slightest idea****",
+    "english": "I don't have the slightest idea***",
     "dutch": "Ik heb geen flauw idee",
     "spanish": "No tengo ni idea",
     "russian": "У меня нет ни малейшего понятия",
@@ -4187,7 +4187,7 @@
   },
   {
     "id": 312,
-    "english": "I have no time for this****",
+    "english": "I have no time for this***",
     "dutch": "Ik heb hier geen tijd voor",
     "spanish": "No tengo tiempo para esto",
     "russian": "У меня нет времени на это",
@@ -4199,7 +4199,7 @@
   },
   {
     "id": 313,
-    "english": "The jetlag is overcome****",
+    "english": "The jetlag is overcome***",
     "dutch": "De jetlag is overwonnen",
     "spanish": "El jetlag está superado",
     "russian": "Джетлаг побеждён",
