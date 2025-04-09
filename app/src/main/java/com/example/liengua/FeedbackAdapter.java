@@ -1,5 +1,7 @@
 package com.example.liengua;
 
+import static com.example.liengua.FeedbackActivity.disableAllCheckboxes;
+import static com.example.liengua.FeedbackActivity.enableAllCheckboxes;
 import static com.example.liengua.FeedbackActivity.gatheredFeedback;
 import static com.google.android.material.internal.ViewUtils.hideKeyboard;
 
@@ -38,7 +40,7 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
     private boolean showDutch = true;
     private boolean showRussian = true;
     private final DictionaryEntry entry;
-
+    Integer expandCount = 0;
     public FeedbackAdapter(Context context, DictionaryEntry entry) {
         this.context = context;
         this.entry = entry;
@@ -91,10 +93,8 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
     public void onBindViewHolder(@NonNull FeedbackViewHolder holder, @SuppressLint("RecyclerView") int position) {
         String phrase = feedbackItems.get(position);
         holder.originalPhrase.setText(phrase);
-        // Set the phrase as a tag for easy retrieval
         holder.feedbackInput.setTag(phrase);
         holder.suggestDelete.setTag(phrase);
-// Set listener for feedback text input
         holder.feedbackInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
@@ -114,10 +114,7 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
     @SuppressLint("LongLogTag")
     private void updateFeedback(String originalPhrase, String feedback, Boolean suggestDelete, FeedbackViewHolder holder) {
         FeedbackItem item = findFeedbackItem(originalPhrase);
-        if (item == null) {
-            item = new FeedbackItem(originalPhrase);
-            gatheredFeedback.add(item);
-        }
+
         item.setStatusChange(suggestDelete,feedback);
         if (suggestDelete != null && feedback != null) {
             item.setSuggestDelete(suggestDelete);
@@ -129,20 +126,16 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
         } else if (feedback != null) {
             item.setFeedback(feedback);
             item.setIsFeedbackProvided(true);
-        } else if (item.getFeedbackProvided()) {
-            item.setIsFeedbackProvided(false);
         }
-
-        if(item.getStatusChange()) {
-            updateItemBackground(holder);
+        if (item.getFeedbackProvided()) {
+            if(!item.isSuggestDelete() && item.getFeedback().isEmpty()) {
+                item.setIsFeedbackProvided(false);
+                updateItemBackground(holder);
+            }
         }
-
-        Log.d("FEEDBACK PRINT phrase", item.getOriginalPhrase());
-        Log.d("FEEDBACK PRINT id", String.valueOf(item.getId()));
-        Log.d("FEEDBACK PRINT feedback", item.getFeedback());
-        Log.d("FEEDBACK PRINT feedback provided", String.valueOf(item.getFeedbackProvided()));
-        Log.d("FEEDBACK PRINT status change", String.valueOf(item.getStatusChange()));
-
+       if(item.getStatusChange()) {
+           updateItemBackground(holder);
+       }
     }
 
     private FeedbackItem findFeedbackItem(String originalPhrase) {
@@ -151,31 +144,25 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
                 return item;
             }
         }
-        return null;
+        FeedbackItem item = new FeedbackItem(originalPhrase);
+        gatheredFeedback.add(item);
+
+        return item;
     }
     @SuppressLint({"NotifyDataSetChanged", "UseCompatLoadingForDrawables", "LongLogTag"})
     private void updateItemBackground(FeedbackViewHolder holder) {
         if(holder.originalPhrase.getText() != null) {
             FeedbackItem item = findFeedbackItem((String) holder.originalPhrase.getText());
             Log.d("FEEDBACK: original phrase clicked: ", (String) holder.originalPhrase.getText());
-            assert item != null;
             holder.suggestDelete.setChecked(item.isSuggestDelete());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-                if(item.getFeedback().isEmpty() && holder.feedbackInput.getText().isEmpty()) {
-                    holder.feedbackInput.setText(item.getFeedback());
-                }
-            }
             if (holder.suggestDelete.isChecked()) {
                 Log.d("FEEDBACK: original phrase: ", "Suggested deletion");
                 holder.mainFeedbackItemLayout.setBackgroundColor(context.getResources().getColor(R.color.suggested_delete));
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-                if (!holder.feedbackInput.getText().isEmpty()) {
+                disableAllCheckboxes();
+            } else if (item.getFeedbackProvided()) {
                     Log.d("FEEDBACK: original phrase: ", item.getFeedback());
                     holder.mainFeedbackItemLayout.setBackgroundColor(context.getResources().getColor(R.color.feedback_received));
-                } else {
-                    Log.d("FEEDBACK: original phrase: ", "No feedback");
-                    holder.mainFeedbackItemLayout.setBackground(context.getDrawable(R.drawable.border));
-                }
+                    disableAllCheckboxes();
             } else {
                 Log.d("FEEDBACK: original phrase: ", "No feedback");
                 holder.mainFeedbackItemLayout.setBackground(context.getDrawable(R.drawable.border));
@@ -194,6 +181,7 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
         this.showDutch = showDutch;
         this.showRussian = showRussian;
         this.prepareFeedbackItems(this.entry);
+        gatheredFeedback.clear();
     }
 
     public class FeedbackViewHolder extends RecyclerView.ViewHolder {
@@ -204,6 +192,7 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
         EditText feedbackInput;
         ImageView expandArrowImage;
         final boolean[] isExpanded = {false};
+
         @SuppressLint({"RestrictedApi", "NotifyDataSetChanged"})
         public FeedbackViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -219,10 +208,22 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
 
                 expandableLayout.setVisibility(isExpanded[0] ? View.VISIBLE : View.GONE);
                 expandArrowImage.setRotation(isExpanded[0] ? 180f : 0f);
-
+                disableAllCheckboxes();
                 if (!isExpanded[0]) {
                     hideKeyboard(v);
                     notifyDataSetChanged();
+                    expandCount=expandCount-1;
+                    for (FeedbackItem feedbackItem: gatheredFeedback
+                    ) {
+                        if (feedbackItem.getFeedbackProvided()){return;}
+                    }
+                    if(expandCount<=0) {
+                        enableAllCheckboxes();
+                        expandCount = 0;
+                    }
+
+                } else {
+                    expandCount=expandCount+1;
                 }
             });
         }

@@ -1,10 +1,16 @@
 package com.example.liengua;
 
+import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -17,19 +23,21 @@ import okhttp3.Response;
 public class FeedbackClient {
 
     private static final String TAG = "FeedbackClient";
-    private static final String WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyWttUVz0B5pm-iwGkOFZ7QMTZWgKkp8iuQBRuHv5WIFx6RBhJMx54eGBnVCipNLP3THw/exec";
+    private static final String WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxSfRrwg54dPyGchoJ7RVEFllu49qVnKJH5C7sZzFN-u8c89q56Rlw04rLwZwAxV1RQvw/exec";
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
-    private static OkHttpClient client = new OkHttpClient();
+    private static final OkHttpClient client = new OkHttpClient();
 
-    public static void sendFeedback(int id, String originalPhrase, String feedback, String user) {
+    public static void sendFeedback(int id, String originalPhrase, Boolean delete, String feedback, String user) {
         try {
             JSONObject json = new JSONObject();
             json.put("id", id);
             json.put("original_phrase", originalPhrase);
+            json.put("suggestDelete", delete);
             json.put("feedback", feedback);
             json.put("user", user);
 
             RequestBody body = RequestBody.create(json.toString(), JSON);
+            Log.d("JSON", json.toString());
             Request request = new Request.Builder()
                     .url(WEB_APP_URL)
                     .post(body)
@@ -37,14 +45,16 @@ public class FeedbackClient {
 
             client.newCall(request).enqueue(new Callback() {
                 @Override
-                public void onFailure(Call call, IOException e) {
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
                     Log.e(TAG, "Feedback send failed: " + e.getMessage());
                 }
 
                 @Override
-                public void onResponse(Call call, Response response) throws IOException {
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                     if (response.isSuccessful()) {
-                        Log.d(TAG, "Feedback sent successfully!");
+                        assert response.body() != null;
+                        Log.d(TAG, "Feedback sent successfully! " + response.body().string());
+
                     } else {
                         Log.e(TAG, "Feedback send failed: " + response.message());
                     }

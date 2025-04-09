@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,7 +25,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FeedbackActivity extends AppCompatActivity {
-    private CheckBox spanishCheckBox, dutchCheckBox, russianCheckBox;
+    private static CheckBox spanishCheckBox;
+    private static CheckBox dutchCheckBox;
+    private static CheckBox russianCheckBox;
+
+    private Button sendFeedbackButton, cancelButton;
     private RecyclerView feedbackRecyclerView;
     public static FeedbackAdapter feedbackAdapter;
     public final static List<FeedbackItem> gatheredFeedback = new ArrayList<>();
@@ -43,18 +49,67 @@ public class FeedbackActivity extends AppCompatActivity {
         spanishCheckBox = findViewById(R.id.spanish_checkbox);
         dutchCheckBox = findViewById(R.id.dutch_checkbox);
         russianCheckBox = findViewById(R.id.russian_checkbox);
+        sendFeedbackButton = findViewById(R.id.send_feedback_button);
+        cancelButton = findViewById(R.id.cancel_button);
+        cancelButton.setOnClickListener(view -> {
+            finish();
+        });
+        String device = Build.MANUFACTURER.concat(" ").concat(Build.MODEL);
+        sendFeedbackButton.setOnClickListener(view -> {
+            for (FeedbackItem item: gatheredFeedback
+                 ) {
+                if (item.getFeedbackProvided() && entry != null) {
+                    FeedbackClient.sendFeedback(entry.getId(), item.getOriginalPhrase(), item.isSuggestDelete(), item.getFeedback(), device);
+                    Toast.makeText(this, "Feedback sent for <" + item.getOriginalPhrase() + ">", Toast.LENGTH_SHORT).show();
+                } else if(entry == null) {
+                    FeedbackClient.sendFeedback(0, item.getOriginalPhrase(), item.isSuggestDelete(), item.getFeedback(), device);
+                    Toast.makeText(this, "Feedback sent for <" + item.getOriginalPhrase() + ">", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         ImageView infoIcon = findViewById(R.id.info_icon1);
         infoIcon.setOnClickListener(v -> showInfoDialog());
         setupCheckBoxListeners();
+        russianCheckBox.setChecked(false);
+        spanishCheckBox.setChecked(false);
+        dutchCheckBox.setChecked(false);
+        updateLanguage();
     }
     private void setupCheckBoxListeners() {
-        spanishCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
-        dutchCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
-        russianCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateLanguages());
+        spanishCheckBox.setOnClickListener(v -> selectLanguage("spanish"));
+        dutchCheckBox.setOnClickListener(v -> selectLanguage("dutch"));
+        russianCheckBox.setOnClickListener(v -> selectLanguage("russian"));
+    }
+
+    private void selectLanguage(String target) {
+        spanishCheckBox.setOnCheckedChangeListener(null);
+        dutchCheckBox.setOnCheckedChangeListener(null);
+        russianCheckBox.setOnCheckedChangeListener(null);
+        spanishCheckBox.setChecked(target.equals("spanish"));
+        dutchCheckBox.setChecked(target.equals("dutch"));
+        russianCheckBox.setChecked(target.equals("russian"));
+        setupCheckBoxListeners();
+        updateLanguage();
+    }
+
+    public static void disableAllCheckboxes() {
+        if(russianCheckBox.isEnabled()) {
+            spanishCheckBox.setEnabled(false);
+            dutchCheckBox.setEnabled(false);
+            russianCheckBox.setEnabled(false);
+        }
+    }
+
+    public static void enableAllCheckboxes() {
+        if(!russianCheckBox.isEnabled()) {
+            spanishCheckBox.setEnabled(true);
+            dutchCheckBox.setEnabled(true);
+            russianCheckBox.setEnabled(true);
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private void updateLanguages() {
+    private void updateLanguage(){
         if (feedbackAdapter != null) {
             feedbackAdapter.setLanguagesToShow(
                     spanishCheckBox.isChecked(),
@@ -69,7 +124,7 @@ public class FeedbackActivity extends AppCompatActivity {
         SpannableString spannableString = new SpannableString(
                 "These are the phrases you can send feedback for. \n" +
                         "Select checkboxes above to filter on language. \n" +
-                        "You can send feedback for multiple phrases at a time."
+                        "You can send feedback for multiple phrases at a time, but not for multiple languages."
         );
         AlertDialog.Builder builder = new AlertDialog.Builder(FeedbackActivity.this);
         builder.setTitle("Information");

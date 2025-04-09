@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class DictionaryEntry implements Serializable {
-    private final Number id;
+    private final Integer id;
     private final String english;
     private final String spanish;
     private final String russian;
@@ -35,7 +35,7 @@ public class DictionaryEntry implements Serializable {
     }
 
     // Getters
-    public Number getId() { return this.id; }
+    public int getId() { return this.id; }
     public String getSentence() {
         return english;
     }
