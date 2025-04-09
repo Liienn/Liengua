@@ -1,6 +1,8 @@
 package com.example.liengua;
 
+import static com.example.liengua.FeedbackActivity.disableAddNewPhrase;
 import static com.example.liengua.FeedbackActivity.disableAllCheckboxes;
+import static com.example.liengua.FeedbackActivity.enableAddNewPhrase;
 import static com.example.liengua.FeedbackActivity.enableAllCheckboxes;
 import static com.example.liengua.FeedbackActivity.gatheredFeedback;
 import static com.google.android.material.internal.ViewUtils.hideKeyboard;
@@ -182,16 +184,19 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
         this.showRussian = showRussian;
         this.prepareFeedbackItems(this.entry);
         gatheredFeedback.clear();
+        enableAddNewPhrase();
     }
 
     public class FeedbackViewHolder extends RecyclerView.ViewHolder {
         LinearLayout mainFeedbackItemLayout;
+        LinearLayout addNewPhraseItemLayout;
         LinearLayout expandableLayout, headerLayout;
         TextView originalPhrase;
         CheckBox suggestDelete;
         EditText feedbackInput;
         ImageView expandArrowImage;
         final boolean[] isExpanded = {false};
+
 
         @SuppressLint({"RestrictedApi", "NotifyDataSetChanged"})
         public FeedbackViewHolder(@NonNull View itemView) {
@@ -203,9 +208,9 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
             feedbackInput = itemView.findViewById(R.id.feedback);
             expandArrowImage = itemView.findViewById(R.id.expandArrow);
             headerLayout = itemView.findViewById(R.id.headerLayout);
+
             mainFeedbackItemLayout.setOnClickListener(v -> {
                 isExpanded[0] = !isExpanded[0];
-
                 expandableLayout.setVisibility(isExpanded[0] ? View.VISIBLE : View.GONE);
                 expandArrowImage.setRotation(isExpanded[0] ? 180f : 0f);
                 disableAllCheckboxes();
@@ -215,15 +220,19 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
                     expandCount=expandCount-1;
                     for (FeedbackItem feedbackItem: gatheredFeedback
                     ) {
-                        if (feedbackItem.getFeedbackProvided()){return;}
+                        if (feedbackItem.getFeedbackProvided()){
+                            disableAddNewPhrase();
+                            return;}
                     }
                     if(expandCount<=0) {
                         enableAllCheckboxes();
+                        enableAddNewPhrase();
                         expandCount = 0;
                     }
 
                 } else {
                     expandCount=expandCount+1;
+                    disableAddNewPhrase();
                 }
             });
         }

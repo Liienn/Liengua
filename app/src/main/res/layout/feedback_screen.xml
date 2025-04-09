@@ -16,6 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <TextView
+            android:id="@+id/targetPhrase_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="English sentence"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+        <TextView
             android:id="@+id/feedbackHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,45 +34,67 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:text="Click the phrase(s) you wish to improve:"
-            android:textStyle="bold"
-            android:textSize="18sp" />
-    <include
-        android:id="@+id/checkbox_feedback_layout"
-        layout="@layout/checkboxes_layout"
-        />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/phrasesRecyclerView"
+            android:textStyle=""
+            android:textSize="16sp" />
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            tools:listitem="@layout/feedback_translation_item" /> <!-- Replace with your item layout name -->
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    >
-        <Button
-            android:id="@+id/send_feedback_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:text="Send feedback" />
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/checkbox_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <include
+                android:id="@+id/checkbox_feedback_layout"
+                layout="@layout/checkboxes_layout"
+                />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:text="Cancel" />
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/phrasesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkbox_layout"
+                tools:listitem="@layout/feedback_translation_item" />
+
+            <LinearLayout
+                android:id="@+id/new_phrase_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phrasesRecyclerView">
+
+                <include layout="@layout/feedback_add_new_phrase_layout" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/send_feedback_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/teal_200"
+                    android:text="Send feedback" />
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/black"
+                    android:text="Cancel"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
