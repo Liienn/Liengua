@@ -4204,9 +4204,249 @@
     "spanish": "El jetlag está superado",
     "russian": "Джетлаг побеждён",
     "alternatives": {
-        "dutch": ["De jetlag is voorbij", "De jetlag is verdwenen"],
+        "dutch": ["De jetlag is voorbij", "Ik heb geen last meer van de jetlag"],
         "spanish": ["El jetlag ha pasado"],
         "russian": ["Джетлаг позади"]
+    }
+  },
+  {
+    "id": 314,
+    "english": "It's up to you****",
+    "dutch": "Jij mag kiezen",
+    "spanish": "Depende de ti",
+    "russian": "Как хочешь",
+    "alternatives": {
+        "dutch": ["Jij mag beslissen", "Jij beslist", "De keuze is aan jou", "Jij mag het zeggen"],
+        "spanish": ["Tú decides", "Tú eliges"],
+        "russian": ["Ты решаешь", "Ты выбираешь", "Это твой выбор","Это зависит от тебя"]
+    }
+  },
+  {
+    "id": 315,
+    "english": "Fortunately, that is not the case****",
+    "dutch": "Gelukkig is dat niet het geval",
+    "spanish": "Afortunadamente, no es así",
+    "russian": "К счастью, это не так",
+    "alternatives": {
+        "dutch": ["Gelukkig is dat niet zo", "Gelukkig is dat niet waar"],
+        "spanish": ["Afortunadamente, no es cierto"],
+        "russian": ["К счастью, это не правда"]
+    }
+  },
+  {
+    "id": 316,
+    "english": "Very dry****",
+    "dutch": "Kurkdroog",
+    "spanish": "Seco como un desierto",
+    "russian": "Как пустыня",
+    "alternatives": {
+        "dutch": ["Heel erg droog"],
+        "spanish": ["Seco como un hueso"],
+        "russian": ["Совершенно сухой", "Совершенно безжизненный"]
+    }
+  },
+  {
+    "id": 317,
+    "english": "I am starving****",
+    "dutch": "Ik rammel van de honger",
+    "spanish": "Estoy muerto de hambre",
+    "russian": "Я умираю от голода",
+    "alternatives": {
+        "dutch": ["Ik heb honger", "Ik heb een enorme trek"],
+        "spanish": ["Estoy hambriento"],
+        "russian": ["Я голоден/голодна", "Я проголодался/проголодалась"]
+    }
+  },
+  {
+    "id": 318,
+    "english": "My skin is shedding****",
+    "dutch": "Ik ben aan het vervellen",
+    "spanish": "Me estoy pelando",
+    "russian": "У меня шелушится кожа",
+    "alternatives": {
+        "dutch": ["Mijn huid is aan het vervellen"],
+        "spanish": ["Me estoy desollando"],
+        "russian": ["Облезает кожа"]
+    }
+  },
+  {
+    "id": 319,
+    "english": "They were flashing by****",
+    "dutch": "Ze flitsen voorbij",
+    "spanish": "Pasaban de largo",
+    "russian": "Они проносились мимо",
+    "alternatives": {
+        "dutch": ["Langsflitsend"],
+        "spanish": ["Pasaban rápidamente"],
+        "russian": []
+    }
+  },
+  {
+    "id": 320,
+    "english": "She was busy with all kinds of things****",
+    "dutch": "Ze was bezig met van alles en nog wat",
+    "spanish": "Estaba ocupada con todo tipo de cosas",
+    "russian": "Она была занята всякой ерундой",
+    "alternatives": {
+        "dutch": ["Ze was met van alles bezig", "Ze was druk met allerlei dingen", "Ze was van alles aan het doen"],
+        "spanish": ["Estaba ocupada con muchas cosas"],
+        "russian": []
+    }
+  },
+  {
+    "id": 321,
+    "english": "She couldn't sit still****",
+    "dutch": "Ze kon niet stilzitten",
+    "spanish": "No podía quedarse quieta",
+    "russian": "Она не могла усидеть на месте",
+    "alternatives": {
+        "dutch": ["Ze kon niet stil blijven zitten", "Ze kon niet stil blijven"],
+        "spanish": ["No podía estar quieta"],
+        "russian": []
+    }
+  },
+  {
+    "id": 322,
+    "english": "It was not meant to be****",
+    "dutch": "Het mocht niet zijn",
+    "spanish": "No pudo ser",
+    "russian": "Не суждено было",
+    "alternatives": {
+        "dutch": [],
+        "spanish": ["No estaba destinado a ser"],
+        "russian": ["Это не суждено было случиться"]
+    }
+  },
+  {
+    "id": 323,
+    "english": "It gets worse with the time****",
+    "dutch": "Het wordt erger met de tijd",
+    "spanish": "Se pone peor con el tiempo",
+    "russian": "Это становится хуже со временем",
+    "alternatives": {
+        "dutch": ["Het wordt erger naarmate de tijd", "Het wordt steeds erger"],
+        "spanish": ["Se pone cada vez peor"],	
+        "russian": []
+    }
+  },
+  {
+    "id": 324,
+    "english": "It is a bit of a mess****",
+    "dutch": "Het is een beetje rommelig",
+    "spanish": "Es un poco desordenado",
+    "russian": "Это немного беспорядочно",
+    "alternatives": {
+        "dutch": ["Het is een beetje chaotisch", "Het is een beetje slordig"],
+        "spanish": ["Es un poco caótico"],
+        "russian": ["Это немного запутано"]
+    }
+  },
+  {
+    "id": 325,
+    "english": "To partake in mischief****",
+    "dutch": "Kattenkwaad uithalen",
+    "spanish": "Hacer travesuras",
+    "russian": "Шалить",
+    "alternatives": {
+        "dutch": ["Streken uithalen"],
+        "spanish": [],
+        "russian": ["Проказничать"]
+    }
+  },
+  {
+    "id": 326,
+    "english": "To be stuck with something****",
+    "dutch": "Opgescheept zitten met iets",
+    "spanish": "Estar atrapado con algo",
+    "russian": "Застрять с чем-то",
+    "alternatives": {
+        "dutch": [],
+        "spanish": [],
+        "russian": []
+    }
+  },
+  {
+    "id": 327,
+    "english": "Embarrassing****",
+    "dutch": "Gênant",
+    "spanish": "Vergonzoso",
+    "russian": "Смущающе",
+    "alternatives": {
+        "dutch": ["Beschamend", "Pijnlijk"],
+        "spanish": ["Bochornoso"],
+        "russian": ["Стыдно", "Уничижительно"]
+    }
+  },
+  {
+    "id": 328,
+    "english": "Something is bothering him****",
+    "dutch": "Iets zit hem dwars",
+    "spanish": "Algo le molesta",
+    "russian": "Что-то его беспокоит",
+    "alternatives": {
+        "dutch": ["Iets maakt hem ongerust", "Hij zit ergens mee", "Hij zit met iets"],
+        "spanish": ["Algo le incomoda"],
+        "russian": ["Что-то его тревожит"]
+    }
+  },
+  {
+    "id": 329,
+    "english": "To be fast in understanding something****",
+    "dutch": "Iets snel oppikken",
+    "spanish": "Entender algo rápido",
+    "russian": "Понимать что-то быстро",
+    "alternatives": {
+        "dutch": ["Iets snel begrijpen", "Iets snel doorhebben", "Ergens snel mee weg zijn"],
+        "spanish": ["Entender algo rápidamente"],
+        "russian": ["Быстро соображать"]
+    }
+  },
+  {
+    "id": 330,
+    "english": "To be fast asleep****",
+    "dutch": "Diep in slaap zijn",
+    "spanish": "Dormir profundamente",
+    "russian": "Спать крепким сном",
+    "alternatives": {
+        "dutch": ["Diep in dromenland zijn", "Diep slapen"],
+        "spanish": ["Dormir como un tronco"],
+        "russian": ["Спать как убитый", "Спать как сурок"]
+    }
+  },
+  {
+    "id": 331,
+    "english": "To make myself achieve something****",
+    "dutch": "me ergens toe aanzetten",
+    "spanish": "Hacerme lograr algo",
+    "russian": "Заставить себя что-то сделать",
+    "alternatives": {
+        "dutch": ["Iets voor elkaar krijgen", "Iets gedaan krijgen"],
+        "spanish": ["Hacerme conseguir algo"],
+        "russian": []
+    }
+  },
+  {
+    "id": 332,
+    "english": "Not mandatory, but recommended****",
+    "dutch": "Niet verplicht, maar aanbevolen",
+    "spanish": "No obligatorio, pero recomendado",
+    "russian": "Не обязательно, но желательно",
+    "alternatives": {
+        "dutch": ["Niet vereist, maar wel gewenst"],
+        "spanish": ["No es obligatorio, pero se recomienda"],
+        "russian": []
+    }
+  },
+  {
+    "id": 333,
+    "english": "It is worn out****",
+    "dutch": "Het is versleten",
+    "spanish": "Está desgastado",
+    "russian": "Изношено",
+    "alternatives": {
+        "dutch": ["Het is afgedragen"],
+        "spanish": ["Está usado"],
+        "russian": []
     }
   },
   {
